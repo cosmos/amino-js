@@ -13,12 +13,12 @@ type Tx interface {
 }
 
 // StdTx is a standard way to wrap a Msg with Fee and Signatures.
-// NOTE: the first signature is the	fee payer (Signatures must not be nil).
+// NOTE: the first signature is the    fee payer (Signatures must not be nil).
 type StdTx struct {
-	Msgs       []Msg          `json:"msg"`
-	Fee        StdFee         `json:"fee"`
-	Signatures []StdSignature `json:"signatures"`
-	Memo       string         `json:"memo"`
+    Msgs       []Msg          `json:"msg"`
+    Fee        StdFee         `json:"fee"`
+    Signatures []StdSignature `json:"signatures"`
+    Memo       string         `json:"memo"`
 }
 
 //__________________________________________________________
@@ -27,8 +27,8 @@ type StdTx struct {
 // gas to be used by the transaction. The ratio yields an effective "gasprice",
 // which must be above some miminum to be accepted into the mempool.
 type StdFee struct {
-	Amount Coins  `json:"amount"`
-	Gas    uint64 `json:"gas"`
+    Amount Coins  `json:"amount"`
+    Gas    uint64 `json:"gas"`
 }
 
 //__________________________________________________________
@@ -39,16 +39,16 @@ type StdFee struct {
 // and the Sequence numbers for each signature (prevent
 // inchain replay and enforce tx ordering per account).
 type StdSignDoc struct {
-	AccountNumber uint64            `json:"account_number"`
-	ChainID       string            `json:"chain_id"`
-	Fee           json.RawMessage   `json:"fee"`
-	Memo          string            `json:"memo"`
-	Msgs          []json.RawMessage `json:"msgs"`
-	Sequence      uint64            `json:"sequence"`
+    AccountNumber uint64            `json:"account_number"`
+    ChainID       string            `json:"chain_id"`
+    Fee           json.RawMessage   `json:"fee"`
+    Memo          string            `json:"memo"`
+    Msgs          []json.RawMessage `json:"msgs"`
+    Sequence      uint64            `json:"sequence"`
 }
 
 // StdSignature represents a sig
 type StdSignature struct {
-	PubKey     `json:"pub_key"` // optional
-	Signature  []byte           `json:"signature"`
+    PubKey     `json:"pub_key"` // optional
+    Signature  []byte           `json:"signature"`
 }

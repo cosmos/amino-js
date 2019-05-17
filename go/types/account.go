@@ -11,7 +11,7 @@ type Account interface {
 
 // VestingAccount defines an account type that vests coins via a vesting schedule.
 type VestingAccount interface {
-	Account
+    Account
 }
 
 // AccountDecoder unmarshals account bytes
@@ -28,11 +28,11 @@ var _ Account = (*BaseAccount)(nil)
 // However one doesn't have to use BaseAccount as long as your struct
 // implements Account.
 type BaseAccount struct {
-	Address       AccAddress `json:"address"`
-	Coins         Coins      `json:"coins"`
-	PubKey        PubKey  `json:"public_key"`
-	AccountNumber uint64         `json:"account_number"`
-	Sequence      uint64         `json:"sequence"`
+    Address       AccAddress `json:"address"`
+    Coins         Coins      `json:"coins"`
+    PubKey        PubKey     `json:"public_key"`
+    AccountNumber uint64     `json:"account_number"`
+    Sequence      uint64     `json:"sequence"`
 }
 
 //-----------------------------------------------------------------------------
@@ -41,13 +41,13 @@ type BaseAccount struct {
 // BaseVestingAccount implements the VestingAccount interface. It contains all
 // the necessary fields needed for any vesting account implementation.
 type BaseVestingAccount struct {
-	*BaseAccount
+    *BaseAccount
 
-	OriginalVesting  sdk.Coins `json:"original_vesting"`  // coins in account upon initialization
-	DelegatedFree    sdk.Coins `json:"delegated_free"`    // coins that are vested and delegated
-	DelegatedVesting sdk.Coins `json:"delegated_vesting"` // coins that vesting and delegated
+    OriginalVesting  sdk.Coins `json:"original_vesting"`  // coins in account upon initialization
+    DelegatedFree    sdk.Coins `json:"delegated_free"`    // coins that are vested and delegated
+    DelegatedVesting sdk.Coins `json:"delegated_vesting"` // coins that vesting and delegated
 
-	EndTime int64 `json:"end_time"` // when the coins become unlocked
+    EndTime int64 `json:"end_time"` // when the coins become unlocked
 }
 
 //-----------------------------------------------------------------------------
@@ -58,9 +58,9 @@ var _ VestingAccount = (*ContinuousVestingAccount)(nil)
 // ContinuousVestingAccount implements the VestingAccount interface. It
 // continuously vests by unlocking coins linearly with respect to time.
 type ContinuousVestingAccount struct {
-	*BaseVestingAccount
+    *BaseVestingAccount
 
-	StartTime int64 `json:"start_time"` // when the coins start to vest
+    StartTime int64 `json:"start_time"` // when the coins start to vest
 }
 
 //-----------------------------------------------------------------------------
@@ -72,5 +72,5 @@ var _ VestingAccount = (*DelayedVestingAccount)(nil)
 // coins after a specific time, but non prior. In other words, it keeps them
 // locked until a specified time.
 type DelayedVestingAccount struct {
-	*BaseVestingAccount
+    *BaseVestingAccount
 }
