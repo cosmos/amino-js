@@ -6,7 +6,6 @@ import (
     "time"
 )
 
-// EncodeBool encodes a bool
 func EncodeBool(b bool) (bz []byte, err error) {
     var w bytes.Buffer
     err = amino.EncodeBool(&w, b)
