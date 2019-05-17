@@ -1,0 +1,4 @@
+{
+  "testMatch": [ "**/*.js" ],
+  "verbose":   true
+}

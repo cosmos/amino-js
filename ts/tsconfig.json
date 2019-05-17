@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "esModuleInterop":              true,
+    "jsx":                          "Preserve",
+    "module":                       "CommonJS",
+    "moduleResolution":             "Node",
+    "noEmit":                       true,
+    "sourceMap":                    true,
+    "strict":                       true,
+    "strictPropertyInitialization": false,
+    "target":                       "ESNext"
+  },
+  "include":         [ "src" ]
+}

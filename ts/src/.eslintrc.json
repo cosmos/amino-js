@@ -1,0 +1,12 @@
+{
+  "env":           {
+    "browser": true,
+    "es6":     true
+  },
+  "extends":       [
+    "../.eslintrc.json"
+  ],
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}
