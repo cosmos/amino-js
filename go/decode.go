@@ -1,160 +1,944 @@
 package main
 
 import (
-    "github.com/tendermint/go-amino"
-    "time"
+	iavl "github.com/jordansexton/go-amino-js/go/types/tendermint/iavl"
+
+	crypto "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/crypto"
+	keys "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/crypto/keys"
+	hd "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/crypto/keys/hd"
+
+	types "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/types"
+
+	auth "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/auth"
+	bank "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/bank"
+	crisis "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/crisis"
+	distribution "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/distribution/types"
+	gov "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/gov/types"
+	ibc "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/ibc"
+	params "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/params/types"
+	slashing "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/slashing"
+	staking "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/x/staking/types"
+
+	tm_crypto "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto"
+	tm_ed25519 "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto/ed25519"
+	tm_multisig "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto/multisig"
+	tm_secp256k1 "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto/secp256k1"
+
+	tm_blockchain "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/blockchain"
+	tm_consensus "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/consensus"
+	tm_evidence "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/evidence"
+	tm_mempool "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/mempool"
+	tm_conn "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/p2p/conn"
+	tm_pex "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/p2p/pex"
+	tm_privval "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/privval"
+	tm_types "github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/types"
 )
 
-func jsDecodeBool(bz []byte) bool {
-    b, _, err := amino.DecodeBool(bz)
-    if err != nil {
-        panic(err)
-    }
-    return b
+func DecodeIAVLAbsenceOp(bz []byte, bare bool) (o *iavl.IAVLAbsenceOp, err error) {
+	if bare {
+		cdc.MustUnmarshalBinaryBare(bz, &o)
+	} else {
+		cdc.MustUnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeByte(bz []byte) byte {
-    b, _, err := amino.DecodeByte(bz)
-    if err != nil {
-        panic(err)
-    }
-    return b
+func DecodeIAVLValueOp(bz []byte, bare bool) (o *iavl.IAVLValueOp, err error) {
+	if bare {
+		cdc.MustUnmarshalBinaryBare(bz, &o)
+	} else {
+		cdc.MustUnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeByteSlice(bz []byte) []byte {
-    bz2, _, err := amino.DecodeByteSlice(bz)
-    if err != nil {
-        panic(err)
-    }
-    return bz2
+func DecodePrivKeyLedgerSecp256k1(bz []byte, bare bool) (o *crypto.PrivKeyLedgerSecp256k1, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeDisfixBytes(bz []byte) (dbr *amino.DisambBytes, pbr *amino.PrefixBytes) {
-    db, hasDb, pb, hasPb, _, err := amino.DecodeDisambPrefixBytes(bz)
-    if err != nil {
-        panic(err)
-    }
-
-    dbr, pbr = &db, &pb
-    if !hasDb {
-        dbr = nil
-    }
-
-    if !hasPb {
-        pbr = nil
-    }
-
-    return dbr, pbr
+func DecodeInfo(bz []byte, bare bool) (o *keys.Info, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeFloat32(bz []byte) float32 {
-    f, _, err := amino.DecodeFloat32(bz)
-    if err != nil {
-        panic(err)
-    }
-    return f
+func DecodeBIP44Params(bz []byte, bare bool) (o *hd.BIP44Params, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeFloat64(bz []byte) float64 {
-    f, _, err := amino.DecodeFloat64(bz)
-    if err != nil {
-        panic(err)
-    }
-    return f
+func DecodeLocalInfo(bz []byte, bare bool) (o *keys.LocalInfo, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeInt16(bz []byte) int16 {
-    i, _, err := amino.DecodeInt16(bz)
-    if err != nil {
-        panic(err)
-    }
-    return i
+func DecodeLedgerInfo(bz []byte, bare bool) (o *keys.LedgerInfo, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeInt32(bz []byte) int32 {
-    i, _, err := amino.DecodeInt32(bz)
-    if err != nil {
-        panic(err)
-    }
-    return i
+func DecodeOfflineInfo(bz []byte, bare bool) (o *keys.OfflineInfo, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeInt64(bz []byte) int64 {
-    i, _, err := amino.DecodeInt64(bz)
-    if err != nil {
-        panic(err)
-    }
-    return i
+func DecodeMultiInfo(bz []byte, bare bool) (o *keys.MultiInfo, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeInt8(bz []byte) int8 {
-    i, _, err := amino.DecodeInt8(bz)
-    if err != nil {
-        panic(err)
-    }
-    return i
+func DecodeMsg(bz []byte, bare bool) (o *types.Msg, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeString(bz []byte) string {
-    s, _, err := amino.DecodeString(bz)
-    if err != nil {
-        panic(err)
-    }
-    return s
+func DecodeTx(bz []byte, bare bool) (o *types.Tx, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeTime(bz []byte) time.Time {
-    t, _, err := amino.DecodeTime(bz)
-    if err != nil {
-        panic(err)
-    }
-    return t
+func DecodeAccount(bz []byte, bare bool) (o *auth.Account, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeUint16(bz []byte) uint16 {
-    u, _, err := amino.DecodeUint16(bz)
-    if err != nil {
-        panic(err)
-    }
-    return u
+func DecodeVestingAccount(bz []byte, bare bool) (o *auth.VestingAccount, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeUint32(bz []byte) uint32 {
-    u, _, err := amino.DecodeUint32(bz)
-    if err != nil {
-        panic(err)
-    }
-    return u
+func DecodeBaseAccount(bz []byte, bare bool) (o *auth.BaseAccount, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeUint64(bz []byte) uint64 {
-    u, _, err := amino.DecodeUint64(bz)
-    if err != nil {
-        panic(err)
-    }
-    return u
+func DecodeBaseVestingAccount(bz []byte, bare bool) (o *auth.BaseVestingAccount, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeUint8(bz []byte) uint8 {
-    u, _, err := amino.DecodeUint8(bz)
-    if err != nil {
-        panic(err)
-    }
-    return u
+func DecodeContinuousVestingAccount(bz []byte, bare bool) (o *auth.ContinuousVestingAccount, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeUvarint(bz []byte) uint64 {
-    u, _, err := amino.DecodeUvarint(bz)
-    if err != nil {
-        panic(err)
-    }
-    return u
+func DecodeDelayedVestingAccount(bz []byte, bare bool) (o *auth.DelayedVestingAccount, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
 
-func jsDecodeVarint(bz []byte) int64 {
-    i, _, err := amino.DecodeVarint(bz)
-    if err != nil {
-        panic(err)
-    }
-    return i
+func DecodeStdTx(bz []byte, bare bool) (o *auth.StdTx, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgSend(bz []byte, bare bool) (o *bank.MsgSend, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgMultiSend(bz []byte, bare bool) (o *bank.MsgMultiSend, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgVerifyInvariant(bz []byte, bare bool) (o *crisis.MsgVerifyInvariant, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgWithdrawDelegatorReward(bz []byte, bare bool) (o *distribution.MsgWithdrawDelegatorReward, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgWithdrawValidatorCommission(bz []byte, bare bool) (o *distribution.MsgWithdrawValidatorCommission, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgSetWithdrawAddress(bz []byte, bare bool) (o *distribution.MsgSetWithdrawAddress, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeContent(bz []byte, bare bool) (o *gov.Content, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgSubmitProposal(bz []byte, bare bool) (o *gov.MsgSubmitProposal, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgDeposit(bz []byte, bare bool) (o *gov.MsgDeposit, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgVote(bz []byte, bare bool) (o *gov.MsgVote, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeTextProposal(bz []byte, bare bool) (o *gov.TextProposal, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeSoftwareUpgradeProposal(bz []byte, bare bool) (o *gov.SoftwareUpgradeProposal, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgIBCTransfer(bz []byte, bare bool) (o *ibc.MsgIBCTransfer, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgIBCReceive(bz []byte, bare bool) (o *ibc.MsgIBCReceive, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeParameterChangeProposal(bz []byte, bare bool) (o *params.ParameterChangeProposal, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgUnjail(bz []byte, bare bool) (o *slashing.MsgUnjail, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgCreateValidator(bz []byte, bare bool) (o *staking.MsgCreateValidator, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgEditValidator(bz []byte, bare bool) (o *staking.MsgEditValidator, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgDelegate(bz []byte, bare bool) (o *staking.MsgDelegate, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgUndelegate(bz []byte, bare bool) (o *staking.MsgUndelegate, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgBeginRedelegate(bz []byte, bare bool) (o *staking.MsgBeginRedelegate, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeBlockchainMessage(bz []byte, bare bool) (o *tm_blockchain.BlockchainMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeBcBlockRequestMessage(bz []byte, bare bool) (o *tm_blockchain.BcBlockRequestMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeBcBlockResponseMessage(bz []byte, bare bool) (o *tm_blockchain.BcBlockResponseMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeBcNoBlockResponseMessage(bz []byte, bare bool) (o *tm_blockchain.BcNoBlockResponseMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeBcStatusResponseMessage(bz []byte, bare bool) (o *tm_blockchain.BcStatusResponseMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeBcStatusRequestMessage(bz []byte, bare bool) (o *tm_blockchain.BcStatusRequestMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeConsensusMessage(bz []byte, bare bool) (o *tm_consensus.ConsensusMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeNewRoundStepMessage(bz []byte, bare bool) (o *tm_consensus.NewRoundStepMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeNewValidBlockMessage(bz []byte, bare bool) (o *tm_consensus.NewValidBlockMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeProposalMessage(bz []byte, bare bool) (o *tm_consensus.ProposalMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeProposalPOLMessage(bz []byte, bare bool) (o *tm_consensus.ProposalPOLMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeBlockPartMessage(bz []byte, bare bool) (o *tm_consensus.BlockPartMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeVoteMessage(bz []byte, bare bool) (o *tm_consensus.VoteMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeHasVoteMessage(bz []byte, bare bool) (o *tm_consensus.HasVoteMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeVoteSetMaj23Message(bz []byte, bare bool) (o *tm_consensus.VoteSetMaj23Message, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeVoteSetBitsMessage(bz []byte, bare bool) (o *tm_consensus.VoteSetBitsMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeWALMessage(bz []byte, bare bool) (o *tm_consensus.WALMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMsgInfo(bz []byte, bare bool) (o *tm_consensus.MsgInfo, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeTimeoutInfo(bz []byte, bare bool) (o *tm_consensus.TimeoutInfo, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEndHeightMessage(bz []byte, bare bool) (o *tm_consensus.EndHeightMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePubKey(bz []byte, bare bool) (o *tm_crypto.PubKey, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePrivKey(bz []byte, bare bool) (o *tm_crypto.PrivKey, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePubKeyEd25519(bz []byte, bare bool) (o *tm_ed25519.PubKeyEd25519, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePrivKeyEd25519(bz []byte, bare bool) (o *tm_ed25519.PrivKeyEd25519, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePubKeySecp256k1(bz []byte, bare bool) (o *tm_secp256k1.PubKeySecp256k1, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePrivKeySecp256k1(bz []byte, bare bool) (o *tm_secp256k1.PrivKeySecp256k1, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePubKeyMultisigThreshold(bz []byte, bare bool) (o *tm_multisig.PubKeyMultisigThreshold, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEvidenceMessage(bz []byte, bare bool) (o *tm_evidence.EvidenceMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEvidenceListMessage(bz []byte, bare bool) (o *tm_evidence.EvidenceListMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMempoolMessage(bz []byte, bare bool) (o *tm_mempool.MempoolMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeTxMessage(bz []byte, bare bool) (o *tm_mempool.TxMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePacket(bz []byte, bare bool) (o *tm_conn.Packet, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePacketPing(bz []byte, bare bool) (o *tm_conn.PacketPing, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePacketPong(bz []byte, bare bool) (o *tm_conn.PacketPong, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePacketMsg(bz []byte, bare bool) (o *tm_conn.PacketMsg, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePexMessage(bz []byte, bare bool) (o *tm_pex.PexMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePexRequestMessage(bz []byte, bare bool) (o *tm_pex.PexRequestMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePexAddrsMessage(bz []byte, bare bool) (o *tm_pex.PexAddrsMessage, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeRemoteSignerMsg(bz []byte, bare bool) (o *tm_privval.RemoteSignerMsg, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePubKeyRequest(bz []byte, bare bool) (o *tm_privval.PubKeyRequest, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePubKeyResponse(bz []byte, bare bool) (o *tm_privval.PubKeyResponse, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeSignVoteRequest(bz []byte, bare bool) (o *tm_privval.SignVoteRequest, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeSignedVoteResponse(bz []byte, bare bool) (o *tm_privval.SignedVoteResponse, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeSignProposalRequest(bz []byte, bare bool) (o *tm_privval.SignProposalRequest, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeSignedProposalResponse(bz []byte, bare bool) (o *tm_privval.SignedProposalResponse, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePingRequest(bz []byte, bare bool) (o *tm_privval.PingRequest, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodePingResponse(bz []byte, bare bool) (o *tm_privval.PingResponse, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeTMEventData(bz []byte, bare bool) (o *tm_types.TMEventData, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataNewBlock(bz []byte, bare bool) (o *tm_types.EventDataNewBlock, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataNewBlockHeader(bz []byte, bare bool) (o *tm_types.EventDataNewBlockHeader, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataTx(bz []byte, bare bool) (o *tm_types.EventDataTx, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataRoundState(bz []byte, bare bool) (o *tm_types.EventDataRoundState, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataNewRound(bz []byte, bare bool) (o *tm_types.EventDataNewRound, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataCompleteProposal(bz []byte, bare bool) (o *tm_types.EventDataCompleteProposal, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataVote(bz []byte, bare bool) (o *tm_types.EventDataVote, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataValidatorSetUpdates(bz []byte, bare bool) (o *tm_types.EventDataValidatorSetUpdates, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEventDataString(bz []byte, bare bool) (o *tm_types.EventDataString, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeEvidence(bz []byte, bare bool) (o *tm_types.Evidence, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeDuplicateVoteEvidence(bz []byte, bare bool) (o *tm_types.DuplicateVoteEvidence, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMockGoodEvidence(bz []byte, bare bool) (o *tm_types.MockGoodEvidence, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMockRandomGoodEvidence(bz []byte, bare bool) (o *tm_types.MockRandomGoodEvidence, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
+}
+
+func DecodeMockBadEvidence(bz []byte, bare bool) (o *tm_types.MockBadEvidence, err error) {
+	if bare {
+		err = cdc.UnmarshalBinaryBare(bz, &o)
+	} else {
+		err = cdc.UnmarshalBinaryLengthPrefixed(bz, &o)
+	}
+	return
 }
