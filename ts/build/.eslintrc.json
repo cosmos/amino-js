@@ -1,19 +1,19 @@
 {
-  "env":           {
-    "commonjs": true,
-    "es6":      true,
-    "node":     true
-  },
-  "extends":       [
-    "../.eslintrc.json",
-    "plugin:node/recommended"
-  ],
-  "plugins":       [ "node" ],
-  "parserOptions": {
-    "ecmaVersion": 2018
-  },
-  "rules":         {
-    "node/no-unpublished-require":        "off",
-    "@typescript-eslint/no-var-requires": "off"
-  }
+    "env":           {
+        "commonjs": true,
+        "es6":      true,
+        "node":     true
+    },
+    "extends":       [
+        "../.eslintrc.json",
+        "plugin:node/recommended"
+    ],
+    "plugins":       [ "node" ],
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules":         {
+        "node/no-unpublished-require":        "off",
+        "@typescript-eslint/no-var-requires": "off"
+    }
 }

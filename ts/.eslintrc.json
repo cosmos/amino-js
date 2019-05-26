@@ -1,13 +1,15 @@
 {
-  "env":           {
-    "commonjs": true
-  },
-  "extends":       [ "plugin:@typescript-eslint/recommended" ],
-  "parserOptions": {
-    "ecmaVersion": 2018
-  },
-  "parser":        "@typescript-eslint/parser",
-  "plugins":       [ "@typescript-eslint" ],
-  "rules":         {
-  }
+    "env":           {
+        "commonjs": true
+    },
+    "extends":       [ "plugin:@typescript-eslint/recommended" ],
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "parser":        "@typescript-eslint/parser",
+    "plugins":       [ "@typescript-eslint" ],
+    "rules":         {
+        "@typescript-eslint/interface-name-prefix": "off",
+        "@typescript-eslint/no-empty-interface":    "off"
+    }
 }
