@@ -17,6 +17,13 @@ cd go-amino-js
 make build
 ```
 
+### Test
+
+```shell
+cd ts
+yarn test
+```
+
 ### Run
 
 ```shell
@@ -29,16 +36,25 @@ open http://localhost:8090
 Using your browser console:
 
 ```javascript
-Amino.JS.decodeString(Amino.JS.encodeString('hello world'));
+Amino.DecodeString(Amino.EncodeString('hello world'));
+// [ "hello world", 12 ]
 ```
 
 ### Structure
 
 ##### `./go`
-Go files -- Amino, wrappers around Amino functions for JS, and some basic structs and types from the Cosmos SDK that aren't used yet.
+Go files:
+  - Amino
+  - Registered and unregistered types from the Cosmos SDK and Tendermint Core with most methods stripped out
+  - Wrappers around Amino encoding and decoding functions for JS
 
 ##### `./ts`
-A Yarn package with TypeScript files and some config, linting, testing, and build boilerplate.
+TypeScript files: 
+  - Yarn package
+  - Config, linting, testing, and build boilerplate
+  - TypeScript definitions for GopherJS's compiled output
+  - Encoding utility functions
+  - Unit tests using Jest
 
 ##### `./static`
 Static assets -- currently just an HTML file to load JS.
