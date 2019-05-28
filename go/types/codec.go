@@ -64,11 +64,6 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterConcrete(&auth.DelayedVestingAccount{}, AuthDelayedVestingAccount, nil)
 	codec.RegisterConcrete(auth.StdTx{}, AuthStdTx, nil)
 
-	//codec.RegisterConcrete(&auth.BaseAccount{}, CosmosSdkBaseAccount, nil)
-	//codec.RegisterConcrete(&auth.BaseVestingAccount{}, CosmosSdkBaseVestingAccount, nil)
-	//codec.RegisterConcrete(&auth.ContinuousVestingAccount{}, CosmosSdkContinuousVestingAccount, nil)
-	//codec.RegisterConcrete(&auth.DelayedVestingAccount{}, CosmosSdkDelayedVestingAccount, nil)
-
 	// cosmos/cosmos-sdk/x/bank/codec.go
 
 	codec.RegisterConcrete(bank.MsgSend{}, CosmosSdkMsgSend, nil)
@@ -211,28 +206,4 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterConcrete(tm_types.MockGoodEvidence{}, TendermintMockGoodEvidence, nil)
 	codec.RegisterConcrete(tm_types.MockRandomGoodEvidence{}, TendermintMockRandomGoodEvidence, nil)
 	codec.RegisterConcrete(tm_types.MockBadEvidence{}, TendermintMockBadEvidence, nil)
-
-	//// tendermint/tendermint/crypto/ed25519/ed25519.go
-	//
-	//codec.RegisterInterface((*tm_crypto.PubKey)(nil), nil)
-	//codec.RegisterConcrete(tm_ed25519.PubKeyEd25519{}, tm_ed25519.PubKeyAminoName, nil)
-	//
-	//codec.RegisterInterface((*tm_crypto.PrivKey)(nil), nil)
-	//codec.RegisterConcrete(tm_ed25519.PrivKeyEd25519{}, tm_ed25519.PrivKeyAminoName, nil)
-	//
-	//// tendermint/tendermint/crypto/secp256k1/secp256k1.go
-	//
-	//codec.RegisterInterface((*tm_crypto.PubKey)(nil), nil)
-	//codec.RegisterConcrete(tm_secp256k1.PubKeySecp256k1{}, tm_secp256k1.PubKeyAminoName, nil)
-	//
-	//codec.RegisterInterface((*tm_crypto.PrivKey)(nil), nil)
-	//codec.RegisterConcrete(tm_secp256k1.PrivKeySecp256k1{}, tm_secp256k1.PrivKeyAminoName, nil)
-	//
-	//// tendermint/tendermint/crypto/multisig/wire.go
-	//
-	//codec.RegisterInterface((*tm_crypto.PubKey)(nil), nil)
-	//codec.RegisterConcrete(tm_multisig.PubKeyMultisigThreshold{}, tm_multisig.PubKeyMultisigThresholdAminoRoute, nil)
-	//
-	//codec.RegisterConcrete(tm_ed25519.PubKeyEd25519{}, tm_ed25519.PubKeyAminoName, nil)
-	//codec.RegisterConcrete(tm_secp256k1.PubKeySecp256k1{}, tm_secp256k1.PubKeyAminoName, nil)
 }
