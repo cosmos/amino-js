@@ -1,4 +1,4 @@
-package js
+package lib
 
 import (
 	rootmulti "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/store/rootmulti"

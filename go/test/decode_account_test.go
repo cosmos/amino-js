@@ -3,7 +3,7 @@ package test
 import (
 	"encoding/base64"
 	"fmt"
-	js "github.com/jordansexton/go-amino-js/go"
+	lib "github.com/jordansexton/go-amino-js/go"
 	"github.com/stretchr/testify/assert"
 	"testing"
 
@@ -47,9 +47,9 @@ func TestDecodeAccount(t *testing.T) {
 	//err = codec.UnmarshalBinaryBare(data, &account)
 
 	//var account auth.Account
-	//account, err = js.DecodeAccount(data, true)
+	//account, err = lib.DecodeAccount(data, true)
 	var account []byte
-	account = js.DecodeAccountJSON(data, true)
+	account = lib.DecodeAccount(data, true)
 
 	assert.NoError(t, err)
 

@@ -1,4 +1,4 @@
-package js
+package lib
 
 import (
 	"github.com/tendermint/go-amino"

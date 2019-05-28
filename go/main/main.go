@@ -2,7 +2,7 @@ package main
 
 import (
 	gopher "github.com/gopherjs/gopherjs/js"
-	js "github.com/jordansexton/go-amino-js/go"
+	lib "github.com/jordansexton/go-amino-js/go"
 	"github.com/tendermint/go-amino"
 )
 

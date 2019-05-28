@@ -1,4 +1,4 @@
-package js
+package lib
 
 import (
 	"github.com/jordansexton/go-amino-js/go/types"
