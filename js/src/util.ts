@@ -2,12 +2,12 @@ const decoder = new TextDecoder;
 const encoder = new TextEncoder;
 
 export function base64ToBytes (base64: string): Uint8Array {
-    const string = atob(base64);
-    const length = string.length;
+    const raw    = atob(base64);
+    const length = raw.length;
     const bytes  = new Uint8Array(new ArrayBuffer(length));
 
     for (let i = 0; i < length; i++) {
-        bytes[i] = string.charCodeAt(i);
+        bytes[i] = raw.charCodeAt(i);
     }
 
     return bytes;
