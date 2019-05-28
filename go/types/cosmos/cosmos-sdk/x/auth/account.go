@@ -1,9 +1,8 @@
 package auth
 
 import (
-	"github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto"
-
 	sdk "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/types"
+	"github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto"
 )
 
 type Account interface {
@@ -29,8 +28,7 @@ type BaseVestingAccount struct {
 	OriginalVesting  sdk.Coins `json:"original_vesting"`  // coins in account upon initialization
 	DelegatedFree    sdk.Coins `json:"delegated_free"`    // coins that are vested and delegated
 	DelegatedVesting sdk.Coins `json:"delegated_vesting"` // coins that vesting and delegated
-
-	EndTime int64 `json:"end_time"` // when the coins become unlocked
+	EndTime          int64     `json:"end_time"`          // when the coins become unlocked
 }
 
 var _ VestingAccount = (*ContinuousVestingAccount)(nil)

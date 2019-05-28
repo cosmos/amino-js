@@ -1,8 +1,8 @@
 package types
 
 type Coin struct {
-	Denom string `json:"denom"`
-	Amount Int `json:"amount"`
+	Amount Int    `json:"amount"`
+	Denom  string `json:"denom"`
 }
 
 type Coins []Coin
