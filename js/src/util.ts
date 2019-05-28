@@ -13,6 +13,11 @@ export function base64ToBytes (base64: string): Uint8Array {
     return bytes;
 }
 
+export function bytesToBase64 (bytes: Uint8Array): string {
+    const raw = String.fromCharCode(...bytes);
+    return btoa(raw);
+}
+
 export function bytesToString (bytes: Uint8Array): string {
     return decoder.decode(bytes);
 }
