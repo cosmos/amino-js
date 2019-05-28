@@ -8,6 +8,7 @@
     },
     "scripts":         {
         "build": "webpack --config build --progress --colors --display-error-details",
+        "gzip":  "gzip -c ./lib/index.js > ./lib/index.js.gz",
         "lint":  "eslint --ext .ts,.js .",
         "reset": "rm -rf **/node_modules yarn.lock && yarn",
         "start": "node -r ts-node/register/transpile-only index.ts",
