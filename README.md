@@ -21,6 +21,7 @@ make build
 
 ```shell
 cd ts
+yarn install
 yarn test
 ```
 
