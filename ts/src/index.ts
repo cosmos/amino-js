@@ -16,6 +16,7 @@ import * as mempool from './mempool';
 import * as params from './params';
 import * as pex from './pex';
 import * as privval from './privval';
+import * as rootmulti from './rootmulti';
 import * as slashing from './slashing';
 import * as staking from './staking';
 import * as types from './types';
