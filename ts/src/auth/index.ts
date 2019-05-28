@@ -1,5 +1,5 @@
-import { Msg, Tx } from '../types';
-import { PubKey } from '../crypto';
+import * as types from '../types';
+import * as crypto from '../crypto';
 
 export interface Account {
 }
@@ -16,7 +16,7 @@ export interface BaseAccount extends Account {
 }
 
 export interface Coin {
-    Denomination: string;
+    Denom: string;
     Amount: number;
 }
 
@@ -34,8 +34,8 @@ export interface ContinuousVestingAccount extends BaseVestingAccount {
 export interface DelayedVestingAccount extends BaseVestingAccount {
 }
 
-export interface StdTx extends Tx {
-    Msgs:       Msg[];
+export interface StdTx extends types.Tx {
+    Msgs:       types.Msg[];
     Fee:        StdFee;
     Signatures: StdSignature[];
     Memo:       string;
@@ -47,6 +47,6 @@ export interface StdFee {
 }
 
 export interface StdSignature {
-    PubKey: PubKey;
+    PubKey: crypto.PubKey;
     Signature: Uint8Array;
 }
