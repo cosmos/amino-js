@@ -1,14 +1,22 @@
+import { TextDecoder, TextEncoder } from 'util';
 import '../../dist/main';
 
 declare global {
+    interface Window {
+        TextEncoder: typeof TextEncoder;
+        TextDecoder: typeof TextDecoder;
+    }
+
     namespace jest {
         interface Matchers<R> {
             toBeBytes (bytes: number[]): R;
-
             toBeDate (date: Date): R;
         }
     }
 }
+
+window.TextEncoder = TextEncoder;
+window.TextDecoder = TextDecoder;
 
 expect.extend({
     toBeBytes (received: Uint8Array, expected: number[]) {
