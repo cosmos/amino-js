@@ -56,7 +56,7 @@ export interface GlobalAmino {
     decodeTime (bytes: Uint8Array): [Date, number];
 
     // Meta
-    decodeDisambPrefixBytes (bytes: Uint8Array): [Uint8Array, boolean, Uint8Array, boolean, number];
+    decodeDisambPrefixBytes (bytes: Uint8Array): [Uint8Array | null, Uint8Array | null, number];
     nameToDisfix (name: string): [Uint8Array, Uint8Array];
     byteSliceSize (bytes: Uint8Array): number;
     uvarintSize (uvarint: number): number;

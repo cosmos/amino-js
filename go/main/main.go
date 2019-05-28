@@ -47,7 +47,7 @@ func main() {
 		"decodeTime":      lib.DecodeTime,
 
 		// Meta
-		"decodeDisambPrefixBytes": amino.DecodeDisambPrefixBytes,
+		"decodeDisambPrefixBytes": lib.DecodeDisambPrefixBytes,
 		"nameToDisfix":            amino.NameToDisfix,
 		"byteSliceSize":           amino.ByteSliceSize,
 		"uvarintSize":             amino.UvarintSize,

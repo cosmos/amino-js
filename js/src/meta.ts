@@ -1,13 +1,7 @@
 import { Amino } from './global';
 
 export function decodeDisambPrefixBytes (bytes: Uint8Array): [Uint8Array | null, Uint8Array | null, number] {
-    const [disambBytes, hasDisambBytes, prefixBytes, hasPrefixBytes, length] = Amino.decodeDisambPrefixBytes(bytes);
-
-    return [
-        hasDisambBytes ? disambBytes : null,
-        hasPrefixBytes ? prefixBytes : null,
-        length
-    ];
+    return Amino.decodeDisambPrefixBytes(bytes);
 }
 
 export function nameToDisfix (name: string): [Uint8Array, Uint8Array] {

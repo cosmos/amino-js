@@ -37,7 +37,8 @@ open http://localhost:8090
 Using your browser console:
 
 ```javascript
-Amino.DecodeString(Amino.EncodeString('hello world'));
+import { encodeString, decodeString } from 'go-amino-js';
+decodeString(encodeString('hello world'));
 // [ "hello world", 12 ]
 ```
 
