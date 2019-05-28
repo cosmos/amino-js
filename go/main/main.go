@@ -44,7 +44,6 @@ func main() {
 		"encodeString":    lib.EncodeString,
 		"encodeTime":      lib.EncodeTime,
 
-		// @TODO
 		"decodeDisambPrefixBytes": amino.DecodeDisambPrefixBytes,
 		"nameToDisfix":            amino.NameToDisfix,
 		"byteSliceSize":           amino.ByteSliceSize,
