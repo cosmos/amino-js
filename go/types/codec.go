@@ -34,7 +34,7 @@ import (
 	amino "github.com/tendermint/go-amino"
 )
 
-func RegisterCodec (codec *amino.Codec) {
+func RegisterCodec(codec *amino.Codec) {
 	// cosmos/cosmos-sdk/crypto/amino.go
 
 	codec.RegisterConcrete(crypto.PrivKeyLedgerSecp256k1{}, TendermintPrivKeyLedgerSecp256k1, nil)

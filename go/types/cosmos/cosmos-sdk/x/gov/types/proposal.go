@@ -1,8 +1,8 @@
 package types
 
 import (
-	"time"
 	sdk "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/types"
+	"time"
 )
 
 type Proposal struct {

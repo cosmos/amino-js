@@ -1,8 +1,8 @@
 package types
 
 import (
-	"github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto"
 	sdk "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/types"
+	"github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto"
 )
 
 var (

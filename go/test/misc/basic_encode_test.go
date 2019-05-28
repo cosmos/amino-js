@@ -1,10 +1,10 @@
 package misc
 
 import (
+	amino "github.com/jordansexton/go-amino-js/go"
 	"math"
 	"testing"
 	"time"
-	amino "github.com/jordansexton/go-amino-js/go"
 )
 
 func TestBasicEncode(t *testing.T) {

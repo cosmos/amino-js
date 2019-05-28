@@ -1,9 +1,9 @@
 package types
 
 import (
-	"time"
 	sdk "github.com/jordansexton/go-amino-js/go/types/cosmos/cosmos-sdk/types"
 	"github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto"
+	"time"
 )
 
 type Validator struct {

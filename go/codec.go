@@ -7,7 +7,7 @@ import (
 
 var codec *amino.Codec
 
-func init () {
+func init() {
 	codec = amino.NewCodec()
 	types.RegisterCodec(codec)
 	codec.Seal()

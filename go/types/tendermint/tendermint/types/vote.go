@@ -1,8 +1,8 @@
 package types
 
 import (
-	"time"
 	"github.com/jordansexton/go-amino-js/go/types/tendermint/tendermint/crypto"
+	"time"
 )
 
 type ErrVoteConflictingVotes struct {
