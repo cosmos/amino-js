@@ -8,24 +8,7 @@ import (
 
 func main() {
 	gopher.Global.Set("Amino", map[string]interface{}{
-		"decodeByte":      lib.DecodeByte,
-		"decodeByteSlice": lib.DecodeByteSlice,
-		"decodeInt8":      lib.DecodeInt8,
-		"decodeInt16":     lib.DecodeInt16,
-		"decodeInt32":     lib.DecodeInt32,
-		"decodeInt64":     lib.DecodeInt64,
-		"decodeVarint":    lib.DecodeVarint,
-		"decodeUint8":     lib.DecodeUint8,
-		"decodeUint16":    lib.DecodeUint16,
-		"decodeUint32":    lib.DecodeUint32,
-		"decodeUint64":    lib.DecodeUint64,
-		"decodeUvarint":   lib.DecodeUvarint,
-		"decodeFloat32":   lib.DecodeFloat32,
-		"decodeFloat64":   lib.DecodeFloat64,
-		"decodeBool":      lib.DecodeBool,
-		"decodeString":    lib.DecodeString,
-		"decodeTime":      lib.DecodeTime,
-
+		// Basic encoding
 		"encodeByte":      lib.EncodeByte,
 		"encodeByteSlice": lib.EncodeByteSlice,
 		"encodeInt8":      lib.EncodeInt8,
@@ -44,12 +27,33 @@ func main() {
 		"encodeString":    lib.EncodeString,
 		"encodeTime":      lib.EncodeTime,
 
+		// Basic decoding
+		"decodeByte":      lib.DecodeByte,
+		"decodeByteSlice": lib.DecodeByteSlice,
+		"decodeInt8":      lib.DecodeInt8,
+		"decodeInt16":     lib.DecodeInt16,
+		"decodeInt32":     lib.DecodeInt32,
+		"decodeInt64":     lib.DecodeInt64,
+		"decodeVarint":    lib.DecodeVarint,
+		"decodeUint8":     lib.DecodeUint8,
+		"decodeUint16":    lib.DecodeUint16,
+		"decodeUint32":    lib.DecodeUint32,
+		"decodeUint64":    lib.DecodeUint64,
+		"decodeUvarint":   lib.DecodeUvarint,
+		"decodeFloat32":   lib.DecodeFloat32,
+		"decodeFloat64":   lib.DecodeFloat64,
+		"decodeBool":      lib.DecodeBool,
+		"decodeString":    lib.DecodeString,
+		"decodeTime":      lib.DecodeTime,
+
+		// Meta
 		"decodeDisambPrefixBytes": amino.DecodeDisambPrefixBytes,
 		"nameToDisfix":            amino.NameToDisfix,
 		"byteSliceSize":           amino.ByteSliceSize,
 		"uvarintSize":             amino.UvarintSize,
 		"varintSize":              amino.VarintSize,
 
+		// Typed encoding
 		"encodeMultiStoreProofOp":              lib.EncodeMultiStoreProofOp,
 		"encodeIAVLAbsenceOp":                  lib.EncodeIAVLAbsenceOp,
 		"encodeIAVLValueOp":                    lib.EncodeIAVLValueOp,
@@ -153,6 +157,7 @@ func main() {
 		"encodeMockRandomGoodEvidence":         lib.EncodeMockRandomGoodEvidence,
 		"encodeMockBadEvidence":                lib.EncodeMockBadEvidence,
 
+		// Typed decoding
 		"decodeMultiStoreProofOp":              lib.DecodeMultiStoreProofOp,
 		"decodeIAVLAbsenceOp":                  lib.DecodeIAVLAbsenceOp,
 		"decodeIAVLValueOp":                    lib.DecodeIAVLValueOp,

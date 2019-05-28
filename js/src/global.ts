@@ -18,7 +18,6 @@ export const Amino: GlobalAmino = context.Amino;
 //@formatter:off
 export interface GlobalAmino {
     // Basic encoding
-
     encodeByte (byte: number): Uint8Array;
     encodeByteSlice (bytes: Uint8Array): Uint8Array;
     encodeInt8 (int8: number): Uint8Array;
@@ -38,7 +37,6 @@ export interface GlobalAmino {
     encodeTime (time: Date): Uint8Array;
 
     // Basic decoding
-
     decodeByte (bytes: Uint8Array): [number, number];
     decodeByteSlice (bytes: Uint8Array): [Uint8Array, number];
     decodeInt8 (bytes: Uint8Array): [number, number];
@@ -57,16 +55,14 @@ export interface GlobalAmino {
     decodeString (bytes: Uint8Array): [string, number];
     decodeTime (bytes: Uint8Array): [Date, number];
 
-    // Miscellaneous
-
+    // Meta
     decodeDisambPrefixBytes (bytes: Uint8Array): [Uint8Array, boolean, Uint8Array, boolean, number];
     nameToDisfix (name: string): [Uint8Array, Uint8Array];
     byteSliceSize (bytes: Uint8Array): number;
     uvarintSize (uvarint: number): number;
     varintSize (varint: number): number;
 
-    // Encode Type
-
+    // Typed encoding
     encodeMultiStoreProofOp (bytes: Uint8Array, bare: boolean): Uint8Array;
     encodeIAVLAbsenceOp (bytes: Uint8Array, bare: boolean): Uint8Array;
     encodeIAVLValueOp (bytes: Uint8Array, bare: boolean): Uint8Array;
@@ -170,8 +166,7 @@ export interface GlobalAmino {
     encodeMockRandomGoodEvidence (bytes: Uint8Array, bare: boolean): Uint8Array;
     encodeMockBadEvidence (bytes: Uint8Array, bare: boolean): Uint8Array;
 
-    // Decode Type
-
+    // Typed decoding
     decodeMultiStoreProofOp (bytes: Uint8Array, bare: boolean): Uint8Array;
     decodeIAVLAbsenceOp (bytes: Uint8Array, bare: boolean): Uint8Array;
     decodeIAVLValueOp (bytes: Uint8Array, bare: boolean): Uint8Array;
