@@ -1,4 +1,5 @@
-import * as Amino from '../src';
+// @ts-ignore
+import * as Amino from '../dist';
 
 // https://rpc.cosmos.network:26657/abci_query?path=%22store/acc/key%22&data=0x01D545E7384C3D6F5BBA7A1B252B4E1A956EBAC64C&prove=true
 

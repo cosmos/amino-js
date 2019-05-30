@@ -8,8 +8,10 @@ module.exports = {
     target:  'web',
     entry:   `${ srcRoot }/index.ts`,
     output:  {
-        path:     `${ root }/dist`,
-        filename: 'index.js'
+        path:          `${ root }/dist`,
+        filename:      'index.js',
+        library:       'Amino',
+        libraryTarget: 'umd'
     },
     resolve: {
         extensions: ['.ts', '.js']
