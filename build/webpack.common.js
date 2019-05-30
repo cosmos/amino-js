@@ -5,7 +5,6 @@ const srcRoot    = `${ root }/src`;
 const production = (process.env.NODE_ENV === 'production');
 
 module.exports = {
-    target:  'web',
     entry:   `${ srcRoot }/index.ts`,
     output:  {
         path:          `${ root }/dist`,

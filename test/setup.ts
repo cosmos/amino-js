@@ -1,5 +1,4 @@
 import jest from 'jest';
-import { TextDecoder, TextEncoder } from 'util';
 
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -10,12 +9,6 @@ declare global {
         }
     }
 }
-
-// Jest's window object doesn't have TextEncoder/TextDecoder
-// @ts-ignore
-window.TextEncoder = TextEncoder;
-// @ts-ignore
-window.TextDecoder = TextDecoder;
 
 expect.extend({
     toBeBytes (received: Uint8Array, expected: number[]): jest.CustomMatcherResult {

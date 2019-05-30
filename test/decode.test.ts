@@ -1,5 +1,5 @@
 // @ts-ignore
-import * as Amino from '../dist';
+import * as Amino from '../';
 
 describe('decode', (): void => {
     describe('decodeByte', (): void => {

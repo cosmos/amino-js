@@ -1,3 +1,24 @@
+let TextDecoder: { new (): { decode (bytes: Uint8Array): string } };
+let TextEncoder: { new (): { encode (string: string): Uint8Array } };
+let atob: (base64: string) => string;
+let btoa: (binary: string) => string;
+
+if (typeof process !== 'undefined' && process.versions && process.versions.node) {
+    ({ TextDecoder, TextEncoder } = require('util'));
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const { Buffer } = require('buffer');
+
+    atob = function (base64: string): string {
+        return Buffer.from(base64, 'base64').toString('binary');
+    };
+    btoa = function (binary: string): string {
+        return Buffer.from(binary, 'binary').toString('base64');
+    };
+}
+else {
+    ({ atob, btoa, TextDecoder, TextEncoder } = window);
+}
+
 const decoder = new TextDecoder;
 const encoder = new TextEncoder;
 

@@ -10,7 +10,7 @@
         "access": "public"
     },
     "version":         "0.1.2",
-    "main":            "dist/index.js",
+    "main":            "index.js",
     "scripts":         {
         "build":     "webpack --config build --progress --colors --display-error-details",
         "clean":     "rm -rf ./dist/*",
@@ -58,6 +58,8 @@
         "dist",
         "lib/**/*.{ts,js,map}",
         "src/**/*.{ts,js}",
+        "index.js",
+        "package.json",
         "README.md",
         "tsconfig.json",
         "yarn.lock"

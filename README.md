@@ -2,9 +2,9 @@
 
 Experimental. Don't use this yet.
 
-Supported in browsers (currently depends on `window`).
+Supported in Node.js and browsers.
 
-Support is planned for Node.js and Service Workers.
+Support is planned for Service Workers.
 
 ### Install
 
