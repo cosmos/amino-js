@@ -1,7 +1,6 @@
 package src
 
 import (
-	"encoding/json"
 	rootmulti "github.com/jordansexton/amino-js/go/lib/cosmos/cosmos-sdk/store/rootmulti"
 	iavl "github.com/jordansexton/amino-js/go/lib/tendermint/iavl"
 
@@ -38,7 +37,7 @@ import (
 
 func EncodeMultiStoreProofOp(bz []byte, bare bool) []byte {
 	var o rootmulti.MultiStoreProofOp
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +52,7 @@ func EncodeMultiStoreProofOp(bz []byte, bare bool) []byte {
 
 func EncodeIAVLAbsenceOp(bz []byte, bare bool) []byte {
 	var o iavl.IAVLAbsenceOp
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -68,7 +67,7 @@ func EncodeIAVLAbsenceOp(bz []byte, bare bool) []byte {
 
 func EncodeIAVLValueOp(bz []byte, bare bool) []byte {
 	var o iavl.IAVLValueOp
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -83,7 +82,7 @@ func EncodeIAVLValueOp(bz []byte, bare bool) []byte {
 
 func EncodePrivKeyLedgerSecp256k1(bz []byte, bare bool) []byte {
 	var o crypto.PrivKeyLedgerSecp256k1
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -98,7 +97,7 @@ func EncodePrivKeyLedgerSecp256k1(bz []byte, bare bool) []byte {
 
 func EncodeInfo(bz []byte, bare bool) []byte {
 	var o keys.Info
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -113,7 +112,7 @@ func EncodeInfo(bz []byte, bare bool) []byte {
 
 func EncodeBIP44Params(bz []byte, bare bool) []byte {
 	var o hd.BIP44Params
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -128,7 +127,7 @@ func EncodeBIP44Params(bz []byte, bare bool) []byte {
 
 func EncodeLocalInfo(bz []byte, bare bool) []byte {
 	var o keys.LocalInfo
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -143,7 +142,7 @@ func EncodeLocalInfo(bz []byte, bare bool) []byte {
 
 func EncodeLedgerInfo(bz []byte, bare bool) []byte {
 	var o keys.LedgerInfo
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -158,7 +157,7 @@ func EncodeLedgerInfo(bz []byte, bare bool) []byte {
 
 func EncodeOfflineInfo(bz []byte, bare bool) []byte {
 	var o keys.OfflineInfo
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -173,7 +172,7 @@ func EncodeOfflineInfo(bz []byte, bare bool) []byte {
 
 func EncodeMultiInfo(bz []byte, bare bool) []byte {
 	var o keys.MultiInfo
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -188,7 +187,7 @@ func EncodeMultiInfo(bz []byte, bare bool) []byte {
 
 func EncodeMsg(bz []byte, bare bool) []byte {
 	var o types.Msg
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -203,7 +202,7 @@ func EncodeMsg(bz []byte, bare bool) []byte {
 
 func EncodeTx(bz []byte, bare bool) []byte {
 	var o types.Tx
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -218,7 +217,7 @@ func EncodeTx(bz []byte, bare bool) []byte {
 
 func EncodeAccount(bz []byte, bare bool) []byte {
 	var o auth.Account
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -233,7 +232,7 @@ func EncodeAccount(bz []byte, bare bool) []byte {
 
 func EncodeVestingAccount(bz []byte, bare bool) []byte {
 	var o auth.VestingAccount
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -248,7 +247,7 @@ func EncodeVestingAccount(bz []byte, bare bool) []byte {
 
 func EncodeBaseAccount(bz []byte, bare bool) []byte {
 	var o auth.BaseAccount
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -263,7 +262,7 @@ func EncodeBaseAccount(bz []byte, bare bool) []byte {
 
 func EncodeBaseVestingAccount(bz []byte, bare bool) []byte {
 	var o auth.BaseVestingAccount
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -278,7 +277,7 @@ func EncodeBaseVestingAccount(bz []byte, bare bool) []byte {
 
 func EncodeContinuousVestingAccount(bz []byte, bare bool) []byte {
 	var o auth.ContinuousVestingAccount
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -293,7 +292,7 @@ func EncodeContinuousVestingAccount(bz []byte, bare bool) []byte {
 
 func EncodeDelayedVestingAccount(bz []byte, bare bool) []byte {
 	var o auth.DelayedVestingAccount
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -308,7 +307,7 @@ func EncodeDelayedVestingAccount(bz []byte, bare bool) []byte {
 
 func EncodeStdTx(bz []byte, bare bool) []byte {
 	var o auth.StdTx
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -323,7 +322,7 @@ func EncodeStdTx(bz []byte, bare bool) []byte {
 
 func EncodeMsgSend(bz []byte, bare bool) []byte {
 	var o bank.MsgSend
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -338,7 +337,7 @@ func EncodeMsgSend(bz []byte, bare bool) []byte {
 
 func EncodeMsgMultiSend(bz []byte, bare bool) []byte {
 	var o bank.MsgMultiSend
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -353,7 +352,7 @@ func EncodeMsgMultiSend(bz []byte, bare bool) []byte {
 
 func EncodeMsgVerifyInvariant(bz []byte, bare bool) []byte {
 	var o crisis.MsgVerifyInvariant
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -368,7 +367,7 @@ func EncodeMsgVerifyInvariant(bz []byte, bare bool) []byte {
 
 func EncodeMsgWithdrawDelegatorReward(bz []byte, bare bool) []byte {
 	var o distribution.MsgWithdrawDelegatorReward
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -383,7 +382,7 @@ func EncodeMsgWithdrawDelegatorReward(bz []byte, bare bool) []byte {
 
 func EncodeMsgWithdrawValidatorCommission(bz []byte, bare bool) []byte {
 	var o distribution.MsgWithdrawValidatorCommission
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -398,7 +397,7 @@ func EncodeMsgWithdrawValidatorCommission(bz []byte, bare bool) []byte {
 
 func EncodeMsgSetWithdrawAddress(bz []byte, bare bool) []byte {
 	var o distribution.MsgSetWithdrawAddress
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -413,7 +412,7 @@ func EncodeMsgSetWithdrawAddress(bz []byte, bare bool) []byte {
 
 func EncodeContent(bz []byte, bare bool) []byte {
 	var o gov.Content
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -428,7 +427,7 @@ func EncodeContent(bz []byte, bare bool) []byte {
 
 func EncodeMsgSubmitProposal(bz []byte, bare bool) []byte {
 	var o gov.MsgSubmitProposal
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -443,7 +442,7 @@ func EncodeMsgSubmitProposal(bz []byte, bare bool) []byte {
 
 func EncodeMsgDeposit(bz []byte, bare bool) []byte {
 	var o gov.MsgDeposit
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -458,7 +457,7 @@ func EncodeMsgDeposit(bz []byte, bare bool) []byte {
 
 func EncodeMsgVote(bz []byte, bare bool) []byte {
 	var o gov.MsgVote
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -473,7 +472,7 @@ func EncodeMsgVote(bz []byte, bare bool) []byte {
 
 func EncodeTextProposal(bz []byte, bare bool) []byte {
 	var o gov.TextProposal
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -488,7 +487,7 @@ func EncodeTextProposal(bz []byte, bare bool) []byte {
 
 func EncodeSoftwareUpgradeProposal(bz []byte, bare bool) []byte {
 	var o gov.SoftwareUpgradeProposal
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -503,7 +502,7 @@ func EncodeSoftwareUpgradeProposal(bz []byte, bare bool) []byte {
 
 func EncodeMsgIBCTransfer(bz []byte, bare bool) []byte {
 	var o ibc.MsgIBCTransfer
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -518,7 +517,7 @@ func EncodeMsgIBCTransfer(bz []byte, bare bool) []byte {
 
 func EncodeMsgIBCReceive(bz []byte, bare bool) []byte {
 	var o ibc.MsgIBCReceive
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -533,7 +532,7 @@ func EncodeMsgIBCReceive(bz []byte, bare bool) []byte {
 
 func EncodeParameterChangeProposal(bz []byte, bare bool) []byte {
 	var o params.ParameterChangeProposal
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -548,7 +547,7 @@ func EncodeParameterChangeProposal(bz []byte, bare bool) []byte {
 
 func EncodeMsgUnjail(bz []byte, bare bool) []byte {
 	var o slashing.MsgUnjail
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -563,7 +562,7 @@ func EncodeMsgUnjail(bz []byte, bare bool) []byte {
 
 func EncodeMsgCreateValidator(bz []byte, bare bool) []byte {
 	var o staking.MsgCreateValidator
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -578,7 +577,7 @@ func EncodeMsgCreateValidator(bz []byte, bare bool) []byte {
 
 func EncodeMsgEditValidator(bz []byte, bare bool) []byte {
 	var o staking.MsgEditValidator
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -593,7 +592,7 @@ func EncodeMsgEditValidator(bz []byte, bare bool) []byte {
 
 func EncodeMsgDelegate(bz []byte, bare bool) []byte {
 	var o staking.MsgDelegate
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -608,7 +607,7 @@ func EncodeMsgDelegate(bz []byte, bare bool) []byte {
 
 func EncodeMsgUndelegate(bz []byte, bare bool) []byte {
 	var o staking.MsgUndelegate
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -623,7 +622,7 @@ func EncodeMsgUndelegate(bz []byte, bare bool) []byte {
 
 func EncodeMsgBeginRedelegate(bz []byte, bare bool) []byte {
 	var o staking.MsgBeginRedelegate
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -638,7 +637,7 @@ func EncodeMsgBeginRedelegate(bz []byte, bare bool) []byte {
 
 func EncodeBlockchainMessage(bz []byte, bare bool) []byte {
 	var o tm_blockchain.BlockchainMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -653,7 +652,7 @@ func EncodeBlockchainMessage(bz []byte, bare bool) []byte {
 
 func EncodeBcBlockRequestMessage(bz []byte, bare bool) []byte {
 	var o tm_blockchain.BcBlockRequestMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -668,7 +667,7 @@ func EncodeBcBlockRequestMessage(bz []byte, bare bool) []byte {
 
 func EncodeBcBlockResponseMessage(bz []byte, bare bool) []byte {
 	var o tm_blockchain.BcBlockResponseMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -683,7 +682,7 @@ func EncodeBcBlockResponseMessage(bz []byte, bare bool) []byte {
 
 func EncodeBcNoBlockResponseMessage(bz []byte, bare bool) []byte {
 	var o tm_blockchain.BcNoBlockResponseMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -698,7 +697,7 @@ func EncodeBcNoBlockResponseMessage(bz []byte, bare bool) []byte {
 
 func EncodeBcStatusResponseMessage(bz []byte, bare bool) []byte {
 	var o tm_blockchain.BcStatusResponseMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -713,7 +712,7 @@ func EncodeBcStatusResponseMessage(bz []byte, bare bool) []byte {
 
 func EncodeBcStatusRequestMessage(bz []byte, bare bool) []byte {
 	var o tm_blockchain.BcStatusRequestMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -728,7 +727,7 @@ func EncodeBcStatusRequestMessage(bz []byte, bare bool) []byte {
 
 func EncodeConsensusMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.ConsensusMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -743,7 +742,7 @@ func EncodeConsensusMessage(bz []byte, bare bool) []byte {
 
 func EncodeNewRoundStepMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.NewRoundStepMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -758,7 +757,7 @@ func EncodeNewRoundStepMessage(bz []byte, bare bool) []byte {
 
 func EncodeNewValidBlockMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.NewValidBlockMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -773,7 +772,7 @@ func EncodeNewValidBlockMessage(bz []byte, bare bool) []byte {
 
 func EncodeProposalMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.ProposalMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -788,7 +787,7 @@ func EncodeProposalMessage(bz []byte, bare bool) []byte {
 
 func EncodeProposalPOLMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.ProposalPOLMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -803,7 +802,7 @@ func EncodeProposalPOLMessage(bz []byte, bare bool) []byte {
 
 func EncodeBlockPartMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.BlockPartMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -818,7 +817,7 @@ func EncodeBlockPartMessage(bz []byte, bare bool) []byte {
 
 func EncodeVoteMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.VoteMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -833,7 +832,7 @@ func EncodeVoteMessage(bz []byte, bare bool) []byte {
 
 func EncodeHasVoteMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.HasVoteMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -848,7 +847,7 @@ func EncodeHasVoteMessage(bz []byte, bare bool) []byte {
 
 func EncodeVoteSetMaj23Message(bz []byte, bare bool) []byte {
 	var o tm_consensus.VoteSetMaj23Message
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -863,7 +862,7 @@ func EncodeVoteSetMaj23Message(bz []byte, bare bool) []byte {
 
 func EncodeVoteSetBitsMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.VoteSetBitsMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -878,7 +877,7 @@ func EncodeVoteSetBitsMessage(bz []byte, bare bool) []byte {
 
 func EncodeWALMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.WALMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -893,7 +892,7 @@ func EncodeWALMessage(bz []byte, bare bool) []byte {
 
 func EncodeMsgInfo(bz []byte, bare bool) []byte {
 	var o tm_consensus.MsgInfo
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -908,7 +907,7 @@ func EncodeMsgInfo(bz []byte, bare bool) []byte {
 
 func EncodeTimeoutInfo(bz []byte, bare bool) []byte {
 	var o tm_consensus.TimeoutInfo
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -923,7 +922,7 @@ func EncodeTimeoutInfo(bz []byte, bare bool) []byte {
 
 func EncodeEndHeightMessage(bz []byte, bare bool) []byte {
 	var o tm_consensus.EndHeightMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -938,7 +937,7 @@ func EncodeEndHeightMessage(bz []byte, bare bool) []byte {
 
 func EncodePubKey(bz []byte, bare bool) []byte {
 	var o tm_crypto.PubKey
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -953,7 +952,7 @@ func EncodePubKey(bz []byte, bare bool) []byte {
 
 func EncodePrivKey(bz []byte, bare bool) []byte {
 	var o tm_crypto.PrivKey
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -968,7 +967,7 @@ func EncodePrivKey(bz []byte, bare bool) []byte {
 
 func EncodePubKeyEd25519(bz []byte, bare bool) []byte {
 	var o tm_ed25519.PubKeyEd25519
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -983,7 +982,7 @@ func EncodePubKeyEd25519(bz []byte, bare bool) []byte {
 
 func EncodePrivKeyEd25519(bz []byte, bare bool) []byte {
 	var o tm_ed25519.PrivKeyEd25519
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -998,7 +997,7 @@ func EncodePrivKeyEd25519(bz []byte, bare bool) []byte {
 
 func EncodePubKeySecp256k1(bz []byte, bare bool) []byte {
 	var o tm_secp256k1.PubKeySecp256k1
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1013,7 +1012,7 @@ func EncodePubKeySecp256k1(bz []byte, bare bool) []byte {
 
 func EncodePrivKeySecp256k1(bz []byte, bare bool) []byte {
 	var o tm_secp256k1.PrivKeySecp256k1
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1028,7 +1027,7 @@ func EncodePrivKeySecp256k1(bz []byte, bare bool) []byte {
 
 func EncodePubKeyMultisigThreshold(bz []byte, bare bool) []byte {
 	var o tm_multisig.PubKeyMultisigThreshold
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1043,7 +1042,7 @@ func EncodePubKeyMultisigThreshold(bz []byte, bare bool) []byte {
 
 func EncodeEvidenceMessage(bz []byte, bare bool) []byte {
 	var o tm_evidence.EvidenceMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1058,7 +1057,7 @@ func EncodeEvidenceMessage(bz []byte, bare bool) []byte {
 
 func EncodeEvidenceListMessage(bz []byte, bare bool) []byte {
 	var o tm_evidence.EvidenceListMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1073,7 +1072,7 @@ func EncodeEvidenceListMessage(bz []byte, bare bool) []byte {
 
 func EncodeMempoolMessage(bz []byte, bare bool) []byte {
 	var o tm_mempool.MempoolMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1088,7 +1087,7 @@ func EncodeMempoolMessage(bz []byte, bare bool) []byte {
 
 func EncodeTxMessage(bz []byte, bare bool) []byte {
 	var o tm_mempool.TxMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1103,7 +1102,7 @@ func EncodeTxMessage(bz []byte, bare bool) []byte {
 
 func EncodePacket(bz []byte, bare bool) []byte {
 	var o tm_conn.Packet
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1118,7 +1117,7 @@ func EncodePacket(bz []byte, bare bool) []byte {
 
 func EncodePacketPing(bz []byte, bare bool) []byte {
 	var o tm_conn.PacketPing
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1133,7 +1132,7 @@ func EncodePacketPing(bz []byte, bare bool) []byte {
 
 func EncodePacketPong(bz []byte, bare bool) []byte {
 	var o tm_conn.PacketPong
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1148,7 +1147,7 @@ func EncodePacketPong(bz []byte, bare bool) []byte {
 
 func EncodePacketMsg(bz []byte, bare bool) []byte {
 	var o tm_conn.PacketMsg
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1163,7 +1162,7 @@ func EncodePacketMsg(bz []byte, bare bool) []byte {
 
 func EncodePexMessage(bz []byte, bare bool) []byte {
 	var o tm_pex.PexMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1178,7 +1177,7 @@ func EncodePexMessage(bz []byte, bare bool) []byte {
 
 func EncodePexRequestMessage(bz []byte, bare bool) []byte {
 	var o tm_pex.PexRequestMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1193,7 +1192,7 @@ func EncodePexRequestMessage(bz []byte, bare bool) []byte {
 
 func EncodePexAddrsMessage(bz []byte, bare bool) []byte {
 	var o tm_pex.PexAddrsMessage
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1208,7 +1207,7 @@ func EncodePexAddrsMessage(bz []byte, bare bool) []byte {
 
 func EncodeRemoteSignerMsg(bz []byte, bare bool) []byte {
 	var o tm_privval.RemoteSignerMsg
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1223,7 +1222,7 @@ func EncodeRemoteSignerMsg(bz []byte, bare bool) []byte {
 
 func EncodePubKeyRequest(bz []byte, bare bool) []byte {
 	var o tm_privval.PubKeyRequest
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1238,7 +1237,7 @@ func EncodePubKeyRequest(bz []byte, bare bool) []byte {
 
 func EncodePubKeyResponse(bz []byte, bare bool) []byte {
 	var o tm_privval.PubKeyResponse
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1253,7 +1252,7 @@ func EncodePubKeyResponse(bz []byte, bare bool) []byte {
 
 func EncodeSignVoteRequest(bz []byte, bare bool) []byte {
 	var o tm_privval.SignVoteRequest
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1268,7 +1267,7 @@ func EncodeSignVoteRequest(bz []byte, bare bool) []byte {
 
 func EncodeSignedVoteResponse(bz []byte, bare bool) []byte {
 	var o tm_privval.SignedVoteResponse
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1283,7 +1282,7 @@ func EncodeSignedVoteResponse(bz []byte, bare bool) []byte {
 
 func EncodeSignProposalRequest(bz []byte, bare bool) []byte {
 	var o tm_privval.SignProposalRequest
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1298,7 +1297,7 @@ func EncodeSignProposalRequest(bz []byte, bare bool) []byte {
 
 func EncodeSignedProposalResponse(bz []byte, bare bool) []byte {
 	var o tm_privval.SignedProposalResponse
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1313,7 +1312,7 @@ func EncodeSignedProposalResponse(bz []byte, bare bool) []byte {
 
 func EncodePingRequest(bz []byte, bare bool) []byte {
 	var o tm_privval.PingRequest
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1328,7 +1327,7 @@ func EncodePingRequest(bz []byte, bare bool) []byte {
 
 func EncodePingResponse(bz []byte, bare bool) []byte {
 	var o tm_privval.PingResponse
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1343,7 +1342,7 @@ func EncodePingResponse(bz []byte, bare bool) []byte {
 
 func EncodeTMEventData(bz []byte, bare bool) []byte {
 	var o tm_types.TMEventData
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1358,7 +1357,7 @@ func EncodeTMEventData(bz []byte, bare bool) []byte {
 
 func EncodeEventDataNewBlock(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataNewBlock
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1373,7 +1372,7 @@ func EncodeEventDataNewBlock(bz []byte, bare bool) []byte {
 
 func EncodeEventDataNewBlockHeader(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataNewBlockHeader
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1388,7 +1387,7 @@ func EncodeEventDataNewBlockHeader(bz []byte, bare bool) []byte {
 
 func EncodeEventDataTx(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataTx
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1403,7 +1402,7 @@ func EncodeEventDataTx(bz []byte, bare bool) []byte {
 
 func EncodeEventDataRoundState(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataRoundState
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1418,7 +1417,7 @@ func EncodeEventDataRoundState(bz []byte, bare bool) []byte {
 
 func EncodeEventDataNewRound(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataNewRound
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1433,7 +1432,7 @@ func EncodeEventDataNewRound(bz []byte, bare bool) []byte {
 
 func EncodeEventDataCompleteProposal(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataCompleteProposal
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1448,7 +1447,7 @@ func EncodeEventDataCompleteProposal(bz []byte, bare bool) []byte {
 
 func EncodeEventDataVote(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataVote
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1463,7 +1462,7 @@ func EncodeEventDataVote(bz []byte, bare bool) []byte {
 
 func EncodeEventDataValidatorSetUpdates(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataValidatorSetUpdates
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1478,7 +1477,7 @@ func EncodeEventDataValidatorSetUpdates(bz []byte, bare bool) []byte {
 
 func EncodeEventDataString(bz []byte, bare bool) []byte {
 	var o tm_types.EventDataString
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1493,7 +1492,7 @@ func EncodeEventDataString(bz []byte, bare bool) []byte {
 
 func EncodeEvidence(bz []byte, bare bool) []byte {
 	var o tm_types.Evidence
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1508,7 +1507,7 @@ func EncodeEvidence(bz []byte, bare bool) []byte {
 
 func EncodeDuplicateVoteEvidence(bz []byte, bare bool) []byte {
 	var o tm_types.DuplicateVoteEvidence
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1523,7 +1522,7 @@ func EncodeDuplicateVoteEvidence(bz []byte, bare bool) []byte {
 
 func EncodeMockGoodEvidence(bz []byte, bare bool) []byte {
 	var o tm_types.MockGoodEvidence
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1538,7 +1537,7 @@ func EncodeMockGoodEvidence(bz []byte, bare bool) []byte {
 
 func EncodeMockRandomGoodEvidence(bz []byte, bare bool) []byte {
 	var o tm_types.MockRandomGoodEvidence
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
@@ -1553,7 +1552,7 @@ func EncodeMockRandomGoodEvidence(bz []byte, bare bool) []byte {
 
 func EncodeMockBadEvidence(bz []byte, bare bool) []byte {
 	var o tm_types.MockBadEvidence
-	err := json.Unmarshal(bz, &o)
+	err := codec.UnmarshalJSON(bz, &o)
 	if err != nil {
 		panic(err)
 	}
