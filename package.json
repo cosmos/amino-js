@@ -1,17 +1,20 @@
 {
-    "name":            "amino-js",
+    "name":            "@jordansexton/amino-js",
     "description":     "tendermint/go-amino for JavaScript",
     "license":         "MIT",
     "repository":      {
         "type": "git",
         "url":  "https://github.com/jordansexton/amino-js.git"
     },
+    "publishConfig":   {
+        "access": "public"
+    },
     "version":         "0.1.0",
     "main":            "dist/index.js",
     "scripts":         {
         "build":     "webpack --config build --progress --colors --display-error-details",
         "clean":     "rm -rf ./dist/*",
-        "dirs":      "mkdir ./dist ./lib",
+        "dirs":      "mkdir ./dist",
         "dist:dev":  "yarn clean && yarn go && NODE_ENV=development yarn build",
         "dist:prod": "yarn clean && yarn go:min && NODE_ENV=production yarn build && yarn gzip",
         "go":        "gopherjs build -v -o ./lib/Amino.js ./go/js/main.go",
@@ -22,6 +25,7 @@
         "gzip:wasm": "gzip -kf ./dist/*.wasm",
         "lint":      "eslint --ext .ts,.js .",
         "nuke":      "rm -rf **/node_modules yarn.lock",
+        "prepare":   "yarn dist:prod",
         "reset":     "yarn nuke && yarn",
         "setup":     "yarn dirs && yarn deps && yarn go && yarn build",
         "test":      "jest --config ./test/jest.config.json",

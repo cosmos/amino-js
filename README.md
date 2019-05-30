@@ -10,18 +10,18 @@ Support is planned for Node.js and Service Workers.
 
 ##### Yarn
 ```shell
-yarn add amino-js
+yarn add @jordansexton/amino-js
 ```
 
 ##### NPM
 ```shell
-npm install amino-js
+npm install @jordansexton/amino-js
 ```
 
 ### Usage
 
 ```js
-import { encodeString, decodeString } from 'amino-js';
+import { encodeString, decodeString } from '@jordansexton/amino-js';
 decodeString(encodeString('hello world'));
 // [ "hello world", 12 ]
 ```
