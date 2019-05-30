@@ -1,65 +1,44 @@
-# go-amino-js
+# amino-js
 
-Experimental, don't use this yet.
+Experimental. Don't use this yet.
+
+Supported in browsers (currently depends on `window`).
+
+Support is planned for Node.js and Service Workers.
 
 ### Install
 
+##### Yarn
 ```shell
-go get -u github.com/tendermint/go-amino
-go get -u github.com/gopherjs/gopherjs
-git clone https://github.com/jordansexton/go-amino-js.git
-cd go-amino-js
+yarn add amino-js
 ```
 
-### Build
-
+##### NPM
 ```shell
-make build
+npm install amino-js
 ```
 
-### Test
+### Usage
 
-```shell
-cd ts
-yarn install
-yarn test
-```
-
-### Run
-
-```shell
-go run server.go
-open http://localhost:8090
-```
-
-### Experiment
-
-Using your browser console:
-
-```javascript
-import { encodeString, decodeString } from 'go-amino-js';
+```js
+import { encodeString, decodeString } from 'amino-js';
 decodeString(encodeString('hello world'));
 // [ "hello world", 12 ]
 ```
 
-### Structure
+### Source
 
-##### `./go`
-Go files:
-  - Amino
-  - Registered and unregistered types from the Cosmos SDK and Tendermint Core with most methods stripped out
-  - Wrappers around Amino encoding and decoding functions for JS
+##### Install
 
-##### `./ts`
-TypeScript files: 
-  - Yarn package
-  - Config, linting, testing, and build boilerplate
-  - TypeScript definitions for GopherJS's compiled output
-  - Encoding utility functions
-  - Unit tests using Jest
+```shell
+git clone https://github.com/jordansexton/amino-js.git
+cd amino-js
+yarn install
+yarn setup
+```
 
-##### `./static`
-Static assets -- currently just an HTML file to load JS.
+##### Test
 
-##### `./dist`
-Compiled and copied output.
+```shell
+yarn test
+```

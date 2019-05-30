@@ -1,0 +1,64 @@
+{
+    "name":            "amino-js",
+    "description":     "tendermint/go-amino for JavaScript",
+    "license":         "MIT",
+    "repository":      {
+        "type": "git",
+        "url":  "https://github.com/jordansexton/amino-js.git"
+    },
+    "version":         "0.1.0",
+    "main":            "dist/index.js",
+    "engines":         {
+        "node": ">=8"
+    },
+    "scripts":         {
+        "build":     "webpack --config build --progress --colors --display-error-details",
+        "clean":     "rm -rf ./dist/*",
+        "dirs":      "mkdir ./dist ./lib",
+        "dist:dev":  "yarn clean && yarn go && NODE_ENV=development yarn build",
+        "dist:prod": "yarn clean && yarn go:min && NODE_ENV=production yarn build && yarn gzip",
+        "go":        "gopherjs build -v -o ./lib/Amino.js ./go/js/main.go",
+        "go:min":    "yarn go -m",
+        "go:wasm":   "GOOS=js GOARCH=wasm go build -o ./dist/Amino.wasm ./go/wasm/main.go",
+        "go:watch":  "yarn go -w",
+        "gzip":      "gzip -kf ./dist/*.{js,map}",
+        "gzip:wasm": "gzip -kf ./dist/*.wasm",
+        "lint":      "eslint --ext .ts,.js .",
+        "nuke":      "rm -rf **/node_modules yarn.lock",
+        "reset":     "yarn nuke && yarn",
+        "setup":     "yarn dirs && yarn deps && yarn go && yarn build",
+        "test":      "jest --config ./test/jest.config.json",
+        "wasm:exec": "cp \"${GOROOT}/misc/wasm/wasm_exec.js\" ./dist/",
+        "watch":     "yarn build --watch"
+    },
+    "dependencies":    { },
+    "devDependencies": {
+        "@babel/core":                      "7.4.5",
+        "@babel/preset-env":                "7.4.5",
+        "@babel/preset-typescript":         "7.3.3",
+        "@types/jest":                      "24.0.13",
+        "@types/node":                      "12.0.3",
+        "@typescript-eslint/eslint-plugin": "1.9.0",
+        "@typescript-eslint/parser":        "1.9.0",
+        "babel-loader":                     "8.0.6",
+        "eslint":                           "5.16.0",
+        "eslint-loader":                    "2.1.2",
+        "eslint-plugin-node":               "9.1.0",
+        "jest":                             "24.8.0",
+        "ts-jest":                          "24.0.2",
+        "ts-loader":                        "6.0.1",
+        "ts-node":                          "8.2.0",
+        "typescript":                       "3.5.1",
+        "webpack":                          "4.32.2",
+        "webpack-cli":                      "3.3.2",
+        "webpack-merge":                    "4.2.1"
+    },
+    "files":           [
+        "dist",
+        "lib/**/*.{ts,js,map}",
+        "src/**/*.{ts,js}",
+        "README.md",
+        "tsconfig.json",
+        "yarn.lock"
+    ]
+}

@@ -3,7 +3,7 @@ package test
 import (
 	"encoding/base64"
 	"fmt"
-	lib "github.com/jordansexton/go-amino-js/go"
+	src "github.com/jordansexton/amino-js/go/src"
 	"testing"
 )
 
@@ -17,13 +17,13 @@ func TestDecodeAccount(t *testing.T) {
 	fmt.Printf("%q\n", encoded)
 
 	// this works, data is decoded as a concrete auth.DelayedVestingAccount
-	decoded := lib.DecodeAccount(encoded, true)
+	decoded := src.DecodeAccount(encoded, true)
 
 	// this errs with "Cannot encode unregistered concrete type map[string]interface {}."
-	encoded = lib.EncodeAccount(decoded, true)
+	encoded = src.EncodeAccount(decoded, true)
 
 	// this errs with "Cannot encode unregistered concrete type []interface {}."
-	encoded = lib.EncodeDelayedVestingAccount(decoded, true)
+	encoded = src.EncodeDelayedVestingAccount(decoded, true)
 
 	_ = err
 	_ = decoded
