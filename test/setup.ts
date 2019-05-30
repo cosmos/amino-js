@@ -1,6 +1,8 @@
+import jest from 'jest';
 import { TextDecoder, TextEncoder } from 'util';
 
 declare global {
+    // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace jest {
         interface Matchers<R> {
             toBeBytes (bytes: number[]): R;
@@ -16,17 +18,17 @@ window.TextEncoder = TextEncoder;
 window.TextDecoder = TextDecoder;
 
 expect.extend({
-    toBeBytes (received: Uint8Array, expected: number[]) {
+    toBeBytes (received: Uint8Array, expected: number[]): jest.CustomMatcherResult {
         if (!(received instanceof Uint8Array)) {
             return {
-                message: () => `expected ${ received } to be a Uint8Array`,
+                message: `expected ${ received } to be a Uint8Array`,
                 pass:    false
             };
         }
 
         if (received.length !== expected.length) {
             return {
-                message: () => `expected ${ expected.length } bytes, received ${ received.length } bytes`,
+                message: `expected ${ expected.length } bytes, received ${ received.length } bytes`,
                 pass:    false
             };
         }
@@ -34,34 +36,34 @@ expect.extend({
         for (let i = 0; i < received.length; i++) {
             if (received[i] !== expected[i]) {
                 return {
-                    message: () => `expected byte at index ${ i } to be ${ expected[i] }, received ${ received[i] }`,
+                    message: `expected byte at index ${ i } to be ${ expected[i] }, received ${ received[i] }`,
                     pass:    false
                 };
             }
         }
 
         return {
-            message: () => `expected ${ received } to be ${ expected }`,
+            message: `expected ${ received } to be ${ expected }`,
             pass:    true
         };
     },
-    toBeDate (received: Date, expected: Date) {
+    toBeDate (received: Date, expected: Date): jest.CustomMatcherResult {
         if (!(received instanceof Date)) {
             return {
-                message: () => `expected ${ received } to be a Date`,
+                message: `expected ${ received } to be a Date`,
                 pass:    false
             };
         }
 
         if (received.getTime() !== expected.getTime()) {
             return {
-                message: () => `expected ${ expected }, received ${ received }`,
+                message: `expected ${ expected }, received ${ received }`,
                 pass:    false
             };
         }
 
         return {
-            message: () => `expected ${ received } to be ${ expected }`,
+            message: `expected ${ received } to be ${ expected }`,
             pass:    true
         };
     }
