@@ -8,9 +8,6 @@
     },
     "version":         "0.1.0",
     "main":            "dist/index.js",
-    "engines":         {
-        "node": ">=8"
-    },
     "scripts":         {
         "build":     "webpack --config build --progress --colors --display-error-details",
         "clean":     "rm -rf ./dist/*",
