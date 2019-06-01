@@ -53,10 +53,10 @@ func main() {
 
 	// Meta
 	exports.Set("decodeDisambPrefixBytes", src.DecodeDisambPrefixBytes)
-	exports.Set("nameToDisfix",            amino.NameToDisfix)
-	exports.Set("byteSliceSize",           amino.ByteSliceSize)
-	exports.Set("uvarintSize",             amino.UvarintSize)
-	exports.Set("varintSize",              amino.VarintSize)
+	exports.Set("nameToDisfix",            src.NameToDisfix)
+	exports.Set("byteSliceSize",           src.ByteSliceSize)
+	exports.Set("uvarintSize",             src.UvarintSize)
+	exports.Set("varintSize",              src.VarintSize)
 
 	// Typed encoding
 	exports.Set("encodeMultiStoreProofOp",              src.EncodeMultiStoreProofOp)

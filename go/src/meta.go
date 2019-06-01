@@ -21,3 +21,19 @@ func DecodeDisambPrefixBytes(bz []byte) (dbr *amino.DisambBytes, pbr *amino.Pref
 
 	return dbr, pbr, n
 }
+
+func NameToDisfix(name string) (amino.DisambBytes, amino.PrefixBytes) {
+	return amino.NameToDisfix(name)
+}
+
+func ByteSliceSize(bz []byte) int {
+	return amino.ByteSliceSize(bz)
+}
+
+func UvarintSize(u uint64) int {
+	return amino.UvarintSize(u)
+}
+
+func VarintSize(i int64) int {
+	return amino.VarintSize(i)
+}
