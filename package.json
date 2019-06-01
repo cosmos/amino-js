@@ -27,7 +27,7 @@
         "nuke":      "rm -rf **/node_modules yarn.lock",
         "prepare":   "yarn dist:prod",
         "reset":     "yarn nuke && yarn",
-        "setup":     "yarn dirs && yarn deps && yarn go && yarn build",
+        "setup":     "yarn dirs && yarn go && yarn build",
         "test":      "jest --config ./test/jest.config.json",
         "wasm:exec": "cp \"${GOROOT}/misc/wasm/wasm_exec.js\" ./dist/",
         "watch":     "yarn build --watch"
