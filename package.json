@@ -25,7 +25,7 @@
         "gzip:wasm": "gzip -kf ./dist/*.wasm",
         "lint":      "eslint --ext .ts,.js .",
         "nuke":      "rm -rf **/node_modules yarn.lock",
-        "prepare":   "yarn dist:prod",
+        "prepare":   "tsc && yarn lint && yarn dist:prod && yarn test",
         "reset":     "yarn nuke && yarn",
         "setup":     "yarn dirs && yarn go && yarn build",
         "test":      "jest --config ./test/jest.config.json",
