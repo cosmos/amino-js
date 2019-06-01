@@ -243,26 +243,26 @@ const multiStoreProofOp = {
     }
 };
 
-describe('Store', (): void => {
-    describe('decoding', (): void => {
-        describe('Account', (): void => {
-            it('decodes bytes', (): void => {
+describe('Store', () => {
+    describe('decoding', () => {
+        describe('Account', () => {
+            it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(accountData);
                 const value = Amino.unmarshalAccount(bytes, true);
                 expect(value).toMatchObject(account);
             });
         });
 
-        describe('IAVLValueOp', (): void => {
-            it('decodes bytes', (): void => {
+        describe('IAVLValueOp', () => {
+            it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(iavlValueOpData);
                 const value = Amino.unmarshalIAVLValueOp(bytes, false);
                 expect(value).toMatchObject(iavlValueOp);
             });
         });
 
-        describe('MultiStoreProofOp', (): void => {
-            it('decodes bytes', (): void => {
+        describe('MultiStoreProofOp', () => {
+            it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(multiStoreProofOpData);
                 const value = Amino.unmarshalMultiStoreProofOp(bytes, false);
                 expect(value).toMatchObject(multiStoreProofOp);
@@ -270,25 +270,25 @@ describe('Store', (): void => {
         });
     });
 
-    describe('encoding', (): void => {
-        describe('Account', (): void => {
-            it('encodes value', (): void => {
-                const bytes = Amino.marshalAccount(account as any, true);
+    describe('encoding', () => {
+        describe('Account', () => {
+            it('encodes value', () => {
+                const bytes = Amino.marshalAccount(account, true);
                 const data  = Amino.bytesToBase64(bytes);
                 expect(data).toBe(accountData);
             });
         });
 
-        describe('IAVLValueOp', (): void => {
-            it('encodes value', (): void => {
-                const bytes = Amino.marshalIAVLValueOp(iavlValueOp as any, false);
+        describe('IAVLValueOp', () => {
+            it('encodes value', () => {
+                const bytes = Amino.marshalIAVLValueOp(iavlValueOp, false);
                 const data  = Amino.bytesToBase64(bytes);
                 expect(data).toBe(iavlValueOpData);
             });
         });
 
-        describe('MultiStoreProofOp', (): void => {
-            it('encodes value', (): void => {
+        describe('MultiStoreProofOp', () => {
+            it('encodes value', () => {
                 const bytes = Amino.marshalMultiStoreProofOp(multiStoreProofOp, false);
                 const data  = Amino.bytesToBase64(bytes);
                 expect(data).toBe(multiStoreProofOpData);

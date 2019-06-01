@@ -9,7 +9,8 @@
     "parser":        "@typescript-eslint/parser",
     "plugins":       [ "@typescript-eslint" ],
     "rules":         {
-        "@typescript-eslint/interface-name-prefix": "off",
-        "@typescript-eslint/no-empty-interface":    "off"
+        "@typescript-eslint/interface-name-prefix":         "off",
+        "@typescript-eslint/no-empty-interface":            "off",
+        "@typescript-eslint/explicit-function-return-type": [ "error", { "allowExpressions": true } ]
     }
 }
