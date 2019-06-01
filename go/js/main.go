@@ -1,9 +1,8 @@
 package main
 
 import (
-	js "github.com/gopherjs/gopherjs/js"
-	src "github.com/jordansexton/amino-js/go/src"
-	"github.com/tendermint/go-amino"
+	"github.com/gopherjs/gopherjs/js"
+	"github.com/jordansexton/amino-js/go/src"
 )
 
 func main() {
@@ -31,7 +30,7 @@ func main() {
 	exports.Set("encodeFloat64",   src.EncodeFloat64)
 	exports.Set("encodeBool",      src.EncodeBool)
 	exports.Set("encodeString",    src.EncodeString)
-	exports.Set("encodeTime",      src.EncodeTime)	
+	exports.Set("encodeTime",      src.EncodeTime)
 
 	// Basic decoding
 	exports.Set("decodeByte",      src.DecodeByte)
