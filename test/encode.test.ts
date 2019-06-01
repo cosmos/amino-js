@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as Amino from '../';
 
 describe('encode', () => {

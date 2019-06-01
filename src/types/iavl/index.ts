@@ -7,21 +7,21 @@ export interface IAVLValueOp {
 }
 
 export interface RangeProof {
-    innerNodes: PathToLeaf[];
+    inner_nodes: PathToLeaf[] | null;
     leaves: Leaf[];
-    leftPath: PathToLeaf[];
+    left_path: PathToLeaf[];
 }
 
 export interface Leaf {
-    key: Uint8Array;
-    valueHash: Uint8Array;
-    version: number;
+    key: string;
+    value: string;
+    version: string;
 }
 
 export interface PathToLeaf {
     height: number;
-    size: number;
-    version: number;
-    left: Uint8Array;
-    right: Uint8Array;
+    size: string;
+    version: string;
+    left: string | null;
+    right: string | null;
 }

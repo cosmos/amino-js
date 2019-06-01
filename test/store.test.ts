@@ -1,4 +1,3 @@
-// @ts-ignore
 import * as Amino from '../';
 
 // https://rpc.cosmos.network:26657/abci_query?path=%22store/acc/key%22&data=0x01D545E7384C3D6F5BBA7A1B252B4E1A956EBAC64C&prove=true
@@ -13,12 +12,10 @@ const account = {
         'BaseVestingAccount': {
             'BaseAccount':       {
                 'address':        'cosmos164z7wwzv84h4hwn6rvjjkns6j4ht43jv9e3ljy',
-                'coins':          [
-                    {
-                        'denom':  'uatom',
-                        'amount': '179848'
-                    }
-                ],
+                'coins':          [{
+                    'denom':  'uatom',
+                    'amount': '179848'
+                }],
                 'public_key':     {
                     'type':  'tendermint/PubKeySecp256k1',
                     'value': 'Aph7TYP/rh43A4a9Xx+z7s2vg7fCf1JLoj1mA9yZDWMS'
@@ -26,24 +23,18 @@ const account = {
                 'account_number': '155',
                 'sequence':       '59'
             },
-            'original_vesting':  [
-                {
-                    'denom':  'uatom',
-                    'amount': '11000000000'
-                }
-            ],
-            'delegated_free':    [
-                {
-                    'denom':  'uatom',
-                    'amount': '209797607'
-                }
-            ],
-            'delegated_vesting': [
-                {
-                    'denom':  'uatom',
-                    'amount': '11000000000'
-                }
-            ],
+            'original_vesting':  [{
+                'denom':  'uatom',
+                'amount': '11000000000'
+            }],
+            'delegated_free':    [{
+                'denom':  'uatom',
+                'amount': '209797607'
+            }],
+            'delegated_vesting': [{
+                'denom':  'uatom',
+                'amount': '11000000000'
+            }],
             'end_time':          '1584140400'
         }
     }

@@ -1,7 +1,12 @@
-export interface PubKey {
+export interface Key {
+    type: string;
+    value: string;
 }
 
-export interface PrivKey {
+export interface PubKey extends Key {
+}
+
+export interface PrivKey extends Key {
 }
 
 export interface PubKeyEd25519 {
