@@ -11,6 +11,7 @@
     },
     "version":         "0.2.0",
     "main":            "index.js",
+    "types":           "index.d.ts",
     "scripts":         {
         "build":     "webpack --config build --progress --colors --display-error-details",
         "clean":     "rm -rf ./dist/*",
@@ -59,6 +60,7 @@
         "lib/**/*.{ts,js,map}",
         "src/**/*.{ts,js}",
         "index.js",
+        "index.d.ts",
         "package.json",
         "README.md",
         "tsconfig.json",
