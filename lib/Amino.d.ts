@@ -1,3 +1,7 @@
+// Bech32
+export function encodeBech32 (hrp: string, data: Uint8Array): string;
+export function decodeBech32 (bech: string): [string, Uint8Array];
+
 // Basic encoding
 export function encodeByte (byte: number): Uint8Array;
 export function encodeByteSlice (bytes: Uint8Array): Uint8Array;

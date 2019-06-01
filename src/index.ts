@@ -1,3 +1,5 @@
+export * from './bech32';
+
 export * from './encode';
 export * from './decode';
 

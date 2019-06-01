@@ -10,6 +10,10 @@ func main() {
 	exports := js.Module.Get("exports")
 
 	// @formatter:off
+	// Bech32
+	exports.Set("encodeBech32", src.EncodeBech32)
+	exports.Set("decodeBech32", src.DecodeBech32)
+
 	// Basic encoding
 	exports.Set("encodeByte",      src.EncodeByte)
 	exports.Set("encodeByteSlice", src.EncodeByteSlice)
