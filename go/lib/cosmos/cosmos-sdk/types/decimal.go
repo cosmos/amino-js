@@ -68,13 +68,6 @@ func NewDecFromStr(str string) (d Dec, err error) {
 func (d Dec) IsNegative() bool { return (d.Int).Sign() == -1 }         // is negative
 func (d Dec) Neg() Dec         { return Dec{new(big.Int).Neg(d.Int)} } // reverse the decimal sign
 
-func (d Dec) Format(s fmt.State, verb rune) {
-	_, err := s.Write([]byte(d.String()))
-	if err != nil {
-		panic(err)
-	}
-}
-
 func (d Dec) String() string {
 	if d.Int == nil {
 		return d.Int.String()

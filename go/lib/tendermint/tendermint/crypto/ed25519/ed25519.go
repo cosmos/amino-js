@@ -6,6 +6,11 @@ import (
 
 var _ crypto.PrivKey = PrivKeyEd25519{}
 
+const (
+	PrivKeyAminoName = "tendermint/PrivKeyEd25519"
+	PubKeyAminoName  = "tendermint/PubKeyEd25519"
+)
+
 type PrivKeyEd25519 [64]byte
 
 var _ crypto.PubKey = PubKeyEd25519{}

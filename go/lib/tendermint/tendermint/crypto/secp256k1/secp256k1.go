@@ -4,6 +4,11 @@ import (
 	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto"
 )
 
+const (
+	PrivKeyAminoName = "tendermint/PrivKeySecp256k1"
+	PubKeyAminoName  = "tendermint/PubKeySecp256k1"
+)
+
 var _ crypto.PrivKey = PrivKeySecp256k1{}
 
 type PrivKeySecp256k1 [32]byte
