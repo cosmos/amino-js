@@ -1,5 +1,41 @@
 import * as Amino from '../';
 
+// https://rpc.cosmos.network:26657/tx?hash=0x2268EB5AB730B45F8426078827BB5BB49819CE2B0D74B2C1D191070BADB379F1&prove=true
+
+const txData = '1gHwYl3uCkOoo2GaChS536x615s3L5HNHZqLKYPpCK3tiRIUF5FHHqSe5EQ+wA9u2QAy8QEasjAaEQoFdWF0b20SCDExNjU3OTk1EhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAtQaCqFnshaZQp6rIkvAPyzThvCvXSDO+9AzbxVErqJPEkDWdRwgfQItPT+dDSYFMOtPqQwbbQ1j8+wfs/aBzhulg0YsRiMGZ1Z69dQmi5IT/0D/rRAb1xh6rJN7mQUN4g/FIgoxMTIyNjcyNzU0';
+
+const tx = {
+    'type':  'auth/StdTx',
+    'value': {
+        'msg':        [{
+            'type':  'cosmos-sdk/MsgSend',
+            'value': {
+                'from_address': 'cosmos1h806c7khnvmjlywdrkdgk2vrayy2mmvf9rxk2r',
+                'to_address':   'cosmos1z7g5w84ynmjyg0kqpahdjqpj7yq34v3suckp0e',
+                'amount':       [{
+                    'denom':  'uatom',
+                    'amount': '11657995'
+                }]
+            }
+        }],
+        'fee':        {
+            'amount': [{
+                'denom':  'uatom',
+                'amount': '5000'
+            }],
+            'gas':    '200000'
+        },
+        'signatures': [{
+            'pub_key':   {
+                'type':  'tendermint/PubKeySecp256k1',
+                'value': 'AtQaCqFnshaZQp6rIkvAPyzThvCvXSDO+9AzbxVErqJP'
+            },
+            'signature': '1nUcIH0CLT0/nQ0mBTDrT6kMG20NY/PsH7P2gc4bpYNGLEYjBmdWevXUJouSE/9A/60QG9cYeqyTe5kFDeIPxQ=='
+        }],
+        'memo':       '1122672754'
+    }
+};
+
 // https://rpc.cosmos.network:26657/abci_query?path=%22store/acc/key%22&data=0x01D545E7384C3D6F5BBA7A1B252B4E1A956EBAC64C&prove=true
 
 const accountData           = 'YPqWwQqcAQpUChTVRec4TD1vW7p6GyUrThqVbrrGTBIPCgV1YXRvbRIGMTc5ODQ4GibrWumHIQKYe02D/64eNwOGvV8fs+7Nr4O3wn9SS6I9ZgPcmQ1jEiCbASg7EhQKBXVhdG9tEgsxMTAwMDAwMDAwMBoSCgV1YXRvbRIJMjA5Nzk3NjA3IhQKBXVhdG9tEgsxMTAwMDAwMDAwMCjwoLDzBQ==';
@@ -236,6 +272,14 @@ const multiStoreProofOp = {
 
 describe('Store', () => {
     describe('decoding', () => {
+        describe('Tx', () => {
+            it('decodes bytes', () => {
+                const bytes = Amino.base64ToBytes(txData);
+                const value = Amino.unmarshalTx(bytes, false);
+                expect(value).toMatchObject(tx);
+            });
+        });
+
         describe('Account', () => {
             it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(accountData);
@@ -262,6 +306,14 @@ describe('Store', () => {
     });
 
     describe('encoding', () => {
+        describe('Tx', () => {
+            it('encodes value', () => {
+                const bytes = Amino.marshalTx(tx, false);
+                const data  = Amino.bytesToBase64(bytes);
+                expect(data).toBe(txData);
+            });
+        });
+
         describe('Account', () => {
             it('encodes value', () => {
                 const bytes = Amino.marshalAccount(account, true);

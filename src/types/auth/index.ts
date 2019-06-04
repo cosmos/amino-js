@@ -34,11 +34,19 @@ export interface DelayedVestingAccount {
     BaseVestingAccount: BaseVestingAccount;
 }
 
-export interface StdTx extends types.Tx {
+export interface StdTx {
+    msg: types.Msg[];
+    fee: StdFee;
+    signatures: StdSignature[];
+    memo: string;
 }
 
 export interface StdFee {
+    amount: types.Coin[];
+    gas: string;
 }
 
 export interface StdSignature {
+    pub_key: crypto.PubKey;
+    signature: string;
 }
