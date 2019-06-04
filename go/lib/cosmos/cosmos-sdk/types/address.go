@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto"
-	cryptoAmino "github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto/encoding/amino"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	cryptoAmino "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/encoding/amino"
 
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/libs/bech32"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/bech32"
 )
 
 const (

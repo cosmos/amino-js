@@ -1,7 +1,7 @@
 package src
 
 import (
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/libs/bech32"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/bech32"
 )
 
 func EncodeBech32(hrp string, data []byte) (bech string) {

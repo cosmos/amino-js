@@ -3,8 +3,8 @@ package consensus
 import (
 	"time"
 
-	cstypes "github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/consensus/types"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/p2p"
+	cstypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/consensus/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
 )
 
 type MsgInfo struct {

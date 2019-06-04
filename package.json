@@ -1,10 +1,10 @@
 {
-    "name":            "@jordansexton/amino-js",
+    "name":            "@cosmos/amino-js",
     "description":     "tendermint/go-amino for JavaScript",
     "license":         "MIT",
     "repository":      {
         "type": "git",
-        "url":  "https://github.com/jordansexton/amino-js.git"
+        "url":  "https://github.com/cosmos/amino-js.git"
     },
     "publishConfig":   {
         "access": "public"

@@ -1,7 +1,7 @@
 package rootmulti
 
 import (
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
 )
 
 type MultiStoreProof struct {

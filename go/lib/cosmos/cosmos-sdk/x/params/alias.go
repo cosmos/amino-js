@@ -1,7 +1,7 @@
 package params
 
 import (
-	"github.com/jordansexton/amino-js/go/lib/cosmos/cosmos-sdk/x/params/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/types"
 )
 
 type ParameterChangeProposal = types.ParameterChangeProposal

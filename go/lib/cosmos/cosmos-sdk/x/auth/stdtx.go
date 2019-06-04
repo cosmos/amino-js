@@ -2,8 +2,8 @@ package auth
 
 import (
 	"encoding/json"
-	sdk "github.com/jordansexton/amino-js/go/lib/cosmos/cosmos-sdk/types"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 )
 
 var _ sdk.Tx = (*StdTx)(nil)

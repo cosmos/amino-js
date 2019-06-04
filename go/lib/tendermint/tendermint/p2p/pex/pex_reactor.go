@@ -1,7 +1,7 @@
 package pex
 
 import (
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
 )
 
 type PexMessage interface{}

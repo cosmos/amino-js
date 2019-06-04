@@ -1,7 +1,7 @@
 package types
 
 import (
-	sdk "github.com/jordansexton/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 	"time"
 )
 

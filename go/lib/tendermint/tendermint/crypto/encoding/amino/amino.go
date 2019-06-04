@@ -2,10 +2,10 @@ package cryptoAmino
 
 import (
 	amino "github.com/tendermint/go-amino"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto/multisig"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto/secp256k1"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/multisig"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/secp256k1"
 )
 
 var cdc = amino.NewCodec()

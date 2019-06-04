@@ -2,7 +2,7 @@ package test
 
 import (
 	"encoding/base64"
-	"github.com/jordansexton/amino-js/go/src"
+	"github.com/cosmos/amino-js/go/src"
 	"testing"
 )
 

@@ -3,7 +3,7 @@ package types
 import (
 	"sync"
 
-	cmn "github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/libs/common"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
 type P2PID string

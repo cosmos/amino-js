@@ -4,8 +4,8 @@ import (
 	"sync"
 	"time"
 
-	cmn "github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/libs/common"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/version"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/version"
 )
 
 type Block struct {

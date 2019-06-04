@@ -1,7 +1,7 @@
 package misc
 
 import (
-	"github.com/jordansexton/amino-js/go/src"
+	"github.com/cosmos/amino-js/go/src"
 	"math"
 	"testing"
 	"time"

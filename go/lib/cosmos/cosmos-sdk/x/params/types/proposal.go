@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	govtypes "github.com/jordansexton/amino-js/go/lib/cosmos/cosmos-sdk/x/gov/types"
+	govtypes "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov/types"
 )
 
 const (

@@ -1,7 +1,7 @@
 package p2p
 
 import (
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 )
 
 type ID string

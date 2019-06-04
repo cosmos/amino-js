@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"time"
 
-	cmn "github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/libs/common"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 type RoundStepType uint8 // These must be numeric, ordered.

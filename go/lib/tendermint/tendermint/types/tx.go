@@ -1,9 +1,9 @@
 package types
 
 import (
-	abci "github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/abci/types"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
-	cmn "github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/libs/common"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
 type Tx []byte

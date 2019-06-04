@@ -1,8 +1,8 @@
 package types
 
 import (
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 	"time"
 )
 

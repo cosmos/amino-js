@@ -1,4 +1,4 @@
-module github.com/jordansexton/amino-js/go/lib
+module github.com/cosmos/amino-js/go/lib
 
 go 1.12
 

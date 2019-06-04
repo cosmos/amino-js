@@ -1,7 +1,7 @@
 package src
 
 import (
-	"github.com/jordansexton/amino-js/go/lib"
+	"github.com/cosmos/amino-js/go/lib"
 	"github.com/tendermint/go-amino"
 )
 

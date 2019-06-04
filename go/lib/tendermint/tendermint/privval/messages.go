@@ -1,8 +1,8 @@
 package privval
 
 import (
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/crypto"
-	"github.com/jordansexton/amino-js/go/lib/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 type RemoteSignerMsg interface{}
