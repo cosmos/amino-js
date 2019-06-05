@@ -6,6 +6,8 @@ Support is planned for Service Workers.
 
 ### Install
 
+Please note that the NPM package name is `@tendermint/amino-js` rather than `@cosmos/amino-js`.
+
 ##### Yarn
 ```shell
 yarn add @tendermint/amino-js
