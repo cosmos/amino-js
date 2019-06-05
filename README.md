@@ -1,7 +1,5 @@
 # amino-js
 
-Experimental. Don't use this yet.
-
 Supported in Node.js and browsers.
 
 Support is planned for Service Workers.
