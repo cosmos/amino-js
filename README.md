@@ -4,6 +4,11 @@ Supported in Node.js and browsers.
 
 Support is planned for Service Workers.
 
+### Demo
+
+- [Node.js](https://repl.it/repls/ScalyGracefulState)
+- [Browser](https://jsfiddle.net/qk2wut06/)
+
 ### Install
 
 Please note that the NPM package name is `@tendermint/amino-js` rather than `@cosmos/amino-js`.
