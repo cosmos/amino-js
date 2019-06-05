@@ -10,18 +10,18 @@ Support is planned for Service Workers.
 
 ##### Yarn
 ```shell
-yarn add @cosmos/amino-js
+yarn add @tendermint/amino-js
 ```
 
 ##### NPM
 ```shell
-npm install @cosmos/amino-js
+npm install @tendermint/amino-js
 ```
 
 ### Usage
 
 ```js
-import { encodeString, decodeString } from '@cosmos/amino-js';
+import { encodeString, decodeString } from '@tendermint/amino-js';
 decodeString(encodeString('hello world'));
 // [ "hello world", 12 ]
 ```
