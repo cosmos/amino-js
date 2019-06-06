@@ -25,512 +25,512 @@ import {
 import * as decodeType from './decodeType';
 import { unmarshalJSON } from './util';
 
-export function unmarshalMultiStoreProofOp (bytes: Uint8Array, bare: boolean = true): rootmulti.MultiStoreProofOp {
-    const json = decodeType.decodeMultiStoreProofOp(bytes, bare);
+export function unmarshalMultiStoreProofOp (amino: Uint8Array, lengthPrefixed: boolean = true): rootmulti.MultiStoreProofOp {
+    const json = decodeType.decodeMultiStoreProofOp(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalIAVLAbsenceOp (bytes: Uint8Array, bare: boolean = true): iavl.IAVLAbsenceOp {
-    const json = decodeType.decodeIAVLAbsenceOp(bytes, bare);
+export function unmarshalIAVLAbsenceOp (amino: Uint8Array, lengthPrefixed: boolean = true): iavl.IAVLAbsenceOp {
+    const json = decodeType.decodeIAVLAbsenceOp(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalIAVLValueOp (bytes: Uint8Array, bare: boolean = true): iavl.IAVLValueOp {
-    const json = decodeType.decodeIAVLValueOp(bytes, bare);
+export function unmarshalIAVLValueOp (amino: Uint8Array, lengthPrefixed: boolean = true): iavl.IAVLValueOp {
+    const json = decodeType.decodeIAVLValueOp(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKeyLedgerSecp256k1 (bytes: Uint8Array, bare: boolean = true): crypto.PrivKeyLedgerSecp256k1 {
-    const json = decodeType.decodePrivKeyLedgerSecp256k1(bytes, bare);
+export function unmarshalPrivKeyLedgerSecp256k1 (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PrivKeyLedgerSecp256k1 {
+    const json = decodeType.decodePrivKeyLedgerSecp256k1(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalInfo (bytes: Uint8Array, bare: boolean = true): keys.Info {
-    const json = decodeType.decodeInfo(bytes, bare);
+export function unmarshalInfo (amino: Uint8Array, lengthPrefixed: boolean = true): keys.Info {
+    const json = decodeType.decodeInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBIP44Params (bytes: Uint8Array, bare: boolean = true): keys.BIP44Params {
-    const json = decodeType.decodeBIP44Params(bytes, bare);
+export function unmarshalBIP44Params (amino: Uint8Array, lengthPrefixed: boolean = true): keys.BIP44Params {
+    const json = decodeType.decodeBIP44Params(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalLocalInfo (bytes: Uint8Array, bare: boolean = true): keys.LocalInfo {
-    const json = decodeType.decodeLocalInfo(bytes, bare);
+export function unmarshalLocalInfo (amino: Uint8Array, lengthPrefixed: boolean = true): keys.LocalInfo {
+    const json = decodeType.decodeLocalInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalLedgerInfo (bytes: Uint8Array, bare: boolean = true): keys.LedgerInfo {
-    const json = decodeType.decodeLedgerInfo(bytes, bare);
+export function unmarshalLedgerInfo (amino: Uint8Array, lengthPrefixed: boolean = true): keys.LedgerInfo {
+    const json = decodeType.decodeLedgerInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalOfflineInfo (bytes: Uint8Array, bare: boolean = true): keys.OfflineInfo {
-    const json = decodeType.decodeOfflineInfo(bytes, bare);
+export function unmarshalOfflineInfo (amino: Uint8Array, lengthPrefixed: boolean = true): keys.OfflineInfo {
+    const json = decodeType.decodeOfflineInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMultiInfo (bytes: Uint8Array, bare: boolean = true): keys.MultiInfo {
-    const json = decodeType.decodeMultiInfo(bytes, bare);
+export function unmarshalMultiInfo (amino: Uint8Array, lengthPrefixed: boolean = true): keys.MultiInfo {
+    const json = decodeType.decodeMultiInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsg (bytes: Uint8Array, bare: boolean = true): types.Msg {
-    const json = decodeType.decodeMsg(bytes, bare);
+export function unmarshalMsg (amino: Uint8Array, lengthPrefixed: boolean = true): types.Msg {
+    const json = decodeType.decodeMsg(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTx (bytes: Uint8Array, bare: boolean = true): types.Tx {
-    const json = decodeType.decodeTx(bytes, bare);
+export function unmarshalTx (amino: Uint8Array, lengthPrefixed: boolean = true): types.Tx {
+    const json = decodeType.decodeTx(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalAccount (bytes: Uint8Array, bare: boolean = true): auth.Account {
-    const json = decodeType.decodeAccount(bytes, bare);
+export function unmarshalAccount (amino: Uint8Array, lengthPrefixed: boolean = true): auth.Account {
+    const json = decodeType.decodeAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVestingAccount (bytes: Uint8Array, bare: boolean = true): auth.VestingAccount {
-    const json = decodeType.decodeVestingAccount(bytes, bare);
+export function unmarshalVestingAccount (amino: Uint8Array, lengthPrefixed: boolean = true): auth.VestingAccount {
+    const json = decodeType.decodeVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBaseAccount (bytes: Uint8Array, bare: boolean = true): auth.BaseAccount {
-    const json = decodeType.decodeBaseAccount(bytes, bare);
+export function unmarshalBaseAccount (amino: Uint8Array, lengthPrefixed: boolean = true): auth.BaseAccount {
+    const json = decodeType.decodeBaseAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBaseVestingAccount (bytes: Uint8Array, bare: boolean = true): auth.BaseVestingAccount {
-    const json = decodeType.decodeBaseVestingAccount(bytes, bare);
+export function unmarshalBaseVestingAccount (amino: Uint8Array, lengthPrefixed: boolean = true): auth.BaseVestingAccount {
+    const json = decodeType.decodeBaseVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalContinuousVestingAccount (bytes: Uint8Array, bare: boolean = true): auth.ContinuousVestingAccount {
-    const json = decodeType.decodeContinuousVestingAccount(bytes, bare);
+export function unmarshalContinuousVestingAccount (amino: Uint8Array, lengthPrefixed: boolean = true): auth.ContinuousVestingAccount {
+    const json = decodeType.decodeContinuousVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalDelayedVestingAccount (bytes: Uint8Array, bare: boolean = true): auth.DelayedVestingAccount {
-    const json = decodeType.decodeDelayedVestingAccount(bytes, bare);
+export function unmarshalDelayedVestingAccount (amino: Uint8Array, lengthPrefixed: boolean = true): auth.DelayedVestingAccount {
+    const json = decodeType.decodeDelayedVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalStdTx (bytes: Uint8Array, bare: boolean = true): auth.StdTx {
-    const json = decodeType.decodeStdTx(bytes, bare);
+export function unmarshalStdTx (amino: Uint8Array, lengthPrefixed: boolean = true): auth.StdTx {
+    const json = decodeType.decodeStdTx(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgSend (bytes: Uint8Array, bare: boolean = true): bank.MsgSend {
-    const json = decodeType.decodeMsgSend(bytes, bare);
+export function unmarshalMsgSend (amino: Uint8Array, lengthPrefixed: boolean = true): bank.MsgSend {
+    const json = decodeType.decodeMsgSend(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgMultiSend (bytes: Uint8Array, bare: boolean = true): bank.MsgMultiSend {
-    const json = decodeType.decodeMsgMultiSend(bytes, bare);
+export function unmarshalMsgMultiSend (amino: Uint8Array, lengthPrefixed: boolean = true): bank.MsgMultiSend {
+    const json = decodeType.decodeMsgMultiSend(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgVerifyInvariant (bytes: Uint8Array, bare: boolean = true): crisis.MsgVerifyInvariant {
-    const json = decodeType.decodeMsgVerifyInvariant(bytes, bare);
+export function unmarshalMsgVerifyInvariant (amino: Uint8Array, lengthPrefixed: boolean = true): crisis.MsgVerifyInvariant {
+    const json = decodeType.decodeMsgVerifyInvariant(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgWithdrawDelegatorReward (bytes: Uint8Array, bare: boolean = true): distribution.MsgWithdrawDelegatorReward {
-    const json = decodeType.decodeMsgWithdrawDelegatorReward(bytes, bare);
+export function unmarshalMsgWithdrawDelegatorReward (amino: Uint8Array, lengthPrefixed: boolean = true): distribution.MsgWithdrawDelegatorReward {
+    const json = decodeType.decodeMsgWithdrawDelegatorReward(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgWithdrawValidatorCommission (bytes: Uint8Array, bare: boolean = true): distribution.MsgWithdrawValidatorCommission {
-    const json = decodeType.decodeMsgWithdrawValidatorCommission(bytes, bare);
+export function unmarshalMsgWithdrawValidatorCommission (amino: Uint8Array, lengthPrefixed: boolean = true): distribution.MsgWithdrawValidatorCommission {
+    const json = decodeType.decodeMsgWithdrawValidatorCommission(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgSetWithdrawAddress (bytes: Uint8Array, bare: boolean = true): distribution.MsgSetWithdrawAddress {
-    const json = decodeType.decodeMsgSetWithdrawAddress(bytes, bare);
+export function unmarshalMsgSetWithdrawAddress (amino: Uint8Array, lengthPrefixed: boolean = true): distribution.MsgSetWithdrawAddress {
+    const json = decodeType.decodeMsgSetWithdrawAddress(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalContent (bytes: Uint8Array, bare: boolean = true): gov.Content {
-    const json = decodeType.decodeContent(bytes, bare);
+export function unmarshalContent (amino: Uint8Array, lengthPrefixed: boolean = true): gov.Content {
+    const json = decodeType.decodeContent(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgSubmitProposal (bytes: Uint8Array, bare: boolean = true): gov.MsgSubmitProposal {
-    const json = decodeType.decodeMsgSubmitProposal(bytes, bare);
+export function unmarshalMsgSubmitProposal (amino: Uint8Array, lengthPrefixed: boolean = true): gov.MsgSubmitProposal {
+    const json = decodeType.decodeMsgSubmitProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgDeposit (bytes: Uint8Array, bare: boolean = true): gov.MsgDeposit {
-    const json = decodeType.decodeMsgDeposit(bytes, bare);
+export function unmarshalMsgDeposit (amino: Uint8Array, lengthPrefixed: boolean = true): gov.MsgDeposit {
+    const json = decodeType.decodeMsgDeposit(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgVote (bytes: Uint8Array, bare: boolean = true): gov.MsgVote {
-    const json = decodeType.decodeMsgVote(bytes, bare);
+export function unmarshalMsgVote (amino: Uint8Array, lengthPrefixed: boolean = true): gov.MsgVote {
+    const json = decodeType.decodeMsgVote(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTextProposal (bytes: Uint8Array, bare: boolean = true): gov.TextProposal {
-    const json = decodeType.decodeTextProposal(bytes, bare);
+export function unmarshalTextProposal (amino: Uint8Array, lengthPrefixed: boolean = true): gov.TextProposal {
+    const json = decodeType.decodeTextProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSoftwareUpgradeProposal (bytes: Uint8Array, bare: boolean = true): gov.SoftwareUpgradeProposal {
-    const json = decodeType.decodeSoftwareUpgradeProposal(bytes, bare);
+export function unmarshalSoftwareUpgradeProposal (amino: Uint8Array, lengthPrefixed: boolean = true): gov.SoftwareUpgradeProposal {
+    const json = decodeType.decodeSoftwareUpgradeProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgIBCTransfer (bytes: Uint8Array, bare: boolean = true): ibc.MsgIBCTransfer {
-    const json = decodeType.decodeMsgIBCTransfer(bytes, bare);
+export function unmarshalMsgIBCTransfer (amino: Uint8Array, lengthPrefixed: boolean = true): ibc.MsgIBCTransfer {
+    const json = decodeType.decodeMsgIBCTransfer(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgIBCReceive (bytes: Uint8Array, bare: boolean = true): ibc.MsgIBCReceive {
-    const json = decodeType.decodeMsgIBCReceive(bytes, bare);
+export function unmarshalMsgIBCReceive (amino: Uint8Array, lengthPrefixed: boolean = true): ibc.MsgIBCReceive {
+    const json = decodeType.decodeMsgIBCReceive(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalParameterChangeProposal (bytes: Uint8Array, bare: boolean = true): params.ParameterChangeProposal {
-    const json = decodeType.decodeParameterChangeProposal(bytes, bare);
+export function unmarshalParameterChangeProposal (amino: Uint8Array, lengthPrefixed: boolean = true): params.ParameterChangeProposal {
+    const json = decodeType.decodeParameterChangeProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgUnjail (bytes: Uint8Array, bare: boolean = true): slashing.MsgUnjail {
-    const json = decodeType.decodeMsgUnjail(bytes, bare);
+export function unmarshalMsgUnjail (amino: Uint8Array, lengthPrefixed: boolean = true): slashing.MsgUnjail {
+    const json = decodeType.decodeMsgUnjail(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgCreateValidator (bytes: Uint8Array, bare: boolean = true): staking.MsgCreateValidator {
-    const json = decodeType.decodeMsgCreateValidator(bytes, bare);
+export function unmarshalMsgCreateValidator (amino: Uint8Array, lengthPrefixed: boolean = true): staking.MsgCreateValidator {
+    const json = decodeType.decodeMsgCreateValidator(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgEditValidator (bytes: Uint8Array, bare: boolean = true): staking.MsgEditValidator {
-    const json = decodeType.decodeMsgEditValidator(bytes, bare);
+export function unmarshalMsgEditValidator (amino: Uint8Array, lengthPrefixed: boolean = true): staking.MsgEditValidator {
+    const json = decodeType.decodeMsgEditValidator(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgDelegate (bytes: Uint8Array, bare: boolean = true): staking.MsgDelegate {
-    const json = decodeType.decodeMsgDelegate(bytes, bare);
+export function unmarshalMsgDelegate (amino: Uint8Array, lengthPrefixed: boolean = true): staking.MsgDelegate {
+    const json = decodeType.decodeMsgDelegate(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgUndelegate (bytes: Uint8Array, bare: boolean = true): staking.MsgUndelegate {
-    const json = decodeType.decodeMsgUndelegate(bytes, bare);
+export function unmarshalMsgUndelegate (amino: Uint8Array, lengthPrefixed: boolean = true): staking.MsgUndelegate {
+    const json = decodeType.decodeMsgUndelegate(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgBeginRedelegate (bytes: Uint8Array, bare: boolean = true): staking.MsgBeginRedelegate {
-    const json = decodeType.decodeMsgBeginRedelegate(bytes, bare);
+export function unmarshalMsgBeginRedelegate (amino: Uint8Array, lengthPrefixed: boolean = true): staking.MsgBeginRedelegate {
+    const json = decodeType.decodeMsgBeginRedelegate(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBlockchainMessage (bytes: Uint8Array, bare: boolean = true): blockchain.BlockchainMessage {
-    const json = decodeType.decodeBlockchainMessage(bytes, bare);
+export function unmarshalBlockchainMessage (amino: Uint8Array, lengthPrefixed: boolean = true): blockchain.BlockchainMessage {
+    const json = decodeType.decodeBlockchainMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcBlockRequestMessage (bytes: Uint8Array, bare: boolean = true): blockchain.BcBlockRequestMessage {
-    const json = decodeType.decodeBcBlockRequestMessage(bytes, bare);
+export function unmarshalBcBlockRequestMessage (amino: Uint8Array, lengthPrefixed: boolean = true): blockchain.BcBlockRequestMessage {
+    const json = decodeType.decodeBcBlockRequestMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcBlockResponseMessage (bytes: Uint8Array, bare: boolean = true): blockchain.BcBlockResponseMessage {
-    const json = decodeType.decodeBcBlockResponseMessage(bytes, bare);
+export function unmarshalBcBlockResponseMessage (amino: Uint8Array, lengthPrefixed: boolean = true): blockchain.BcBlockResponseMessage {
+    const json = decodeType.decodeBcBlockResponseMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcNoBlockResponseMessage (bytes: Uint8Array, bare: boolean = true): blockchain.BcNoBlockResponseMessage {
-    const json = decodeType.decodeBcNoBlockResponseMessage(bytes, bare);
+export function unmarshalBcNoBlockResponseMessage (amino: Uint8Array, lengthPrefixed: boolean = true): blockchain.BcNoBlockResponseMessage {
+    const json = decodeType.decodeBcNoBlockResponseMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcStatusResponseMessage (bytes: Uint8Array, bare: boolean = true): blockchain.BcStatusResponseMessage {
-    const json = decodeType.decodeBcStatusResponseMessage(bytes, bare);
+export function unmarshalBcStatusResponseMessage (amino: Uint8Array, lengthPrefixed: boolean = true): blockchain.BcStatusResponseMessage {
+    const json = decodeType.decodeBcStatusResponseMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcStatusRequestMessage (bytes: Uint8Array, bare: boolean = true): blockchain.BcStatusRequestMessage {
-    const json = decodeType.decodeBcStatusRequestMessage(bytes, bare);
+export function unmarshalBcStatusRequestMessage (amino: Uint8Array, lengthPrefixed: boolean = true): blockchain.BcStatusRequestMessage {
+    const json = decodeType.decodeBcStatusRequestMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalConsensusMessage (bytes: Uint8Array, bare: boolean = true): consensus.ConsensusMessage {
-    const json = decodeType.decodeConsensusMessage(bytes, bare);
+export function unmarshalConsensusMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.ConsensusMessage {
+    const json = decodeType.decodeConsensusMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalNewRoundStepMessage (bytes: Uint8Array, bare: boolean = true): consensus.NewRoundStepMessage {
-    const json = decodeType.decodeNewRoundStepMessage(bytes, bare);
+export function unmarshalNewRoundStepMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.NewRoundStepMessage {
+    const json = decodeType.decodeNewRoundStepMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalNewValidBlockMessage (bytes: Uint8Array, bare: boolean = true): consensus.NewValidBlockMessage {
-    const json = decodeType.decodeNewValidBlockMessage(bytes, bare);
+export function unmarshalNewValidBlockMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.NewValidBlockMessage {
+    const json = decodeType.decodeNewValidBlockMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalProposalMessage (bytes: Uint8Array, bare: boolean = true): consensus.ProposalMessage {
-    const json = decodeType.decodeProposalMessage(bytes, bare);
+export function unmarshalProposalMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.ProposalMessage {
+    const json = decodeType.decodeProposalMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalProposalPOLMessage (bytes: Uint8Array, bare: boolean = true): consensus.ProposalPOLMessage {
-    const json = decodeType.decodeProposalPOLMessage(bytes, bare);
+export function unmarshalProposalPOLMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.ProposalPOLMessage {
+    const json = decodeType.decodeProposalPOLMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBlockPartMessage (bytes: Uint8Array, bare: boolean = true): consensus.BlockPartMessage {
-    const json = decodeType.decodeBlockPartMessage(bytes, bare);
+export function unmarshalBlockPartMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.BlockPartMessage {
+    const json = decodeType.decodeBlockPartMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVoteMessage (bytes: Uint8Array, bare: boolean = true): consensus.VoteMessage {
-    const json = decodeType.decodeVoteMessage(bytes, bare);
+export function unmarshalVoteMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.VoteMessage {
+    const json = decodeType.decodeVoteMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalHasVoteMessage (bytes: Uint8Array, bare: boolean = true): consensus.HasVoteMessage {
-    const json = decodeType.decodeHasVoteMessage(bytes, bare);
+export function unmarshalHasVoteMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.HasVoteMessage {
+    const json = decodeType.decodeHasVoteMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVoteSetMaj23Message (bytes: Uint8Array, bare: boolean = true): consensus.VoteSetMaj23Message {
-    const json = decodeType.decodeVoteSetMaj23Message(bytes, bare);
+export function unmarshalVoteSetMaj23Message (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.VoteSetMaj23Message {
+    const json = decodeType.decodeVoteSetMaj23Message(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVoteSetBitsMessage (bytes: Uint8Array, bare: boolean = true): consensus.VoteSetBitsMessage {
-    const json = decodeType.decodeVoteSetBitsMessage(bytes, bare);
+export function unmarshalVoteSetBitsMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.VoteSetBitsMessage {
+    const json = decodeType.decodeVoteSetBitsMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalWALMessage (bytes: Uint8Array, bare: boolean = true): consensus.WALMessage {
-    const json = decodeType.decodeWALMessage(bytes, bare);
+export function unmarshalWALMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.WALMessage {
+    const json = decodeType.decodeWALMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgInfo (bytes: Uint8Array, bare: boolean = true): consensus.MsgInfo {
-    const json = decodeType.decodeMsgInfo(bytes, bare);
+export function unmarshalMsgInfo (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.MsgInfo {
+    const json = decodeType.decodeMsgInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTimeoutInfo (bytes: Uint8Array, bare: boolean = true): consensus.TimeoutInfo {
-    const json = decodeType.decodeTimeoutInfo(bytes, bare);
+export function unmarshalTimeoutInfo (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.TimeoutInfo {
+    const json = decodeType.decodeTimeoutInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEndHeightMessage (bytes: Uint8Array, bare: boolean = true): consensus.EndHeightMessage {
-    const json = decodeType.decodeEndHeightMessage(bytes, bare);
+export function unmarshalEndHeightMessage (amino: Uint8Array, lengthPrefixed: boolean = true): consensus.EndHeightMessage {
+    const json = decodeType.decodeEndHeightMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKey (bytes: Uint8Array, bare: boolean = true): crypto.PubKey {
-    const json = decodeType.decodePubKey(bytes, bare);
+export function unmarshalPubKey (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PubKey {
+    const json = decodeType.decodePubKey(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKey (bytes: Uint8Array, bare: boolean = true): crypto.PrivKey {
-    const json = decodeType.decodePrivKey(bytes, bare);
+export function unmarshalPrivKey (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PrivKey {
+    const json = decodeType.decodePrivKey(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyEd25519 (bytes: Uint8Array, bare: boolean = true): crypto.PubKeyEd25519 {
-    const json = decodeType.decodePubKeyEd25519(bytes, bare);
+export function unmarshalPubKeyEd25519 (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PubKeyEd25519 {
+    const json = decodeType.decodePubKeyEd25519(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKeyEd25519 (bytes: Uint8Array, bare: boolean = true): crypto.PrivKeyEd25519 {
-    const json = decodeType.decodePrivKeyEd25519(bytes, bare);
+export function unmarshalPrivKeyEd25519 (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PrivKeyEd25519 {
+    const json = decodeType.decodePrivKeyEd25519(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeySecp256k1 (bytes: Uint8Array, bare: boolean = true): crypto.PubKeySecp256k1 {
-    const json = decodeType.decodePubKeySecp256k1(bytes, bare);
+export function unmarshalPubKeySecp256k1 (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PubKeySecp256k1 {
+    const json = decodeType.decodePubKeySecp256k1(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKeySecp256k1 (bytes: Uint8Array, bare: boolean = true): crypto.PrivKeySecp256k1 {
-    const json = decodeType.decodePrivKeySecp256k1(bytes, bare);
+export function unmarshalPrivKeySecp256k1 (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PrivKeySecp256k1 {
+    const json = decodeType.decodePrivKeySecp256k1(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyMultisigThreshold (bytes: Uint8Array, bare: boolean = true): crypto.PubKeyMultisigThreshold {
-    const json = decodeType.decodePubKeyMultisigThreshold(bytes, bare);
+export function unmarshalPubKeyMultisigThreshold (amino: Uint8Array, lengthPrefixed: boolean = true): crypto.PubKeyMultisigThreshold {
+    const json = decodeType.decodePubKeyMultisigThreshold(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEvidenceMessage (bytes: Uint8Array, bare: boolean = true): evidence.EvidenceMessage {
-    const json = decodeType.decodeEvidenceMessage(bytes, bare);
+export function unmarshalEvidenceMessage (amino: Uint8Array, lengthPrefixed: boolean = true): evidence.EvidenceMessage {
+    const json = decodeType.decodeEvidenceMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEvidenceListMessage (bytes: Uint8Array, bare: boolean = true): evidence.EvidenceListMessage {
-    const json = decodeType.decodeEvidenceListMessage(bytes, bare);
+export function unmarshalEvidenceListMessage (amino: Uint8Array, lengthPrefixed: boolean = true): evidence.EvidenceListMessage {
+    const json = decodeType.decodeEvidenceListMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMempoolMessage (bytes: Uint8Array, bare: boolean = true): mempool.MempoolMessage {
-    const json = decodeType.decodeMempoolMessage(bytes, bare);
+export function unmarshalMempoolMessage (amino: Uint8Array, lengthPrefixed: boolean = true): mempool.MempoolMessage {
+    const json = decodeType.decodeMempoolMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTxMessage (bytes: Uint8Array, bare: boolean = true): mempool.TxMessage {
-    const json = decodeType.decodeTxMessage(bytes, bare);
+export function unmarshalTxMessage (amino: Uint8Array, lengthPrefixed: boolean = true): mempool.TxMessage {
+    const json = decodeType.decodeTxMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacket (bytes: Uint8Array, bare: boolean = true): conn.Packet {
-    const json = decodeType.decodePacket(bytes, bare);
+export function unmarshalPacket (amino: Uint8Array, lengthPrefixed: boolean = true): conn.Packet {
+    const json = decodeType.decodePacket(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacketPing (bytes: Uint8Array, bare: boolean = true): conn.PacketPing {
-    const json = decodeType.decodePacketPing(bytes, bare);
+export function unmarshalPacketPing (amino: Uint8Array, lengthPrefixed: boolean = true): conn.PacketPing {
+    const json = decodeType.decodePacketPing(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacketPong (bytes: Uint8Array, bare: boolean = true): conn.PacketPong {
-    const json = decodeType.decodePacketPong(bytes, bare);
+export function unmarshalPacketPong (amino: Uint8Array, lengthPrefixed: boolean = true): conn.PacketPong {
+    const json = decodeType.decodePacketPong(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacketMsg (bytes: Uint8Array, bare: boolean = true): conn.PacketMsg {
-    const json = decodeType.decodePacketMsg(bytes, bare);
+export function unmarshalPacketMsg (amino: Uint8Array, lengthPrefixed: boolean = true): conn.PacketMsg {
+    const json = decodeType.decodePacketMsg(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPexMessage (bytes: Uint8Array, bare: boolean = true): pex.PexMessage {
-    const json = decodeType.decodePexMessage(bytes, bare);
+export function unmarshalPexMessage (amino: Uint8Array, lengthPrefixed: boolean = true): pex.PexMessage {
+    const json = decodeType.decodePexMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPexRequestMessage (bytes: Uint8Array, bare: boolean = true): pex.PexRequestMessage {
-    const json = decodeType.decodePexRequestMessage(bytes, bare);
+export function unmarshalPexRequestMessage (amino: Uint8Array, lengthPrefixed: boolean = true): pex.PexRequestMessage {
+    const json = decodeType.decodePexRequestMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPexAddrsMessage (bytes: Uint8Array, bare: boolean = true): pex.PexAddrsMessage {
-    const json = decodeType.decodePexAddrsMessage(bytes, bare);
+export function unmarshalPexAddrsMessage (amino: Uint8Array, lengthPrefixed: boolean = true): pex.PexAddrsMessage {
+    const json = decodeType.decodePexAddrsMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalRemoteSignerMsg (bytes: Uint8Array, bare: boolean = true): privval.RemoteSignerMsg {
-    const json = decodeType.decodeRemoteSignerMsg(bytes, bare);
+export function unmarshalRemoteSignerMsg (amino: Uint8Array, lengthPrefixed: boolean = true): privval.RemoteSignerMsg {
+    const json = decodeType.decodeRemoteSignerMsg(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyRequest (bytes: Uint8Array, bare: boolean = true): privval.PubKeyRequest {
-    const json = decodeType.decodePubKeyRequest(bytes, bare);
+export function unmarshalPubKeyRequest (amino: Uint8Array, lengthPrefixed: boolean = true): privval.PubKeyRequest {
+    const json = decodeType.decodePubKeyRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyResponse (bytes: Uint8Array, bare: boolean = true): privval.PubKeyResponse {
-    const json = decodeType.decodePubKeyResponse(bytes, bare);
+export function unmarshalPubKeyResponse (amino: Uint8Array, lengthPrefixed: boolean = true): privval.PubKeyResponse {
+    const json = decodeType.decodePubKeyResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignVoteRequest (bytes: Uint8Array, bare: boolean = true): privval.SignVoteRequest {
-    const json = decodeType.decodeSignVoteRequest(bytes, bare);
+export function unmarshalSignVoteRequest (amino: Uint8Array, lengthPrefixed: boolean = true): privval.SignVoteRequest {
+    const json = decodeType.decodeSignVoteRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignedVoteResponse (bytes: Uint8Array, bare: boolean = true): privval.SignedVoteResponse {
-    const json = decodeType.decodeSignedVoteResponse(bytes, bare);
+export function unmarshalSignedVoteResponse (amino: Uint8Array, lengthPrefixed: boolean = true): privval.SignedVoteResponse {
+    const json = decodeType.decodeSignedVoteResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignProposalRequest (bytes: Uint8Array, bare: boolean = true): privval.SignProposalRequest {
-    const json = decodeType.decodeSignProposalRequest(bytes, bare);
+export function unmarshalSignProposalRequest (amino: Uint8Array, lengthPrefixed: boolean = true): privval.SignProposalRequest {
+    const json = decodeType.decodeSignProposalRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignedProposalResponse (bytes: Uint8Array, bare: boolean = true): privval.SignedProposalResponse {
-    const json = decodeType.decodeSignedProposalResponse(bytes, bare);
+export function unmarshalSignedProposalResponse (amino: Uint8Array, lengthPrefixed: boolean = true): privval.SignedProposalResponse {
+    const json = decodeType.decodeSignedProposalResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPingRequest (bytes: Uint8Array, bare: boolean = true): privval.PingRequest {
-    const json = decodeType.decodePingRequest(bytes, bare);
+export function unmarshalPingRequest (amino: Uint8Array, lengthPrefixed: boolean = true): privval.PingRequest {
+    const json = decodeType.decodePingRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPingResponse (bytes: Uint8Array, bare: boolean = true): privval.PingResponse {
-    const json = decodeType.decodePingResponse(bytes, bare);
+export function unmarshalPingResponse (amino: Uint8Array, lengthPrefixed: boolean = true): privval.PingResponse {
+    const json = decodeType.decodePingResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTMEventData (bytes: Uint8Array, bare: boolean = true): events.TMEventData {
-    const json = decodeType.decodeTMEventData(bytes, bare);
+export function unmarshalTMEventData (amino: Uint8Array, lengthPrefixed: boolean = true): events.TMEventData {
+    const json = decodeType.decodeTMEventData(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataNewBlock (bytes: Uint8Array, bare: boolean = true): events.EventDataNewBlock {
-    const json = decodeType.decodeEventDataNewBlock(bytes, bare);
+export function unmarshalEventDataNewBlock (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataNewBlock {
+    const json = decodeType.decodeEventDataNewBlock(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataNewBlockHeader (bytes: Uint8Array, bare: boolean = true): events.EventDataNewBlockHeader {
-    const json = decodeType.decodeEventDataNewBlockHeader(bytes, bare);
+export function unmarshalEventDataNewBlockHeader (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataNewBlockHeader {
+    const json = decodeType.decodeEventDataNewBlockHeader(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataTx (bytes: Uint8Array, bare: boolean = true): events.EventDataTx {
-    const json = decodeType.decodeEventDataTx(bytes, bare);
+export function unmarshalEventDataTx (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataTx {
+    const json = decodeType.decodeEventDataTx(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataRoundState (bytes: Uint8Array, bare: boolean = true): events.EventDataRoundState {
-    const json = decodeType.decodeEventDataRoundState(bytes, bare);
+export function unmarshalEventDataRoundState (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataRoundState {
+    const json = decodeType.decodeEventDataRoundState(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataNewRound (bytes: Uint8Array, bare: boolean = true): events.EventDataNewRound {
-    const json = decodeType.decodeEventDataNewRound(bytes, bare);
+export function unmarshalEventDataNewRound (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataNewRound {
+    const json = decodeType.decodeEventDataNewRound(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataCompleteProposal (bytes: Uint8Array, bare: boolean = true): events.EventDataCompleteProposal {
-    const json = decodeType.decodeEventDataCompleteProposal(bytes, bare);
+export function unmarshalEventDataCompleteProposal (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataCompleteProposal {
+    const json = decodeType.decodeEventDataCompleteProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataVote (bytes: Uint8Array, bare: boolean = true): events.EventDataVote {
-    const json = decodeType.decodeEventDataVote(bytes, bare);
+export function unmarshalEventDataVote (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataVote {
+    const json = decodeType.decodeEventDataVote(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataValidatorSetUpdates (bytes: Uint8Array, bare: boolean = true): events.EventDataValidatorSetUpdates {
-    const json = decodeType.decodeEventDataValidatorSetUpdates(bytes, bare);
+export function unmarshalEventDataValidatorSetUpdates (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataValidatorSetUpdates {
+    const json = decodeType.decodeEventDataValidatorSetUpdates(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataString (bytes: Uint8Array, bare: boolean = true): events.EventDataString {
-    const json = decodeType.decodeEventDataString(bytes, bare);
+export function unmarshalEventDataString (amino: Uint8Array, lengthPrefixed: boolean = true): events.EventDataString {
+    const json = decodeType.decodeEventDataString(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEvidence (bytes: Uint8Array, bare: boolean = true): evidence.Evidence {
-    const json = decodeType.decodeEvidence(bytes, bare);
+export function unmarshalEvidence (amino: Uint8Array, lengthPrefixed: boolean = true): evidence.Evidence {
+    const json = decodeType.decodeEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalDuplicateVoteEvidence (bytes: Uint8Array, bare: boolean = true): evidence.DuplicateVoteEvidence {
-    const json = decodeType.decodeDuplicateVoteEvidence(bytes, bare);
+export function unmarshalDuplicateVoteEvidence (amino: Uint8Array, lengthPrefixed: boolean = true): evidence.DuplicateVoteEvidence {
+    const json = decodeType.decodeDuplicateVoteEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMockGoodEvidence (bytes: Uint8Array, bare: boolean = true): evidence.MockGoodEvidence {
-    const json = decodeType.decodeMockGoodEvidence(bytes, bare);
+export function unmarshalMockGoodEvidence (amino: Uint8Array, lengthPrefixed: boolean = true): evidence.MockGoodEvidence {
+    const json = decodeType.decodeMockGoodEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMockRandomGoodEvidence (bytes: Uint8Array, bare: boolean = true): evidence.MockRandomGoodEvidence {
-    const json = decodeType.decodeMockRandomGoodEvidence(bytes, bare);
+export function unmarshalMockRandomGoodEvidence (amino: Uint8Array, lengthPrefixed: boolean = true): evidence.MockRandomGoodEvidence {
+    const json = decodeType.decodeMockRandomGoodEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMockBadEvidence (bytes: Uint8Array, bare: boolean = true): evidence.MockBadEvidence {
-    const json = decodeType.decodeMockBadEvidence(bytes, bare);
+export function unmarshalMockBadEvidence (amino: Uint8Array, lengthPrefixed: boolean = true): evidence.MockBadEvidence {
+    const json = decodeType.decodeMockBadEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }

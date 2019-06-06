@@ -35,920 +35,920 @@ import (
 	tm_types "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
-func encodeMultiStoreProofOp(o rootmulti.MultiStoreProofOp, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMultiStoreProofOp(o rootmulti.MultiStoreProofOp, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeIAVLAbsenceOp(o iavl.IAVLAbsenceOp, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeIAVLAbsenceOp(o iavl.IAVLAbsenceOp, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeIAVLValueOp(o iavl.IAVLValueOp, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeIAVLValueOp(o iavl.IAVLValueOp, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePrivKeyLedgerSecp256k1(o crypto.PrivKeyLedgerSecp256k1, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePrivKeyLedgerSecp256k1(o crypto.PrivKeyLedgerSecp256k1, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeInfo(o keys.Info, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeInfo(o keys.Info, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBIP44Params(o hd.BIP44Params, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBIP44Params(o hd.BIP44Params, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeLocalInfo(o keys.LocalInfo, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeLocalInfo(o keys.LocalInfo, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeLedgerInfo(o keys.LedgerInfo, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeLedgerInfo(o keys.LedgerInfo, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeOfflineInfo(o keys.OfflineInfo, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeOfflineInfo(o keys.OfflineInfo, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMultiInfo(o keys.MultiInfo, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMultiInfo(o keys.MultiInfo, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsg(o types.Msg, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsg(o types.Msg, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeTx(o types.Tx, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeTx(o types.Tx, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeAccount(o auth.Account, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeAccount(o auth.Account, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeVestingAccount(o auth.VestingAccount, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeVestingAccount(o auth.VestingAccount, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBaseAccount(o auth.BaseAccount, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBaseAccount(o auth.BaseAccount, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBaseVestingAccount(o auth.BaseVestingAccount, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBaseVestingAccount(o auth.BaseVestingAccount, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeContinuousVestingAccount(o auth.ContinuousVestingAccount, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeContinuousVestingAccount(o auth.ContinuousVestingAccount, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeDelayedVestingAccount(o auth.DelayedVestingAccount, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeDelayedVestingAccount(o auth.DelayedVestingAccount, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeStdTx(o auth.StdTx, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeStdTx(o auth.StdTx, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgSend(o bank.MsgSend, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgSend(o bank.MsgSend, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgMultiSend(o bank.MsgMultiSend, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgMultiSend(o bank.MsgMultiSend, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgVerifyInvariant(o crisis.MsgVerifyInvariant, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgVerifyInvariant(o crisis.MsgVerifyInvariant, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgWithdrawDelegatorReward(o distribution.MsgWithdrawDelegatorReward, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgWithdrawDelegatorReward(o distribution.MsgWithdrawDelegatorReward, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgWithdrawValidatorCommission(o distribution.MsgWithdrawValidatorCommission, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgWithdrawValidatorCommission(o distribution.MsgWithdrawValidatorCommission, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgSetWithdrawAddress(o distribution.MsgSetWithdrawAddress, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgSetWithdrawAddress(o distribution.MsgSetWithdrawAddress, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeContent(o gov.Content, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeContent(o gov.Content, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgSubmitProposal(o gov.MsgSubmitProposal, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgSubmitProposal(o gov.MsgSubmitProposal, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgDeposit(o gov.MsgDeposit, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgDeposit(o gov.MsgDeposit, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgVote(o gov.MsgVote, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgVote(o gov.MsgVote, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeTextProposal(o gov.TextProposal, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeTextProposal(o gov.TextProposal, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeSoftwareUpgradeProposal(o gov.SoftwareUpgradeProposal, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeSoftwareUpgradeProposal(o gov.SoftwareUpgradeProposal, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgIBCTransfer(o ibc.MsgIBCTransfer, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgIBCTransfer(o ibc.MsgIBCTransfer, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgIBCReceive(o ibc.MsgIBCReceive, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgIBCReceive(o ibc.MsgIBCReceive, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeParameterChangeProposal(o params.ParameterChangeProposal, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeParameterChangeProposal(o params.ParameterChangeProposal, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgUnjail(o slashing.MsgUnjail, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgUnjail(o slashing.MsgUnjail, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgCreateValidator(o staking.MsgCreateValidator, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgCreateValidator(o staking.MsgCreateValidator, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgEditValidator(o staking.MsgEditValidator, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgEditValidator(o staking.MsgEditValidator, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgDelegate(o staking.MsgDelegate, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgDelegate(o staking.MsgDelegate, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgUndelegate(o staking.MsgUndelegate, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgUndelegate(o staking.MsgUndelegate, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgBeginRedelegate(o staking.MsgBeginRedelegate, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgBeginRedelegate(o staking.MsgBeginRedelegate, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBlockchainMessage(o tm_blockchain.BlockchainMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBlockchainMessage(o tm_blockchain.BlockchainMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBcBlockRequestMessage(o tm_blockchain.BcBlockRequestMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBcBlockRequestMessage(o tm_blockchain.BcBlockRequestMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBcBlockResponseMessage(o tm_blockchain.BcBlockResponseMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBcBlockResponseMessage(o tm_blockchain.BcBlockResponseMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBcNoBlockResponseMessage(o tm_blockchain.BcNoBlockResponseMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBcNoBlockResponseMessage(o tm_blockchain.BcNoBlockResponseMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBcStatusResponseMessage(o tm_blockchain.BcStatusResponseMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBcStatusResponseMessage(o tm_blockchain.BcStatusResponseMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBcStatusRequestMessage(o tm_blockchain.BcStatusRequestMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBcStatusRequestMessage(o tm_blockchain.BcStatusRequestMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeConsensusMessage(o tm_consensus.ConsensusMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeConsensusMessage(o tm_consensus.ConsensusMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeNewRoundStepMessage(o tm_consensus.NewRoundStepMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeNewRoundStepMessage(o tm_consensus.NewRoundStepMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeNewValidBlockMessage(o tm_consensus.NewValidBlockMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeNewValidBlockMessage(o tm_consensus.NewValidBlockMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeProposalMessage(o tm_consensus.ProposalMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeProposalMessage(o tm_consensus.ProposalMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeProposalPOLMessage(o tm_consensus.ProposalPOLMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeProposalPOLMessage(o tm_consensus.ProposalPOLMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeBlockPartMessage(o tm_consensus.BlockPartMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeBlockPartMessage(o tm_consensus.BlockPartMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeVoteMessage(o tm_consensus.VoteMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeVoteMessage(o tm_consensus.VoteMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeHasVoteMessage(o tm_consensus.HasVoteMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeHasVoteMessage(o tm_consensus.HasVoteMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeVoteSetMaj23Message(o tm_consensus.VoteSetMaj23Message, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeVoteSetMaj23Message(o tm_consensus.VoteSetMaj23Message, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeVoteSetBitsMessage(o tm_consensus.VoteSetBitsMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeVoteSetBitsMessage(o tm_consensus.VoteSetBitsMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeWALMessage(o tm_consensus.WALMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeWALMessage(o tm_consensus.WALMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMsgInfo(o tm_consensus.MsgInfo, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMsgInfo(o tm_consensus.MsgInfo, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeTimeoutInfo(o tm_consensus.TimeoutInfo, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeTimeoutInfo(o tm_consensus.TimeoutInfo, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEndHeightMessage(o tm_consensus.EndHeightMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEndHeightMessage(o tm_consensus.EndHeightMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePubKey(o tm_crypto.PubKey, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePubKey(o tm_crypto.PubKey, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePrivKey(o tm_crypto.PrivKey, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePrivKey(o tm_crypto.PrivKey, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePubKeyEd25519(o tm_ed25519.PubKeyEd25519, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePubKeyEd25519(o tm_ed25519.PubKeyEd25519, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePrivKeyEd25519(o tm_ed25519.PrivKeyEd25519, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePrivKeyEd25519(o tm_ed25519.PrivKeyEd25519, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePubKeySecp256k1(o tm_secp256k1.PubKeySecp256k1, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePubKeySecp256k1(o tm_secp256k1.PubKeySecp256k1, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePrivKeySecp256k1(o tm_secp256k1.PrivKeySecp256k1, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePrivKeySecp256k1(o tm_secp256k1.PrivKeySecp256k1, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePubKeyMultisigThreshold(o tm_multisig.PubKeyMultisigThreshold, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePubKeyMultisigThreshold(o tm_multisig.PubKeyMultisigThreshold, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEvidenceMessage(o tm_evidence.EvidenceMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEvidenceMessage(o tm_evidence.EvidenceMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEvidenceListMessage(o tm_evidence.EvidenceListMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEvidenceListMessage(o tm_evidence.EvidenceListMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMempoolMessage(o tm_mempool.MempoolMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMempoolMessage(o tm_mempool.MempoolMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeTxMessage(o tm_mempool.TxMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeTxMessage(o tm_mempool.TxMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePacket(o tm_conn.Packet, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePacket(o tm_conn.Packet, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePacketPing(o tm_conn.PacketPing, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePacketPing(o tm_conn.PacketPing, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePacketPong(o tm_conn.PacketPong, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePacketPong(o tm_conn.PacketPong, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePacketMsg(o tm_conn.PacketMsg, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePacketMsg(o tm_conn.PacketMsg, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePexMessage(o tm_pex.PexMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePexMessage(o tm_pex.PexMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePexRequestMessage(o tm_pex.PexRequestMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePexRequestMessage(o tm_pex.PexRequestMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePexAddrsMessage(o tm_pex.PexAddrsMessage, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePexAddrsMessage(o tm_pex.PexAddrsMessage, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeRemoteSignerMsg(o tm_privval.RemoteSignerMsg, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeRemoteSignerMsg(o tm_privval.RemoteSignerMsg, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePubKeyRequest(o tm_privval.PubKeyRequest, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePubKeyRequest(o tm_privval.PubKeyRequest, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePubKeyResponse(o tm_privval.PubKeyResponse, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePubKeyResponse(o tm_privval.PubKeyResponse, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeSignVoteRequest(o tm_privval.SignVoteRequest, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeSignVoteRequest(o tm_privval.SignVoteRequest, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeSignedVoteResponse(o tm_privval.SignedVoteResponse, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeSignedVoteResponse(o tm_privval.SignedVoteResponse, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeSignProposalRequest(o tm_privval.SignProposalRequest, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeSignProposalRequest(o tm_privval.SignProposalRequest, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeSignedProposalResponse(o tm_privval.SignedProposalResponse, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeSignedProposalResponse(o tm_privval.SignedProposalResponse, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePingRequest(o tm_privval.PingRequest, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePingRequest(o tm_privval.PingRequest, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodePingResponse(o tm_privval.PingResponse, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodePingResponse(o tm_privval.PingResponse, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeTMEventData(o tm_types.TMEventData, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeTMEventData(o tm_types.TMEventData, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataNewBlock(o tm_types.EventDataNewBlock, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataNewBlock(o tm_types.EventDataNewBlock, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataNewBlockHeader(o tm_types.EventDataNewBlockHeader, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataNewBlockHeader(o tm_types.EventDataNewBlockHeader, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataTx(o tm_types.EventDataTx, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataTx(o tm_types.EventDataTx, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataRoundState(o tm_types.EventDataRoundState, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataRoundState(o tm_types.EventDataRoundState, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataNewRound(o tm_types.EventDataNewRound, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataNewRound(o tm_types.EventDataNewRound, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataCompleteProposal(o tm_types.EventDataCompleteProposal, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataCompleteProposal(o tm_types.EventDataCompleteProposal, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataVote(o tm_types.EventDataVote, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataVote(o tm_types.EventDataVote, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataValidatorSetUpdates(o tm_types.EventDataValidatorSetUpdates, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataValidatorSetUpdates(o tm_types.EventDataValidatorSetUpdates, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEventDataString(o tm_types.EventDataString, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEventDataString(o tm_types.EventDataString, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeEvidence(o tm_types.Evidence, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeEvidence(o tm_types.Evidence, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeDuplicateVoteEvidence(o tm_types.DuplicateVoteEvidence, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeDuplicateVoteEvidence(o tm_types.DuplicateVoteEvidence, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMockGoodEvidence(o tm_types.MockGoodEvidence, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMockGoodEvidence(o tm_types.MockGoodEvidence, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMockRandomGoodEvidence(o tm_types.MockRandomGoodEvidence, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMockRandomGoodEvidence(o tm_types.MockRandomGoodEvidence, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }
 
-func encodeMockBadEvidence(o tm_types.MockBadEvidence, bare bool) (bz []byte, err error) {
-	if bare {
-		bz, err = codec.MarshalBinaryBare(o)
-	} else {
+func encodeMockBadEvidence(o tm_types.MockBadEvidence, lengthPrefixed bool) (bz []byte, err error) {
+	if lengthPrefixed {
 		bz, err = codec.MarshalBinaryLengthPrefixed(o)
+	} else {
+		bz, err = codec.MarshalBinaryBare(o)
 	}
 	return
 }

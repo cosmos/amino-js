@@ -1,1429 +1,1429 @@
 package src
 
-func DecodeMultiStoreProofOp(bz []byte, bare bool) []byte {
-	o, err := decodeMultiStoreProofOp(bz, bare)
+func DecodeMultiStoreProofOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMultiStoreProofOp(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeIAVLAbsenceOp(bz []byte, bare bool) []byte {
-	o, err := decodeIAVLAbsenceOp(bz, bare)
+func DecodeIAVLAbsenceOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeIAVLAbsenceOp(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeIAVLValueOp(bz []byte, bare bool) []byte {
-	o, err := decodeIAVLValueOp(bz, bare)
+func DecodeIAVLValueOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeIAVLValueOp(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePrivKeyLedgerSecp256k1(bz []byte, bare bool) []byte {
-	o, err := decodePrivKeyLedgerSecp256k1(bz, bare)
+func DecodePrivKeyLedgerSecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePrivKeyLedgerSecp256k1(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeInfo(bz []byte, bare bool) []byte {
-	o, err := decodeInfo(bz, bare)
+func DecodeInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeInfo(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBIP44Params(bz []byte, bare bool) []byte {
-	o, err := decodeBIP44Params(bz, bare)
+func DecodeBIP44Params(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBIP44Params(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeLocalInfo(bz []byte, bare bool) []byte {
-	o, err := decodeLocalInfo(bz, bare)
+func DecodeLocalInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeLocalInfo(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeLedgerInfo(bz []byte, bare bool) []byte {
-	o, err := decodeLedgerInfo(bz, bare)
+func DecodeLedgerInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeLedgerInfo(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeOfflineInfo(bz []byte, bare bool) []byte {
-	o, err := decodeOfflineInfo(bz, bare)
+func DecodeOfflineInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeOfflineInfo(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMultiInfo(bz []byte, bare bool) []byte {
-	o, err := decodeMultiInfo(bz, bare)
+func DecodeMultiInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMultiInfo(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsg(bz []byte, bare bool) []byte {
-	o, err := decodeMsg(bz, bare)
+func DecodeMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsg(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeTx(bz []byte, bare bool) []byte {
-	o, err := decodeTx(bz, bare)
+func DecodeTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeTx(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeAccount(bz []byte, bare bool) []byte {
-	o, err := decodeAccount(bz, bare)
+func DecodeAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeAccount(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeVestingAccount(bz []byte, bare bool) []byte {
-	o, err := decodeVestingAccount(bz, bare)
+func DecodeVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeVestingAccount(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBaseAccount(bz []byte, bare bool) []byte {
-	o, err := decodeBaseAccount(bz, bare)
+func DecodeBaseAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBaseAccount(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBaseVestingAccount(bz []byte, bare bool) []byte {
-	o, err := decodeBaseVestingAccount(bz, bare)
+func DecodeBaseVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBaseVestingAccount(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeContinuousVestingAccount(bz []byte, bare bool) []byte {
-	o, err := decodeContinuousVestingAccount(bz, bare)
+func DecodeContinuousVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeContinuousVestingAccount(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeDelayedVestingAccount(bz []byte, bare bool) []byte {
-	o, err := decodeDelayedVestingAccount(bz, bare)
+func DecodeDelayedVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeDelayedVestingAccount(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeStdTx(bz []byte, bare bool) []byte {
-	o, err := decodeStdTx(bz, bare)
+func DecodeStdTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeStdTx(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgSend(bz []byte, bare bool) []byte {
-	o, err := decodeMsgSend(bz, bare)
+func DecodeMsgSend(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgSend(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgMultiSend(bz []byte, bare bool) []byte {
-	o, err := decodeMsgMultiSend(bz, bare)
+func DecodeMsgMultiSend(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgMultiSend(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgVerifyInvariant(bz []byte, bare bool) []byte {
-	o, err := decodeMsgVerifyInvariant(bz, bare)
+func DecodeMsgVerifyInvariant(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgVerifyInvariant(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgWithdrawDelegatorReward(bz []byte, bare bool) []byte {
-	o, err := decodeMsgWithdrawDelegatorReward(bz, bare)
+func DecodeMsgWithdrawDelegatorReward(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgWithdrawDelegatorReward(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgWithdrawValidatorCommission(bz []byte, bare bool) []byte {
-	o, err := decodeMsgWithdrawValidatorCommission(bz, bare)
+func DecodeMsgWithdrawValidatorCommission(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgWithdrawValidatorCommission(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgSetWithdrawAddress(bz []byte, bare bool) []byte {
-	o, err := decodeMsgSetWithdrawAddress(bz, bare)
+func DecodeMsgSetWithdrawAddress(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgSetWithdrawAddress(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeContent(bz []byte, bare bool) []byte {
-	o, err := decodeContent(bz, bare)
+func DecodeContent(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeContent(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgSubmitProposal(bz []byte, bare bool) []byte {
-	o, err := decodeMsgSubmitProposal(bz, bare)
+func DecodeMsgSubmitProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgSubmitProposal(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgDeposit(bz []byte, bare bool) []byte {
-	o, err := decodeMsgDeposit(bz, bare)
+func DecodeMsgDeposit(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgDeposit(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgVote(bz []byte, bare bool) []byte {
-	o, err := decodeMsgVote(bz, bare)
+func DecodeMsgVote(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgVote(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeTextProposal(bz []byte, bare bool) []byte {
-	o, err := decodeTextProposal(bz, bare)
+func DecodeTextProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeTextProposal(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeSoftwareUpgradeProposal(bz []byte, bare bool) []byte {
-	o, err := decodeSoftwareUpgradeProposal(bz, bare)
+func DecodeSoftwareUpgradeProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeSoftwareUpgradeProposal(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgIBCTransfer(bz []byte, bare bool) []byte {
-	o, err := decodeMsgIBCTransfer(bz, bare)
+func DecodeMsgIBCTransfer(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgIBCTransfer(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgIBCReceive(bz []byte, bare bool) []byte {
-	o, err := decodeMsgIBCReceive(bz, bare)
+func DecodeMsgIBCReceive(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgIBCReceive(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeParameterChangeProposal(bz []byte, bare bool) []byte {
-	o, err := decodeParameterChangeProposal(bz, bare)
+func DecodeParameterChangeProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeParameterChangeProposal(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgUnjail(bz []byte, bare bool) []byte {
-	o, err := decodeMsgUnjail(bz, bare)
+func DecodeMsgUnjail(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgUnjail(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgCreateValidator(bz []byte, bare bool) []byte {
-	o, err := decodeMsgCreateValidator(bz, bare)
+func DecodeMsgCreateValidator(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgCreateValidator(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgEditValidator(bz []byte, bare bool) []byte {
-	o, err := decodeMsgEditValidator(bz, bare)
+func DecodeMsgEditValidator(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgEditValidator(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgDelegate(bz []byte, bare bool) []byte {
-	o, err := decodeMsgDelegate(bz, bare)
+func DecodeMsgDelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgDelegate(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgUndelegate(bz []byte, bare bool) []byte {
-	o, err := decodeMsgUndelegate(bz, bare)
+func DecodeMsgUndelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgUndelegate(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgBeginRedelegate(bz []byte, bare bool) []byte {
-	o, err := decodeMsgBeginRedelegate(bz, bare)
+func DecodeMsgBeginRedelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgBeginRedelegate(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBlockchainMessage(bz []byte, bare bool) []byte {
-	o, err := decodeBlockchainMessage(bz, bare)
+func DecodeBlockchainMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBlockchainMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBcBlockRequestMessage(bz []byte, bare bool) []byte {
-	o, err := decodeBcBlockRequestMessage(bz, bare)
+func DecodeBcBlockRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBcBlockRequestMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBcBlockResponseMessage(bz []byte, bare bool) []byte {
-	o, err := decodeBcBlockResponseMessage(bz, bare)
+func DecodeBcBlockResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBcBlockResponseMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBcNoBlockResponseMessage(bz []byte, bare bool) []byte {
-	o, err := decodeBcNoBlockResponseMessage(bz, bare)
+func DecodeBcNoBlockResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBcNoBlockResponseMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBcStatusResponseMessage(bz []byte, bare bool) []byte {
-	o, err := decodeBcStatusResponseMessage(bz, bare)
+func DecodeBcStatusResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBcStatusResponseMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBcStatusRequestMessage(bz []byte, bare bool) []byte {
-	o, err := decodeBcStatusRequestMessage(bz, bare)
+func DecodeBcStatusRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBcStatusRequestMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeConsensusMessage(bz []byte, bare bool) []byte {
-	o, err := decodeConsensusMessage(bz, bare)
+func DecodeConsensusMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeConsensusMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeNewRoundStepMessage(bz []byte, bare bool) []byte {
-	o, err := decodeNewRoundStepMessage(bz, bare)
+func DecodeNewRoundStepMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeNewRoundStepMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeNewValidBlockMessage(bz []byte, bare bool) []byte {
-	o, err := decodeNewValidBlockMessage(bz, bare)
+func DecodeNewValidBlockMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeNewValidBlockMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeProposalMessage(bz []byte, bare bool) []byte {
-	o, err := decodeProposalMessage(bz, bare)
+func DecodeProposalMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeProposalMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeProposalPOLMessage(bz []byte, bare bool) []byte {
-	o, err := decodeProposalPOLMessage(bz, bare)
+func DecodeProposalPOLMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeProposalPOLMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeBlockPartMessage(bz []byte, bare bool) []byte {
-	o, err := decodeBlockPartMessage(bz, bare)
+func DecodeBlockPartMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeBlockPartMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeVoteMessage(bz []byte, bare bool) []byte {
-	o, err := decodeVoteMessage(bz, bare)
+func DecodeVoteMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeVoteMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeHasVoteMessage(bz []byte, bare bool) []byte {
-	o, err := decodeHasVoteMessage(bz, bare)
+func DecodeHasVoteMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeHasVoteMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeVoteSetMaj23Message(bz []byte, bare bool) []byte {
-	o, err := decodeVoteSetMaj23Message(bz, bare)
+func DecodeVoteSetMaj23Message(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeVoteSetMaj23Message(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeVoteSetBitsMessage(bz []byte, bare bool) []byte {
-	o, err := decodeVoteSetBitsMessage(bz, bare)
+func DecodeVoteSetBitsMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeVoteSetBitsMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeWALMessage(bz []byte, bare bool) []byte {
-	o, err := decodeWALMessage(bz, bare)
+func DecodeWALMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeWALMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMsgInfo(bz []byte, bare bool) []byte {
-	o, err := decodeMsgInfo(bz, bare)
+func DecodeMsgInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMsgInfo(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeTimeoutInfo(bz []byte, bare bool) []byte {
-	o, err := decodeTimeoutInfo(bz, bare)
+func DecodeTimeoutInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeTimeoutInfo(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEndHeightMessage(bz []byte, bare bool) []byte {
-	o, err := decodeEndHeightMessage(bz, bare)
+func DecodeEndHeightMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEndHeightMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePubKey(bz []byte, bare bool) []byte {
-	o, err := decodePubKey(bz, bare)
+func DecodePubKey(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePubKey(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePrivKey(bz []byte, bare bool) []byte {
-	o, err := decodePrivKey(bz, bare)
+func DecodePrivKey(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePrivKey(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePubKeyEd25519(bz []byte, bare bool) []byte {
-	o, err := decodePubKeyEd25519(bz, bare)
+func DecodePubKeyEd25519(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePubKeyEd25519(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePrivKeyEd25519(bz []byte, bare bool) []byte {
-	o, err := decodePrivKeyEd25519(bz, bare)
+func DecodePrivKeyEd25519(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePrivKeyEd25519(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePubKeySecp256k1(bz []byte, bare bool) []byte {
-	o, err := decodePubKeySecp256k1(bz, bare)
+func DecodePubKeySecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePubKeySecp256k1(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePrivKeySecp256k1(bz []byte, bare bool) []byte {
-	o, err := decodePrivKeySecp256k1(bz, bare)
+func DecodePrivKeySecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePrivKeySecp256k1(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePubKeyMultisigThreshold(bz []byte, bare bool) []byte {
-	o, err := decodePubKeyMultisigThreshold(bz, bare)
+func DecodePubKeyMultisigThreshold(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePubKeyMultisigThreshold(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEvidenceMessage(bz []byte, bare bool) []byte {
-	o, err := decodeEvidenceMessage(bz, bare)
+func DecodeEvidenceMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEvidenceMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEvidenceListMessage(bz []byte, bare bool) []byte {
-	o, err := decodeEvidenceListMessage(bz, bare)
+func DecodeEvidenceListMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEvidenceListMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMempoolMessage(bz []byte, bare bool) []byte {
-	o, err := decodeMempoolMessage(bz, bare)
+func DecodeMempoolMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMempoolMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeTxMessage(bz []byte, bare bool) []byte {
-	o, err := decodeTxMessage(bz, bare)
+func DecodeTxMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeTxMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePacket(bz []byte, bare bool) []byte {
-	o, err := decodePacket(bz, bare)
+func DecodePacket(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePacket(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePacketPing(bz []byte, bare bool) []byte {
-	o, err := decodePacketPing(bz, bare)
+func DecodePacketPing(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePacketPing(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePacketPong(bz []byte, bare bool) []byte {
-	o, err := decodePacketPong(bz, bare)
+func DecodePacketPong(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePacketPong(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePacketMsg(bz []byte, bare bool) []byte {
-	o, err := decodePacketMsg(bz, bare)
+func DecodePacketMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePacketMsg(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePexMessage(bz []byte, bare bool) []byte {
-	o, err := decodePexMessage(bz, bare)
+func DecodePexMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePexMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePexRequestMessage(bz []byte, bare bool) []byte {
-	o, err := decodePexRequestMessage(bz, bare)
+func DecodePexRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePexRequestMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePexAddrsMessage(bz []byte, bare bool) []byte {
-	o, err := decodePexAddrsMessage(bz, bare)
+func DecodePexAddrsMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePexAddrsMessage(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeRemoteSignerMsg(bz []byte, bare bool) []byte {
-	o, err := decodeRemoteSignerMsg(bz, bare)
+func DecodeRemoteSignerMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeRemoteSignerMsg(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePubKeyRequest(bz []byte, bare bool) []byte {
-	o, err := decodePubKeyRequest(bz, bare)
+func DecodePubKeyRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePubKeyRequest(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePubKeyResponse(bz []byte, bare bool) []byte {
-	o, err := decodePubKeyResponse(bz, bare)
+func DecodePubKeyResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePubKeyResponse(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeSignVoteRequest(bz []byte, bare bool) []byte {
-	o, err := decodeSignVoteRequest(bz, bare)
+func DecodeSignVoteRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeSignVoteRequest(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeSignedVoteResponse(bz []byte, bare bool) []byte {
-	o, err := decodeSignedVoteResponse(bz, bare)
+func DecodeSignedVoteResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeSignedVoteResponse(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeSignProposalRequest(bz []byte, bare bool) []byte {
-	o, err := decodeSignProposalRequest(bz, bare)
+func DecodeSignProposalRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeSignProposalRequest(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeSignedProposalResponse(bz []byte, bare bool) []byte {
-	o, err := decodeSignedProposalResponse(bz, bare)
+func DecodeSignedProposalResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeSignedProposalResponse(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePingRequest(bz []byte, bare bool) []byte {
-	o, err := decodePingRequest(bz, bare)
+func DecodePingRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePingRequest(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodePingResponse(bz []byte, bare bool) []byte {
-	o, err := decodePingResponse(bz, bare)
+func DecodePingResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodePingResponse(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeTMEventData(bz []byte, bare bool) []byte {
-	o, err := decodeTMEventData(bz, bare)
+func DecodeTMEventData(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeTMEventData(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataNewBlock(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataNewBlock(bz, bare)
+func DecodeEventDataNewBlock(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataNewBlock(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataNewBlockHeader(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataNewBlockHeader(bz, bare)
+func DecodeEventDataNewBlockHeader(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataNewBlockHeader(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataTx(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataTx(bz, bare)
+func DecodeEventDataTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataTx(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataRoundState(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataRoundState(bz, bare)
+func DecodeEventDataRoundState(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataRoundState(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataNewRound(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataNewRound(bz, bare)
+func DecodeEventDataNewRound(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataNewRound(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataCompleteProposal(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataCompleteProposal(bz, bare)
+func DecodeEventDataCompleteProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataCompleteProposal(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataVote(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataVote(bz, bare)
+func DecodeEventDataVote(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataVote(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataValidatorSetUpdates(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataValidatorSetUpdates(bz, bare)
+func DecodeEventDataValidatorSetUpdates(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataValidatorSetUpdates(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEventDataString(bz []byte, bare bool) []byte {
-	o, err := decodeEventDataString(bz, bare)
+func DecodeEventDataString(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEventDataString(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeEvidence(bz []byte, bare bool) []byte {
-	o, err := decodeEvidence(bz, bare)
+func DecodeEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeEvidence(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeDuplicateVoteEvidence(bz []byte, bare bool) []byte {
-	o, err := decodeDuplicateVoteEvidence(bz, bare)
+func DecodeDuplicateVoteEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeDuplicateVoteEvidence(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMockGoodEvidence(bz []byte, bare bool) []byte {
-	o, err := decodeMockGoodEvidence(bz, bare)
+func DecodeMockGoodEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMockGoodEvidence(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMockRandomGoodEvidence(bz []byte, bare bool) []byte {
-	o, err := decodeMockRandomGoodEvidence(bz, bare)
+func DecodeMockRandomGoodEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMockRandomGoodEvidence(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }
 
-func DecodeMockBadEvidence(bz []byte, bare bool) []byte {
-	o, err := decodeMockBadEvidence(bz, bare)
+func DecodeMockBadEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
+	o, err := decodeMockBadEvidence(bz, lengthPrefixed)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	bz2, err := codec.MarshalJSON(o)
+	bz2, err = codec.MarshalJSON(o)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	return bz2
+	return
 }

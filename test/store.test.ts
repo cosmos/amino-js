@@ -275,7 +275,7 @@ describe('Store', () => {
         describe('Tx', () => {
             it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(txData);
-                const value = Amino.unmarshalTx(bytes, false);
+                const value = Amino.unmarshalTx(bytes, true);
                 expect(value).toMatchObject(tx);
             });
         });
@@ -283,7 +283,7 @@ describe('Store', () => {
         describe('Account', () => {
             it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(accountData);
-                const value = Amino.unmarshalAccount(bytes, true);
+                const value = Amino.unmarshalAccount(bytes, false);
                 expect(value).toMatchObject(account);
             });
         });
@@ -291,7 +291,7 @@ describe('Store', () => {
         describe('IAVLValueOp', () => {
             it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(iavlValueOpData);
-                const value = Amino.unmarshalIAVLValueOp(bytes, false);
+                const value = Amino.unmarshalIAVLValueOp(bytes, true);
                 expect(value).toMatchObject(iavlValueOp);
             });
         });
@@ -299,7 +299,7 @@ describe('Store', () => {
         describe('MultiStoreProofOp', () => {
             it('decodes bytes', () => {
                 const bytes = Amino.base64ToBytes(multiStoreProofOpData);
-                const value = Amino.unmarshalMultiStoreProofOp(bytes, false);
+                const value = Amino.unmarshalMultiStoreProofOp(bytes, true);
                 expect(value).toMatchObject(multiStoreProofOp);
             });
         });
@@ -308,7 +308,7 @@ describe('Store', () => {
     describe('encoding', () => {
         describe('Tx', () => {
             it('encodes value', () => {
-                const bytes = Amino.marshalTx(tx, false);
+                const bytes = Amino.marshalTx(tx, true);
                 const data  = Amino.bytesToBase64(bytes);
                 expect(data).toBe(txData);
             });
@@ -316,7 +316,7 @@ describe('Store', () => {
 
         describe('Account', () => {
             it('encodes value', () => {
-                const bytes = Amino.marshalAccount(account, true);
+                const bytes = Amino.marshalAccount(account, false);
                 const data  = Amino.bytesToBase64(bytes);
                 expect(data).toBe(accountData);
             });
@@ -324,7 +324,7 @@ describe('Store', () => {
 
         describe('IAVLValueOp', () => {
             it('encodes value', () => {
-                const bytes = Amino.marshalIAVLValueOp(iavlValueOp, false);
+                const bytes = Amino.marshalIAVLValueOp(iavlValueOp, true);
                 const data  = Amino.bytesToBase64(bytes);
                 expect(data).toBe(iavlValueOpData);
             });
@@ -332,7 +332,7 @@ describe('Store', () => {
 
         describe('MultiStoreProofOp', () => {
             it('encodes value', () => {
-                const bytes = Amino.marshalMultiStoreProofOp(multiStoreProofOp, false);
+                const bytes = Amino.marshalMultiStoreProofOp(multiStoreProofOp, true);
                 const data  = Amino.bytesToBase64(bytes);
                 expect(data).toBe(multiStoreProofOpData);
             });

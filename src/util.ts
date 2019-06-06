@@ -47,10 +47,10 @@ export function stringToBytes (string: string): Uint8Array {
     return encoder.encode(string);
 }
 
-export function marshalJSON<T> (o: T): Uint8Array {
-    return stringToBytes(JSON.stringify(o));
+export function marshalJSON<T> (object: T): Uint8Array {
+    return stringToBytes(JSON.stringify(object));
 }
 
-export function unmarshalJSON<T> (bytes: Uint8Array): T {
-    return JSON.parse(bytesToString(bytes));
+export function unmarshalJSON<T> (json: Uint8Array): T {
+    return JSON.parse(bytesToString(json));
 }

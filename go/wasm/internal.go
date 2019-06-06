@@ -15,10 +15,10 @@ func typedArrayToByteSlice(arg js.Value) []byte {
 	return bz
 }
 
-func encodeDecodeType(fn func(bz []byte, bare bool) []byte) js.Func {
+func encodeDecodeType(fn func(bz []byte, lengthPrefixed bool) (bz2 []byte, err error)) js.Func {
 	return js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		bz := typedArrayToByteSlice(args[0])
-		bz2 := fn(bz, args[1].Bool())
-		return js.TypedArrayOf(bz2)
+		bz2, err := fn(bz, args[1].Bool())
+		return []interface{}{js.TypedArrayOf(bz2), err}
 	})
 }

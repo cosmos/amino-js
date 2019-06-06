@@ -8,8 +8,8 @@ import (
 )
 
 func DecodeDisambPrefixBytes(this js.Value, args []js.Value) interface{} {
-	dbr, pbr, n := src.DecodeDisambPrefixBytes(typedArrayToByteSlice(args[0]))
-	return []interface{}{js.TypedArrayOf(dbr), js.TypedArrayOf(pbr), n}
+	db, hasDb, pb, hasPb, n, err := src.DecodeDisambPrefixBytes(typedArrayToByteSlice(args[0]))
+	return []interface{}{js.TypedArrayOf(db), hasDb, js.TypedArrayOf(pb), hasPb, n, err}
 }
 
 func NameToDisfix(this js.Value, args []js.Value) interface{} {
