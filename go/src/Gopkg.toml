@@ -1,0 +1,9 @@
+ignored = ["github.com/cosmos/amino-js"]
+
+[[constraint]]
+  name = "github.com/tendermint/go-amino"
+  version = "0.15.0"
+
+[prune]
+  go-tests = true
+  unused-packages = true

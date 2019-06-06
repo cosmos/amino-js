@@ -1,0 +1,9 @@
+ignored = ["github.com/cosmos/amino-js"]
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/gopherjs/gopherjs"
+
+[prune]
+  go-tests = true
+  unused-packages = true
