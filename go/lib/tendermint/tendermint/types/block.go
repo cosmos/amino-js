@@ -1,15 +1,12 @@
 package types
 
 import (
-	"sync"
 	"time"
-
 	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/version"
 )
 
 type Block struct {
-	mtx        sync.Mutex
 	Header     `json:"header"`
 	Data       `json:"data"`
 	Evidence   EvidenceData `json:"evidence"`

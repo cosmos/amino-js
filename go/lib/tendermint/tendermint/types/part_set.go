@@ -2,8 +2,6 @@ package types
 
 import (
 	"bytes"
-	"sync"
-
 	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
 	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
@@ -23,7 +21,6 @@ type PartSet struct {
 	total int
 	hash  []byte
 
-	mtx           sync.Mutex
 	parts         []*Part
 	partsBitArray *cmn.BitArray
 	count         int

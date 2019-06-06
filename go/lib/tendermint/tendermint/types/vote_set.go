@@ -1,8 +1,6 @@
 package types
 
 import (
-	"sync"
-
 	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
@@ -15,7 +13,6 @@ type VoteSet struct {
 	type_   SignedMsgType
 	valSet  *ValidatorSet
 
-	mtx           sync.Mutex
 	votesBitArray *cmn.BitArray
 	votes         []*Vote                // Primary votes to share
 	sum           int64                  // Sum of voting power for seen votes, discounting conflicts
