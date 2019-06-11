@@ -33,6 +33,12 @@ decodeString(encodeString('hello world'));
 
 ### Source
 
+##### Prerequisites
+
+Install `myitcv/gopherjs` via the instructions @ https://github.com/myitcv/gopherjs#installation-and-usage
+
+This fork is required for go module support until https://github.com/gopherjs/gopherjs/issues/855 is resolved.
+
 ##### Install
 
 ```shell
