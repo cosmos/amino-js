@@ -1,4 +1,4 @@
-package test
+package misc
 
 import (
 	"encoding/base64"
