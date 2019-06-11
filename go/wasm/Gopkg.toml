@@ -1,5 +1,0 @@
-ignored = ["github.com/cosmos/amino-js"]
-
-[prune]
-  go-tests = true
-  unused-packages = true
