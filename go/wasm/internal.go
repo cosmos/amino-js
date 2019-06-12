@@ -3,7 +3,6 @@
 package main
 
 import (
-	"encoding/json"
 	"syscall/js"
 )
 
@@ -28,6 +27,5 @@ func errorOf(err error) interface{} {
 	if err == nil {
 		return nil
 	}
-	bz, _ := json.Marshal(err)
-	return js.TypedArrayOf(bz)
+	return err.Error()
 }
