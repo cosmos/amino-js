@@ -7,12 +7,6 @@ import (
 	"syscall/js"
 )
 
-func DecodeBool(this js.Value, args []js.Value) interface{} {
-	bz := typedArrayToByteSlice(args[0])
-	b, n, err := src.DecodeBool(bz)
-	return []interface{}{b, n, errorOf(err)}
-}
-
 func DecodeByte(this js.Value, args []js.Value) interface{} {
 	bz := typedArrayToByteSlice(args[0])
 	b, n, err := src.DecodeByte(bz)
@@ -25,16 +19,10 @@ func DecodeByteSlice(this js.Value, args []js.Value) interface{} {
 	return []interface{}{js.TypedArrayOf(bz2), n, errorOf(err)}
 }
 
-func DecodeFloat32(this js.Value, args []js.Value) interface{} {
+func DecodeInt8(this js.Value, args []js.Value) interface{} {
 	bz := typedArrayToByteSlice(args[0])
-	f, n, err := src.DecodeFloat32(bz)
-	return []interface{}{f, n, errorOf(err)}
-}
-
-func DecodeFloat64(this js.Value, args []js.Value) interface{} {
-	bz := typedArrayToByteSlice(args[0])
-	f, n, err := src.DecodeFloat64(bz)
-	return []interface{}{f, n, errorOf(err)}
+	i, n, err := src.DecodeInt8(bz)
+	return []interface{}{i, n, errorOf(err)}
 }
 
 func DecodeInt16(this js.Value, args []js.Value) interface{} {
@@ -55,22 +43,16 @@ func DecodeInt64(this js.Value, args []js.Value) interface{} {
 	return []interface{}{i, n, errorOf(err)}
 }
 
-func DecodeInt8(this js.Value, args []js.Value) interface{} {
+func DecodeVarint(this js.Value, args []js.Value) interface{} {
 	bz := typedArrayToByteSlice(args[0])
-	i, n, err := src.DecodeInt8(bz)
+	i, n, err := src.DecodeVarint(bz)
 	return []interface{}{i, n, errorOf(err)}
 }
 
-func DecodeString(this js.Value, args []js.Value) interface{} {
+func DecodeUint8(this js.Value, args []js.Value) interface{} {
 	bz := typedArrayToByteSlice(args[0])
-	s, n, err := src.DecodeString(bz)
-	return []interface{}{s, n, errorOf(err)}
-}
-
-func DecodeTime(this js.Value, args []js.Value) interface{} {
-	bz := typedArrayToByteSlice(args[0])
-	t, n, err := src.DecodeTime(bz)
-	return []interface{}{t, n, errorOf(err)} // @FIXME: not implemented
+	u, n, err := src.DecodeUint8(bz)
+	return []interface{}{u, n, errorOf(err)}
 }
 
 func DecodeUint16(this js.Value, args []js.Value) interface{} {
@@ -91,20 +73,38 @@ func DecodeUint64(this js.Value, args []js.Value) interface{} {
 	return []interface{}{u, n, errorOf(err)}
 }
 
-func DecodeUint8(this js.Value, args []js.Value) interface{} {
-	bz := typedArrayToByteSlice(args[0])
-	u, n, err := src.DecodeUint8(bz)
-	return []interface{}{u, n, errorOf(err)}
-}
-
 func DecodeUvarint(this js.Value, args []js.Value) interface{} {
 	bz := typedArrayToByteSlice(args[0])
 	u, n, err := src.DecodeUvarint(bz)
 	return []interface{}{u, n, errorOf(err)}
 }
 
-func DecodeVarint(this js.Value, args []js.Value) interface{} {
+func DecodeFloat32(this js.Value, args []js.Value) interface{} {
 	bz := typedArrayToByteSlice(args[0])
-	i, n, err := src.DecodeVarint(bz)
-	return []interface{}{i, n, errorOf(err)}
+	f, n, err := src.DecodeFloat32(bz)
+	return []interface{}{f, n, errorOf(err)}
+}
+
+func DecodeFloat64(this js.Value, args []js.Value) interface{} {
+	bz := typedArrayToByteSlice(args[0])
+	f, n, err := src.DecodeFloat64(bz)
+	return []interface{}{f, n, errorOf(err)}
+}
+
+func DecodeBool(this js.Value, args []js.Value) interface{} {
+	bz := typedArrayToByteSlice(args[0])
+	b, n, err := src.DecodeBool(bz)
+	return []interface{}{b, n, errorOf(err)}
+}
+
+func DecodeString(this js.Value, args []js.Value) interface{} {
+	bz := typedArrayToByteSlice(args[0])
+	s, n, err := src.DecodeString(bz)
+	return []interface{}{s, n, errorOf(err)}
+}
+
+func DecodeTime(this js.Value, args []js.Value) interface{} {
+	bz := typedArrayToByteSlice(args[0])
+	t, n, err := src.DecodeTime(bz)
+	return []interface{}{t, n, errorOf(err)} // @FIXME: not implemented
 }
