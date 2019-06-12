@@ -1,7 +1,48 @@
 package src
 
+import (
+	rootmulti "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/rootmulti"
+	iavl "github.com/cosmos/amino-js/go/lib/tendermint/iavl"
+
+	crypto "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto"
+	keys "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys"
+	hd "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys/hd"
+
+	types "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+
+	auth "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	bank "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank"
+	crisis "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/crisis"
+	distribution "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/distribution/types"
+	gov "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov/types"
+	ibc "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/ibc"
+	params "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/types"
+	slashing "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing"
+	staking "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/types"
+
+	tm_crypto "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	tm_ed25519 "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
+	tm_multisig "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/multisig"
+	tm_secp256k1 "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/secp256k1"
+
+	tm_blockchain "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/blockchain"
+	tm_consensus "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/consensus"
+	tm_evidence "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/evidence"
+	tm_mempool "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/mempool"
+	tm_conn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p/conn"
+	tm_pex "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p/pex"
+	tm_privval "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
+	tm_types "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
+)
+
 func DecodeMultiStoreProofOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMultiStoreProofOp(bz, lengthPrefixed)
+	var o rootmulti.MultiStoreProofOp
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -15,7 +56,13 @@ func DecodeMultiStoreProofOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err er
 }
 
 func DecodeIAVLAbsenceOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeIAVLAbsenceOp(bz, lengthPrefixed)
+	var o iavl.IAVLAbsenceOp
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -29,7 +76,13 @@ func DecodeIAVLAbsenceOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error)
 }
 
 func DecodeIAVLValueOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeIAVLValueOp(bz, lengthPrefixed)
+	var o iavl.IAVLValueOp
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -43,7 +96,13 @@ func DecodeIAVLValueOp(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePrivKeyLedgerSecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePrivKeyLedgerSecp256k1(bz, lengthPrefixed)
+	var o crypto.PrivKeyLedgerSecp256k1
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -57,7 +116,13 @@ func DecodePrivKeyLedgerSecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, e
 }
 
 func DecodeInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeInfo(bz, lengthPrefixed)
+	var o keys.Info
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -71,7 +136,13 @@ func DecodeInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeBIP44Params(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBIP44Params(bz, lengthPrefixed)
+	var o hd.BIP44Params
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -85,7 +156,13 @@ func DecodeBIP44Params(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeLocalInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeLocalInfo(bz, lengthPrefixed)
+	var o keys.LocalInfo
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -99,7 +176,13 @@ func DecodeLocalInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeLedgerInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeLedgerInfo(bz, lengthPrefixed)
+	var o keys.LedgerInfo
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -113,7 +196,13 @@ func DecodeLedgerInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeOfflineInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeOfflineInfo(bz, lengthPrefixed)
+	var o keys.OfflineInfo
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -127,7 +216,13 @@ func DecodeOfflineInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMultiInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMultiInfo(bz, lengthPrefixed)
+	var o keys.MultiInfo
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -141,7 +236,13 @@ func DecodeMultiInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsg(bz, lengthPrefixed)
+	var o types.Msg
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -155,7 +256,13 @@ func DecodeMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeTx(bz, lengthPrefixed)
+	var o types.Tx
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -169,7 +276,13 @@ func DecodeTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeAccount(bz, lengthPrefixed)
+	var o auth.Account
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -183,7 +296,13 @@ func DecodeAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeVestingAccount(bz, lengthPrefixed)
+	var o auth.VestingAccount
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -197,7 +316,13 @@ func DecodeVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error
 }
 
 func DecodeBaseAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBaseAccount(bz, lengthPrefixed)
+	var o auth.BaseAccount
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -211,7 +336,13 @@ func DecodeBaseAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeBaseVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBaseVestingAccount(bz, lengthPrefixed)
+	var o auth.BaseVestingAccount
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -225,7 +356,13 @@ func DecodeBaseVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err e
 }
 
 func DecodeContinuousVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeContinuousVestingAccount(bz, lengthPrefixed)
+	var o auth.ContinuousVestingAccount
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -239,7 +376,13 @@ func DecodeContinuousVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte,
 }
 
 func DecodeDelayedVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeDelayedVestingAccount(bz, lengthPrefixed)
+	var o auth.DelayedVestingAccount
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -253,7 +396,13 @@ func DecodeDelayedVestingAccount(bz []byte, lengthPrefixed bool) (bz2 []byte, er
 }
 
 func DecodeStdTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeStdTx(bz, lengthPrefixed)
+	var o auth.StdTx
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -267,7 +416,13 @@ func DecodeStdTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsgSend(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgSend(bz, lengthPrefixed)
+	var o bank.MsgSend
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -281,7 +436,13 @@ func DecodeMsgSend(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsgMultiSend(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgMultiSend(bz, lengthPrefixed)
+	var o bank.MsgMultiSend
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -295,7 +456,13 @@ func DecodeMsgMultiSend(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) 
 }
 
 func DecodeMsgVerifyInvariant(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgVerifyInvariant(bz, lengthPrefixed)
+	var o crisis.MsgVerifyInvariant
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -309,7 +476,13 @@ func DecodeMsgVerifyInvariant(bz []byte, lengthPrefixed bool) (bz2 []byte, err e
 }
 
 func DecodeMsgWithdrawDelegatorReward(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgWithdrawDelegatorReward(bz, lengthPrefixed)
+	var o distribution.MsgWithdrawDelegatorReward
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -323,7 +496,13 @@ func DecodeMsgWithdrawDelegatorReward(bz []byte, lengthPrefixed bool) (bz2 []byt
 }
 
 func DecodeMsgWithdrawValidatorCommission(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgWithdrawValidatorCommission(bz, lengthPrefixed)
+	var o distribution.MsgWithdrawValidatorCommission
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -337,7 +516,13 @@ func DecodeMsgWithdrawValidatorCommission(bz []byte, lengthPrefixed bool) (bz2 [
 }
 
 func DecodeMsgSetWithdrawAddress(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgSetWithdrawAddress(bz, lengthPrefixed)
+	var o distribution.MsgSetWithdrawAddress
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -351,7 +536,13 @@ func DecodeMsgSetWithdrawAddress(bz []byte, lengthPrefixed bool) (bz2 []byte, er
 }
 
 func DecodeContent(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeContent(bz, lengthPrefixed)
+	var o gov.Content
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -365,7 +556,13 @@ func DecodeContent(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsgSubmitProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgSubmitProposal(bz, lengthPrefixed)
+	var o gov.MsgSubmitProposal
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -379,7 +576,13 @@ func DecodeMsgSubmitProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err er
 }
 
 func DecodeMsgDeposit(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgDeposit(bz, lengthPrefixed)
+	var o gov.MsgDeposit
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -393,7 +596,13 @@ func DecodeMsgDeposit(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsgVote(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgVote(bz, lengthPrefixed)
+	var o gov.MsgVote
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -407,7 +616,13 @@ func DecodeMsgVote(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeTextProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeTextProposal(bz, lengthPrefixed)
+	var o gov.TextProposal
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -421,7 +636,13 @@ func DecodeTextProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) 
 }
 
 func DecodeSoftwareUpgradeProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeSoftwareUpgradeProposal(bz, lengthPrefixed)
+	var o gov.SoftwareUpgradeProposal
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -435,7 +656,13 @@ func DecodeSoftwareUpgradeProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, 
 }
 
 func DecodeMsgIBCTransfer(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgIBCTransfer(bz, lengthPrefixed)
+	var o ibc.MsgIBCTransfer
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -449,7 +676,13 @@ func DecodeMsgIBCTransfer(bz []byte, lengthPrefixed bool) (bz2 []byte, err error
 }
 
 func DecodeMsgIBCReceive(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgIBCReceive(bz, lengthPrefixed)
+	var o ibc.MsgIBCReceive
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -463,7 +696,13 @@ func DecodeMsgIBCReceive(bz []byte, lengthPrefixed bool) (bz2 []byte, err error)
 }
 
 func DecodeParameterChangeProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeParameterChangeProposal(bz, lengthPrefixed)
+	var o params.ParameterChangeProposal
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -477,7 +716,13 @@ func DecodeParameterChangeProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, 
 }
 
 func DecodeMsgUnjail(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgUnjail(bz, lengthPrefixed)
+	var o slashing.MsgUnjail
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -491,7 +736,13 @@ func DecodeMsgUnjail(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsgCreateValidator(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgCreateValidator(bz, lengthPrefixed)
+	var o staking.MsgCreateValidator
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -505,7 +756,13 @@ func DecodeMsgCreateValidator(bz []byte, lengthPrefixed bool) (bz2 []byte, err e
 }
 
 func DecodeMsgEditValidator(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgEditValidator(bz, lengthPrefixed)
+	var o staking.MsgEditValidator
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -519,7 +776,13 @@ func DecodeMsgEditValidator(bz []byte, lengthPrefixed bool) (bz2 []byte, err err
 }
 
 func DecodeMsgDelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgDelegate(bz, lengthPrefixed)
+	var o staking.MsgDelegate
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -533,7 +796,13 @@ func DecodeMsgDelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsgUndelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgUndelegate(bz, lengthPrefixed)
+	var o staking.MsgUndelegate
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -547,7 +816,13 @@ func DecodeMsgUndelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error)
 }
 
 func DecodeMsgBeginRedelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgBeginRedelegate(bz, lengthPrefixed)
+	var o staking.MsgBeginRedelegate
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -561,7 +836,13 @@ func DecodeMsgBeginRedelegate(bz []byte, lengthPrefixed bool) (bz2 []byte, err e
 }
 
 func DecodeBlockchainMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBlockchainMessage(bz, lengthPrefixed)
+	var o tm_blockchain.BlockchainMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -575,7 +856,13 @@ func DecodeBlockchainMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err er
 }
 
 func DecodeBcBlockRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBcBlockRequestMessage(bz, lengthPrefixed)
+	var o tm_blockchain.BcBlockRequestMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -589,7 +876,13 @@ func DecodeBcBlockRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, er
 }
 
 func DecodeBcBlockResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBcBlockResponseMessage(bz, lengthPrefixed)
+	var o tm_blockchain.BcBlockResponseMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -603,7 +896,13 @@ func DecodeBcBlockResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, e
 }
 
 func DecodeBcNoBlockResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBcNoBlockResponseMessage(bz, lengthPrefixed)
+	var o tm_blockchain.BcNoBlockResponseMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -617,7 +916,13 @@ func DecodeBcNoBlockResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte,
 }
 
 func DecodeBcStatusResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBcStatusResponseMessage(bz, lengthPrefixed)
+	var o tm_blockchain.BcStatusResponseMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -631,7 +936,13 @@ func DecodeBcStatusResponseMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, 
 }
 
 func DecodeBcStatusRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBcStatusRequestMessage(bz, lengthPrefixed)
+	var o tm_blockchain.BcStatusRequestMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -645,7 +956,13 @@ func DecodeBcStatusRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, e
 }
 
 func DecodeConsensusMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeConsensusMessage(bz, lengthPrefixed)
+	var o tm_consensus.ConsensusMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -659,7 +976,13 @@ func DecodeConsensusMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err err
 }
 
 func DecodeNewRoundStepMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeNewRoundStepMessage(bz, lengthPrefixed)
+	var o tm_consensus.NewRoundStepMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -673,7 +996,13 @@ func DecodeNewRoundStepMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err 
 }
 
 func DecodeNewValidBlockMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeNewValidBlockMessage(bz, lengthPrefixed)
+	var o tm_consensus.NewValidBlockMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -687,7 +1016,13 @@ func DecodeNewValidBlockMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err
 }
 
 func DecodeProposalMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeProposalMessage(bz, lengthPrefixed)
+	var o tm_consensus.ProposalMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -701,7 +1036,13 @@ func DecodeProposalMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 }
 
 func DecodeProposalPOLMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeProposalPOLMessage(bz, lengthPrefixed)
+	var o tm_consensus.ProposalPOLMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -715,7 +1056,13 @@ func DecodeProposalPOLMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err e
 }
 
 func DecodeBlockPartMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeBlockPartMessage(bz, lengthPrefixed)
+	var o tm_consensus.BlockPartMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -729,7 +1076,13 @@ func DecodeBlockPartMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err err
 }
 
 func DecodeVoteMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeVoteMessage(bz, lengthPrefixed)
+	var o tm_consensus.VoteMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -743,7 +1096,13 @@ func DecodeVoteMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeHasVoteMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeHasVoteMessage(bz, lengthPrefixed)
+	var o tm_consensus.HasVoteMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -757,7 +1116,13 @@ func DecodeHasVoteMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error
 }
 
 func DecodeVoteSetMaj23Message(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeVoteSetMaj23Message(bz, lengthPrefixed)
+	var o tm_consensus.VoteSetMaj23Message
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -771,7 +1136,13 @@ func DecodeVoteSetMaj23Message(bz []byte, lengthPrefixed bool) (bz2 []byte, err 
 }
 
 func DecodeVoteSetBitsMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeVoteSetBitsMessage(bz, lengthPrefixed)
+	var o tm_consensus.VoteSetBitsMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -785,7 +1156,13 @@ func DecodeVoteSetBitsMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err e
 }
 
 func DecodeWALMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeWALMessage(bz, lengthPrefixed)
+	var o tm_consensus.WALMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -799,7 +1176,13 @@ func DecodeWALMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeMsgInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMsgInfo(bz, lengthPrefixed)
+	var o tm_consensus.MsgInfo
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -813,7 +1196,13 @@ func DecodeMsgInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeTimeoutInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeTimeoutInfo(bz, lengthPrefixed)
+	var o tm_consensus.TimeoutInfo
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -827,7 +1216,13 @@ func DecodeTimeoutInfo(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeEndHeightMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEndHeightMessage(bz, lengthPrefixed)
+	var o tm_consensus.EndHeightMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -841,7 +1236,13 @@ func DecodeEndHeightMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err err
 }
 
 func DecodePubKey(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePubKey(bz, lengthPrefixed)
+	var o tm_crypto.PubKey
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -855,7 +1256,13 @@ func DecodePubKey(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePrivKey(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePrivKey(bz, lengthPrefixed)
+	var o tm_crypto.PrivKey
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -869,7 +1276,13 @@ func DecodePrivKey(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePubKeyEd25519(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePubKeyEd25519(bz, lengthPrefixed)
+	var o tm_ed25519.PubKeyEd25519
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -883,7 +1296,13 @@ func DecodePubKeyEd25519(bz []byte, lengthPrefixed bool) (bz2 []byte, err error)
 }
 
 func DecodePrivKeyEd25519(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePrivKeyEd25519(bz, lengthPrefixed)
+	var o tm_ed25519.PrivKeyEd25519
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -897,7 +1316,13 @@ func DecodePrivKeyEd25519(bz []byte, lengthPrefixed bool) (bz2 []byte, err error
 }
 
 func DecodePubKeySecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePubKeySecp256k1(bz, lengthPrefixed)
+	var o tm_secp256k1.PubKeySecp256k1
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -911,7 +1336,13 @@ func DecodePubKeySecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 }
 
 func DecodePrivKeySecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePrivKeySecp256k1(bz, lengthPrefixed)
+	var o tm_secp256k1.PrivKeySecp256k1
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -925,7 +1356,13 @@ func DecodePrivKeySecp256k1(bz []byte, lengthPrefixed bool) (bz2 []byte, err err
 }
 
 func DecodePubKeyMultisigThreshold(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePubKeyMultisigThreshold(bz, lengthPrefixed)
+	var o tm_multisig.PubKeyMultisigThreshold
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -939,7 +1376,13 @@ func DecodePubKeyMultisigThreshold(bz []byte, lengthPrefixed bool) (bz2 []byte, 
 }
 
 func DecodeEvidenceMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEvidenceMessage(bz, lengthPrefixed)
+	var o tm_evidence.EvidenceMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -953,7 +1396,13 @@ func DecodeEvidenceMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 }
 
 func DecodeEvidenceListMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEvidenceListMessage(bz, lengthPrefixed)
+	var o tm_evidence.EvidenceListMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -967,7 +1416,13 @@ func DecodeEvidenceListMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err 
 }
 
 func DecodeMempoolMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMempoolMessage(bz, lengthPrefixed)
+	var o tm_mempool.MempoolMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -981,7 +1436,13 @@ func DecodeMempoolMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error
 }
 
 func DecodeTxMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeTxMessage(bz, lengthPrefixed)
+	var o tm_mempool.TxMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -995,7 +1456,13 @@ func DecodeTxMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePacket(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePacket(bz, lengthPrefixed)
+	var o tm_conn.Packet
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1009,7 +1476,13 @@ func DecodePacket(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePacketPing(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePacketPing(bz, lengthPrefixed)
+	var o tm_conn.PacketPing
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1023,7 +1496,13 @@ func DecodePacketPing(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePacketPong(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePacketPong(bz, lengthPrefixed)
+	var o tm_conn.PacketPong
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1037,7 +1516,13 @@ func DecodePacketPong(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePacketMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePacketMsg(bz, lengthPrefixed)
+	var o tm_conn.PacketMsg
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1051,7 +1536,13 @@ func DecodePacketMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePexMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePexMessage(bz, lengthPrefixed)
+	var o tm_pex.PexMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1065,7 +1556,13 @@ func DecodePexMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePexRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePexRequestMessage(bz, lengthPrefixed)
+	var o tm_pex.PexRequestMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1079,7 +1576,13 @@ func DecodePexRequestMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err er
 }
 
 func DecodePexAddrsMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePexAddrsMessage(bz, lengthPrefixed)
+	var o tm_pex.PexAddrsMessage
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1093,7 +1596,13 @@ func DecodePexAddrsMessage(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 }
 
 func DecodeRemoteSignerMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeRemoteSignerMsg(bz, lengthPrefixed)
+	var o tm_privval.RemoteSignerMsg
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1107,7 +1616,13 @@ func DecodeRemoteSignerMsg(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 }
 
 func DecodePubKeyRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePubKeyRequest(bz, lengthPrefixed)
+	var o tm_privval.PubKeyRequest
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1121,7 +1636,13 @@ func DecodePubKeyRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error)
 }
 
 func DecodePubKeyResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePubKeyResponse(bz, lengthPrefixed)
+	var o tm_privval.PubKeyResponse
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1135,7 +1656,13 @@ func DecodePubKeyResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error
 }
 
 func DecodeSignVoteRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeSignVoteRequest(bz, lengthPrefixed)
+	var o tm_privval.SignVoteRequest
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1149,7 +1676,13 @@ func DecodeSignVoteRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 }
 
 func DecodeSignedVoteResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeSignedVoteResponse(bz, lengthPrefixed)
+	var o tm_privval.SignedVoteResponse
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1163,7 +1696,13 @@ func DecodeSignedVoteResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err e
 }
 
 func DecodeSignProposalRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeSignProposalRequest(bz, lengthPrefixed)
+	var o tm_privval.SignProposalRequest
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1177,7 +1716,13 @@ func DecodeSignProposalRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err 
 }
 
 func DecodeSignedProposalResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeSignedProposalResponse(bz, lengthPrefixed)
+	var o tm_privval.SignedProposalResponse
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1191,7 +1736,13 @@ func DecodeSignedProposalResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, e
 }
 
 func DecodePingRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePingRequest(bz, lengthPrefixed)
+	var o tm_privval.PingRequest
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1205,7 +1756,13 @@ func DecodePingRequest(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodePingResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodePingResponse(bz, lengthPrefixed)
+	var o tm_privval.PingResponse
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1219,7 +1776,13 @@ func DecodePingResponse(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) 
 }
 
 func DecodeTMEventData(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeTMEventData(bz, lengthPrefixed)
+	var o tm_types.TMEventData
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1233,7 +1796,13 @@ func DecodeTMEventData(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeEventDataNewBlock(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataNewBlock(bz, lengthPrefixed)
+	var o tm_types.EventDataNewBlock
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1247,7 +1816,13 @@ func DecodeEventDataNewBlock(bz []byte, lengthPrefixed bool) (bz2 []byte, err er
 }
 
 func DecodeEventDataNewBlockHeader(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataNewBlockHeader(bz, lengthPrefixed)
+	var o tm_types.EventDataNewBlockHeader
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1261,7 +1836,13 @@ func DecodeEventDataNewBlockHeader(bz []byte, lengthPrefixed bool) (bz2 []byte, 
 }
 
 func DecodeEventDataTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataTx(bz, lengthPrefixed)
+	var o tm_types.EventDataTx
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1275,7 +1856,13 @@ func DecodeEventDataTx(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeEventDataRoundState(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataRoundState(bz, lengthPrefixed)
+	var o tm_types.EventDataRoundState
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1289,7 +1876,13 @@ func DecodeEventDataRoundState(bz []byte, lengthPrefixed bool) (bz2 []byte, err 
 }
 
 func DecodeEventDataNewRound(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataNewRound(bz, lengthPrefixed)
+	var o tm_types.EventDataNewRound
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1303,7 +1896,13 @@ func DecodeEventDataNewRound(bz []byte, lengthPrefixed bool) (bz2 []byte, err er
 }
 
 func DecodeEventDataCompleteProposal(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataCompleteProposal(bz, lengthPrefixed)
+	var o tm_types.EventDataCompleteProposal
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1317,7 +1916,13 @@ func DecodeEventDataCompleteProposal(bz []byte, lengthPrefixed bool) (bz2 []byte
 }
 
 func DecodeEventDataVote(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataVote(bz, lengthPrefixed)
+	var o tm_types.EventDataVote
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1331,7 +1936,13 @@ func DecodeEventDataVote(bz []byte, lengthPrefixed bool) (bz2 []byte, err error)
 }
 
 func DecodeEventDataValidatorSetUpdates(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataValidatorSetUpdates(bz, lengthPrefixed)
+	var o tm_types.EventDataValidatorSetUpdates
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1345,7 +1956,13 @@ func DecodeEventDataValidatorSetUpdates(bz []byte, lengthPrefixed bool) (bz2 []b
 }
 
 func DecodeEventDataString(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEventDataString(bz, lengthPrefixed)
+	var o tm_types.EventDataString
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1359,7 +1976,13 @@ func DecodeEventDataString(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 }
 
 func DecodeEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeEvidence(bz, lengthPrefixed)
+	var o tm_types.Evidence
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1373,7 +1996,13 @@ func DecodeEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
 }
 
 func DecodeDuplicateVoteEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeDuplicateVoteEvidence(bz, lengthPrefixed)
+	var o tm_types.DuplicateVoteEvidence
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1387,7 +2016,13 @@ func DecodeDuplicateVoteEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, er
 }
 
 func DecodeMockGoodEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMockGoodEvidence(bz, lengthPrefixed)
+	var o tm_types.MockGoodEvidence
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1401,7 +2036,13 @@ func DecodeMockGoodEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err err
 }
 
 func DecodeMockRandomGoodEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMockRandomGoodEvidence(bz, lengthPrefixed)
+	var o tm_types.MockRandomGoodEvidence
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
@@ -1415,7 +2056,13 @@ func DecodeMockRandomGoodEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, e
 }
 
 func DecodeMockBadEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err error) {
-	o, err := decodeMockBadEvidence(bz, lengthPrefixed)
+	var o tm_types.MockBadEvidence
+	if lengthPrefixed {
+		err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
+	} else {
+		err = codec.UnmarshalBinaryBare(bz, &o)
+	}
+
 	if err != nil {
 		return nil, err
 	}
