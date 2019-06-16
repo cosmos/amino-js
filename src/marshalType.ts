@@ -1,4 +1,4 @@
-import { AminoBytes } from './../lib/bytes';
+import { AminoBytes } from '../lib/types';
 import * as encodeType from './encodeType';
 import {
     Account,

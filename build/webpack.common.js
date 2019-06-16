@@ -2,6 +2,7 @@ const path = require('path');
 
 const root       = path.resolve(`${ __dirname }/..`);
 const srcRoot    = `${ root }/src`;
+const libRoot    = `${ root }/lib`;
 const production = (process.env.NODE_ENV === 'production');
 
 module.exports = {
@@ -18,8 +19,8 @@ module.exports = {
     module:  {
         rules: [{
             enforce: 'pre',
-            test:    /\.(j|t)s$/,
-            include: srcRoot,
+            test:    /\.ts$/,
+            include: [srcRoot, libRoot],
             use:     [{
                 loader:  'eslint-loader',
                 options: {
@@ -27,8 +28,8 @@ module.exports = {
                 }
             }]
         }, {
-            test:    /\.(j|t)s$/,
-            include: srcRoot,
+            test:    /\.ts$/,
+            include: [srcRoot, libRoot],
             use:     [
                 {
                     loader:  'babel-loader',

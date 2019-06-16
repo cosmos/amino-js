@@ -1,5 +1,5 @@
 import * as Amino from '../../lib/Amino.wasm';
-import { AminoBytes, JSONBytes } from '../../lib/bytes';
+import { AminoBytes, JSONBytes } from '../../lib/types';
 
 export function encodeMultiStoreProofOp (json: JSONBytes, lengthPrefixed: boolean = true): AminoBytes {
     const [amino, error] = Amino.encodeMultiStoreProofOp(json, lengthPrefixed);

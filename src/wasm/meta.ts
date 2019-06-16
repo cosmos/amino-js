@@ -1,5 +1,5 @@
 import * as Amino from '../../lib/Amino.wasm';
-import { AminoBytes, DisambBytes, PrefixBytes } from '../../lib/bytes';
+import { AminoBytes, DisambBytes, PrefixBytes } from '../../lib/types';
 
 export {
     nameToDisfix,

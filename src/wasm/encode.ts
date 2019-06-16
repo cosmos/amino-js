@@ -1,5 +1,5 @@
 import * as Amino from '../../lib/Amino.wasm';
-import { AminoBytes, Bytes } from '../../lib/bytes';
+import { AminoBytes, Bytes } from '../../lib/types';
 
 export function encodeByte (byte: number): AminoBytes {
     const [amino, error] = Amino.encodeByte(byte);

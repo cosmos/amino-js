@@ -1,4 +1,4 @@
-import { Bytes, DisambBytes, PrefixBytes, JSONBytes, AminoBytes } from './bytes';
+import { Bytes, DisambBytes, PrefixBytes, JSONBytes, AminoBytes } from './types';
 
 // Bech32
 /**

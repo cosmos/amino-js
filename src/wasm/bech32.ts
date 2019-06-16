@@ -1,5 +1,5 @@
 import * as Amino from '../../lib/Amino.wasm';
-import { Bytes } from '../../lib/bytes';
+import { Bytes } from '../../lib/types';
 
 export function encodeBech32 (hrp: string, data: Bytes): string {
     const [bech, error] = Amino.encodeBech32(hrp, data);

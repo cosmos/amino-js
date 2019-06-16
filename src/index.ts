@@ -15,4 +15,4 @@ export * from './util';
 
 export * from './types';
 
-export * from '../lib/bytes';
+export * from '../lib/types';

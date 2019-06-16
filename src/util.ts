@@ -1,4 +1,4 @@
-import { Bytes, JSONBytes } from '../lib/bytes';
+import { Bytes, JSONBytes } from '../lib/types';
 
 let TextDecoder: { new (): { decode (bytes: Bytes): string } };
 let TextEncoder: { new (): { encode (string: string): Bytes } };
