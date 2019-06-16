@@ -1,4 +1,5 @@
 dist
+docs
 go
-lib
+lib/*.js
 node_modules
