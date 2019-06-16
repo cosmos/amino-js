@@ -11,10 +11,9 @@ Support is planned for Service Workers.
 
 ### Documentation
 
-All exported functions are documented. Some Amino registered type interfaces are documented.
+**https://cosmos.github.io/amino-js/**
 
-- [HTML](docs/html/index.html)
-- [Markdown](docs/md/README.md)
+All exported functions are documented. Some Amino registered type interfaces are documented.
 
 ### Install
 
