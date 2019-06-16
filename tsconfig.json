@@ -17,6 +17,7 @@
         "test"
     ],
     "typedocOptions":  {
+        "out":                    "docs",
         "mode":                   "file",
         "readme":                 "none",
         "ignoreCompilerErrors":   true,
