@@ -110,7 +110,7 @@ import { marshalJSON } from './util';
  * Marshal a `MultiStoreProofOp` object to Amino
  *
  * @param   o              - `MultiStoreProofOp` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MultiStoreProofOp` object
  * @throws  will throw if encoding fails
@@ -124,7 +124,7 @@ export function marshalMultiStoreProofOp (o: MultiStoreProofOp, lengthPrefixed: 
  * Marshal a `IAVLAbsenceOp` object to Amino
  *
  * @param   o              - `IAVLAbsenceOp` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `IAVLAbsenceOp` object
  * @throws  will throw if encoding fails
@@ -138,7 +138,7 @@ export function marshalIAVLAbsenceOp (o: IAVLAbsenceOp, lengthPrefixed: boolean 
  * Marshal a `IAVLValueOp` object to Amino
  *
  * @param   o              - `IAVLValueOp` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `IAVLValueOp` object
  * @throws  will throw if encoding fails
@@ -152,7 +152,7 @@ export function marshalIAVLValueOp (o: IAVLValueOp, lengthPrefixed: boolean = tr
  * Marshal a `PrivKeyLedgerSecp256k1` object to Amino
  *
  * @param   o              - `PrivKeyLedgerSecp256k1` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PrivKeyLedgerSecp256k1` object
  * @throws  will throw if encoding fails
@@ -166,7 +166,7 @@ export function marshalPrivKeyLedgerSecp256k1 (o: PrivKeyLedgerSecp256k1, length
  * Marshal a `Info` object to Amino
  *
  * @param   o              - `Info` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `Info` object
  * @throws  will throw if encoding fails
@@ -180,7 +180,7 @@ export function marshalInfo (o: Info, lengthPrefixed: boolean = true): AminoByte
  * Marshal a `BIP44Params` object to Amino
  *
  * @param   o              - `BIP44Params` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BIP44Params` object
  * @throws  will throw if encoding fails
@@ -194,7 +194,7 @@ export function marshalBIP44Params (o: BIP44Params, lengthPrefixed: boolean = tr
  * Marshal a `LocalInfo` object to Amino
  *
  * @param   o              - `LocalInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `LocalInfo` object
  * @throws  will throw if encoding fails
@@ -208,7 +208,7 @@ export function marshalLocalInfo (o: LocalInfo, lengthPrefixed: boolean = true):
  * Marshal a `LedgerInfo` object to Amino
  *
  * @param   o              - `LedgerInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `LedgerInfo` object
  * @throws  will throw if encoding fails
@@ -222,7 +222,7 @@ export function marshalLedgerInfo (o: LedgerInfo, lengthPrefixed: boolean = true
  * Marshal a `OfflineInfo` object to Amino
  *
  * @param   o              - `OfflineInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `OfflineInfo` object
  * @throws  will throw if encoding fails
@@ -236,7 +236,7 @@ export function marshalOfflineInfo (o: OfflineInfo, lengthPrefixed: boolean = tr
  * Marshal a `MultiInfo` object to Amino
  *
  * @param   o              - `MultiInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MultiInfo` object
  * @throws  will throw if encoding fails
@@ -250,7 +250,7 @@ export function marshalMultiInfo (o: MultiInfo, lengthPrefixed: boolean = true):
  * Marshal a `Msg` object to Amino
  *
  * @param   o              - `Msg` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `Msg` object
  * @throws  will throw if encoding fails
@@ -264,7 +264,7 @@ export function marshalMsg (o: Msg, lengthPrefixed: boolean = true): AminoBytes 
  * Marshal a `Tx` object to Amino
  *
  * @param   o              - `Tx` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `Tx` object
  * @throws  will throw if encoding fails
@@ -278,7 +278,7 @@ export function marshalTx (o: Tx, lengthPrefixed: boolean = true): AminoBytes {
  * Marshal a `Account` object to Amino
  *
  * @param   o              - `Account` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `Account` object
  * @throws  will throw if encoding fails
@@ -292,7 +292,7 @@ export function marshalAccount (o: Account, lengthPrefixed: boolean = true): Ami
  * Marshal a `VestingAccount` object to Amino
  *
  * @param   o              - `VestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `VestingAccount` object
  * @throws  will throw if encoding fails
@@ -306,7 +306,7 @@ export function marshalVestingAccount (o: VestingAccount, lengthPrefixed: boolea
  * Marshal a `BaseAccount` object to Amino
  *
  * @param   o              - `BaseAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BaseAccount` object
  * @throws  will throw if encoding fails
@@ -320,7 +320,7 @@ export function marshalBaseAccount (o: BaseAccount, lengthPrefixed: boolean = tr
  * Marshal a `BaseVestingAccount` object to Amino
  *
  * @param   o              - `BaseVestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BaseVestingAccount` object
  * @throws  will throw if encoding fails
@@ -334,7 +334,7 @@ export function marshalBaseVestingAccount (o: BaseVestingAccount, lengthPrefixed
  * Marshal a `ContinuousVestingAccount` object to Amino
  *
  * @param   o              - `ContinuousVestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `ContinuousVestingAccount` object
  * @throws  will throw if encoding fails
@@ -348,7 +348,7 @@ export function marshalContinuousVestingAccount (o: ContinuousVestingAccount, le
  * Marshal a `DelayedVestingAccount` object to Amino
  *
  * @param   o              - `DelayedVestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `DelayedVestingAccount` object
  * @throws  will throw if encoding fails
@@ -362,7 +362,7 @@ export function marshalDelayedVestingAccount (o: DelayedVestingAccount, lengthPr
  * Marshal a `StdTx` object to Amino
  *
  * @param   o              - `StdTx` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `StdTx` object
  * @throws  will throw if encoding fails
@@ -376,7 +376,7 @@ export function marshalStdTx (o: StdTx, lengthPrefixed: boolean = true): AminoBy
  * Marshal a `MsgSend` object to Amino
  *
  * @param   o              - `MsgSend` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgSend` object
  * @throws  will throw if encoding fails
@@ -390,7 +390,7 @@ export function marshalMsgSend (o: MsgSend, lengthPrefixed: boolean = true): Ami
  * Marshal a `MsgMultiSend` object to Amino
  *
  * @param   o              - `MsgMultiSend` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgMultiSend` object
  * @throws  will throw if encoding fails
@@ -404,7 +404,7 @@ export function marshalMsgMultiSend (o: MsgMultiSend, lengthPrefixed: boolean = 
  * Marshal a `MsgVerifyInvariant` object to Amino
  *
  * @param   o              - `MsgVerifyInvariant` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgVerifyInvariant` object
  * @throws  will throw if encoding fails
@@ -418,7 +418,7 @@ export function marshalMsgVerifyInvariant (o: MsgVerifyInvariant, lengthPrefixed
  * Marshal a `MsgWithdrawDelegatorReward` object to Amino
  *
  * @param   o              - `MsgWithdrawDelegatorReward` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgWithdrawDelegatorReward` object
  * @throws  will throw if encoding fails
@@ -432,7 +432,7 @@ export function marshalMsgWithdrawDelegatorReward (o: MsgWithdrawDelegatorReward
  * Marshal a `MsgWithdrawValidatorCommission` object to Amino
  *
  * @param   o              - `MsgWithdrawValidatorCommission` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgWithdrawValidatorCommission` object
  * @throws  will throw if encoding fails
@@ -446,7 +446,7 @@ export function marshalMsgWithdrawValidatorCommission (o: MsgWithdrawValidatorCo
  * Marshal a `MsgSetWithdrawAddress` object to Amino
  *
  * @param   o              - `MsgSetWithdrawAddress` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgSetWithdrawAddress` object
  * @throws  will throw if encoding fails
@@ -460,7 +460,7 @@ export function marshalMsgSetWithdrawAddress (o: MsgSetWithdrawAddress, lengthPr
  * Marshal a `Content` object to Amino
  *
  * @param   o              - `Content` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `Content` object
  * @throws  will throw if encoding fails
@@ -474,7 +474,7 @@ export function marshalContent (o: Content, lengthPrefixed: boolean = true): Ami
  * Marshal a `MsgSubmitProposal` object to Amino
  *
  * @param   o              - `MsgSubmitProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgSubmitProposal` object
  * @throws  will throw if encoding fails
@@ -488,7 +488,7 @@ export function marshalMsgSubmitProposal (o: MsgSubmitProposal, lengthPrefixed: 
  * Marshal a `MsgDeposit` object to Amino
  *
  * @param   o              - `MsgDeposit` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgDeposit` object
  * @throws  will throw if encoding fails
@@ -502,7 +502,7 @@ export function marshalMsgDeposit (o: MsgDeposit, lengthPrefixed: boolean = true
  * Marshal a `MsgVote` object to Amino
  *
  * @param   o              - `MsgVote` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgVote` object
  * @throws  will throw if encoding fails
@@ -516,7 +516,7 @@ export function marshalMsgVote (o: MsgVote, lengthPrefixed: boolean = true): Ami
  * Marshal a `TextProposal` object to Amino
  *
  * @param   o              - `TextProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `TextProposal` object
  * @throws  will throw if encoding fails
@@ -530,7 +530,7 @@ export function marshalTextProposal (o: TextProposal, lengthPrefixed: boolean = 
  * Marshal a `SoftwareUpgradeProposal` object to Amino
  *
  * @param   o              - `SoftwareUpgradeProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `SoftwareUpgradeProposal` object
  * @throws  will throw if encoding fails
@@ -544,7 +544,7 @@ export function marshalSoftwareUpgradeProposal (o: SoftwareUpgradeProposal, leng
  * Marshal a `MsgIBCTransfer` object to Amino
  *
  * @param   o              - `MsgIBCTransfer` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgIBCTransfer` object
  * @throws  will throw if encoding fails
@@ -558,7 +558,7 @@ export function marshalMsgIBCTransfer (o: MsgIBCTransfer, lengthPrefixed: boolea
  * Marshal a `MsgIBCReceive` object to Amino
  *
  * @param   o              - `MsgIBCReceive` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgIBCReceive` object
  * @throws  will throw if encoding fails
@@ -572,7 +572,7 @@ export function marshalMsgIBCReceive (o: MsgIBCReceive, lengthPrefixed: boolean 
  * Marshal a `ParameterChangeProposal` object to Amino
  *
  * @param   o              - `ParameterChangeProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `ParameterChangeProposal` object
  * @throws  will throw if encoding fails
@@ -586,7 +586,7 @@ export function marshalParameterChangeProposal (o: ParameterChangeProposal, leng
  * Marshal a `MsgUnjail` object to Amino
  *
  * @param   o              - `MsgUnjail` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgUnjail` object
  * @throws  will throw if encoding fails
@@ -600,7 +600,7 @@ export function marshalMsgUnjail (o: MsgUnjail, lengthPrefixed: boolean = true):
  * Marshal a `MsgCreateValidator` object to Amino
  *
  * @param   o              - `MsgCreateValidator` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgCreateValidator` object
  * @throws  will throw if encoding fails
@@ -614,7 +614,7 @@ export function marshalMsgCreateValidator (o: MsgCreateValidator, lengthPrefixed
  * Marshal a `MsgEditValidator` object to Amino
  *
  * @param   o              - `MsgEditValidator` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgEditValidator` object
  * @throws  will throw if encoding fails
@@ -628,7 +628,7 @@ export function marshalMsgEditValidator (o: MsgEditValidator, lengthPrefixed: bo
  * Marshal a `MsgDelegate` object to Amino
  *
  * @param   o              - `MsgDelegate` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgDelegate` object
  * @throws  will throw if encoding fails
@@ -642,7 +642,7 @@ export function marshalMsgDelegate (o: MsgDelegate, lengthPrefixed: boolean = tr
  * Marshal a `MsgUndelegate` object to Amino
  *
  * @param   o              - `MsgUndelegate` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgUndelegate` object
  * @throws  will throw if encoding fails
@@ -656,7 +656,7 @@ export function marshalMsgUndelegate (o: MsgUndelegate, lengthPrefixed: boolean 
  * Marshal a `MsgBeginRedelegate` object to Amino
  *
  * @param   o              - `MsgBeginRedelegate` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgBeginRedelegate` object
  * @throws  will throw if encoding fails
@@ -670,7 +670,7 @@ export function marshalMsgBeginRedelegate (o: MsgBeginRedelegate, lengthPrefixed
  * Marshal a `BlockchainMessage` object to Amino
  *
  * @param   o              - `BlockchainMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BlockchainMessage` object
  * @throws  will throw if encoding fails
@@ -684,7 +684,7 @@ export function marshalBlockchainMessage (o: BlockchainMessage, lengthPrefixed: 
  * Marshal a `BcBlockRequestMessage` object to Amino
  *
  * @param   o              - `BcBlockRequestMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BcBlockRequestMessage` object
  * @throws  will throw if encoding fails
@@ -698,7 +698,7 @@ export function marshalBcBlockRequestMessage (o: BcBlockRequestMessage, lengthPr
  * Marshal a `BcBlockResponseMessage` object to Amino
  *
  * @param   o              - `BcBlockResponseMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BcBlockResponseMessage` object
  * @throws  will throw if encoding fails
@@ -712,7 +712,7 @@ export function marshalBcBlockResponseMessage (o: BcBlockResponseMessage, length
  * Marshal a `BcNoBlockResponseMessage` object to Amino
  *
  * @param   o              - `BcNoBlockResponseMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BcNoBlockResponseMessage` object
  * @throws  will throw if encoding fails
@@ -726,7 +726,7 @@ export function marshalBcNoBlockResponseMessage (o: BcNoBlockResponseMessage, le
  * Marshal a `BcStatusResponseMessage` object to Amino
  *
  * @param   o              - `BcStatusResponseMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BcStatusResponseMessage` object
  * @throws  will throw if encoding fails
@@ -740,7 +740,7 @@ export function marshalBcStatusResponseMessage (o: BcStatusResponseMessage, leng
  * Marshal a `BcStatusRequestMessage` object to Amino
  *
  * @param   o              - `BcStatusRequestMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BcStatusRequestMessage` object
  * @throws  will throw if encoding fails
@@ -754,7 +754,7 @@ export function marshalBcStatusRequestMessage (o: BcStatusRequestMessage, length
  * Marshal a `ConsensusMessage` object to Amino
  *
  * @param   o              - `ConsensusMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `ConsensusMessage` object
  * @throws  will throw if encoding fails
@@ -768,7 +768,7 @@ export function marshalConsensusMessage (o: ConsensusMessage, lengthPrefixed: bo
  * Marshal a `NewRoundStepMessage` object to Amino
  *
  * @param   o              - `NewRoundStepMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `NewRoundStepMessage` object
  * @throws  will throw if encoding fails
@@ -782,7 +782,7 @@ export function marshalNewRoundStepMessage (o: NewRoundStepMessage, lengthPrefix
  * Marshal a `NewValidBlockMessage` object to Amino
  *
  * @param   o              - `NewValidBlockMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `NewValidBlockMessage` object
  * @throws  will throw if encoding fails
@@ -796,7 +796,7 @@ export function marshalNewValidBlockMessage (o: NewValidBlockMessage, lengthPref
  * Marshal a `ProposalMessage` object to Amino
  *
  * @param   o              - `ProposalMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `ProposalMessage` object
  * @throws  will throw if encoding fails
@@ -810,7 +810,7 @@ export function marshalProposalMessage (o: ProposalMessage, lengthPrefixed: bool
  * Marshal a `ProposalPOLMessage` object to Amino
  *
  * @param   o              - `ProposalPOLMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `ProposalPOLMessage` object
  * @throws  will throw if encoding fails
@@ -824,7 +824,7 @@ export function marshalProposalPOLMessage (o: ProposalPOLMessage, lengthPrefixed
  * Marshal a `BlockPartMessage` object to Amino
  *
  * @param   o              - `BlockPartMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `BlockPartMessage` object
  * @throws  will throw if encoding fails
@@ -838,7 +838,7 @@ export function marshalBlockPartMessage (o: BlockPartMessage, lengthPrefixed: bo
  * Marshal a `VoteMessage` object to Amino
  *
  * @param   o              - `VoteMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `VoteMessage` object
  * @throws  will throw if encoding fails
@@ -852,7 +852,7 @@ export function marshalVoteMessage (o: VoteMessage, lengthPrefixed: boolean = tr
  * Marshal a `HasVoteMessage` object to Amino
  *
  * @param   o              - `HasVoteMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `HasVoteMessage` object
  * @throws  will throw if encoding fails
@@ -866,7 +866,7 @@ export function marshalHasVoteMessage (o: HasVoteMessage, lengthPrefixed: boolea
  * Marshal a `VoteSetMaj23Message` object to Amino
  *
  * @param   o              - `VoteSetMaj23Message` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `VoteSetMaj23Message` object
  * @throws  will throw if encoding fails
@@ -880,7 +880,7 @@ export function marshalVoteSetMaj23Message (o: VoteSetMaj23Message, lengthPrefix
  * Marshal a `VoteSetBitsMessage` object to Amino
  *
  * @param   o              - `VoteSetBitsMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `VoteSetBitsMessage` object
  * @throws  will throw if encoding fails
@@ -894,7 +894,7 @@ export function marshalVoteSetBitsMessage (o: VoteSetBitsMessage, lengthPrefixed
  * Marshal a `WALMessage` object to Amino
  *
  * @param   o              - `WALMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `WALMessage` object
  * @throws  will throw if encoding fails
@@ -908,7 +908,7 @@ export function marshalWALMessage (o: WALMessage, lengthPrefixed: boolean = true
  * Marshal a `MsgInfo` object to Amino
  *
  * @param   o              - `MsgInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MsgInfo` object
  * @throws  will throw if encoding fails
@@ -922,7 +922,7 @@ export function marshalMsgInfo (o: MsgInfo, lengthPrefixed: boolean = true): Ami
  * Marshal a `TimeoutInfo` object to Amino
  *
  * @param   o              - `TimeoutInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `TimeoutInfo` object
  * @throws  will throw if encoding fails
@@ -936,7 +936,7 @@ export function marshalTimeoutInfo (o: TimeoutInfo, lengthPrefixed: boolean = tr
  * Marshal a `EndHeightMessage` object to Amino
  *
  * @param   o              - `EndHeightMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EndHeightMessage` object
  * @throws  will throw if encoding fails
@@ -950,7 +950,7 @@ export function marshalEndHeightMessage (o: EndHeightMessage, lengthPrefixed: bo
  * Marshal a `PubKey` object to Amino
  *
  * @param   o              - `PubKey` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PubKey` object
  * @throws  will throw if encoding fails
@@ -964,7 +964,7 @@ export function marshalPubKey (o: PubKey, lengthPrefixed: boolean = true): Amino
  * Marshal a `PrivKey` object to Amino
  *
  * @param   o              - `PrivKey` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PrivKey` object
  * @throws  will throw if encoding fails
@@ -978,7 +978,7 @@ export function marshalPrivKey (o: PrivKey, lengthPrefixed: boolean = true): Ami
  * Marshal a `PubKeyEd25519` object to Amino
  *
  * @param   o              - `PubKeyEd25519` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PubKeyEd25519` object
  * @throws  will throw if encoding fails
@@ -992,7 +992,7 @@ export function marshalPubKeyEd25519 (o: PubKeyEd25519, lengthPrefixed: boolean 
  * Marshal a `PrivKeyEd25519` object to Amino
  *
  * @param   o              - `PrivKeyEd25519` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PrivKeyEd25519` object
  * @throws  will throw if encoding fails
@@ -1006,7 +1006,7 @@ export function marshalPrivKeyEd25519 (o: PrivKeyEd25519, lengthPrefixed: boolea
  * Marshal a `PubKeySecp256k1` object to Amino
  *
  * @param   o              - `PubKeySecp256k1` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PubKeySecp256k1` object
  * @throws  will throw if encoding fails
@@ -1020,7 +1020,7 @@ export function marshalPubKeySecp256k1 (o: PubKeySecp256k1, lengthPrefixed: bool
  * Marshal a `PrivKeySecp256k1` object to Amino
  *
  * @param   o              - `PrivKeySecp256k1` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PrivKeySecp256k1` object
  * @throws  will throw if encoding fails
@@ -1034,7 +1034,7 @@ export function marshalPrivKeySecp256k1 (o: PrivKeySecp256k1, lengthPrefixed: bo
  * Marshal a `PubKeyMultisigThreshold` object to Amino
  *
  * @param   o              - `PubKeyMultisigThreshold` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PubKeyMultisigThreshold` object
  * @throws  will throw if encoding fails
@@ -1048,7 +1048,7 @@ export function marshalPubKeyMultisigThreshold (o: PubKeyMultisigThreshold, leng
  * Marshal a `EvidenceMessage` object to Amino
  *
  * @param   o              - `EvidenceMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EvidenceMessage` object
  * @throws  will throw if encoding fails
@@ -1062,7 +1062,7 @@ export function marshalEvidenceMessage (o: EvidenceMessage, lengthPrefixed: bool
  * Marshal a `EvidenceListMessage` object to Amino
  *
  * @param   o              - `EvidenceListMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EvidenceListMessage` object
  * @throws  will throw if encoding fails
@@ -1076,7 +1076,7 @@ export function marshalEvidenceListMessage (o: EvidenceListMessage, lengthPrefix
  * Marshal a `MempoolMessage` object to Amino
  *
  * @param   o              - `MempoolMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MempoolMessage` object
  * @throws  will throw if encoding fails
@@ -1090,7 +1090,7 @@ export function marshalMempoolMessage (o: MempoolMessage, lengthPrefixed: boolea
  * Marshal a `TxMessage` object to Amino
  *
  * @param   o              - `TxMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `TxMessage` object
  * @throws  will throw if encoding fails
@@ -1104,7 +1104,7 @@ export function marshalTxMessage (o: TxMessage, lengthPrefixed: boolean = true):
  * Marshal a `Packet` object to Amino
  *
  * @param   o              - `Packet` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `Packet` object
  * @throws  will throw if encoding fails
@@ -1118,7 +1118,7 @@ export function marshalPacket (o: Packet, lengthPrefixed: boolean = true): Amino
  * Marshal a `PacketPing` object to Amino
  *
  * @param   o              - `PacketPing` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PacketPing` object
  * @throws  will throw if encoding fails
@@ -1132,7 +1132,7 @@ export function marshalPacketPing (o: PacketPing, lengthPrefixed: boolean = true
  * Marshal a `PacketPong` object to Amino
  *
  * @param   o              - `PacketPong` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PacketPong` object
  * @throws  will throw if encoding fails
@@ -1146,7 +1146,7 @@ export function marshalPacketPong (o: PacketPong, lengthPrefixed: boolean = true
  * Marshal a `PacketMsg` object to Amino
  *
  * @param   o              - `PacketMsg` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PacketMsg` object
  * @throws  will throw if encoding fails
@@ -1160,7 +1160,7 @@ export function marshalPacketMsg (o: PacketMsg, lengthPrefixed: boolean = true):
  * Marshal a `PexMessage` object to Amino
  *
  * @param   o              - `PexMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PexMessage` object
  * @throws  will throw if encoding fails
@@ -1174,7 +1174,7 @@ export function marshalPexMessage (o: PexMessage, lengthPrefixed: boolean = true
  * Marshal a `PexRequestMessage` object to Amino
  *
  * @param   o              - `PexRequestMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PexRequestMessage` object
  * @throws  will throw if encoding fails
@@ -1188,7 +1188,7 @@ export function marshalPexRequestMessage (o: PexRequestMessage, lengthPrefixed: 
  * Marshal a `PexAddrsMessage` object to Amino
  *
  * @param   o              - `PexAddrsMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PexAddrsMessage` object
  * @throws  will throw if encoding fails
@@ -1202,7 +1202,7 @@ export function marshalPexAddrsMessage (o: PexAddrsMessage, lengthPrefixed: bool
  * Marshal a `RemoteSignerMsg` object to Amino
  *
  * @param   o              - `RemoteSignerMsg` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `RemoteSignerMsg` object
  * @throws  will throw if encoding fails
@@ -1216,7 +1216,7 @@ export function marshalRemoteSignerMsg (o: RemoteSignerMsg, lengthPrefixed: bool
  * Marshal a `PubKeyRequest` object to Amino
  *
  * @param   o              - `PubKeyRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PubKeyRequest` object
  * @throws  will throw if encoding fails
@@ -1230,7 +1230,7 @@ export function marshalPubKeyRequest (o: PubKeyRequest, lengthPrefixed: boolean 
  * Marshal a `PubKeyResponse` object to Amino
  *
  * @param   o              - `PubKeyResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PubKeyResponse` object
  * @throws  will throw if encoding fails
@@ -1244,7 +1244,7 @@ export function marshalPubKeyResponse (o: PubKeyResponse, lengthPrefixed: boolea
  * Marshal a `SignVoteRequest` object to Amino
  *
  * @param   o              - `SignVoteRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `SignVoteRequest` object
  * @throws  will throw if encoding fails
@@ -1258,7 +1258,7 @@ export function marshalSignVoteRequest (o: SignVoteRequest, lengthPrefixed: bool
  * Marshal a `SignedVoteResponse` object to Amino
  *
  * @param   o              - `SignedVoteResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `SignedVoteResponse` object
  * @throws  will throw if encoding fails
@@ -1272,7 +1272,7 @@ export function marshalSignedVoteResponse (o: SignedVoteResponse, lengthPrefixed
  * Marshal a `SignProposalRequest` object to Amino
  *
  * @param   o              - `SignProposalRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `SignProposalRequest` object
  * @throws  will throw if encoding fails
@@ -1286,7 +1286,7 @@ export function marshalSignProposalRequest (o: SignProposalRequest, lengthPrefix
  * Marshal a `SignedProposalResponse` object to Amino
  *
  * @param   o              - `SignedProposalResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `SignedProposalResponse` object
  * @throws  will throw if encoding fails
@@ -1300,7 +1300,7 @@ export function marshalSignedProposalResponse (o: SignedProposalResponse, length
  * Marshal a `PingRequest` object to Amino
  *
  * @param   o              - `PingRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PingRequest` object
  * @throws  will throw if encoding fails
@@ -1314,7 +1314,7 @@ export function marshalPingRequest (o: PingRequest, lengthPrefixed: boolean = tr
  * Marshal a `PingResponse` object to Amino
  *
  * @param   o              - `PingResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `PingResponse` object
  * @throws  will throw if encoding fails
@@ -1328,7 +1328,7 @@ export function marshalPingResponse (o: PingResponse, lengthPrefixed: boolean = 
  * Marshal a `TMEventData` object to Amino
  *
  * @param   o              - `TMEventData` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `TMEventData` object
  * @throws  will throw if encoding fails
@@ -1342,7 +1342,7 @@ export function marshalTMEventData (o: TMEventData, lengthPrefixed: boolean = tr
  * Marshal a `EventDataNewBlock` object to Amino
  *
  * @param   o              - `EventDataNewBlock` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataNewBlock` object
  * @throws  will throw if encoding fails
@@ -1356,7 +1356,7 @@ export function marshalEventDataNewBlock (o: EventDataNewBlock, lengthPrefixed: 
  * Marshal a `EventDataNewBlockHeader` object to Amino
  *
  * @param   o              - `EventDataNewBlockHeader` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataNewBlockHeader` object
  * @throws  will throw if encoding fails
@@ -1370,7 +1370,7 @@ export function marshalEventDataNewBlockHeader (o: EventDataNewBlockHeader, leng
  * Marshal a `EventDataTx` object to Amino
  *
  * @param   o              - `EventDataTx` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataTx` object
  * @throws  will throw if encoding fails
@@ -1384,7 +1384,7 @@ export function marshalEventDataTx (o: EventDataTx, lengthPrefixed: boolean = tr
  * Marshal a `EventDataRoundState` object to Amino
  *
  * @param   o              - `EventDataRoundState` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataRoundState` object
  * @throws  will throw if encoding fails
@@ -1398,7 +1398,7 @@ export function marshalEventDataRoundState (o: EventDataRoundState, lengthPrefix
  * Marshal a `EventDataNewRound` object to Amino
  *
  * @param   o              - `EventDataNewRound` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataNewRound` object
  * @throws  will throw if encoding fails
@@ -1412,7 +1412,7 @@ export function marshalEventDataNewRound (o: EventDataNewRound, lengthPrefixed: 
  * Marshal a `EventDataCompleteProposal` object to Amino
  *
  * @param   o              - `EventDataCompleteProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataCompleteProposal` object
  * @throws  will throw if encoding fails
@@ -1426,7 +1426,7 @@ export function marshalEventDataCompleteProposal (o: EventDataCompleteProposal, 
  * Marshal a `EventDataVote` object to Amino
  *
  * @param   o              - `EventDataVote` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataVote` object
  * @throws  will throw if encoding fails
@@ -1440,7 +1440,7 @@ export function marshalEventDataVote (o: EventDataVote, lengthPrefixed: boolean 
  * Marshal a `EventDataValidatorSetUpdates` object to Amino
  *
  * @param   o              - `EventDataValidatorSetUpdates` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataValidatorSetUpdates` object
  * @throws  will throw if encoding fails
@@ -1454,7 +1454,7 @@ export function marshalEventDataValidatorSetUpdates (o: EventDataValidatorSetUpd
  * Marshal a `EventDataString` object to Amino
  *
  * @param   o              - `EventDataString` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `EventDataString` object
  * @throws  will throw if encoding fails
@@ -1468,7 +1468,7 @@ export function marshalEventDataString (o: EventDataString, lengthPrefixed: bool
  * Marshal a `Evidence` object to Amino
  *
  * @param   o              - `Evidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `Evidence` object
  * @throws  will throw if encoding fails
@@ -1482,7 +1482,7 @@ export function marshalEvidence (o: Evidence, lengthPrefixed: boolean = true): A
  * Marshal a `DuplicateVoteEvidence` object to Amino
  *
  * @param   o              - `DuplicateVoteEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `DuplicateVoteEvidence` object
  * @throws  will throw if encoding fails
@@ -1496,7 +1496,7 @@ export function marshalDuplicateVoteEvidence (o: DuplicateVoteEvidence, lengthPr
  * Marshal a `MockGoodEvidence` object to Amino
  *
  * @param   o              - `MockGoodEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MockGoodEvidence` object
  * @throws  will throw if encoding fails
@@ -1510,7 +1510,7 @@ export function marshalMockGoodEvidence (o: MockGoodEvidence, lengthPrefixed: bo
  * Marshal a `MockRandomGoodEvidence` object to Amino
  *
  * @param   o              - `MockRandomGoodEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MockRandomGoodEvidence` object
  * @throws  will throw if encoding fails
@@ -1524,7 +1524,7 @@ export function marshalMockRandomGoodEvidence (o: MockRandomGoodEvidence, length
  * Marshal a `MockBadEvidence` object to Amino
  *
  * @param   o              - `MockBadEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino encoding; if false, use bare Amino encoding
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
  * @returns binary Amino-encoded `MockBadEvidence` object
  * @throws  will throw if encoding fails
