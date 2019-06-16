@@ -14,3 +14,5 @@ export * from './meta';
 export * from './util';
 
 export * from './types';
+
+export * from '../lib/bytes';

@@ -1,6 +1,7 @@
 import * as Amino from '../../lib/Amino.wasm';
+import { AminoBytes, Bytes } from '../../lib/bytes';
 
-export function encodeByte (byte: number): Amino.AminoBytes {
+export function encodeByte (byte: number): AminoBytes {
     const [amino, error] = Amino.encodeByte(byte);
     if (error) {
         throw new Error(error);
@@ -8,7 +9,7 @@ export function encodeByte (byte: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeByteSlice (bytes: Amino.Bytes): Amino.AminoBytes {
+export function encodeByteSlice (bytes: Bytes): AminoBytes {
     const [amino, error] = Amino.encodeByteSlice(bytes);
     if (error) {
         throw new Error(error);
@@ -16,7 +17,7 @@ export function encodeByteSlice (bytes: Amino.Bytes): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeInt8 (int8: number): Amino.AminoBytes {
+export function encodeInt8 (int8: number): AminoBytes {
     const [amino, error] = Amino.encodeInt8(int8);
     if (error) {
         throw new Error(error);
@@ -24,7 +25,7 @@ export function encodeInt8 (int8: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeInt16 (int16: number): Amino.AminoBytes {
+export function encodeInt16 (int16: number): AminoBytes {
     const [amino, error] = Amino.encodeInt16(int16);
     if (error) {
         throw new Error(error);
@@ -32,7 +33,7 @@ export function encodeInt16 (int16: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeInt32 (int32: number): Amino.AminoBytes {
+export function encodeInt32 (int32: number): AminoBytes {
     const [amino, error] = Amino.encodeInt32(int32);
     if (error) {
         throw new Error(error);
@@ -40,7 +41,7 @@ export function encodeInt32 (int32: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeInt64 (int64: number): Amino.AminoBytes {
+export function encodeInt64 (int64: number): AminoBytes {
     const [amino, error] = Amino.encodeInt64(int64);
     if (error) {
         throw new Error(error);
@@ -48,7 +49,7 @@ export function encodeInt64 (int64: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeVarint (varint: number): Amino.AminoBytes {
+export function encodeVarint (varint: number): AminoBytes {
     const [amino, error] = Amino.encodeVarint(varint);
     if (error) {
         throw new Error(error);
@@ -56,7 +57,7 @@ export function encodeVarint (varint: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeUint8 (uint8: number): Amino.AminoBytes {
+export function encodeUint8 (uint8: number): AminoBytes {
     const [amino, error] = Amino.encodeUint8(uint8);
     if (error) {
         throw new Error(error);
@@ -64,7 +65,7 @@ export function encodeUint8 (uint8: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeUint16 (uint16: number): Amino.AminoBytes {
+export function encodeUint16 (uint16: number): AminoBytes {
     const [amino, error] = Amino.encodeUint16(uint16);
     if (error) {
         throw new Error(error);
@@ -72,7 +73,7 @@ export function encodeUint16 (uint16: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeUint32 (uint32: number): Amino.AminoBytes {
+export function encodeUint32 (uint32: number): AminoBytes {
     const [amino, error] = Amino.encodeUint32(uint32);
     if (error) {
         throw new Error(error);
@@ -80,7 +81,7 @@ export function encodeUint32 (uint32: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeUint64 (uint64: number): Amino.AminoBytes {
+export function encodeUint64 (uint64: number): AminoBytes {
     const [amino, error] = Amino.encodeUint64(uint64);
     if (error) {
         throw new Error(error);
@@ -88,7 +89,7 @@ export function encodeUint64 (uint64: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeUvarint (uvarint: number): Amino.AminoBytes {
+export function encodeUvarint (uvarint: number): AminoBytes {
     const [amino, error] = Amino.encodeUvarint(uvarint);
     if (error) {
         throw new Error(error);
@@ -96,31 +97,31 @@ export function encodeUvarint (uvarint: number): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeFloat32 (float: number): Amino.AminoBytes {
-    const [amino, error] = Amino.encodeFloat32(float);
+export function encodeFloat32 (float32: number): AminoBytes {
+    const [amino, error] = Amino.encodeFloat32(float32);
     if (error) {
         throw new Error(error);
     }
     return amino;
 }
 
-export function encodeFloat64 (float: number): Amino.AminoBytes {
-    const [amino, error] = Amino.encodeFloat64(float);
+export function encodeFloat64 (float64: number): AminoBytes {
+    const [amino, error] = Amino.encodeFloat64(float64);
     if (error) {
         throw new Error(error);
     }
     return amino;
 }
 
-export function encodeBool (bool: boolean): Amino.AminoBytes {
-    const [amino, error] = Amino.encodeBool(bool);
+export function encodeBool (boolean: boolean): AminoBytes {
+    const [amino, error] = Amino.encodeBool(boolean);
     if (error) {
         throw new Error(error);
     }
     return amino;
 }
 
-export function encodeString (string: string): Amino.AminoBytes {
+export function encodeString (string: string): AminoBytes {
     const [amino, error] = Amino.encodeString(string);
     if (error) {
         throw new Error(error);
@@ -128,7 +129,7 @@ export function encodeString (string: string): Amino.AminoBytes {
     return amino;
 }
 
-export function encodeTime (time: Date): Amino.AminoBytes {
+export function encodeTime (time: Date): AminoBytes {
     const [amino, error] = Amino.encodeTime(time);
     if (error) {
         throw new Error(error);

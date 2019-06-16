@@ -1,537 +1,617 @@
+import { AminoBytes } from '../../lib/bytes';
 import {
-    auth,
-    bank,
-    blockchain,
-    conn,
-    consensus,
-    crisis,
-    crypto,
-    distribution,
-    events,
-    evidence,
-    gov,
-    iavl,
-    ibc,
-    keys,
-    mempool,
-    params,
-    pex,
-    privval,
-    rootmulti,
-    slashing,
-    staking,
-    types
+    Account,
+    BaseAccount,
+    BaseVestingAccount,
+    BcBlockRequestMessage,
+    BcBlockResponseMessage,
+    BcNoBlockResponseMessage,
+    BcStatusRequestMessage,
+    BcStatusResponseMessage,
+    BIP44Params,
+    BlockchainMessage,
+    BlockPartMessage,
+    ConsensusMessage,
+    Content,
+    ContinuousVestingAccount,
+    DelayedVestingAccount,
+    DuplicateVoteEvidence,
+    EndHeightMessage,
+    EventDataCompleteProposal,
+    EventDataNewBlock,
+    EventDataNewBlockHeader,
+    EventDataNewRound,
+    EventDataRoundState,
+    EventDataString,
+    EventDataTx,
+    EventDataValidatorSetUpdates,
+    EventDataVote,
+    Evidence,
+    EvidenceListMessage,
+    EvidenceMessage,
+    HasVoteMessage,
+    IAVLAbsenceOp,
+    IAVLValueOp,
+    Info,
+    LedgerInfo,
+    LocalInfo,
+    MempoolMessage,
+    MockBadEvidence,
+    MockGoodEvidence,
+    MockRandomGoodEvidence,
+    Msg,
+    MsgBeginRedelegate,
+    MsgCreateValidator,
+    MsgDelegate,
+    MsgDeposit,
+    MsgEditValidator,
+    MsgIBCReceive,
+    MsgIBCTransfer,
+    MsgInfo,
+    MsgMultiSend,
+    MsgSend,
+    MsgSetWithdrawAddress,
+    MsgSubmitProposal,
+    MsgUndelegate,
+    MsgUnjail,
+    MsgVerifyInvariant,
+    MsgVote,
+    MsgWithdrawDelegatorReward,
+    MsgWithdrawValidatorCommission,
+    MultiInfo,
+    MultiStoreProofOp,
+    NewRoundStepMessage,
+    NewValidBlockMessage,
+    OfflineInfo,
+    Packet,
+    PacketMsg,
+    PacketPing,
+    PacketPong,
+    ParameterChangeProposal,
+    PexAddrsMessage,
+    PexMessage,
+    PexRequestMessage,
+    PingRequest,
+    PingResponse,
+    PrivKey,
+    PrivKeyEd25519,
+    PrivKeyLedgerSecp256k1,
+    PrivKeySecp256k1,
+    ProposalMessage,
+    ProposalPOLMessage,
+    PubKey,
+    PubKeyEd25519,
+    PubKeyMultisigThreshold,
+    PubKeyRequest,
+    PubKeyResponse,
+    PubKeySecp256k1,
+    RemoteSignerMsg,
+    SignedProposalResponse,
+    SignedVoteResponse,
+    SignProposalRequest,
+    SignVoteRequest,
+    SoftwareUpgradeProposal,
+    StdTx,
+    TextProposal,
+    TimeoutInfo,
+    TMEventData,
+    Tx,
+    TxMessage,
+    VestingAccount,
+    VoteMessage,
+    VoteSetBitsMessage,
+    VoteSetMaj23Message,
+    WALMessage
 } from '../types';
-import * as decodeType from './decodeType';
 import { unmarshalJSON } from '../util';
-import * as Amino from '../../lib/Amino.wasm';
+import * as decodeType from './decodeType';
 
-export function unmarshalMultiStoreProofOp (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): rootmulti.MultiStoreProofOp {
+export function unmarshalMultiStoreProofOp (amino: AminoBytes, lengthPrefixed: boolean = true): MultiStoreProofOp {
     const json = decodeType.decodeMultiStoreProofOp(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalIAVLAbsenceOp (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): iavl.IAVLAbsenceOp {
+export function unmarshalIAVLAbsenceOp (amino: AminoBytes, lengthPrefixed: boolean = true): IAVLAbsenceOp {
     const json = decodeType.decodeIAVLAbsenceOp(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalIAVLValueOp (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): iavl.IAVLValueOp {
+export function unmarshalIAVLValueOp (amino: AminoBytes, lengthPrefixed: boolean = true): IAVLValueOp {
     const json = decodeType.decodeIAVLValueOp(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKeyLedgerSecp256k1 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PrivKeyLedgerSecp256k1 {
+export function unmarshalPrivKeyLedgerSecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKeyLedgerSecp256k1 {
     const json = decodeType.decodePrivKeyLedgerSecp256k1(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): keys.Info {
+export function unmarshalInfo (amino: AminoBytes, lengthPrefixed: boolean = true): Info {
     const json = decodeType.decodeInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBIP44Params (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): keys.BIP44Params {
+export function unmarshalBIP44Params (amino: AminoBytes, lengthPrefixed: boolean = true): BIP44Params {
     const json = decodeType.decodeBIP44Params(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalLocalInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): keys.LocalInfo {
+export function unmarshalLocalInfo (amino: AminoBytes, lengthPrefixed: boolean = true): LocalInfo {
     const json = decodeType.decodeLocalInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalLedgerInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): keys.LedgerInfo {
+export function unmarshalLedgerInfo (amino: AminoBytes, lengthPrefixed: boolean = true): LedgerInfo {
     const json = decodeType.decodeLedgerInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalOfflineInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): keys.OfflineInfo {
+export function unmarshalOfflineInfo (amino: AminoBytes, lengthPrefixed: boolean = true): OfflineInfo {
     const json = decodeType.decodeOfflineInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMultiInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): keys.MultiInfo {
+export function unmarshalMultiInfo (amino: AminoBytes, lengthPrefixed: boolean = true): MultiInfo {
     const json = decodeType.decodeMultiInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsg (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): types.Msg {
+export function unmarshalMsg (amino: AminoBytes, lengthPrefixed: boolean = true): Msg {
     const json = decodeType.decodeMsg(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): types.Tx {
+export function unmarshalTx (amino: AminoBytes, lengthPrefixed: boolean = true): Tx {
     const json = decodeType.decodeTx(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): auth.Account {
+export function unmarshalAccount (amino: AminoBytes, lengthPrefixed: boolean = true): Account {
     const json = decodeType.decodeAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): auth.VestingAccount {
+export function unmarshalVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): VestingAccount {
     const json = decodeType.decodeVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBaseAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): auth.BaseAccount {
+export function unmarshalBaseAccount (amino: AminoBytes, lengthPrefixed: boolean = true): BaseAccount {
     const json = decodeType.decodeBaseAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBaseVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): auth.BaseVestingAccount {
+export function unmarshalBaseVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): BaseVestingAccount {
     const json = decodeType.decodeBaseVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalContinuousVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): auth.ContinuousVestingAccount {
+export function unmarshalContinuousVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): ContinuousVestingAccount {
     const json = decodeType.decodeContinuousVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalDelayedVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): auth.DelayedVestingAccount {
+export function unmarshalDelayedVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): DelayedVestingAccount {
     const json = decodeType.decodeDelayedVestingAccount(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalStdTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): auth.StdTx {
+export function unmarshalStdTx (amino: AminoBytes, lengthPrefixed: boolean = true): StdTx {
     const json = decodeType.decodeStdTx(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgSend (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): bank.MsgSend {
+export function unmarshalMsgSend (amino: AminoBytes, lengthPrefixed: boolean = true): MsgSend {
     const json = decodeType.decodeMsgSend(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgMultiSend (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): bank.MsgMultiSend {
+export function unmarshalMsgMultiSend (amino: AminoBytes, lengthPrefixed: boolean = true): MsgMultiSend {
     const json = decodeType.decodeMsgMultiSend(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgVerifyInvariant (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crisis.MsgVerifyInvariant {
+export function unmarshalMsgVerifyInvariant (amino: AminoBytes, lengthPrefixed: boolean = true): MsgVerifyInvariant {
     const json = decodeType.decodeMsgVerifyInvariant(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgWithdrawDelegatorReward (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): distribution.MsgWithdrawDelegatorReward {
+export function unmarshalMsgWithdrawDelegatorReward (amino: AminoBytes, lengthPrefixed: boolean = true): MsgWithdrawDelegatorReward {
     const json = decodeType.decodeMsgWithdrawDelegatorReward(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgWithdrawValidatorCommission (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): distribution.MsgWithdrawValidatorCommission {
+export function unmarshalMsgWithdrawValidatorCommission (amino: AminoBytes, lengthPrefixed: boolean = true): MsgWithdrawValidatorCommission {
     const json = decodeType.decodeMsgWithdrawValidatorCommission(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgSetWithdrawAddress (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): distribution.MsgSetWithdrawAddress {
+export function unmarshalMsgSetWithdrawAddress (amino: AminoBytes, lengthPrefixed: boolean = true): MsgSetWithdrawAddress {
     const json = decodeType.decodeMsgSetWithdrawAddress(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalContent (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): gov.Content {
+export function unmarshalContent (amino: AminoBytes, lengthPrefixed: boolean = true): Content {
     const json = decodeType.decodeContent(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgSubmitProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): gov.MsgSubmitProposal {
+export function unmarshalMsgSubmitProposal (amino: AminoBytes, lengthPrefixed: boolean = true): MsgSubmitProposal {
     const json = decodeType.decodeMsgSubmitProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgDeposit (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): gov.MsgDeposit {
+export function unmarshalMsgDeposit (amino: AminoBytes, lengthPrefixed: boolean = true): MsgDeposit {
     const json = decodeType.decodeMsgDeposit(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgVote (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): gov.MsgVote {
+export function unmarshalMsgVote (amino: AminoBytes, lengthPrefixed: boolean = true): MsgVote {
     const json = decodeType.decodeMsgVote(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTextProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): gov.TextProposal {
+export function unmarshalTextProposal (amino: AminoBytes, lengthPrefixed: boolean = true): TextProposal {
     const json = decodeType.decodeTextProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSoftwareUpgradeProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): gov.SoftwareUpgradeProposal {
+export function unmarshalSoftwareUpgradeProposal (amino: AminoBytes, lengthPrefixed: boolean = true): SoftwareUpgradeProposal {
     const json = decodeType.decodeSoftwareUpgradeProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgIBCTransfer (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): ibc.MsgIBCTransfer {
+export function unmarshalMsgIBCTransfer (amino: AminoBytes, lengthPrefixed: boolean = true): MsgIBCTransfer {
     const json = decodeType.decodeMsgIBCTransfer(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgIBCReceive (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): ibc.MsgIBCReceive {
+export function unmarshalMsgIBCReceive (amino: AminoBytes, lengthPrefixed: boolean = true): MsgIBCReceive {
     const json = decodeType.decodeMsgIBCReceive(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalParameterChangeProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): params.ParameterChangeProposal {
+export function unmarshalParameterChangeProposal (amino: AminoBytes, lengthPrefixed: boolean = true): ParameterChangeProposal {
     const json = decodeType.decodeParameterChangeProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgUnjail (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): slashing.MsgUnjail {
+export function unmarshalMsgUnjail (amino: AminoBytes, lengthPrefixed: boolean = true): MsgUnjail {
     const json = decodeType.decodeMsgUnjail(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgCreateValidator (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): staking.MsgCreateValidator {
+export function unmarshalMsgCreateValidator (amino: AminoBytes, lengthPrefixed: boolean = true): MsgCreateValidator {
     const json = decodeType.decodeMsgCreateValidator(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgEditValidator (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): staking.MsgEditValidator {
+export function unmarshalMsgEditValidator (amino: AminoBytes, lengthPrefixed: boolean = true): MsgEditValidator {
     const json = decodeType.decodeMsgEditValidator(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgDelegate (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): staking.MsgDelegate {
+export function unmarshalMsgDelegate (amino: AminoBytes, lengthPrefixed: boolean = true): MsgDelegate {
     const json = decodeType.decodeMsgDelegate(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgUndelegate (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): staking.MsgUndelegate {
+export function unmarshalMsgUndelegate (amino: AminoBytes, lengthPrefixed: boolean = true): MsgUndelegate {
     const json = decodeType.decodeMsgUndelegate(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgBeginRedelegate (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): staking.MsgBeginRedelegate {
+export function unmarshalMsgBeginRedelegate (amino: AminoBytes, lengthPrefixed: boolean = true): MsgBeginRedelegate {
     const json = decodeType.decodeMsgBeginRedelegate(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBlockchainMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): blockchain.BlockchainMessage {
+export function unmarshalBlockchainMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BlockchainMessage {
     const json = decodeType.decodeBlockchainMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcBlockRequestMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): blockchain.BcBlockRequestMessage {
+export function unmarshalBcBlockRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcBlockRequestMessage {
     const json = decodeType.decodeBcBlockRequestMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcBlockResponseMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): blockchain.BcBlockResponseMessage {
+export function unmarshalBcBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcBlockResponseMessage {
     const json = decodeType.decodeBcBlockResponseMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcNoBlockResponseMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): blockchain.BcNoBlockResponseMessage {
+export function unmarshalBcNoBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcNoBlockResponseMessage {
     const json = decodeType.decodeBcNoBlockResponseMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcStatusResponseMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): blockchain.BcStatusResponseMessage {
+export function unmarshalBcStatusResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcStatusResponseMessage {
     const json = decodeType.decodeBcStatusResponseMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBcStatusRequestMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): blockchain.BcStatusRequestMessage {
+export function unmarshalBcStatusRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcStatusRequestMessage {
     const json = decodeType.decodeBcStatusRequestMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalConsensusMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.ConsensusMessage {
+export function unmarshalConsensusMessage (amino: AminoBytes, lengthPrefixed: boolean = true): ConsensusMessage {
     const json = decodeType.decodeConsensusMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalNewRoundStepMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.NewRoundStepMessage {
+export function unmarshalNewRoundStepMessage (amino: AminoBytes, lengthPrefixed: boolean = true): NewRoundStepMessage {
     const json = decodeType.decodeNewRoundStepMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalNewValidBlockMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.NewValidBlockMessage {
+export function unmarshalNewValidBlockMessage (amino: AminoBytes, lengthPrefixed: boolean = true): NewValidBlockMessage {
     const json = decodeType.decodeNewValidBlockMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalProposalMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.ProposalMessage {
+export function unmarshalProposalMessage (amino: AminoBytes, lengthPrefixed: boolean = true): ProposalMessage {
     const json = decodeType.decodeProposalMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalProposalPOLMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.ProposalPOLMessage {
+export function unmarshalProposalPOLMessage (amino: AminoBytes, lengthPrefixed: boolean = true): ProposalPOLMessage {
     const json = decodeType.decodeProposalPOLMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalBlockPartMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.BlockPartMessage {
+export function unmarshalBlockPartMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BlockPartMessage {
     const json = decodeType.decodeBlockPartMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVoteMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.VoteMessage {
+export function unmarshalVoteMessage (amino: AminoBytes, lengthPrefixed: boolean = true): VoteMessage {
     const json = decodeType.decodeVoteMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalHasVoteMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.HasVoteMessage {
+export function unmarshalHasVoteMessage (amino: AminoBytes, lengthPrefixed: boolean = true): HasVoteMessage {
     const json = decodeType.decodeHasVoteMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVoteSetMaj23Message (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.VoteSetMaj23Message {
+export function unmarshalVoteSetMaj23Message (amino: AminoBytes, lengthPrefixed: boolean = true): VoteSetMaj23Message {
     const json = decodeType.decodeVoteSetMaj23Message(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalVoteSetBitsMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.VoteSetBitsMessage {
+export function unmarshalVoteSetBitsMessage (amino: AminoBytes, lengthPrefixed: boolean = true): VoteSetBitsMessage {
     const json = decodeType.decodeVoteSetBitsMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalWALMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.WALMessage {
+export function unmarshalWALMessage (amino: AminoBytes, lengthPrefixed: boolean = true): WALMessage {
     const json = decodeType.decodeWALMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMsgInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.MsgInfo {
+export function unmarshalMsgInfo (amino: AminoBytes, lengthPrefixed: boolean = true): MsgInfo {
     const json = decodeType.decodeMsgInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTimeoutInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.TimeoutInfo {
+export function unmarshalTimeoutInfo (amino: AminoBytes, lengthPrefixed: boolean = true): TimeoutInfo {
     const json = decodeType.decodeTimeoutInfo(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEndHeightMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): consensus.EndHeightMessage {
+export function unmarshalEndHeightMessage (amino: AminoBytes, lengthPrefixed: boolean = true): EndHeightMessage {
     const json = decodeType.decodeEndHeightMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKey (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PubKey {
+export function unmarshalPubKey (amino: AminoBytes, lengthPrefixed: boolean = true): PubKey {
     const json = decodeType.decodePubKey(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKey (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PrivKey {
+export function unmarshalPrivKey (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKey {
     const json = decodeType.decodePrivKey(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyEd25519 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PubKeyEd25519 {
+export function unmarshalPubKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyEd25519 {
     const json = decodeType.decodePubKeyEd25519(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKeyEd25519 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PrivKeyEd25519 {
+export function unmarshalPrivKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKeyEd25519 {
     const json = decodeType.decodePrivKeyEd25519(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeySecp256k1 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PubKeySecp256k1 {
+export function unmarshalPubKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeySecp256k1 {
     const json = decodeType.decodePubKeySecp256k1(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPrivKeySecp256k1 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PrivKeySecp256k1 {
+export function unmarshalPrivKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKeySecp256k1 {
     const json = decodeType.decodePrivKeySecp256k1(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyMultisigThreshold (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): crypto.PubKeyMultisigThreshold {
+export function unmarshalPubKeyMultisigThreshold (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyMultisigThreshold {
     const json = decodeType.decodePubKeyMultisigThreshold(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEvidenceMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): evidence.EvidenceMessage {
+export function unmarshalEvidenceMessage (amino: AminoBytes, lengthPrefixed: boolean = true): EvidenceMessage {
     const json = decodeType.decodeEvidenceMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEvidenceListMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): evidence.EvidenceListMessage {
+export function unmarshalEvidenceListMessage (amino: AminoBytes, lengthPrefixed: boolean = true): EvidenceListMessage {
     const json = decodeType.decodeEvidenceListMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMempoolMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): mempool.MempoolMessage {
+export function unmarshalMempoolMessage (amino: AminoBytes, lengthPrefixed: boolean = true): MempoolMessage {
     const json = decodeType.decodeMempoolMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTxMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): mempool.TxMessage {
+export function unmarshalTxMessage (amino: AminoBytes, lengthPrefixed: boolean = true): TxMessage {
     const json = decodeType.decodeTxMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacket (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): conn.Packet {
+export function unmarshalPacket (amino: AminoBytes, lengthPrefixed: boolean = true): Packet {
     const json = decodeType.decodePacket(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacketPing (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): conn.PacketPing {
+export function unmarshalPacketPing (amino: AminoBytes, lengthPrefixed: boolean = true): PacketPing {
     const json = decodeType.decodePacketPing(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacketPong (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): conn.PacketPong {
+export function unmarshalPacketPong (amino: AminoBytes, lengthPrefixed: boolean = true): PacketPong {
     const json = decodeType.decodePacketPong(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPacketMsg (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): conn.PacketMsg {
+export function unmarshalPacketMsg (amino: AminoBytes, lengthPrefixed: boolean = true): PacketMsg {
     const json = decodeType.decodePacketMsg(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPexMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): pex.PexMessage {
+export function unmarshalPexMessage (amino: AminoBytes, lengthPrefixed: boolean = true): PexMessage {
     const json = decodeType.decodePexMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPexRequestMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): pex.PexRequestMessage {
+export function unmarshalPexRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): PexRequestMessage {
     const json = decodeType.decodePexRequestMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPexAddrsMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): pex.PexAddrsMessage {
+export function unmarshalPexAddrsMessage (amino: AminoBytes, lengthPrefixed: boolean = true): PexAddrsMessage {
     const json = decodeType.decodePexAddrsMessage(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalRemoteSignerMsg (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.RemoteSignerMsg {
+export function unmarshalRemoteSignerMsg (amino: AminoBytes, lengthPrefixed: boolean = true): RemoteSignerMsg {
     const json = decodeType.decodeRemoteSignerMsg(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.PubKeyRequest {
+export function unmarshalPubKeyRequest (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyRequest {
     const json = decodeType.decodePubKeyRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPubKeyResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.PubKeyResponse {
+export function unmarshalPubKeyResponse (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyResponse {
     const json = decodeType.decodePubKeyResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignVoteRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.SignVoteRequest {
+export function unmarshalSignVoteRequest (amino: AminoBytes, lengthPrefixed: boolean = true): SignVoteRequest {
     const json = decodeType.decodeSignVoteRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignedVoteResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.SignedVoteResponse {
+export function unmarshalSignedVoteResponse (amino: AminoBytes, lengthPrefixed: boolean = true): SignedVoteResponse {
     const json = decodeType.decodeSignedVoteResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignProposalRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.SignProposalRequest {
+export function unmarshalSignProposalRequest (amino: AminoBytes, lengthPrefixed: boolean = true): SignProposalRequest {
     const json = decodeType.decodeSignProposalRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalSignedProposalResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.SignedProposalResponse {
+export function unmarshalSignedProposalResponse (amino: AminoBytes, lengthPrefixed: boolean = true): SignedProposalResponse {
     const json = decodeType.decodeSignedProposalResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPingRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.PingRequest {
+export function unmarshalPingRequest (amino: AminoBytes, lengthPrefixed: boolean = true): PingRequest {
     const json = decodeType.decodePingRequest(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalPingResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): privval.PingResponse {
+export function unmarshalPingResponse (amino: AminoBytes, lengthPrefixed: boolean = true): PingResponse {
     const json = decodeType.decodePingResponse(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalTMEventData (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.TMEventData {
+export function unmarshalTMEventData (amino: AminoBytes, lengthPrefixed: boolean = true): TMEventData {
     const json = decodeType.decodeTMEventData(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataNewBlock (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataNewBlock {
+export function unmarshalEventDataNewBlock (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataNewBlock {
     const json = decodeType.decodeEventDataNewBlock(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataNewBlockHeader (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataNewBlockHeader {
+export function unmarshalEventDataNewBlockHeader (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataNewBlockHeader {
     const json = decodeType.decodeEventDataNewBlockHeader(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataTx {
+export function unmarshalEventDataTx (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataTx {
     const json = decodeType.decodeEventDataTx(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataRoundState (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataRoundState {
+export function unmarshalEventDataRoundState (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataRoundState {
     const json = decodeType.decodeEventDataRoundState(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataNewRound (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataNewRound {
+export function unmarshalEventDataNewRound (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataNewRound {
     const json = decodeType.decodeEventDataNewRound(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataCompleteProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataCompleteProposal {
+export function unmarshalEventDataCompleteProposal (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataCompleteProposal {
     const json = decodeType.decodeEventDataCompleteProposal(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataVote (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataVote {
+export function unmarshalEventDataVote (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataVote {
     const json = decodeType.decodeEventDataVote(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataValidatorSetUpdates (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataValidatorSetUpdates {
+export function unmarshalEventDataValidatorSetUpdates (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataValidatorSetUpdates {
     const json = decodeType.decodeEventDataValidatorSetUpdates(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEventDataString (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): events.EventDataString {
+export function unmarshalEventDataString (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataString {
     const json = decodeType.decodeEventDataString(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): evidence.Evidence {
+export function unmarshalEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): Evidence {
     const json = decodeType.decodeEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalDuplicateVoteEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): evidence.DuplicateVoteEvidence {
+export function unmarshalDuplicateVoteEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): DuplicateVoteEvidence {
     const json = decodeType.decodeDuplicateVoteEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMockGoodEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): evidence.MockGoodEvidence {
+export function unmarshalMockGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): MockGoodEvidence {
     const json = decodeType.decodeMockGoodEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMockRandomGoodEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): evidence.MockRandomGoodEvidence {
+export function unmarshalMockRandomGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): MockRandomGoodEvidence {
     const json = decodeType.decodeMockRandomGoodEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }
 
-export function unmarshalMockBadEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): evidence.MockBadEvidence {
+export function unmarshalMockBadEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): MockBadEvidence {
     const json = decodeType.decodeMockBadEvidence(amino, lengthPrefixed);
     return unmarshalJSON(json);
 }

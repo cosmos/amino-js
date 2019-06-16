@@ -1,47 +1,22 @@
-import * as auth from './auth';
-import * as bank from './bank';
-import * as blockchain from './blockchain';
-import * as conn from './conn';
-import * as consensus from './consensus';
-import * as crisis from './crisis';
-import * as crypto from './crypto';
-import * as distribution from './distribution';
-import * as events from './events';
-import * as evidence from './evidence';
-import * as gov from './gov';
-import * as iavl from './iavl';
-import * as ibc from './ibc';
-import * as keys from './keys';
-import * as mempool from './mempool';
-import * as params from './params';
-import * as pex from './pex';
-import * as privval from './privval';
-import * as rootmulti from './rootmulti';
-import * as slashing from './slashing';
-import * as staking from './staking';
-import * as types from './types';
-
-export {
-    auth,
-    bank,
-    blockchain,
-    conn,
-    consensus,
-    crisis,
-    crypto,
-    distribution,
-    events,
-    evidence,
-    gov,
-    iavl,
-    ibc,
-    keys,
-    mempool,
-    params,
-    pex,
-    privval,
-    rootmulti,
-    slashing,
-    staking,
-    types
-};
+export * from './auth';
+export * from './bank';
+export * from './blockchain';
+export * from './conn';
+export * from './consensus';
+export * from './crisis';
+export * from './crypto';
+export * from './distribution';
+export * from './events';
+export * from './evidence';
+export * from './gov';
+export * from './iavl';
+export * from './ibc';
+export * from './keys';
+export * from './mempool';
+export * from './params';
+export * from './pex';
+export * from './privval';
+export * from './rootmulti';
+export * from './slashing';
+export * from './staking';
+export * from './types';

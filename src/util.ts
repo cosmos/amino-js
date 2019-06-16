@@ -1,5 +1,7 @@
-let TextDecoder: { new (): { decode (bytes: Uint8Array): string } };
-let TextEncoder: { new (): { encode (string: string): Uint8Array } };
+import { Bytes, JSONBytes } from '../lib/bytes';
+
+let TextDecoder: { new (): { decode (bytes: Bytes): string } };
+let TextEncoder: { new (): { encode (string: string): Bytes } };
 let atob: (base64: string) => string;
 let btoa: (binary: string) => string;
 
@@ -22,7 +24,14 @@ else {
 const decoder = new TextDecoder;
 const encoder = new TextEncoder;
 
-export function base64ToBytes (base64: string): Uint8Array {
+/**
+ * Decode bytes from Base64
+ *
+ * @param   base64 - string to decode
+ *
+ * @returns bytes from Base64-encoded string
+ */
+export function base64ToBytes (base64: string): Bytes {
     const binary = atob(base64);
     const length = binary.length;
     const bytes  = new Uint8Array(new ArrayBuffer(length));
@@ -34,23 +43,62 @@ export function base64ToBytes (base64: string): Uint8Array {
     return bytes;
 }
 
-export function bytesToBase64 (bytes: Uint8Array): string {
+/**
+ * Encode bytes as Base64
+ *
+ * @param   bytes - bytes to encode
+ *
+ * @returns Base64-encoded string from bytes
+ */
+export function bytesToBase64 (bytes: Bytes): string {
     const binary = String.fromCharCode(...bytes);
     return btoa(binary);
 }
 
-export function bytesToString (bytes: Uint8Array): string {
+/**
+ * Decode a string from bytes
+ *
+ * @param   bytes - bytes to decode as a string
+ *
+ * @returns string decoded from bytes
+ * @throws  will throw if decoding fails
+ */
+export function bytesToString (bytes: Bytes): string {
     return decoder.decode(bytes);
 }
 
-export function stringToBytes (string: string): Uint8Array {
+/**
+ * Encode a string as bytes
+ *
+ * @param   string - string to encode as bytes
+ *
+ * @returns bytes encoded from string
+ * @throws  will throw if encoding fails
+ */
+export function stringToBytes (string: string): Bytes {
     return encoder.encode(string);
 }
 
-export function marshalJSON<T> (object: T): Uint8Array {
+/**
+ * Encode an object as JSON bytes
+ *
+ * @param   object - object to encode as binary JSON bytes
+ *
+ * @returns JSON-encoded bytes
+ * @throws  will throw if `JSON.stringify` fails (e.g. on circular reference)
+ */
+export function marshalJSON<T> (object: T): JSONBytes {
     return stringToBytes(JSON.stringify(object));
 }
 
-export function unmarshalJSON<T> (json: Uint8Array): T {
+/**
+ * Decode an object from JSON bytes
+ *
+ * @param   json - binary JSON bytes to decode
+ *
+ * @returns JSON-decoded object
+ * @throws  will throw if `JSON.parse` fails (e.g. on malformed JSON)
+ */
+export function unmarshalJSON<T> (json: JSONBytes): T {
     return JSON.parse(bytesToString(json));
 }

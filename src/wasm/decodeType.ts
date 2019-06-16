@@ -1,6 +1,7 @@
 import * as Amino from '../../lib/Amino.wasm';
+import { AminoBytes, JSONBytes } from '../../lib/bytes';
 
-export function decodeMultiStoreProofOp (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMultiStoreProofOp (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMultiStoreProofOp(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -8,7 +9,7 @@ export function decodeMultiStoreProofOp (amino: Amino.AminoBytes, lengthPrefixed
     return json;
 }
 
-export function decodeIAVLAbsenceOp (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeIAVLAbsenceOp (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeIAVLAbsenceOp(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -16,7 +17,7 @@ export function decodeIAVLAbsenceOp (amino: Amino.AminoBytes, lengthPrefixed: bo
     return json;
 }
 
-export function decodeIAVLValueOp (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeIAVLValueOp (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeIAVLValueOp(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -24,7 +25,7 @@ export function decodeIAVLValueOp (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodePrivKeyLedgerSecp256k1 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePrivKeyLedgerSecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePrivKeyLedgerSecp256k1(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -32,7 +33,7 @@ export function decodePrivKeyLedgerSecp256k1 (amino: Amino.AminoBytes, lengthPre
     return json;
 }
 
-export function decodeInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeInfo (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeInfo(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -40,7 +41,7 @@ export function decodeInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = t
     return json;
 }
 
-export function decodeBIP44Params (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBIP44Params (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBIP44Params(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -48,7 +49,7 @@ export function decodeBIP44Params (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeLocalInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeLocalInfo (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeLocalInfo(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -56,7 +57,7 @@ export function decodeLocalInfo (amino: Amino.AminoBytes, lengthPrefixed: boolea
     return json;
 }
 
-export function decodeLedgerInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeLedgerInfo (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeLedgerInfo(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -64,7 +65,7 @@ export function decodeLedgerInfo (amino: Amino.AminoBytes, lengthPrefixed: boole
     return json;
 }
 
-export function decodeOfflineInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeOfflineInfo (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeOfflineInfo(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -72,7 +73,7 @@ export function decodeOfflineInfo (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeMultiInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMultiInfo (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMultiInfo(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -80,7 +81,7 @@ export function decodeMultiInfo (amino: Amino.AminoBytes, lengthPrefixed: boolea
     return json;
 }
 
-export function decodeMsg (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsg (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsg(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -88,7 +89,7 @@ export function decodeMsg (amino: Amino.AminoBytes, lengthPrefixed: boolean = tr
     return json;
 }
 
-export function decodeTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeTx (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeTx(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -96,7 +97,7 @@ export function decodeTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = tru
     return json;
 }
 
-export function decodeAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeAccount (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeAccount(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -104,7 +105,7 @@ export function decodeAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean 
     return json;
 }
 
-export function decodeVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeVestingAccount(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -112,7 +113,7 @@ export function decodeVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: b
     return json;
 }
 
-export function decodeBaseAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBaseAccount (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBaseAccount(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -120,7 +121,7 @@ export function decodeBaseAccount (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeBaseVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBaseVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBaseVestingAccount(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -128,7 +129,7 @@ export function decodeBaseVestingAccount (amino: Amino.AminoBytes, lengthPrefixe
     return json;
 }
 
-export function decodeContinuousVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeContinuousVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeContinuousVestingAccount(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -136,7 +137,7 @@ export function decodeContinuousVestingAccount (amino: Amino.AminoBytes, lengthP
     return json;
 }
 
-export function decodeDelayedVestingAccount (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeDelayedVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeDelayedVestingAccount(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -144,7 +145,7 @@ export function decodeDelayedVestingAccount (amino: Amino.AminoBytes, lengthPref
     return json;
 }
 
-export function decodeStdTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeStdTx (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeStdTx(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -152,7 +153,7 @@ export function decodeStdTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = 
     return json;
 }
 
-export function decodeMsgSend (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgSend (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgSend(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -160,7 +161,7 @@ export function decodeMsgSend (amino: Amino.AminoBytes, lengthPrefixed: boolean 
     return json;
 }
 
-export function decodeMsgMultiSend (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgMultiSend (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgMultiSend(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -168,7 +169,7 @@ export function decodeMsgMultiSend (amino: Amino.AminoBytes, lengthPrefixed: boo
     return json;
 }
 
-export function decodeMsgVerifyInvariant (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgVerifyInvariant (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgVerifyInvariant(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -176,7 +177,7 @@ export function decodeMsgVerifyInvariant (amino: Amino.AminoBytes, lengthPrefixe
     return json;
 }
 
-export function decodeMsgWithdrawDelegatorReward (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgWithdrawDelegatorReward (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgWithdrawDelegatorReward(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -184,7 +185,7 @@ export function decodeMsgWithdrawDelegatorReward (amino: Amino.AminoBytes, lengt
     return json;
 }
 
-export function decodeMsgWithdrawValidatorCommission (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgWithdrawValidatorCommission (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgWithdrawValidatorCommission(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -192,7 +193,7 @@ export function decodeMsgWithdrawValidatorCommission (amino: Amino.AminoBytes, l
     return json;
 }
 
-export function decodeMsgSetWithdrawAddress (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgSetWithdrawAddress (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgSetWithdrawAddress(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -200,7 +201,7 @@ export function decodeMsgSetWithdrawAddress (amino: Amino.AminoBytes, lengthPref
     return json;
 }
 
-export function decodeContent (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeContent (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeContent(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -208,7 +209,7 @@ export function decodeContent (amino: Amino.AminoBytes, lengthPrefixed: boolean 
     return json;
 }
 
-export function decodeMsgSubmitProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgSubmitProposal (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgSubmitProposal(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -216,7 +217,7 @@ export function decodeMsgSubmitProposal (amino: Amino.AminoBytes, lengthPrefixed
     return json;
 }
 
-export function decodeMsgDeposit (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgDeposit (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgDeposit(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -224,7 +225,7 @@ export function decodeMsgDeposit (amino: Amino.AminoBytes, lengthPrefixed: boole
     return json;
 }
 
-export function decodeMsgVote (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgVote (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgVote(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -232,7 +233,7 @@ export function decodeMsgVote (amino: Amino.AminoBytes, lengthPrefixed: boolean 
     return json;
 }
 
-export function decodeTextProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeTextProposal (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeTextProposal(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -240,7 +241,7 @@ export function decodeTextProposal (amino: Amino.AminoBytes, lengthPrefixed: boo
     return json;
 }
 
-export function decodeSoftwareUpgradeProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeSoftwareUpgradeProposal (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeSoftwareUpgradeProposal(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -248,7 +249,7 @@ export function decodeSoftwareUpgradeProposal (amino: Amino.AminoBytes, lengthPr
     return json;
 }
 
-export function decodeMsgIBCTransfer (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgIBCTransfer (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgIBCTransfer(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -256,7 +257,7 @@ export function decodeMsgIBCTransfer (amino: Amino.AminoBytes, lengthPrefixed: b
     return json;
 }
 
-export function decodeMsgIBCReceive (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgIBCReceive (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgIBCReceive(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -264,7 +265,7 @@ export function decodeMsgIBCReceive (amino: Amino.AminoBytes, lengthPrefixed: bo
     return json;
 }
 
-export function decodeParameterChangeProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeParameterChangeProposal (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeParameterChangeProposal(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -272,7 +273,7 @@ export function decodeParameterChangeProposal (amino: Amino.AminoBytes, lengthPr
     return json;
 }
 
-export function decodeMsgUnjail (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgUnjail (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgUnjail(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -280,7 +281,7 @@ export function decodeMsgUnjail (amino: Amino.AminoBytes, lengthPrefixed: boolea
     return json;
 }
 
-export function decodeMsgCreateValidator (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgCreateValidator (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgCreateValidator(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -288,7 +289,7 @@ export function decodeMsgCreateValidator (amino: Amino.AminoBytes, lengthPrefixe
     return json;
 }
 
-export function decodeMsgEditValidator (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgEditValidator (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgEditValidator(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -296,7 +297,7 @@ export function decodeMsgEditValidator (amino: Amino.AminoBytes, lengthPrefixed:
     return json;
 }
 
-export function decodeMsgDelegate (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgDelegate (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgDelegate(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -304,7 +305,7 @@ export function decodeMsgDelegate (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeMsgUndelegate (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgUndelegate (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgUndelegate(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -312,7 +313,7 @@ export function decodeMsgUndelegate (amino: Amino.AminoBytes, lengthPrefixed: bo
     return json;
 }
 
-export function decodeMsgBeginRedelegate (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgBeginRedelegate (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgBeginRedelegate(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -320,7 +321,7 @@ export function decodeMsgBeginRedelegate (amino: Amino.AminoBytes, lengthPrefixe
     return json;
 }
 
-export function decodeBlockchainMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBlockchainMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBlockchainMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -328,7 +329,7 @@ export function decodeBlockchainMessage (amino: Amino.AminoBytes, lengthPrefixed
     return json;
 }
 
-export function decodeBcBlockRequestMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBcBlockRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBcBlockRequestMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -336,7 +337,7 @@ export function decodeBcBlockRequestMessage (amino: Amino.AminoBytes, lengthPref
     return json;
 }
 
-export function decodeBcBlockResponseMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBcBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBcBlockResponseMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -344,7 +345,7 @@ export function decodeBcBlockResponseMessage (amino: Amino.AminoBytes, lengthPre
     return json;
 }
 
-export function decodeBcNoBlockResponseMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBcNoBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBcNoBlockResponseMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -352,7 +353,7 @@ export function decodeBcNoBlockResponseMessage (amino: Amino.AminoBytes, lengthP
     return json;
 }
 
-export function decodeBcStatusResponseMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBcStatusResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBcStatusResponseMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -360,7 +361,7 @@ export function decodeBcStatusResponseMessage (amino: Amino.AminoBytes, lengthPr
     return json;
 }
 
-export function decodeBcStatusRequestMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBcStatusRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBcStatusRequestMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -368,7 +369,7 @@ export function decodeBcStatusRequestMessage (amino: Amino.AminoBytes, lengthPre
     return json;
 }
 
-export function decodeConsensusMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeConsensusMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeConsensusMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -376,7 +377,7 @@ export function decodeConsensusMessage (amino: Amino.AminoBytes, lengthPrefixed:
     return json;
 }
 
-export function decodeNewRoundStepMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeNewRoundStepMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeNewRoundStepMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -384,7 +385,7 @@ export function decodeNewRoundStepMessage (amino: Amino.AminoBytes, lengthPrefix
     return json;
 }
 
-export function decodeNewValidBlockMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeNewValidBlockMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeNewValidBlockMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -392,7 +393,7 @@ export function decodeNewValidBlockMessage (amino: Amino.AminoBytes, lengthPrefi
     return json;
 }
 
-export function decodeProposalMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeProposalMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeProposalMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -400,7 +401,7 @@ export function decodeProposalMessage (amino: Amino.AminoBytes, lengthPrefixed: 
     return json;
 }
 
-export function decodeProposalPOLMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeProposalPOLMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeProposalPOLMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -408,7 +409,7 @@ export function decodeProposalPOLMessage (amino: Amino.AminoBytes, lengthPrefixe
     return json;
 }
 
-export function decodeBlockPartMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeBlockPartMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeBlockPartMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -416,7 +417,7 @@ export function decodeBlockPartMessage (amino: Amino.AminoBytes, lengthPrefixed:
     return json;
 }
 
-export function decodeVoteMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeVoteMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeVoteMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -424,7 +425,7 @@ export function decodeVoteMessage (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeHasVoteMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeHasVoteMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeHasVoteMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -432,7 +433,7 @@ export function decodeHasVoteMessage (amino: Amino.AminoBytes, lengthPrefixed: b
     return json;
 }
 
-export function decodeVoteSetMaj23Message (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeVoteSetMaj23Message (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeVoteSetMaj23Message(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -440,7 +441,7 @@ export function decodeVoteSetMaj23Message (amino: Amino.AminoBytes, lengthPrefix
     return json;
 }
 
-export function decodeVoteSetBitsMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeVoteSetBitsMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeVoteSetBitsMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -448,7 +449,7 @@ export function decodeVoteSetBitsMessage (amino: Amino.AminoBytes, lengthPrefixe
     return json;
 }
 
-export function decodeWALMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeWALMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeWALMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -456,7 +457,7 @@ export function decodeWALMessage (amino: Amino.AminoBytes, lengthPrefixed: boole
     return json;
 }
 
-export function decodeMsgInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMsgInfo (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMsgInfo(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -464,7 +465,7 @@ export function decodeMsgInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean 
     return json;
 }
 
-export function decodeTimeoutInfo (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeTimeoutInfo (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeTimeoutInfo(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -472,7 +473,7 @@ export function decodeTimeoutInfo (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeEndHeightMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEndHeightMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEndHeightMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -480,7 +481,7 @@ export function decodeEndHeightMessage (amino: Amino.AminoBytes, lengthPrefixed:
     return json;
 }
 
-export function decodePubKey (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePubKey (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePubKey(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -488,7 +489,7 @@ export function decodePubKey (amino: Amino.AminoBytes, lengthPrefixed: boolean =
     return json;
 }
 
-export function decodePrivKey (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePrivKey (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePrivKey(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -496,7 +497,7 @@ export function decodePrivKey (amino: Amino.AminoBytes, lengthPrefixed: boolean 
     return json;
 }
 
-export function decodePubKeyEd25519 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePubKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePubKeyEd25519(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -504,7 +505,7 @@ export function decodePubKeyEd25519 (amino: Amino.AminoBytes, lengthPrefixed: bo
     return json;
 }
 
-export function decodePrivKeyEd25519 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePrivKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePrivKeyEd25519(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -512,7 +513,7 @@ export function decodePrivKeyEd25519 (amino: Amino.AminoBytes, lengthPrefixed: b
     return json;
 }
 
-export function decodePubKeySecp256k1 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePubKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePubKeySecp256k1(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -520,7 +521,7 @@ export function decodePubKeySecp256k1 (amino: Amino.AminoBytes, lengthPrefixed: 
     return json;
 }
 
-export function decodePrivKeySecp256k1 (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePrivKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePrivKeySecp256k1(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -528,7 +529,7 @@ export function decodePrivKeySecp256k1 (amino: Amino.AminoBytes, lengthPrefixed:
     return json;
 }
 
-export function decodePubKeyMultisigThreshold (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePubKeyMultisigThreshold (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePubKeyMultisigThreshold(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -536,7 +537,7 @@ export function decodePubKeyMultisigThreshold (amino: Amino.AminoBytes, lengthPr
     return json;
 }
 
-export function decodeEvidenceMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEvidenceMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEvidenceMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -544,7 +545,7 @@ export function decodeEvidenceMessage (amino: Amino.AminoBytes, lengthPrefixed: 
     return json;
 }
 
-export function decodeEvidenceListMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEvidenceListMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEvidenceListMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -552,7 +553,7 @@ export function decodeEvidenceListMessage (amino: Amino.AminoBytes, lengthPrefix
     return json;
 }
 
-export function decodeMempoolMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMempoolMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMempoolMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -560,7 +561,7 @@ export function decodeMempoolMessage (amino: Amino.AminoBytes, lengthPrefixed: b
     return json;
 }
 
-export function decodeTxMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeTxMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeTxMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -568,7 +569,7 @@ export function decodeTxMessage (amino: Amino.AminoBytes, lengthPrefixed: boolea
     return json;
 }
 
-export function decodePacket (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePacket (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePacket(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -576,7 +577,7 @@ export function decodePacket (amino: Amino.AminoBytes, lengthPrefixed: boolean =
     return json;
 }
 
-export function decodePacketPing (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePacketPing (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePacketPing(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -584,7 +585,7 @@ export function decodePacketPing (amino: Amino.AminoBytes, lengthPrefixed: boole
     return json;
 }
 
-export function decodePacketPong (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePacketPong (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePacketPong(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -592,7 +593,7 @@ export function decodePacketPong (amino: Amino.AminoBytes, lengthPrefixed: boole
     return json;
 }
 
-export function decodePacketMsg (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePacketMsg (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePacketMsg(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -600,7 +601,7 @@ export function decodePacketMsg (amino: Amino.AminoBytes, lengthPrefixed: boolea
     return json;
 }
 
-export function decodePexMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePexMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePexMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -608,7 +609,7 @@ export function decodePexMessage (amino: Amino.AminoBytes, lengthPrefixed: boole
     return json;
 }
 
-export function decodePexRequestMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePexRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePexRequestMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -616,7 +617,7 @@ export function decodePexRequestMessage (amino: Amino.AminoBytes, lengthPrefixed
     return json;
 }
 
-export function decodePexAddrsMessage (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePexAddrsMessage (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePexAddrsMessage(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -624,7 +625,7 @@ export function decodePexAddrsMessage (amino: Amino.AminoBytes, lengthPrefixed: 
     return json;
 }
 
-export function decodeRemoteSignerMsg (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeRemoteSignerMsg (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeRemoteSignerMsg(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -632,7 +633,7 @@ export function decodeRemoteSignerMsg (amino: Amino.AminoBytes, lengthPrefixed: 
     return json;
 }
 
-export function decodePubKeyRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePubKeyRequest (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePubKeyRequest(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -640,7 +641,7 @@ export function decodePubKeyRequest (amino: Amino.AminoBytes, lengthPrefixed: bo
     return json;
 }
 
-export function decodePubKeyResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePubKeyResponse (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePubKeyResponse(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -648,7 +649,7 @@ export function decodePubKeyResponse (amino: Amino.AminoBytes, lengthPrefixed: b
     return json;
 }
 
-export function decodeSignVoteRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeSignVoteRequest (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeSignVoteRequest(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -656,7 +657,7 @@ export function decodeSignVoteRequest (amino: Amino.AminoBytes, lengthPrefixed: 
     return json;
 }
 
-export function decodeSignedVoteResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeSignedVoteResponse (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeSignedVoteResponse(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -664,7 +665,7 @@ export function decodeSignedVoteResponse (amino: Amino.AminoBytes, lengthPrefixe
     return json;
 }
 
-export function decodeSignProposalRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeSignProposalRequest (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeSignProposalRequest(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -672,7 +673,7 @@ export function decodeSignProposalRequest (amino: Amino.AminoBytes, lengthPrefix
     return json;
 }
 
-export function decodeSignedProposalResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeSignedProposalResponse (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeSignedProposalResponse(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -680,7 +681,7 @@ export function decodeSignedProposalResponse (amino: Amino.AminoBytes, lengthPre
     return json;
 }
 
-export function decodePingRequest (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePingRequest (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePingRequest(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -688,7 +689,7 @@ export function decodePingRequest (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodePingResponse (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodePingResponse (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodePingResponse(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -696,7 +697,7 @@ export function decodePingResponse (amino: Amino.AminoBytes, lengthPrefixed: boo
     return json;
 }
 
-export function decodeTMEventData (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeTMEventData (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeTMEventData(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -704,7 +705,7 @@ export function decodeTMEventData (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeEventDataNewBlock (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataNewBlock (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataNewBlock(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -712,7 +713,7 @@ export function decodeEventDataNewBlock (amino: Amino.AminoBytes, lengthPrefixed
     return json;
 }
 
-export function decodeEventDataNewBlockHeader (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataNewBlockHeader (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataNewBlockHeader(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -720,7 +721,7 @@ export function decodeEventDataNewBlockHeader (amino: Amino.AminoBytes, lengthPr
     return json;
 }
 
-export function decodeEventDataTx (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataTx (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataTx(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -728,7 +729,7 @@ export function decodeEventDataTx (amino: Amino.AminoBytes, lengthPrefixed: bool
     return json;
 }
 
-export function decodeEventDataRoundState (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataRoundState (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataRoundState(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -736,7 +737,7 @@ export function decodeEventDataRoundState (amino: Amino.AminoBytes, lengthPrefix
     return json;
 }
 
-export function decodeEventDataNewRound (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataNewRound (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataNewRound(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -744,7 +745,7 @@ export function decodeEventDataNewRound (amino: Amino.AminoBytes, lengthPrefixed
     return json;
 }
 
-export function decodeEventDataCompleteProposal (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataCompleteProposal (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataCompleteProposal(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -752,7 +753,7 @@ export function decodeEventDataCompleteProposal (amino: Amino.AminoBytes, length
     return json;
 }
 
-export function decodeEventDataVote (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataVote (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataVote(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -760,7 +761,7 @@ export function decodeEventDataVote (amino: Amino.AminoBytes, lengthPrefixed: bo
     return json;
 }
 
-export function decodeEventDataValidatorSetUpdates (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataValidatorSetUpdates (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataValidatorSetUpdates(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -768,7 +769,7 @@ export function decodeEventDataValidatorSetUpdates (amino: Amino.AminoBytes, len
     return json;
 }
 
-export function decodeEventDataString (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEventDataString (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEventDataString(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -776,7 +777,7 @@ export function decodeEventDataString (amino: Amino.AminoBytes, lengthPrefixed: 
     return json;
 }
 
-export function decodeEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeEvidence(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -784,7 +785,7 @@ export function decodeEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean
     return json;
 }
 
-export function decodeDuplicateVoteEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeDuplicateVoteEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeDuplicateVoteEvidence(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -792,7 +793,7 @@ export function decodeDuplicateVoteEvidence (amino: Amino.AminoBytes, lengthPref
     return json;
 }
 
-export function decodeMockGoodEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMockGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMockGoodEvidence(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -800,7 +801,7 @@ export function decodeMockGoodEvidence (amino: Amino.AminoBytes, lengthPrefixed:
     return json;
 }
 
-export function decodeMockRandomGoodEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMockRandomGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMockRandomGoodEvidence(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);
@@ -808,7 +809,7 @@ export function decodeMockRandomGoodEvidence (amino: Amino.AminoBytes, lengthPre
     return json;
 }
 
-export function decodeMockBadEvidence (amino: Amino.AminoBytes, lengthPrefixed: boolean = true): Amino.JSONBytes {
+export function decodeMockBadEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): JSONBytes {
     const [json, error] = Amino.decodeMockBadEvidence(amino, lengthPrefixed);
     if (error) {
         throw new Error(error);

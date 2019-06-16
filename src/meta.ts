@@ -1,4 +1,5 @@
 import * as Amino from '../lib/Amino';
+import { AminoBytes, DisambBytes, PrefixBytes } from '../lib/bytes';
 
 export {
     nameToDisfix,
@@ -7,7 +8,15 @@ export {
     varintSize
 } from '../lib/Amino';
 
-export function decodeDisambPrefixBytes (amino: Amino.AminoBytes): [Amino.DisambBytes | null, Amino.PrefixBytes | null, number] {
+/**
+ * Decode disambiguation bytes, prefix bytes, and byte length from Amino
+ *
+ * @param   amino - binary Amino-encoded bytes
+ *
+ * @returns tuple of disambiguation bytes (or null if none), prefix bytes (or null if none), and byte length
+ * @throws  will throw if decoding fails
+ */
+export function decodeDisambPrefixBytes (amino: AminoBytes): [DisambBytes | null, PrefixBytes | null, number] {
     const [disamb, hasDisamb, prefix, hasPrefix, length] = Amino.decodeDisambPrefixBytes(amino);
     return [
         hasDisamb ? disamb : null,

@@ -1,6 +1,14 @@
 import * as Amino from '../../lib/Amino.wasm';
+import { AminoBytes, DisambBytes, PrefixBytes } from '../../lib/bytes';
 
-export function decodeDisambPrefixBytes (amino: Amino.AminoBytes): [Amino.DisambBytes | null, Amino.PrefixBytes | null, number] {
+export {
+    nameToDisfix,
+    byteSliceSize,
+    uvarintSize,
+    varintSize
+} from '../../lib/Amino.wasm';
+
+export function decodeDisambPrefixBytes (amino: AminoBytes): [DisambBytes | null, PrefixBytes | null, number] {
     const [disamb, hasDisamb, prefix, hasPrefix, length, error] = Amino.decodeDisambPrefixBytes(amino);
     if (error) {
         throw new Error(error);
@@ -10,20 +18,4 @@ export function decodeDisambPrefixBytes (amino: Amino.AminoBytes): [Amino.Disamb
         hasPrefix ? prefix : null,
         length
     ];
-}
-
-export function nameToDisfix (name: string): [Amino.DisambBytes, Amino.PrefixBytes] {
-    return Amino.nameToDisfix(name);
-}
-
-export function byteSliceSize (bytes: Amino.Bytes): number {
-    return Amino.byteSliceSize(bytes);
-}
-
-export function uvarintSize (uvarint: number): number {
-    return Amino.uvarintSize(uvarint);
-}
-
-export function varintSize (varint: number): number {
-    return Amino.varintSize(varint);
 }

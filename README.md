@@ -9,6 +9,13 @@ Support is planned for Service Workers.
 - [Node.js](https://repl.it/repls/ScalyGracefulState)
 - [Browser](https://jsfiddle.net/qk2wut06/)
 
+### Documentation
+
+All exported functions are documented. Some Amino registered type interfaces are documented.
+
+- [HTML](docs/html/index.html)
+- [Markdown](docs/md/README.md)
+
 ### Install
 
 Please note that the NPM package name is `@tendermint/amino-js` rather than `@cosmos/amino-js`.
@@ -25,10 +32,51 @@ npm install @tendermint/amino-js
 
 ### Usage
 
+Encoding decoding of basic values:
 ```js
 import { encodeString, decodeString } from '@tendermint/amino-js';
 decodeString(encodeString('hello world'));
 // [ "hello world", 12 ]
+```
+
+Encoding/decoding of registered types:
+```js
+import { marshalTx, unmarshalTx } from '@tendermint/amino-js';
+
+const tx = {
+   'type':  'auth/StdTx',
+   'value': {
+       'msg':        [{
+           'type':  'cosmos-sdk/MsgSend',
+           'value': {
+               'from_address': 'cosmos1h806c7khnvmjlywdrkdgk2vrayy2mmvf9rxk2r',
+               'to_address':   'cosmos1z7g5w84ynmjyg0kqpahdjqpj7yq34v3suckp0e',
+               'amount':       [{
+                   'denom':  'uatom',
+                   'amount': '11657995'
+               }]
+           }
+       }],
+       'fee':        {
+           'amount': [{
+               'denom':  'uatom',
+               'amount': '5000'
+           }],
+           'gas':    '200000'
+       },
+       'signatures': [{
+           'pub_key':   {
+               'type':  'tendermint/PubKeySecp256k1',
+               'value': 'AtQaCqFnshaZQp6rIkvAPyzThvCvXSDO+9AzbxVErqJP'
+           },
+           'signature': '1nUcIH0CLT0/nQ0mBTDrT6kMG20NY/PsH7P2gc4bpYNGLEYjBmdWevXUJouSE/9A/60QG9cYeqyTe5kFDeIPxQ=='
+       }],
+       'memo':       '1122672754'
+   }
+};
+
+const encodedTx = marshalTx(tx);
+const decodedTx = unmarshalTx(encodedTx);
 ```
 
 ### Source

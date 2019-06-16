@@ -15,5 +15,14 @@
         "lib",
         "src",
         "test"
-    ]
+    ],
+    "typedocOptions":  {
+        "mode":                   "file",
+        "readme":                 "none",
+        "ignoreCompilerErrors":   true,
+        "includeDeclarations":    true,
+        "excludeNotExported":     true,
+        "excludeExternals":       true,
+        "listInvalidSymbolLinks": true
+    }
 }
