@@ -1,4 +1,4 @@
-import { Bytes, DisambBytes, PrefixBytes, JSONBytes, AminoBytes } from './types';
+import { AminoBytes, Bech32String, Bytes, DisambBytes, JSONBytes, PrefixBytes } from './types';
 
 // Bech32
 /**
@@ -10,7 +10,7 @@ import { Bytes, DisambBytes, PrefixBytes, JSONBytes, AminoBytes } from './types'
  * @returns Bech32-encoded string
  * @throws  will throw if encoding fails
  */
-export function encodeBech32 (hrp: string, data: Bytes): string;
+export function encodeBech32 (hrp: string, data: Bytes): Bech32String;
 
 /**
  * Decode data (e.g. an account address) from Bech32
@@ -20,7 +20,7 @@ export function encodeBech32 (hrp: string, data: Bytes): string;
  * @returns tuple of decoded human readable part and data
  * @throws  will throw if decoding fails
  */
-export function decodeBech32 (bech: string): [string, Bytes];
+export function decodeBech32 (bech: Bech32String): [string, Bytes];
 
 // Basic encoding
 /**
@@ -28,7 +28,7 @@ export function decodeBech32 (bech: string): [string, Bytes];
  *
  * @param   byte - number to encode
  *
- * @returns binary Amino-encoded byte
+ * @returns Amino-encoded byte
  * @throws  will throw if encoding fails
  */
 export function encodeByte (byte: number): AminoBytes;
@@ -38,7 +38,7 @@ export function encodeByte (byte: number): AminoBytes;
  *
  * @param   bytes - bytes to encode
  *
- * @returns binary Amino-encoded bytes
+ * @returns Amino-encoded bytes
  * @throws  will throw if encoding fails
  */
 export function encodeByteSlice (bytes: Bytes): AminoBytes;
@@ -48,7 +48,7 @@ export function encodeByteSlice (bytes: Bytes): AminoBytes;
  *
  * @param   int8 - number to encode
  *
- * @returns binary Amino-encoded int8
+ * @returns Amino-encoded int8
  * @throws  will throw if encoding fails
  */
 export function encodeInt8 (int8: number): AminoBytes;
@@ -58,7 +58,7 @@ export function encodeInt8 (int8: number): AminoBytes;
  *
  * @param   int16 - number to encode
  *
- * @returns binary Amino-encoded int16
+ * @returns Amino-encoded int16
  * @throws  will throw if encoding fails
  */
 export function encodeInt16 (int16: number): AminoBytes;
@@ -68,7 +68,7 @@ export function encodeInt16 (int16: number): AminoBytes;
  *
  * @param   int32 - number to encode
  *
- * @returns binary Amino-encoded int32
+ * @returns Amino-encoded int32
  * @throws  will throw if encoding fails
  */
 export function encodeInt32 (int32: number): AminoBytes;
@@ -78,7 +78,7 @@ export function encodeInt32 (int32: number): AminoBytes;
  *
  * @param   int64 - number to encode
  *
- * @returns binary Amino-encoded int64
+ * @returns Amino-encoded int64
  * @throws  will throw if encoding fails
  */
 export function encodeInt64 (int64: number): AminoBytes;
@@ -88,7 +88,7 @@ export function encodeInt64 (int64: number): AminoBytes;
  *
  * @param   varint - number to encode
  *
- * @returns binary Amino-encoded varint
+ * @returns Amino-encoded varint
  * @throws  will throw if encoding fails
  */
 export function encodeVarint (varint: number): AminoBytes;
@@ -98,7 +98,7 @@ export function encodeVarint (varint: number): AminoBytes;
  *
  * @param   uint8 - number to encode
  *
- * @returns binary Amino-encoded uint8
+ * @returns Amino-encoded uint8
  * @throws  will throw if encoding fails
  */
 export function encodeUint8 (uint8: number): AminoBytes;
@@ -108,7 +108,7 @@ export function encodeUint8 (uint8: number): AminoBytes;
  *
  * @param   uint16 - number to encode
  *
- * @returns binary Amino-encoded uint16
+ * @returns Amino-encoded uint16
  * @throws  will throw if encoding fails
  */
 export function encodeUint16 (uint16: number): AminoBytes;
@@ -118,7 +118,7 @@ export function encodeUint16 (uint16: number): AminoBytes;
  *
  * @param   uint32 - number to encode
  *
- * @returns binary Amino-encoded uint32
+ * @returns Amino-encoded uint32
  * @throws  will throw if encoding fails
  */
 export function encodeUint32 (uint32: number): AminoBytes;
@@ -128,7 +128,7 @@ export function encodeUint32 (uint32: number): AminoBytes;
  *
  * @param   uint64 - number to encode
  *
- * @returns binary Amino-encoded uint64
+ * @returns Amino-encoded uint64
  * @throws  will throw if encoding fails
  */
 export function encodeUint64 (uint64: number): AminoBytes;
@@ -138,7 +138,7 @@ export function encodeUint64 (uint64: number): AminoBytes;
  *
  * @param   uvarint - number to encode
  *
- * @returns binary Amino-encoded uvarint
+ * @returns Amino-encoded uvarint
  * @throws  will throw if encoding fails
  */
 export function encodeUvarint (uvarint: number): AminoBytes;
@@ -148,7 +148,7 @@ export function encodeUvarint (uvarint: number): AminoBytes;
  *
  * @param   float - number to encode
  *
- * @returns binary Amino-encoded float32
+ * @returns Amino-encoded float32
  * @throws  will throw if encoding fails
  */
 export function encodeFloat32 (float: number): AminoBytes;
@@ -158,7 +158,7 @@ export function encodeFloat32 (float: number): AminoBytes;
  *
  * @param   float - number to encode
  *
- * @returns binary Amino-encoded float64
+ * @returns Amino-encoded float64
  * @throws  will throw if encoding fails
  */
 export function encodeFloat64 (float: number): AminoBytes;
@@ -168,7 +168,7 @@ export function encodeFloat64 (float: number): AminoBytes;
  *
  * @param   boolean - boolean to encode
  *
- * @returns binary Amino-encoded bool
+ * @returns Amino-encoded bool
  * @throws  will throw if encoding fails
  */
 export function encodeBool (boolean: boolean): AminoBytes;
@@ -178,7 +178,7 @@ export function encodeBool (boolean: boolean): AminoBytes;
  *
  * @param   string - string to encode
  *
- * @returns binary Amino-encoded string
+ * @returns Amino-encoded string
  * @throws  will throw if encoding fails
  */
 export function encodeString (string: string): AminoBytes;
@@ -188,7 +188,7 @@ export function encodeString (string: string): AminoBytes;
  *
  * @param   time - Date to encode
  *
- * @returns binary Amino-encoded time
+ * @returns Amino-encoded time
  * @throws  will throw if encoding fails
  */
 export function encodeTime (time: Date): AminoBytes;
@@ -197,7 +197,7 @@ export function encodeTime (time: Date): AminoBytes;
 /**
  * Decode a byte from Amino
  *
- * @param   amino - binary Amino-encoded byte
+ * @param   amino - Amino-encoded byte
  *
  * @returns tuple of decoded byte and byte length
  * @throws  will throw if decoding fails
@@ -207,7 +207,7 @@ export function decodeByte (amino: AminoBytes): [number, number];
 /**
  * Decode a byte slice from Amino
  *
- * @param   amino - binary Amino-encoded bytes
+ * @param   amino - Amino-encoded bytes
  *
  * @returns tuple of decoded bytes and byte length
  * @throws  will throw if decoding fails
@@ -217,7 +217,7 @@ export function decodeByteSlice (amino: AminoBytes): [Bytes, number];
 /**
  * Decode an int8 from Amino
  *
- * @param   amino - binary Amino-encoded int8
+ * @param   amino - Amino-encoded int8
  *
  * @returns tuple of decoded int8 and byte length
  * @throws  will throw if decoding fails
@@ -227,7 +227,7 @@ export function decodeInt8 (amino: AminoBytes): [number, number];
 /**
  * Decode an int16 from Amino
  *
- * @param   amino - binary Amino-encoded int16
+ * @param   amino - Amino-encoded int16
  *
  * @returns tuple of decoded int16 and byte length
  * @throws  will throw if decoding fails
@@ -237,7 +237,7 @@ export function decodeInt16 (amino: AminoBytes): [number, number];
 /**
  * Decode an int32 from Amino
  *
- * @param   amino - binary Amino-encoded int32
+ * @param   amino - Amino-encoded int32
  *
  * @returns tuple of decoded int32 and byte length
  * @throws  will throw if decoding fails
@@ -247,7 +247,7 @@ export function decodeInt32 (amino: AminoBytes): [number, number];
 /**
  * Decode an int64 from Amino
  *
- * @param   amino - binary Amino-encoded int64
+ * @param   amino - Amino-encoded int64
  *
  * @returns tuple of decoded int64 and byte length
  * @throws  will throw if decoding fails
@@ -257,7 +257,7 @@ export function decodeInt64 (amino: AminoBytes): [number, number];
 /**
  * Decode a varint from Amino
  *
- * @param   amino - binary Amino-encoded varint
+ * @param   amino - Amino-encoded varint
  *
  * @returns tuple of decoded varint and byte length
  * @throws  will throw if decoding fails
@@ -267,7 +267,7 @@ export function decodeVarint (amino: AminoBytes): [number, number];
 /**
  * Decode a uint8 from Amino
  *
- * @param   amino - binary Amino-encoded uint8
+ * @param   amino - Amino-encoded uint8
  *
  * @returns tuple of decoded uint8 and byte length
  * @throws  will throw if decoding fails
@@ -277,7 +277,7 @@ export function decodeUint8 (amino: AminoBytes): [number, number];
 /**
  * Decode a uint16 from Amino
  *
- * @param   amino - binary Amino-encoded uint16
+ * @param   amino - Amino-encoded uint16
  *
  * @returns tuple of decoded uint16 and byte length
  * @throws  will throw if decoding fails
@@ -287,7 +287,7 @@ export function decodeUint16 (amino: AminoBytes): [number, number];
 /**
  * Decode a uint32 from Amino
  *
- * @param   amino - binary Amino-encoded uint32
+ * @param   amino - Amino-encoded uint32
  *
  * @returns tuple of decoded uint32 and byte length
  * @throws  will throw if decoding fails
@@ -297,7 +297,7 @@ export function decodeUint32 (amino: AminoBytes): [number, number];
 /**
  * Decode a uint64 from Amino
  *
- * @param   amino - binary Amino-encoded uint64
+ * @param   amino - Amino-encoded uint64
  *
  * @returns tuple of decoded uint64 and byte length
  * @throws  will throw if decoding fails
@@ -307,7 +307,7 @@ export function decodeUint64 (amino: AminoBytes): [number, number];
 /**
  * Decode a uvarint from Amino
  *
- * @param   amino - binary Amino-encoded uvarint
+ * @param   amino - Amino-encoded uvarint
  *
  * @returns tuple of decoded uvarint and byte length
  * @throws  will throw if decoding fails
@@ -317,7 +317,7 @@ export function decodeUvarint (amino: AminoBytes): [number, number];
 /**
  * Decode a float32 from Amino
  *
- * @param   amino - binary Amino-encoded float32
+ * @param   amino - Amino-encoded float32
  *
  * @returns tuple of decoded float32 and byte length
  * @throws  will throw if decoding fails
@@ -327,7 +327,7 @@ export function decodeFloat32 (amino: AminoBytes): [number, number];
 /**
  * Decode a float64 from Amino
  *
- * @param   amino - binary Amino-encoded float64
+ * @param   amino - Amino-encoded float64
  *
  * @returns tuple of decoded float64 and byte length
  * @throws  will throw if decoding fails
@@ -337,7 +337,7 @@ export function decodeFloat64 (amino: AminoBytes): [number, number];
 /**
  * Decode a boolean from Amino
  *
- * @param   amino - binary Amino-encoded boolean
+ * @param   amino - Amino-encoded boolean
  *
  * @returns tuple of decoded boolean and byte length
  * @throws  will throw if decoding fails
@@ -347,7 +347,7 @@ export function decodeBool (amino: AminoBytes): [boolean, number];
 /**
  * Decode a string from Amino
  *
- * @param   amino - binary Amino-encoded string
+ * @param   amino - Amino-encoded string
  *
  * @returns tuple of decoded string and byte length
  * @throws  will throw if decoding fails
@@ -357,7 +357,7 @@ export function decodeString (amino: AminoBytes): [string, number];
 /**
  * Decode a time from Amino
  *
- * @param   amino - binary Amino-encoded time
+ * @param   amino - Amino-encoded time
  *
  * @returns tuple of decoded time and byte length
  * @throws  will throw if decoding fails
@@ -368,7 +368,7 @@ export function decodeTime (amino: AminoBytes): [Date, number];
 /**
  * Decode disambiguation bytes, prefix bytes, and byte length from Amino
  *
- * @param   amino - binary Amino-encoded bytes
+ * @param   amino - Amino-encoded bytes
  *
  * @returns tuple of disambiguation bytes, hasDisambiguationBytes, prefix bytes, hasPrefixBytes, and byte length
  * @throws  will throw if decoding fails
@@ -378,7 +378,7 @@ export function decodeDisambPrefixBytes (amino: AminoBytes): [DisambBytes, boole
 /**
  * Calculate disambiguation bytes and prefix bytes from a name
  *
- * @param   name - name of registerable interface/concrete
+ * @param   name - Amino registered type name (e.g. `"auth/Account"`)
  *
  * @returns tuple of disambiguation bytes and prefix bytes
  */
@@ -415,10 +415,10 @@ export function varintSize (varint: number): number;
 /**
  * Encode a `MultiStoreProofOp` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MultiStoreProofOp` object
+ * @param   json           - JSON-encoded `MultiStoreProofOp` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MultiStoreProofOp` object
+ * @returns Amino-encoded `MultiStoreProofOp` object
  * @throws  will throw if encoding fails
  */
 export function encodeMultiStoreProofOp (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -426,10 +426,10 @@ export function encodeMultiStoreProofOp (json: JSONBytes, lengthPrefixed: boolea
 /**
  * Encode a `IAVLAbsenceOp` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `IAVLAbsenceOp` object
+ * @param   json           - JSON-encoded `IAVLAbsenceOp` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `IAVLAbsenceOp` object
+ * @returns Amino-encoded `IAVLAbsenceOp` object
  * @throws  will throw if encoding fails
  */
 export function encodeIAVLAbsenceOp (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -437,10 +437,10 @@ export function encodeIAVLAbsenceOp (json: JSONBytes, lengthPrefixed: boolean): 
 /**
  * Encode a `IAVLValueOp` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `IAVLValueOp` object
+ * @param   json           - JSON-encoded `IAVLValueOp` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `IAVLValueOp` object
+ * @returns Amino-encoded `IAVLValueOp` object
  * @throws  will throw if encoding fails
  */
 export function encodeIAVLValueOp (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -448,10 +448,10 @@ export function encodeIAVLValueOp (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `PrivKeyLedgerSecp256k1` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PrivKeyLedgerSecp256k1` object
+ * @param   json           - JSON-encoded `PrivKeyLedgerSecp256k1` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PrivKeyLedgerSecp256k1` object
+ * @returns Amino-encoded `PrivKeyLedgerSecp256k1` object
  * @throws  will throw if encoding fails
  */
 export function encodePrivKeyLedgerSecp256k1 (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -459,10 +459,10 @@ export function encodePrivKeyLedgerSecp256k1 (json: JSONBytes, lengthPrefixed: b
 /**
  * Encode a `Info` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `Info` object
+ * @param   json           - JSON-encoded `Info` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `Info` object
+ * @returns Amino-encoded `Info` object
  * @throws  will throw if encoding fails
  */
 export function encodeInfo (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -470,10 +470,10 @@ export function encodeInfo (json: JSONBytes, lengthPrefixed: boolean): AminoByte
 /**
  * Encode a `BIP44Params` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BIP44Params` object
+ * @param   json           - JSON-encoded `BIP44Params` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BIP44Params` object
+ * @returns Amino-encoded `BIP44Params` object
  * @throws  will throw if encoding fails
  */
 export function encodeBIP44Params (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -481,10 +481,10 @@ export function encodeBIP44Params (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `LocalInfo` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `LocalInfo` object
+ * @param   json           - JSON-encoded `LocalInfo` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `LocalInfo` object
+ * @returns Amino-encoded `LocalInfo` object
  * @throws  will throw if encoding fails
  */
 export function encodeLocalInfo (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -492,10 +492,10 @@ export function encodeLocalInfo (json: JSONBytes, lengthPrefixed: boolean): Amin
 /**
  * Encode a `LedgerInfo` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `LedgerInfo` object
+ * @param   json           - JSON-encoded `LedgerInfo` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `LedgerInfo` object
+ * @returns Amino-encoded `LedgerInfo` object
  * @throws  will throw if encoding fails
  */
 export function encodeLedgerInfo (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -503,10 +503,10 @@ export function encodeLedgerInfo (json: JSONBytes, lengthPrefixed: boolean): Ami
 /**
  * Encode a `OfflineInfo` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `OfflineInfo` object
+ * @param   json           - JSON-encoded `OfflineInfo` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `OfflineInfo` object
+ * @returns Amino-encoded `OfflineInfo` object
  * @throws  will throw if encoding fails
  */
 export function encodeOfflineInfo (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -514,10 +514,10 @@ export function encodeOfflineInfo (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `MultiInfo` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MultiInfo` object
+ * @param   json           - JSON-encoded `MultiInfo` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MultiInfo` object
+ * @returns Amino-encoded `MultiInfo` object
  * @throws  will throw if encoding fails
  */
 export function encodeMultiInfo (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -525,10 +525,10 @@ export function encodeMultiInfo (json: JSONBytes, lengthPrefixed: boolean): Amin
 /**
  * Encode a `Msg` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `Msg` object
+ * @param   json           - JSON-encoded `Msg` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `Msg` object
+ * @returns Amino-encoded `Msg` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsg (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -536,10 +536,10 @@ export function encodeMsg (json: JSONBytes, lengthPrefixed: boolean): AminoBytes
 /**
  * Encode a `Tx` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `Tx` object
+ * @param   json           - JSON-encoded `Tx` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `Tx` object
+ * @returns Amino-encoded `Tx` object
  * @throws  will throw if encoding fails
  */
 export function encodeTx (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -547,10 +547,10 @@ export function encodeTx (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
 /**
  * Encode a `Account` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `Account` object
+ * @param   json           - JSON-encoded `Account` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `Account` object
+ * @returns Amino-encoded `Account` object
  * @throws  will throw if encoding fails
  */
 export function encodeAccount (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -558,10 +558,10 @@ export function encodeAccount (json: JSONBytes, lengthPrefixed: boolean): AminoB
 /**
  * Encode a `VestingAccount` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `VestingAccount` object
+ * @param   json           - JSON-encoded `VestingAccount` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `VestingAccount` object
+ * @returns Amino-encoded `VestingAccount` object
  * @throws  will throw if encoding fails
  */
 export function encodeVestingAccount (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -569,10 +569,10 @@ export function encodeVestingAccount (json: JSONBytes, lengthPrefixed: boolean):
 /**
  * Encode a `BaseAccount` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BaseAccount` object
+ * @param   json           - JSON-encoded `BaseAccount` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BaseAccount` object
+ * @returns Amino-encoded `BaseAccount` object
  * @throws  will throw if encoding fails
  */
 export function encodeBaseAccount (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -580,10 +580,10 @@ export function encodeBaseAccount (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `BaseVestingAccount` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BaseVestingAccount` object
+ * @param   json           - JSON-encoded `BaseVestingAccount` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BaseVestingAccount` object
+ * @returns Amino-encoded `BaseVestingAccount` object
  * @throws  will throw if encoding fails
  */
 export function encodeBaseVestingAccount (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -591,10 +591,10 @@ export function encodeBaseVestingAccount (json: JSONBytes, lengthPrefixed: boole
 /**
  * Encode a `ContinuousVestingAccount` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `ContinuousVestingAccount` object
+ * @param   json           - JSON-encoded `ContinuousVestingAccount` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `ContinuousVestingAccount` object
+ * @returns Amino-encoded `ContinuousVestingAccount` object
  * @throws  will throw if encoding fails
  */
 export function encodeContinuousVestingAccount (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -602,10 +602,10 @@ export function encodeContinuousVestingAccount (json: JSONBytes, lengthPrefixed:
 /**
  * Encode a `DelayedVestingAccount` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `DelayedVestingAccount` object
+ * @param   json           - JSON-encoded `DelayedVestingAccount` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `DelayedVestingAccount` object
+ * @returns Amino-encoded `DelayedVestingAccount` object
  * @throws  will throw if encoding fails
  */
 export function encodeDelayedVestingAccount (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -613,10 +613,10 @@ export function encodeDelayedVestingAccount (json: JSONBytes, lengthPrefixed: bo
 /**
  * Encode a `StdTx` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `StdTx` object
+ * @param   json           - JSON-encoded `StdTx` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `StdTx` object
+ * @returns Amino-encoded `StdTx` object
  * @throws  will throw if encoding fails
  */
 export function encodeStdTx (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -624,10 +624,10 @@ export function encodeStdTx (json: JSONBytes, lengthPrefixed: boolean): AminoByt
 /**
  * Encode a `MsgSend` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgSend` object
+ * @param   json           - JSON-encoded `MsgSend` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgSend` object
+ * @returns Amino-encoded `MsgSend` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgSend (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -635,10 +635,10 @@ export function encodeMsgSend (json: JSONBytes, lengthPrefixed: boolean): AminoB
 /**
  * Encode a `MsgMultiSend` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgMultiSend` object
+ * @param   json           - JSON-encoded `MsgMultiSend` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgMultiSend` object
+ * @returns Amino-encoded `MsgMultiSend` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgMultiSend (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -646,10 +646,10 @@ export function encodeMsgMultiSend (json: JSONBytes, lengthPrefixed: boolean): A
 /**
  * Encode a `MsgVerifyInvariant` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgVerifyInvariant` object
+ * @param   json           - JSON-encoded `MsgVerifyInvariant` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgVerifyInvariant` object
+ * @returns Amino-encoded `MsgVerifyInvariant` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgVerifyInvariant (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -657,10 +657,10 @@ export function encodeMsgVerifyInvariant (json: JSONBytes, lengthPrefixed: boole
 /**
  * Encode a `MsgWithdrawDelegatorReward` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgWithdrawDelegatorReward` object
+ * @param   json           - JSON-encoded `MsgWithdrawDelegatorReward` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgWithdrawDelegatorReward` object
+ * @returns Amino-encoded `MsgWithdrawDelegatorReward` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgWithdrawDelegatorReward (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -668,10 +668,10 @@ export function encodeMsgWithdrawDelegatorReward (json: JSONBytes, lengthPrefixe
 /**
  * Encode a `MsgWithdrawValidatorCommission` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgWithdrawValidatorCommission` object
+ * @param   json           - JSON-encoded `MsgWithdrawValidatorCommission` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgWithdrawValidatorCommission` object
+ * @returns Amino-encoded `MsgWithdrawValidatorCommission` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgWithdrawValidatorCommission (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -679,10 +679,10 @@ export function encodeMsgWithdrawValidatorCommission (json: JSONBytes, lengthPre
 /**
  * Encode a `MsgSetWithdrawAddress` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgSetWithdrawAddress` object
+ * @param   json           - JSON-encoded `MsgSetWithdrawAddress` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgSetWithdrawAddress` object
+ * @returns Amino-encoded `MsgSetWithdrawAddress` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgSetWithdrawAddress (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -690,10 +690,10 @@ export function encodeMsgSetWithdrawAddress (json: JSONBytes, lengthPrefixed: bo
 /**
  * Encode a `Content` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `Content` object
+ * @param   json           - JSON-encoded `Content` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `Content` object
+ * @returns Amino-encoded `Content` object
  * @throws  will throw if encoding fails
  */
 export function encodeContent (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -701,10 +701,10 @@ export function encodeContent (json: JSONBytes, lengthPrefixed: boolean): AminoB
 /**
  * Encode a `MsgSubmitProposal` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgSubmitProposal` object
+ * @param   json           - JSON-encoded `MsgSubmitProposal` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgSubmitProposal` object
+ * @returns Amino-encoded `MsgSubmitProposal` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgSubmitProposal (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -712,10 +712,10 @@ export function encodeMsgSubmitProposal (json: JSONBytes, lengthPrefixed: boolea
 /**
  * Encode a `MsgDeposit` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgDeposit` object
+ * @param   json           - JSON-encoded `MsgDeposit` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgDeposit` object
+ * @returns Amino-encoded `MsgDeposit` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgDeposit (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -723,10 +723,10 @@ export function encodeMsgDeposit (json: JSONBytes, lengthPrefixed: boolean): Ami
 /**
  * Encode a `MsgVote` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgVote` object
+ * @param   json           - JSON-encoded `MsgVote` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgVote` object
+ * @returns Amino-encoded `MsgVote` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgVote (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -734,10 +734,10 @@ export function encodeMsgVote (json: JSONBytes, lengthPrefixed: boolean): AminoB
 /**
  * Encode a `TextProposal` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `TextProposal` object
+ * @param   json           - JSON-encoded `TextProposal` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `TextProposal` object
+ * @returns Amino-encoded `TextProposal` object
  * @throws  will throw if encoding fails
  */
 export function encodeTextProposal (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -745,10 +745,10 @@ export function encodeTextProposal (json: JSONBytes, lengthPrefixed: boolean): A
 /**
  * Encode a `SoftwareUpgradeProposal` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `SoftwareUpgradeProposal` object
+ * @param   json           - JSON-encoded `SoftwareUpgradeProposal` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `SoftwareUpgradeProposal` object
+ * @returns Amino-encoded `SoftwareUpgradeProposal` object
  * @throws  will throw if encoding fails
  */
 export function encodeSoftwareUpgradeProposal (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -756,10 +756,10 @@ export function encodeSoftwareUpgradeProposal (json: JSONBytes, lengthPrefixed: 
 /**
  * Encode a `MsgIBCTransfer` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgIBCTransfer` object
+ * @param   json           - JSON-encoded `MsgIBCTransfer` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgIBCTransfer` object
+ * @returns Amino-encoded `MsgIBCTransfer` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgIBCTransfer (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -767,10 +767,10 @@ export function encodeMsgIBCTransfer (json: JSONBytes, lengthPrefixed: boolean):
 /**
  * Encode a `MsgIBCReceive` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgIBCReceive` object
+ * @param   json           - JSON-encoded `MsgIBCReceive` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgIBCReceive` object
+ * @returns Amino-encoded `MsgIBCReceive` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgIBCReceive (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -778,10 +778,10 @@ export function encodeMsgIBCReceive (json: JSONBytes, lengthPrefixed: boolean): 
 /**
  * Encode a `ParameterChangeProposal` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `ParameterChangeProposal` object
+ * @param   json           - JSON-encoded `ParameterChangeProposal` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `ParameterChangeProposal` object
+ * @returns Amino-encoded `ParameterChangeProposal` object
  * @throws  will throw if encoding fails
  */
 export function encodeParameterChangeProposal (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -789,10 +789,10 @@ export function encodeParameterChangeProposal (json: JSONBytes, lengthPrefixed: 
 /**
  * Encode a `MsgUnjail` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgUnjail` object
+ * @param   json           - JSON-encoded `MsgUnjail` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgUnjail` object
+ * @returns Amino-encoded `MsgUnjail` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgUnjail (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -800,10 +800,10 @@ export function encodeMsgUnjail (json: JSONBytes, lengthPrefixed: boolean): Amin
 /**
  * Encode a `MsgCreateValidator` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgCreateValidator` object
+ * @param   json           - JSON-encoded `MsgCreateValidator` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgCreateValidator` object
+ * @returns Amino-encoded `MsgCreateValidator` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgCreateValidator (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -811,10 +811,10 @@ export function encodeMsgCreateValidator (json: JSONBytes, lengthPrefixed: boole
 /**
  * Encode a `MsgEditValidator` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgEditValidator` object
+ * @param   json           - JSON-encoded `MsgEditValidator` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgEditValidator` object
+ * @returns Amino-encoded `MsgEditValidator` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgEditValidator (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -822,10 +822,10 @@ export function encodeMsgEditValidator (json: JSONBytes, lengthPrefixed: boolean
 /**
  * Encode a `MsgDelegate` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgDelegate` object
+ * @param   json           - JSON-encoded `MsgDelegate` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgDelegate` object
+ * @returns Amino-encoded `MsgDelegate` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgDelegate (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -833,10 +833,10 @@ export function encodeMsgDelegate (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `MsgUndelegate` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgUndelegate` object
+ * @param   json           - JSON-encoded `MsgUndelegate` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgUndelegate` object
+ * @returns Amino-encoded `MsgUndelegate` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgUndelegate (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -844,10 +844,10 @@ export function encodeMsgUndelegate (json: JSONBytes, lengthPrefixed: boolean): 
 /**
  * Encode a `MsgBeginRedelegate` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgBeginRedelegate` object
+ * @param   json           - JSON-encoded `MsgBeginRedelegate` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgBeginRedelegate` object
+ * @returns Amino-encoded `MsgBeginRedelegate` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgBeginRedelegate (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -855,10 +855,10 @@ export function encodeMsgBeginRedelegate (json: JSONBytes, lengthPrefixed: boole
 /**
  * Encode a `BlockchainMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BlockchainMessage` object
+ * @param   json           - JSON-encoded `BlockchainMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BlockchainMessage` object
+ * @returns Amino-encoded `BlockchainMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeBlockchainMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -866,10 +866,10 @@ export function encodeBlockchainMessage (json: JSONBytes, lengthPrefixed: boolea
 /**
  * Encode a `BcBlockRequestMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BcBlockRequestMessage` object
+ * @param   json           - JSON-encoded `BcBlockRequestMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BcBlockRequestMessage` object
+ * @returns Amino-encoded `BcBlockRequestMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeBcBlockRequestMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -877,10 +877,10 @@ export function encodeBcBlockRequestMessage (json: JSONBytes, lengthPrefixed: bo
 /**
  * Encode a `BcBlockResponseMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BcBlockResponseMessage` object
+ * @param   json           - JSON-encoded `BcBlockResponseMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BcBlockResponseMessage` object
+ * @returns Amino-encoded `BcBlockResponseMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeBcBlockResponseMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -888,10 +888,10 @@ export function encodeBcBlockResponseMessage (json: JSONBytes, lengthPrefixed: b
 /**
  * Encode a `BcNoBlockResponseMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BcNoBlockResponseMessage` object
+ * @param   json           - JSON-encoded `BcNoBlockResponseMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BcNoBlockResponseMessage` object
+ * @returns Amino-encoded `BcNoBlockResponseMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeBcNoBlockResponseMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -899,10 +899,10 @@ export function encodeBcNoBlockResponseMessage (json: JSONBytes, lengthPrefixed:
 /**
  * Encode a `BcStatusResponseMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BcStatusResponseMessage` object
+ * @param   json           - JSON-encoded `BcStatusResponseMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BcStatusResponseMessage` object
+ * @returns Amino-encoded `BcStatusResponseMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeBcStatusResponseMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -910,10 +910,10 @@ export function encodeBcStatusResponseMessage (json: JSONBytes, lengthPrefixed: 
 /**
  * Encode a `BcStatusRequestMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BcStatusRequestMessage` object
+ * @param   json           - JSON-encoded `BcStatusRequestMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BcStatusRequestMessage` object
+ * @returns Amino-encoded `BcStatusRequestMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeBcStatusRequestMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -921,10 +921,10 @@ export function encodeBcStatusRequestMessage (json: JSONBytes, lengthPrefixed: b
 /**
  * Encode a `ConsensusMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `ConsensusMessage` object
+ * @param   json           - JSON-encoded `ConsensusMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `ConsensusMessage` object
+ * @returns Amino-encoded `ConsensusMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeConsensusMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -932,10 +932,10 @@ export function encodeConsensusMessage (json: JSONBytes, lengthPrefixed: boolean
 /**
  * Encode a `NewRoundStepMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `NewRoundStepMessage` object
+ * @param   json           - JSON-encoded `NewRoundStepMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `NewRoundStepMessage` object
+ * @returns Amino-encoded `NewRoundStepMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeNewRoundStepMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -943,10 +943,10 @@ export function encodeNewRoundStepMessage (json: JSONBytes, lengthPrefixed: bool
 /**
  * Encode a `NewValidBlockMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `NewValidBlockMessage` object
+ * @param   json           - JSON-encoded `NewValidBlockMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `NewValidBlockMessage` object
+ * @returns Amino-encoded `NewValidBlockMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeNewValidBlockMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -954,10 +954,10 @@ export function encodeNewValidBlockMessage (json: JSONBytes, lengthPrefixed: boo
 /**
  * Encode a `ProposalMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `ProposalMessage` object
+ * @param   json           - JSON-encoded `ProposalMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `ProposalMessage` object
+ * @returns Amino-encoded `ProposalMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeProposalMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -965,10 +965,10 @@ export function encodeProposalMessage (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Encode a `ProposalPOLMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `ProposalPOLMessage` object
+ * @param   json           - JSON-encoded `ProposalPOLMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `ProposalPOLMessage` object
+ * @returns Amino-encoded `ProposalPOLMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeProposalPOLMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -976,10 +976,10 @@ export function encodeProposalPOLMessage (json: JSONBytes, lengthPrefixed: boole
 /**
  * Encode a `BlockPartMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `BlockPartMessage` object
+ * @param   json           - JSON-encoded `BlockPartMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `BlockPartMessage` object
+ * @returns Amino-encoded `BlockPartMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeBlockPartMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -987,10 +987,10 @@ export function encodeBlockPartMessage (json: JSONBytes, lengthPrefixed: boolean
 /**
  * Encode a `VoteMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `VoteMessage` object
+ * @param   json           - JSON-encoded `VoteMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `VoteMessage` object
+ * @returns Amino-encoded `VoteMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeVoteMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -998,10 +998,10 @@ export function encodeVoteMessage (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `HasVoteMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `HasVoteMessage` object
+ * @param   json           - JSON-encoded `HasVoteMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `HasVoteMessage` object
+ * @returns Amino-encoded `HasVoteMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeHasVoteMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1009,10 +1009,10 @@ export function encodeHasVoteMessage (json: JSONBytes, lengthPrefixed: boolean):
 /**
  * Encode a `VoteSetMaj23Message` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `VoteSetMaj23Message` object
+ * @param   json           - JSON-encoded `VoteSetMaj23Message` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `VoteSetMaj23Message` object
+ * @returns Amino-encoded `VoteSetMaj23Message` object
  * @throws  will throw if encoding fails
  */
 export function encodeVoteSetMaj23Message (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1020,10 +1020,10 @@ export function encodeVoteSetMaj23Message (json: JSONBytes, lengthPrefixed: bool
 /**
  * Encode a `VoteSetBitsMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `VoteSetBitsMessage` object
+ * @param   json           - JSON-encoded `VoteSetBitsMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `VoteSetBitsMessage` object
+ * @returns Amino-encoded `VoteSetBitsMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeVoteSetBitsMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1031,10 +1031,10 @@ export function encodeVoteSetBitsMessage (json: JSONBytes, lengthPrefixed: boole
 /**
  * Encode a `WALMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `WALMessage` object
+ * @param   json           - JSON-encoded `WALMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `WALMessage` object
+ * @returns Amino-encoded `WALMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeWALMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1042,10 +1042,10 @@ export function encodeWALMessage (json: JSONBytes, lengthPrefixed: boolean): Ami
 /**
  * Encode a `MsgInfo` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MsgInfo` object
+ * @param   json           - JSON-encoded `MsgInfo` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MsgInfo` object
+ * @returns Amino-encoded `MsgInfo` object
  * @throws  will throw if encoding fails
  */
 export function encodeMsgInfo (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1053,10 +1053,10 @@ export function encodeMsgInfo (json: JSONBytes, lengthPrefixed: boolean): AminoB
 /**
  * Encode a `TimeoutInfo` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `TimeoutInfo` object
+ * @param   json           - JSON-encoded `TimeoutInfo` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `TimeoutInfo` object
+ * @returns Amino-encoded `TimeoutInfo` object
  * @throws  will throw if encoding fails
  */
 export function encodeTimeoutInfo (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1064,10 +1064,10 @@ export function encodeTimeoutInfo (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `EndHeightMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EndHeightMessage` object
+ * @param   json           - JSON-encoded `EndHeightMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EndHeightMessage` object
+ * @returns Amino-encoded `EndHeightMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeEndHeightMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1075,10 +1075,10 @@ export function encodeEndHeightMessage (json: JSONBytes, lengthPrefixed: boolean
 /**
  * Encode a `PubKey` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PubKey` object
+ * @param   json           - JSON-encoded `PubKey` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PubKey` object
+ * @returns Amino-encoded `PubKey` object
  * @throws  will throw if encoding fails
  */
 export function encodePubKey (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1086,10 +1086,10 @@ export function encodePubKey (json: JSONBytes, lengthPrefixed: boolean): AminoBy
 /**
  * Encode a `PrivKey` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PrivKey` object
+ * @param   json           - JSON-encoded `PrivKey` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PrivKey` object
+ * @returns Amino-encoded `PrivKey` object
  * @throws  will throw if encoding fails
  */
 export function encodePrivKey (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1097,10 +1097,10 @@ export function encodePrivKey (json: JSONBytes, lengthPrefixed: boolean): AminoB
 /**
  * Encode a `PubKeyEd25519` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PubKeyEd25519` object
+ * @param   json           - JSON-encoded `PubKeyEd25519` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PubKeyEd25519` object
+ * @returns Amino-encoded `PubKeyEd25519` object
  * @throws  will throw if encoding fails
  */
 export function encodePubKeyEd25519 (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1108,10 +1108,10 @@ export function encodePubKeyEd25519 (json: JSONBytes, lengthPrefixed: boolean): 
 /**
  * Encode a `PrivKeyEd25519` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PrivKeyEd25519` object
+ * @param   json           - JSON-encoded `PrivKeyEd25519` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PrivKeyEd25519` object
+ * @returns Amino-encoded `PrivKeyEd25519` object
  * @throws  will throw if encoding fails
  */
 export function encodePrivKeyEd25519 (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1119,10 +1119,10 @@ export function encodePrivKeyEd25519 (json: JSONBytes, lengthPrefixed: boolean):
 /**
  * Encode a `PubKeySecp256k1` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PubKeySecp256k1` object
+ * @param   json           - JSON-encoded `PubKeySecp256k1` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PubKeySecp256k1` object
+ * @returns Amino-encoded `PubKeySecp256k1` object
  * @throws  will throw if encoding fails
  */
 export function encodePubKeySecp256k1 (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1130,10 +1130,10 @@ export function encodePubKeySecp256k1 (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Encode a `PrivKeySecp256k1` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PrivKeySecp256k1` object
+ * @param   json           - JSON-encoded `PrivKeySecp256k1` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PrivKeySecp256k1` object
+ * @returns Amino-encoded `PrivKeySecp256k1` object
  * @throws  will throw if encoding fails
  */
 export function encodePrivKeySecp256k1 (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1141,10 +1141,10 @@ export function encodePrivKeySecp256k1 (json: JSONBytes, lengthPrefixed: boolean
 /**
  * Encode a `PubKeyMultisigThreshold` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PubKeyMultisigThreshold` object
+ * @param   json           - JSON-encoded `PubKeyMultisigThreshold` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PubKeyMultisigThreshold` object
+ * @returns Amino-encoded `PubKeyMultisigThreshold` object
  * @throws  will throw if encoding fails
  */
 export function encodePubKeyMultisigThreshold (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1152,10 +1152,10 @@ export function encodePubKeyMultisigThreshold (json: JSONBytes, lengthPrefixed: 
 /**
  * Encode a `EvidenceMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EvidenceMessage` object
+ * @param   json           - JSON-encoded `EvidenceMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EvidenceMessage` object
+ * @returns Amino-encoded `EvidenceMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeEvidenceMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1163,10 +1163,10 @@ export function encodeEvidenceMessage (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Encode a `EvidenceListMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EvidenceListMessage` object
+ * @param   json           - JSON-encoded `EvidenceListMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EvidenceListMessage` object
+ * @returns Amino-encoded `EvidenceListMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeEvidenceListMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1174,10 +1174,10 @@ export function encodeEvidenceListMessage (json: JSONBytes, lengthPrefixed: bool
 /**
  * Encode a `MempoolMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MempoolMessage` object
+ * @param   json           - JSON-encoded `MempoolMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MempoolMessage` object
+ * @returns Amino-encoded `MempoolMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeMempoolMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1185,10 +1185,10 @@ export function encodeMempoolMessage (json: JSONBytes, lengthPrefixed: boolean):
 /**
  * Encode a `TxMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `TxMessage` object
+ * @param   json           - JSON-encoded `TxMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `TxMessage` object
+ * @returns Amino-encoded `TxMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodeTxMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1196,10 +1196,10 @@ export function encodeTxMessage (json: JSONBytes, lengthPrefixed: boolean): Amin
 /**
  * Encode a `Packet` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `Packet` object
+ * @param   json           - JSON-encoded `Packet` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `Packet` object
+ * @returns Amino-encoded `Packet` object
  * @throws  will throw if encoding fails
  */
 export function encodePacket (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1207,10 +1207,10 @@ export function encodePacket (json: JSONBytes, lengthPrefixed: boolean): AminoBy
 /**
  * Encode a `PacketPing` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PacketPing` object
+ * @param   json           - JSON-encoded `PacketPing` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PacketPing` object
+ * @returns Amino-encoded `PacketPing` object
  * @throws  will throw if encoding fails
  */
 export function encodePacketPing (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1218,10 +1218,10 @@ export function encodePacketPing (json: JSONBytes, lengthPrefixed: boolean): Ami
 /**
  * Encode a `PacketPong` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PacketPong` object
+ * @param   json           - JSON-encoded `PacketPong` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PacketPong` object
+ * @returns Amino-encoded `PacketPong` object
  * @throws  will throw if encoding fails
  */
 export function encodePacketPong (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1229,10 +1229,10 @@ export function encodePacketPong (json: JSONBytes, lengthPrefixed: boolean): Ami
 /**
  * Encode a `PacketMsg` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PacketMsg` object
+ * @param   json           - JSON-encoded `PacketMsg` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PacketMsg` object
+ * @returns Amino-encoded `PacketMsg` object
  * @throws  will throw if encoding fails
  */
 export function encodePacketMsg (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1240,10 +1240,10 @@ export function encodePacketMsg (json: JSONBytes, lengthPrefixed: boolean): Amin
 /**
  * Encode a `PexMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PexMessage` object
+ * @param   json           - JSON-encoded `PexMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PexMessage` object
+ * @returns Amino-encoded `PexMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodePexMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1251,10 +1251,10 @@ export function encodePexMessage (json: JSONBytes, lengthPrefixed: boolean): Ami
 /**
  * Encode a `PexRequestMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PexRequestMessage` object
+ * @param   json           - JSON-encoded `PexRequestMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PexRequestMessage` object
+ * @returns Amino-encoded `PexRequestMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodePexRequestMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1262,10 +1262,10 @@ export function encodePexRequestMessage (json: JSONBytes, lengthPrefixed: boolea
 /**
  * Encode a `PexAddrsMessage` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PexAddrsMessage` object
+ * @param   json           - JSON-encoded `PexAddrsMessage` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PexAddrsMessage` object
+ * @returns Amino-encoded `PexAddrsMessage` object
  * @throws  will throw if encoding fails
  */
 export function encodePexAddrsMessage (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1273,10 +1273,10 @@ export function encodePexAddrsMessage (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Encode a `RemoteSignerMsg` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `RemoteSignerMsg` object
+ * @param   json           - JSON-encoded `RemoteSignerMsg` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `RemoteSignerMsg` object
+ * @returns Amino-encoded `RemoteSignerMsg` object
  * @throws  will throw if encoding fails
  */
 export function encodeRemoteSignerMsg (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1284,10 +1284,10 @@ export function encodeRemoteSignerMsg (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Encode a `PubKeyRequest` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PubKeyRequest` object
+ * @param   json           - JSON-encoded `PubKeyRequest` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PubKeyRequest` object
+ * @returns Amino-encoded `PubKeyRequest` object
  * @throws  will throw if encoding fails
  */
 export function encodePubKeyRequest (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1295,10 +1295,10 @@ export function encodePubKeyRequest (json: JSONBytes, lengthPrefixed: boolean): 
 /**
  * Encode a `PubKeyResponse` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PubKeyResponse` object
+ * @param   json           - JSON-encoded `PubKeyResponse` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PubKeyResponse` object
+ * @returns Amino-encoded `PubKeyResponse` object
  * @throws  will throw if encoding fails
  */
 export function encodePubKeyResponse (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1306,10 +1306,10 @@ export function encodePubKeyResponse (json: JSONBytes, lengthPrefixed: boolean):
 /**
  * Encode a `SignVoteRequest` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `SignVoteRequest` object
+ * @param   json           - JSON-encoded `SignVoteRequest` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `SignVoteRequest` object
+ * @returns Amino-encoded `SignVoteRequest` object
  * @throws  will throw if encoding fails
  */
 export function encodeSignVoteRequest (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1317,10 +1317,10 @@ export function encodeSignVoteRequest (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Encode a `SignedVoteResponse` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `SignedVoteResponse` object
+ * @param   json           - JSON-encoded `SignedVoteResponse` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `SignedVoteResponse` object
+ * @returns Amino-encoded `SignedVoteResponse` object
  * @throws  will throw if encoding fails
  */
 export function encodeSignedVoteResponse (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1328,10 +1328,10 @@ export function encodeSignedVoteResponse (json: JSONBytes, lengthPrefixed: boole
 /**
  * Encode a `SignProposalRequest` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `SignProposalRequest` object
+ * @param   json           - JSON-encoded `SignProposalRequest` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `SignProposalRequest` object
+ * @returns Amino-encoded `SignProposalRequest` object
  * @throws  will throw if encoding fails
  */
 export function encodeSignProposalRequest (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1339,10 +1339,10 @@ export function encodeSignProposalRequest (json: JSONBytes, lengthPrefixed: bool
 /**
  * Encode a `SignedProposalResponse` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `SignedProposalResponse` object
+ * @param   json           - JSON-encoded `SignedProposalResponse` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `SignedProposalResponse` object
+ * @returns Amino-encoded `SignedProposalResponse` object
  * @throws  will throw if encoding fails
  */
 export function encodeSignedProposalResponse (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1350,10 +1350,10 @@ export function encodeSignedProposalResponse (json: JSONBytes, lengthPrefixed: b
 /**
  * Encode a `PingRequest` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PingRequest` object
+ * @param   json           - JSON-encoded `PingRequest` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PingRequest` object
+ * @returns Amino-encoded `PingRequest` object
  * @throws  will throw if encoding fails
  */
 export function encodePingRequest (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1361,10 +1361,10 @@ export function encodePingRequest (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `PingResponse` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `PingResponse` object
+ * @param   json           - JSON-encoded `PingResponse` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `PingResponse` object
+ * @returns Amino-encoded `PingResponse` object
  * @throws  will throw if encoding fails
  */
 export function encodePingResponse (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1372,10 +1372,10 @@ export function encodePingResponse (json: JSONBytes, lengthPrefixed: boolean): A
 /**
  * Encode a `TMEventData` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `TMEventData` object
+ * @param   json           - JSON-encoded `TMEventData` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `TMEventData` object
+ * @returns Amino-encoded `TMEventData` object
  * @throws  will throw if encoding fails
  */
 export function encodeTMEventData (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1383,10 +1383,10 @@ export function encodeTMEventData (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `EventDataNewBlock` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataNewBlock` object
+ * @param   json           - JSON-encoded `EventDataNewBlock` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataNewBlock` object
+ * @returns Amino-encoded `EventDataNewBlock` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataNewBlock (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1394,10 +1394,10 @@ export function encodeEventDataNewBlock (json: JSONBytes, lengthPrefixed: boolea
 /**
  * Encode a `EventDataNewBlockHeader` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataNewBlockHeader` object
+ * @param   json           - JSON-encoded `EventDataNewBlockHeader` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataNewBlockHeader` object
+ * @returns Amino-encoded `EventDataNewBlockHeader` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataNewBlockHeader (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1405,10 +1405,10 @@ export function encodeEventDataNewBlockHeader (json: JSONBytes, lengthPrefixed: 
 /**
  * Encode a `EventDataTx` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataTx` object
+ * @param   json           - JSON-encoded `EventDataTx` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataTx` object
+ * @returns Amino-encoded `EventDataTx` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataTx (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1416,10 +1416,10 @@ export function encodeEventDataTx (json: JSONBytes, lengthPrefixed: boolean): Am
 /**
  * Encode a `EventDataRoundState` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataRoundState` object
+ * @param   json           - JSON-encoded `EventDataRoundState` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataRoundState` object
+ * @returns Amino-encoded `EventDataRoundState` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataRoundState (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1427,10 +1427,10 @@ export function encodeEventDataRoundState (json: JSONBytes, lengthPrefixed: bool
 /**
  * Encode a `EventDataNewRound` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataNewRound` object
+ * @param   json           - JSON-encoded `EventDataNewRound` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataNewRound` object
+ * @returns Amino-encoded `EventDataNewRound` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataNewRound (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1438,10 +1438,10 @@ export function encodeEventDataNewRound (json: JSONBytes, lengthPrefixed: boolea
 /**
  * Encode a `EventDataCompleteProposal` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataCompleteProposal` object
+ * @param   json           - JSON-encoded `EventDataCompleteProposal` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataCompleteProposal` object
+ * @returns Amino-encoded `EventDataCompleteProposal` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataCompleteProposal (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1449,10 +1449,10 @@ export function encodeEventDataCompleteProposal (json: JSONBytes, lengthPrefixed
 /**
  * Encode a `EventDataVote` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataVote` object
+ * @param   json           - JSON-encoded `EventDataVote` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataVote` object
+ * @returns Amino-encoded `EventDataVote` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataVote (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1460,10 +1460,10 @@ export function encodeEventDataVote (json: JSONBytes, lengthPrefixed: boolean): 
 /**
  * Encode a `EventDataValidatorSetUpdates` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataValidatorSetUpdates` object
+ * @param   json           - JSON-encoded `EventDataValidatorSetUpdates` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataValidatorSetUpdates` object
+ * @returns Amino-encoded `EventDataValidatorSetUpdates` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataValidatorSetUpdates (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1471,10 +1471,10 @@ export function encodeEventDataValidatorSetUpdates (json: JSONBytes, lengthPrefi
 /**
  * Encode a `EventDataString` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `EventDataString` object
+ * @param   json           - JSON-encoded `EventDataString` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `EventDataString` object
+ * @returns Amino-encoded `EventDataString` object
  * @throws  will throw if encoding fails
  */
 export function encodeEventDataString (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1482,10 +1482,10 @@ export function encodeEventDataString (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Encode a `Evidence` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `Evidence` object
+ * @param   json           - JSON-encoded `Evidence` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `Evidence` object
+ * @returns Amino-encoded `Evidence` object
  * @throws  will throw if encoding fails
  */
 export function encodeEvidence (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1493,10 +1493,10 @@ export function encodeEvidence (json: JSONBytes, lengthPrefixed: boolean): Amino
 /**
  * Encode a `DuplicateVoteEvidence` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `DuplicateVoteEvidence` object
+ * @param   json           - JSON-encoded `DuplicateVoteEvidence` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `DuplicateVoteEvidence` object
+ * @returns Amino-encoded `DuplicateVoteEvidence` object
  * @throws  will throw if encoding fails
  */
 export function encodeDuplicateVoteEvidence (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1504,10 +1504,10 @@ export function encodeDuplicateVoteEvidence (json: JSONBytes, lengthPrefixed: bo
 /**
  * Encode a `MockGoodEvidence` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MockGoodEvidence` object
+ * @param   json           - JSON-encoded `MockGoodEvidence` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MockGoodEvidence` object
+ * @returns Amino-encoded `MockGoodEvidence` object
  * @throws  will throw if encoding fails
  */
 export function encodeMockGoodEvidence (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1515,10 +1515,10 @@ export function encodeMockGoodEvidence (json: JSONBytes, lengthPrefixed: boolean
 /**
  * Encode a `MockRandomGoodEvidence` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MockRandomGoodEvidence` object
+ * @param   json           - JSON-encoded `MockRandomGoodEvidence` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MockRandomGoodEvidence` object
+ * @returns Amino-encoded `MockRandomGoodEvidence` object
  * @throws  will throw if encoding fails
  */
 export function encodeMockRandomGoodEvidence (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1526,10 +1526,10 @@ export function encodeMockRandomGoodEvidence (json: JSONBytes, lengthPrefixed: b
 /**
  * Encode a `MockBadEvidence` object from JSON to Amino
  *
- * @param   json           - binary JSON-encoded `MockBadEvidence` object
+ * @param   json           - JSON-encoded `MockBadEvidence` object
  * @param   lengthPrefixed - if `true`, use length-prefixed Amino encoding; if `false`, use bare Amino encoding
  *
- * @returns binary Amino-encoded `MockBadEvidence` object
+ * @returns Amino-encoded `MockBadEvidence` object
  * @throws  will throw if encoding fails
  */
 export function encodeMockBadEvidence (json: JSONBytes, lengthPrefixed: boolean): AminoBytes;
@@ -1538,10 +1538,10 @@ export function encodeMockBadEvidence (json: JSONBytes, lengthPrefixed: boolean)
 /**
  * Decode a `MultiStoreProofOp` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MultiStoreProofOp` object
+ * @param   amino          - Amino-encoded `MultiStoreProofOp` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MultiStoreProofOp` object
+ * @returns JSON-encoded `MultiStoreProofOp` object
  * @throws  will throw if decoding fails
  */
 export function decodeMultiStoreProofOp (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1549,10 +1549,10 @@ export function decodeMultiStoreProofOp (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Decode a `IAVLAbsenceOp` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `IAVLAbsenceOp` object
+ * @param   amino          - Amino-encoded `IAVLAbsenceOp` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `IAVLAbsenceOp` object
+ * @returns JSON-encoded `IAVLAbsenceOp` object
  * @throws  will throw if decoding fails
  */
 export function decodeIAVLAbsenceOp (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1560,10 +1560,10 @@ export function decodeIAVLAbsenceOp (amino: AminoBytes, lengthPrefixed: boolean)
 /**
  * Decode a `IAVLValueOp` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `IAVLValueOp` object
+ * @param   amino          - Amino-encoded `IAVLValueOp` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `IAVLValueOp` object
+ * @returns JSON-encoded `IAVLValueOp` object
  * @throws  will throw if decoding fails
  */
 export function decodeIAVLValueOp (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1571,10 +1571,10 @@ export function decodeIAVLValueOp (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `PrivKeyLedgerSecp256k1` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PrivKeyLedgerSecp256k1` object
+ * @param   amino          - Amino-encoded `PrivKeyLedgerSecp256k1` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PrivKeyLedgerSecp256k1` object
+ * @returns JSON-encoded `PrivKeyLedgerSecp256k1` object
  * @throws  will throw if decoding fails
  */
 export function decodePrivKeyLedgerSecp256k1 (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1582,10 +1582,10 @@ export function decodePrivKeyLedgerSecp256k1 (amino: AminoBytes, lengthPrefixed:
 /**
  * Decode a `Info` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded  `object ` object
+ * @param   amino          - Amino-encoded  `object ` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Info` object
+ * @returns JSON-encoded `Info` object
  * @throws  will throw if decoding fails
  */
 export function decodeInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1593,10 +1593,10 @@ export function decodeInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONByt
 /**
  * Decode a `BIP44Params` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BIP44Params` object
+ * @param   amino          - Amino-encoded `BIP44Params` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BIP44Params` object
+ * @returns JSON-encoded `BIP44Params` object
  * @throws  will throw if decoding fails
  */
 export function decodeBIP44Params (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1604,10 +1604,10 @@ export function decodeBIP44Params (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `LocalInfo` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `LocalInfo` object
+ * @param   amino          - Amino-encoded `LocalInfo` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `LocalInfo` object
+ * @returns JSON-encoded `LocalInfo` object
  * @throws  will throw if decoding fails
  */
 export function decodeLocalInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1615,10 +1615,10 @@ export function decodeLocalInfo (amino: AminoBytes, lengthPrefixed: boolean): JS
 /**
  * Decode a `LedgerInfo` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `LedgerInfo` object
+ * @param   amino          - Amino-encoded `LedgerInfo` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `LedgerInfo` object
+ * @returns JSON-encoded `LedgerInfo` object
  * @throws  will throw if decoding fails
  */
 export function decodeLedgerInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1626,10 +1626,10 @@ export function decodeLedgerInfo (amino: AminoBytes, lengthPrefixed: boolean): J
 /**
  * Decode a `OfflineInfo` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `OfflineInfo` object
+ * @param   amino          - Amino-encoded `OfflineInfo` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `OfflineInfo` object
+ * @returns JSON-encoded `OfflineInfo` object
  * @throws  will throw if decoding fails
  */
 export function decodeOfflineInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1637,10 +1637,10 @@ export function decodeOfflineInfo (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `MultiInfo` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MultiInfo` object
+ * @param   amino          - Amino-encoded `MultiInfo` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MultiInfo` object
+ * @returns JSON-encoded `MultiInfo` object
  * @throws  will throw if decoding fails
  */
 export function decodeMultiInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1648,10 +1648,10 @@ export function decodeMultiInfo (amino: AminoBytes, lengthPrefixed: boolean): JS
 /**
  * Decode a `Msg` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `object ` object
+ * @param   amino          - Amino-encoded `object ` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Msg` object
+ * @returns JSON-encoded `Msg` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsg (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1659,10 +1659,10 @@ export function decodeMsg (amino: AminoBytes, lengthPrefixed: boolean): JSONByte
 /**
  * Decode a `Tx` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `object ` object
+ * @param   amino          - Amino-encoded `object ` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Tx` object
+ * @returns JSON-encoded `Tx` object
  * @throws  will throw if decoding fails
  */
 export function decodeTx (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1670,10 +1670,10 @@ export function decodeTx (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes
 /**
  * Decode a `Account` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `Account` object
+ * @param   amino          - Amino-encoded `Account` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Account` object
+ * @returns JSON-encoded `Account` object
  * @throws  will throw if decoding fails
  */
 export function decodeAccount (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1681,10 +1681,10 @@ export function decodeAccount (amino: AminoBytes, lengthPrefixed: boolean): JSON
 /**
  * Decode a `VestingAccount` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `VestingAccount` object
+ * @param   amino          - Amino-encoded `VestingAccount` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `VestingAccount` object
+ * @returns JSON-encoded `VestingAccount` object
  * @throws  will throw if decoding fails
  */
 export function decodeVestingAccount (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1692,10 +1692,10 @@ export function decodeVestingAccount (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Decode a `BaseAccount` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BaseAccount` object
+ * @param   amino          - Amino-encoded `BaseAccount` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BaseAccount` object
+ * @returns JSON-encoded `BaseAccount` object
  * @throws  will throw if decoding fails
  */
 export function decodeBaseAccount (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1703,10 +1703,10 @@ export function decodeBaseAccount (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `BaseVestingAccount` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BaseVestingAccount` object
+ * @param   amino          - Amino-encoded `BaseVestingAccount` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BaseVestingAccount` object
+ * @returns JSON-encoded `BaseVestingAccount` object
  * @throws  will throw if decoding fails
  */
 export function decodeBaseVestingAccount (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1714,10 +1714,10 @@ export function decodeBaseVestingAccount (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Decode a  `ContinuousVestingAccount` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `ContinuousVestingAccount` object
+ * @param   amino          - Amino-encoded `ContinuousVestingAccount` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `ContinuousVestingAccount` object
+ * @returns JSON-encoded `ContinuousVestingAccount` object
  * @throws  will throw if decoding fails
  */
 export function decodeContinuousVestingAccount (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1725,10 +1725,10 @@ export function decodeContinuousVestingAccount (amino: AminoBytes, lengthPrefixe
 /**
  * Decode a `DelayedVestingAccount` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `DelayedVestingAccount` object
+ * @param   amino          - Amino-encoded `DelayedVestingAccount` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `DelayedVestingAccount` object
+ * @returns JSON-encoded `DelayedVestingAccount` object
  * @throws  will throw if decoding fails
  */
 export function decodeDelayedVestingAccount (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1736,10 +1736,10 @@ export function decodeDelayedVestingAccount (amino: AminoBytes, lengthPrefixed: 
 /**
  * Decode a `StdTx` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `object ` object
+ * @param   amino          - Amino-encoded `object ` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `StdTx` object
+ * @returns JSON-encoded `StdTx` object
  * @throws  will throw if decoding fails
  */
 export function decodeStdTx (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1747,10 +1747,10 @@ export function decodeStdTx (amino: AminoBytes, lengthPrefixed: boolean): JSONBy
 /**
  * Decode a `MsgSend` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgSend` object
+ * @param   amino          - Amino-encoded `MsgSend` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgSend` object
+ * @returns JSON-encoded `MsgSend` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgSend (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1758,10 +1758,10 @@ export function decodeMsgSend (amino: AminoBytes, lengthPrefixed: boolean): JSON
 /**
  * Decode a `MsgMultiSend` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgMultiSend` object
+ * @param   amino          - Amino-encoded `MsgMultiSend` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgMultiSend` object
+ * @returns JSON-encoded `MsgMultiSend` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgMultiSend (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1769,10 +1769,10 @@ export function decodeMsgMultiSend (amino: AminoBytes, lengthPrefixed: boolean):
 /**
  * Decode a `MsgVerifyInvariant` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgVerifyInvariant` object
+ * @param   amino          - Amino-encoded `MsgVerifyInvariant` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgVerifyInvariant` object
+ * @returns JSON-encoded `MsgVerifyInvariant` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgVerifyInvariant (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1780,10 +1780,10 @@ export function decodeMsgVerifyInvariant (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Decode a `MsgWithdrawDelegatorReward` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgWithdrawDelegatorReward` object
+ * @param   amino          - Amino-encoded `MsgWithdrawDelegatorReward` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgWithdrawDelegatorReward` object
+ * @returns JSON-encoded `MsgWithdrawDelegatorReward` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgWithdrawDelegatorReward (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1791,10 +1791,10 @@ export function decodeMsgWithdrawDelegatorReward (amino: AminoBytes, lengthPrefi
 /**
  * Decode a `MsgWithdrawValidatorCommission` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgWithdrawValidatorCommission` object
+ * @param   amino          - Amino-encoded `MsgWithdrawValidatorCommission` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgWithdrawValidatorCommission` object
+ * @returns JSON-encoded `MsgWithdrawValidatorCommission` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgWithdrawValidatorCommission (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1802,10 +1802,10 @@ export function decodeMsgWithdrawValidatorCommission (amino: AminoBytes, lengthP
 /**
  * Decode a `MsgSetWithdrawAddress` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgSetWithdrawAddress` object
+ * @param   amino          - Amino-encoded `MsgSetWithdrawAddress` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgSetWithdrawAddress` object
+ * @returns JSON-encoded `MsgSetWithdrawAddress` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgSetWithdrawAddress (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1813,10 +1813,10 @@ export function decodeMsgSetWithdrawAddress (amino: AminoBytes, lengthPrefixed: 
 /**
  * Decode a `Content` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `Content` object
+ * @param   amino          - Amino-encoded `Content` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Content` object
+ * @returns JSON-encoded `Content` object
  * @throws  will throw if decoding fails
  */
 export function decodeContent (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1824,10 +1824,10 @@ export function decodeContent (amino: AminoBytes, lengthPrefixed: boolean): JSON
 /**
  * Decode a `MsgSubmitProposal` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgSubmitProposal` object
+ * @param   amino          - Amino-encoded `MsgSubmitProposal` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgSubmitProposal` object
+ * @returns JSON-encoded `MsgSubmitProposal` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgSubmitProposal (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1835,10 +1835,10 @@ export function decodeMsgSubmitProposal (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Decode a `MsgDeposit` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgDeposit` object
+ * @param   amino          - Amino-encoded `MsgDeposit` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgDeposit` object
+ * @returns JSON-encoded `MsgDeposit` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgDeposit (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1846,10 +1846,10 @@ export function decodeMsgDeposit (amino: AminoBytes, lengthPrefixed: boolean): J
 /**
  * Decode a `MsgVote` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgVote` object
+ * @param   amino          - Amino-encoded `MsgVote` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgVote` object
+ * @returns JSON-encoded `MsgVote` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgVote (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1857,10 +1857,10 @@ export function decodeMsgVote (amino: AminoBytes, lengthPrefixed: boolean): JSON
 /**
  * Decode a `TextProposal` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `TextProposal` object
+ * @param   amino          - Amino-encoded `TextProposal` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `TextProposal` object
+ * @returns JSON-encoded `TextProposal` object
  * @throws  will throw if decoding fails
  */
 export function decodeTextProposal (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1868,10 +1868,10 @@ export function decodeTextProposal (amino: AminoBytes, lengthPrefixed: boolean):
 /**
  * Decode a `SoftwareUpgradeProposal` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `SoftwareUpgradeProposal` object
+ * @param   amino          - Amino-encoded `SoftwareUpgradeProposal` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `SoftwareUpgradeProposal` object
+ * @returns JSON-encoded `SoftwareUpgradeProposal` object
  * @throws  will throw if decoding fails
  */
 export function decodeSoftwareUpgradeProposal (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1879,10 +1879,10 @@ export function decodeSoftwareUpgradeProposal (amino: AminoBytes, lengthPrefixed
 /**
  * Decode a `MsgIBCTransfer` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgIBCTransfer` object
+ * @param   amino          - Amino-encoded `MsgIBCTransfer` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgIBCTransfer` object
+ * @returns JSON-encoded `MsgIBCTransfer` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgIBCTransfer (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1890,10 +1890,10 @@ export function decodeMsgIBCTransfer (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Decode a `MsgIBCReceive` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgIBCReceive` object
+ * @param   amino          - Amino-encoded `MsgIBCReceive` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgIBCReceive` object
+ * @returns JSON-encoded `MsgIBCReceive` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgIBCReceive (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1901,10 +1901,10 @@ export function decodeMsgIBCReceive (amino: AminoBytes, lengthPrefixed: boolean)
 /**
  * Decode a `ParameterChangeProposal` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `ParameterChangeProposal` object
+ * @param   amino          - Amino-encoded `ParameterChangeProposal` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `ParameterChangeProposal` object
+ * @returns JSON-encoded `ParameterChangeProposal` object
  * @throws  will throw if decoding fails
  */
 export function decodeParameterChangeProposal (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1912,10 +1912,10 @@ export function decodeParameterChangeProposal (amino: AminoBytes, lengthPrefixed
 /**
  * Decode a `MsgUnjail` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgUnjail` object
+ * @param   amino          - Amino-encoded `MsgUnjail` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgUnjail` object
+ * @returns JSON-encoded `MsgUnjail` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgUnjail (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1923,10 +1923,10 @@ export function decodeMsgUnjail (amino: AminoBytes, lengthPrefixed: boolean): JS
 /**
  * Decode a `MsgCreateValidator` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgCreateValidator` object
+ * @param   amino          - Amino-encoded `MsgCreateValidator` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgCreateValidator` object
+ * @returns JSON-encoded `MsgCreateValidator` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgCreateValidator (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1934,10 +1934,10 @@ export function decodeMsgCreateValidator (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Decode a `MsgEditValidator` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgEditValidator` object
+ * @param   amino          - Amino-encoded `MsgEditValidator` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgEditValidator` object
+ * @returns JSON-encoded `MsgEditValidator` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgEditValidator (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1945,10 +1945,10 @@ export function decodeMsgEditValidator (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Decode a `MsgDelegate` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgDelegate` object
+ * @param   amino          - Amino-encoded `MsgDelegate` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgDelegate` object
+ * @returns JSON-encoded `MsgDelegate` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgDelegate (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1956,10 +1956,10 @@ export function decodeMsgDelegate (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `MsgUndelegate` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgUndelegate` object
+ * @param   amino          - Amino-encoded `MsgUndelegate` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgUndelegate` object
+ * @returns JSON-encoded `MsgUndelegate` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgUndelegate (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1967,10 +1967,10 @@ export function decodeMsgUndelegate (amino: AminoBytes, lengthPrefixed: boolean)
 /**
  * Decode a `MsgBeginRedelegate` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgBeginRedelegate` object
+ * @param   amino          - Amino-encoded `MsgBeginRedelegate` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgBeginRedelegate` object
+ * @returns JSON-encoded `MsgBeginRedelegate` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgBeginRedelegate (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1978,10 +1978,10 @@ export function decodeMsgBeginRedelegate (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Decode a `BlockchainMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BlockchainMessage` object
+ * @param   amino          - Amino-encoded `BlockchainMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BlockchainMessage` object
+ * @returns JSON-encoded `BlockchainMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeBlockchainMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -1989,10 +1989,10 @@ export function decodeBlockchainMessage (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Decode a `BcBlockRequestMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BcBlockRequestMessage` object
+ * @param   amino          - Amino-encoded `BcBlockRequestMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BcBlockRequestMessage` object
+ * @returns JSON-encoded `BcBlockRequestMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeBcBlockRequestMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2000,10 +2000,10 @@ export function decodeBcBlockRequestMessage (amino: AminoBytes, lengthPrefixed: 
 /**
  * Decode a `BcBlockResponseMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BcBlockResponseMessage` object
+ * @param   amino          - Amino-encoded `BcBlockResponseMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BcBlockResponseMessage` object
+ * @returns JSON-encoded `BcBlockResponseMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeBcBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2011,10 +2011,10 @@ export function decodeBcBlockResponseMessage (amino: AminoBytes, lengthPrefixed:
 /**
  * Decode a  `BcNoBlockResponseMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BcNoBlockResponseMessage` object
+ * @param   amino          - Amino-encoded `BcNoBlockResponseMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BcNoBlockResponseMessage` object
+ * @returns JSON-encoded `BcNoBlockResponseMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeBcNoBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2022,10 +2022,10 @@ export function decodeBcNoBlockResponseMessage (amino: AminoBytes, lengthPrefixe
 /**
  * Decode a `BcStatusResponseMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BcStatusResponseMessage` object
+ * @param   amino          - Amino-encoded `BcStatusResponseMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BcStatusResponseMessage` object
+ * @returns JSON-encoded `BcStatusResponseMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeBcStatusResponseMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2033,10 +2033,10 @@ export function decodeBcStatusResponseMessage (amino: AminoBytes, lengthPrefixed
 /**
  * Decode a `BcStatusRequestMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BcStatusRequestMessage` object
+ * @param   amino          - Amino-encoded `BcStatusRequestMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BcStatusRequestMessage` object
+ * @returns JSON-encoded `BcStatusRequestMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeBcStatusRequestMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2044,10 +2044,10 @@ export function decodeBcStatusRequestMessage (amino: AminoBytes, lengthPrefixed:
 /**
  * Decode a `ConsensusMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `ConsensusMessage` object
+ * @param   amino          - Amino-encoded `ConsensusMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `ConsensusMessage` object
+ * @returns JSON-encoded `ConsensusMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeConsensusMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2055,10 +2055,10 @@ export function decodeConsensusMessage (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Decode a `NewRoundStepMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `NewRoundStepMessage` object
+ * @param   amino          - Amino-encoded `NewRoundStepMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `NewRoundStepMessage` object
+ * @returns JSON-encoded `NewRoundStepMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeNewRoundStepMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2066,10 +2066,10 @@ export function decodeNewRoundStepMessage (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Decode a `NewValidBlockMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `NewValidBlockMessage` object
+ * @param   amino          - Amino-encoded `NewValidBlockMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `NewValidBlockMessage` object
+ * @returns JSON-encoded `NewValidBlockMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeNewValidBlockMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2077,10 +2077,10 @@ export function decodeNewValidBlockMessage (amino: AminoBytes, lengthPrefixed: b
 /**
  * Decode a `ProposalMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `ProposalMessage` object
+ * @param   amino          - Amino-encoded `ProposalMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `ProposalMessage` object
+ * @returns JSON-encoded `ProposalMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeProposalMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2088,10 +2088,10 @@ export function decodeProposalMessage (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Decode a `ProposalPOLMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `ProposalPOLMessage` object
+ * @param   amino          - Amino-encoded `ProposalPOLMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `ProposalPOLMessage` object
+ * @returns JSON-encoded `ProposalPOLMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeProposalPOLMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2099,10 +2099,10 @@ export function decodeProposalPOLMessage (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Decode a `BlockPartMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `BlockPartMessage` object
+ * @param   amino          - Amino-encoded `BlockPartMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `BlockPartMessage` object
+ * @returns JSON-encoded `BlockPartMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeBlockPartMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2110,10 +2110,10 @@ export function decodeBlockPartMessage (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Decode a `VoteMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `VoteMessage` object
+ * @param   amino          - Amino-encoded `VoteMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `VoteMessage` object
+ * @returns JSON-encoded `VoteMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeVoteMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2121,10 +2121,10 @@ export function decodeVoteMessage (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `HasVoteMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `HasVoteMessage` object
+ * @param   amino          - Amino-encoded `HasVoteMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `HasVoteMessage` object
+ * @returns JSON-encoded `HasVoteMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeHasVoteMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2132,10 +2132,10 @@ export function decodeHasVoteMessage (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Decode a `VoteSetMaj23Message` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `VoteSetMaj23Message` object
+ * @param   amino          - Amino-encoded `VoteSetMaj23Message` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `VoteSetMaj23Message` object
+ * @returns JSON-encoded `VoteSetMaj23Message` object
  * @throws  will throw if decoding fails
  */
 export function decodeVoteSetMaj23Message (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2143,10 +2143,10 @@ export function decodeVoteSetMaj23Message (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Decode a `VoteSetBitsMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `VoteSetBitsMessage` object
+ * @param   amino          - Amino-encoded `VoteSetBitsMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `VoteSetBitsMessage` object
+ * @returns JSON-encoded `VoteSetBitsMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeVoteSetBitsMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2154,10 +2154,10 @@ export function decodeVoteSetBitsMessage (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Decode a `WALMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `WALMessage` object
+ * @param   amino          - Amino-encoded `WALMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `WALMessage` object
+ * @returns JSON-encoded `WALMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeWALMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2165,10 +2165,10 @@ export function decodeWALMessage (amino: AminoBytes, lengthPrefixed: boolean): J
 /**
  * Decode a `MsgInfo` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MsgInfo` object
+ * @param   amino          - Amino-encoded `MsgInfo` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MsgInfo` object
+ * @returns JSON-encoded `MsgInfo` object
  * @throws  will throw if decoding fails
  */
 export function decodeMsgInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2176,10 +2176,10 @@ export function decodeMsgInfo (amino: AminoBytes, lengthPrefixed: boolean): JSON
 /**
  * Decode a `TimeoutInfo` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `TimeoutInfo` object
+ * @param   amino          - Amino-encoded `TimeoutInfo` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `TimeoutInfo` object
+ * @returns JSON-encoded `TimeoutInfo` object
  * @throws  will throw if decoding fails
  */
 export function decodeTimeoutInfo (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2187,10 +2187,10 @@ export function decodeTimeoutInfo (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `EndHeightMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EndHeightMessage` object
+ * @param   amino          - Amino-encoded `EndHeightMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EndHeightMessage` object
+ * @returns JSON-encoded `EndHeightMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeEndHeightMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2198,10 +2198,10 @@ export function decodeEndHeightMessage (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Decode a `PubKey` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PubKey` object
+ * @param   amino          - Amino-encoded `PubKey` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PubKey` object
+ * @returns JSON-encoded `PubKey` object
  * @throws  will throw if decoding fails
  */
 export function decodePubKey (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2209,10 +2209,10 @@ export function decodePubKey (amino: AminoBytes, lengthPrefixed: boolean): JSONB
 /**
  * Decode a `PrivKey` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PrivKey` object
+ * @param   amino          - Amino-encoded `PrivKey` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PrivKey` object
+ * @returns JSON-encoded `PrivKey` object
  * @throws  will throw if decoding fails
  */
 export function decodePrivKey (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2220,10 +2220,10 @@ export function decodePrivKey (amino: AminoBytes, lengthPrefixed: boolean): JSON
 /**
  * Decode a `PubKeyEd25519` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PubKeyEd25519` object
+ * @param   amino          - Amino-encoded `PubKeyEd25519` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PubKeyEd25519` object
+ * @returns JSON-encoded `PubKeyEd25519` object
  * @throws  will throw if decoding fails
  */
 export function decodePubKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2231,10 +2231,10 @@ export function decodePubKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean)
 /**
  * Decode a `PrivKeyEd25519` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PrivKeyEd25519` object
+ * @param   amino          - Amino-encoded `PrivKeyEd25519` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PrivKeyEd25519` object
+ * @returns JSON-encoded `PrivKeyEd25519` object
  * @throws  will throw if decoding fails
  */
 export function decodePrivKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2242,10 +2242,10 @@ export function decodePrivKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Decode a `PubKeySecp256k1` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PubKeySecp256k1` object
+ * @param   amino          - Amino-encoded `PubKeySecp256k1` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PubKeySecp256k1` object
+ * @returns JSON-encoded `PubKeySecp256k1` object
  * @throws  will throw if decoding fails
  */
 export function decodePubKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2253,10 +2253,10 @@ export function decodePubKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Decode a `PrivKeySecp256k1` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PrivKeySecp256k1` object
+ * @param   amino          - Amino-encoded `PrivKeySecp256k1` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PrivKeySecp256k1` object
+ * @returns JSON-encoded `PrivKeySecp256k1` object
  * @throws  will throw if decoding fails
  */
 export function decodePrivKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2264,10 +2264,10 @@ export function decodePrivKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Decode a `PubKeyMultisigThreshold` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PubKeyMultisigThreshold` object
+ * @param   amino          - Amino-encoded `PubKeyMultisigThreshold` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PubKeyMultisigThreshold` object
+ * @returns JSON-encoded `PubKeyMultisigThreshold` object
  * @throws  will throw if decoding fails
  */
 export function decodePubKeyMultisigThreshold (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2275,10 +2275,10 @@ export function decodePubKeyMultisigThreshold (amino: AminoBytes, lengthPrefixed
 /**
  * Decode a `EvidenceMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EvidenceMessage` object
+ * @param   amino          - Amino-encoded `EvidenceMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EvidenceMessage` object
+ * @returns JSON-encoded `EvidenceMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeEvidenceMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2286,10 +2286,10 @@ export function decodeEvidenceMessage (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Decode a `EvidenceListMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EvidenceListMessage` object
+ * @param   amino          - Amino-encoded `EvidenceListMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EvidenceListMessage` object
+ * @returns JSON-encoded `EvidenceListMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeEvidenceListMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2297,10 +2297,10 @@ export function decodeEvidenceListMessage (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Decode a `MempoolMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MempoolMessage` object
+ * @param   amino          - Amino-encoded `MempoolMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MempoolMessage` object
+ * @returns JSON-encoded `MempoolMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeMempoolMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2308,10 +2308,10 @@ export function decodeMempoolMessage (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Decode a `TxMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `TxMessage` object
+ * @param   amino          - Amino-encoded `TxMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `TxMessage` object
+ * @returns JSON-encoded `TxMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodeTxMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2319,10 +2319,10 @@ export function decodeTxMessage (amino: AminoBytes, lengthPrefixed: boolean): JS
 /**
  * Decode a `Packet` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `Packet` object
+ * @param   amino          - Amino-encoded `Packet` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Packet` object
+ * @returns JSON-encoded `Packet` object
  * @throws  will throw if decoding fails
  */
 export function decodePacket (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2330,10 +2330,10 @@ export function decodePacket (amino: AminoBytes, lengthPrefixed: boolean): JSONB
 /**
  * Decode a `PacketPing` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PacketPing` object
+ * @param   amino          - Amino-encoded `PacketPing` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PacketPing` object
+ * @returns JSON-encoded `PacketPing` object
  * @throws  will throw if decoding fails
  */
 export function decodePacketPing (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2341,10 +2341,10 @@ export function decodePacketPing (amino: AminoBytes, lengthPrefixed: boolean): J
 /**
  * Decode a `PacketPong` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PacketPong` object
+ * @param   amino          - Amino-encoded `PacketPong` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PacketPong` object
+ * @returns JSON-encoded `PacketPong` object
  * @throws  will throw if decoding fails
  */
 export function decodePacketPong (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2352,10 +2352,10 @@ export function decodePacketPong (amino: AminoBytes, lengthPrefixed: boolean): J
 /**
  * Decode a `PacketMsg` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PacketMsg` object
+ * @param   amino          - Amino-encoded `PacketMsg` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PacketMsg` object
+ * @returns JSON-encoded `PacketMsg` object
  * @throws  will throw if decoding fails
  */
 export function decodePacketMsg (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2363,10 +2363,10 @@ export function decodePacketMsg (amino: AminoBytes, lengthPrefixed: boolean): JS
 /**
  * Decode a `PexMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PexMessage` object
+ * @param   amino          - Amino-encoded `PexMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PexMessage` object
+ * @returns JSON-encoded `PexMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodePexMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2374,10 +2374,10 @@ export function decodePexMessage (amino: AminoBytes, lengthPrefixed: boolean): J
 /**
  * Decode a `PexRequestMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PexRequestMessage` object
+ * @param   amino          - Amino-encoded `PexRequestMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PexRequestMessage` object
+ * @returns JSON-encoded `PexRequestMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodePexRequestMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2385,10 +2385,10 @@ export function decodePexRequestMessage (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Decode a `PexAddrsMessage` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PexAddrsMessage` object
+ * @param   amino          - Amino-encoded `PexAddrsMessage` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PexAddrsMessage` object
+ * @returns JSON-encoded `PexAddrsMessage` object
  * @throws  will throw if decoding fails
  */
 export function decodePexAddrsMessage (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2396,10 +2396,10 @@ export function decodePexAddrsMessage (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Decode a `RemoteSignerMsg` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `RemoteSignerMsg` object
+ * @param   amino          - Amino-encoded `RemoteSignerMsg` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `RemoteSignerMsg` object
+ * @returns JSON-encoded `RemoteSignerMsg` object
  * @throws  will throw if decoding fails
  */
 export function decodeRemoteSignerMsg (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2407,10 +2407,10 @@ export function decodeRemoteSignerMsg (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Decode a `PubKeyRequest` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PubKeyRequest` object
+ * @param   amino          - Amino-encoded `PubKeyRequest` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PubKeyRequest` object
+ * @returns JSON-encoded `PubKeyRequest` object
  * @throws  will throw if decoding fails
  */
 export function decodePubKeyRequest (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2418,10 +2418,10 @@ export function decodePubKeyRequest (amino: AminoBytes, lengthPrefixed: boolean)
 /**
  * Decode a `PubKeyResponse` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PubKeyResponse` object
+ * @param   amino          - Amino-encoded `PubKeyResponse` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PubKeyResponse` object
+ * @returns JSON-encoded `PubKeyResponse` object
  * @throws  will throw if decoding fails
  */
 export function decodePubKeyResponse (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2429,10 +2429,10 @@ export function decodePubKeyResponse (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Decode a `SignVoteRequest` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `SignVoteRequest` object
+ * @param   amino          - Amino-encoded `SignVoteRequest` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `SignVoteRequest` object
+ * @returns JSON-encoded `SignVoteRequest` object
  * @throws  will throw if decoding fails
  */
 export function decodeSignVoteRequest (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2440,10 +2440,10 @@ export function decodeSignVoteRequest (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Decode a `SignedVoteResponse` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `SignedVoteResponse` object
+ * @param   amino          - Amino-encoded `SignedVoteResponse` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `SignedVoteResponse` object
+ * @returns JSON-encoded `SignedVoteResponse` object
  * @throws  will throw if decoding fails
  */
 export function decodeSignedVoteResponse (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2451,10 +2451,10 @@ export function decodeSignedVoteResponse (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Decode a `SignProposalRequest` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `SignProposalRequest` object
+ * @param   amino          - Amino-encoded `SignProposalRequest` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `SignProposalRequest` object
+ * @returns JSON-encoded `SignProposalRequest` object
  * @throws  will throw if decoding fails
  */
 export function decodeSignProposalRequest (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2462,10 +2462,10 @@ export function decodeSignProposalRequest (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Decode a `SignedProposalResponse` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `SignedProposalResponse` object
+ * @param   amino          - Amino-encoded `SignedProposalResponse` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `SignedProposalResponse` object
+ * @returns JSON-encoded `SignedProposalResponse` object
  * @throws  will throw if decoding fails
  */
 export function decodeSignedProposalResponse (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2473,10 +2473,10 @@ export function decodeSignedProposalResponse (amino: AminoBytes, lengthPrefixed:
 /**
  * Decode a `PingRequest` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PingRequest` object
+ * @param   amino          - Amino-encoded `PingRequest` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PingRequest` object
+ * @returns JSON-encoded `PingRequest` object
  * @throws  will throw if decoding fails
  */
 export function decodePingRequest (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2484,10 +2484,10 @@ export function decodePingRequest (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `PingResponse` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `PingResponse` object
+ * @param   amino          - Amino-encoded `PingResponse` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `PingResponse` object
+ * @returns JSON-encoded `PingResponse` object
  * @throws  will throw if decoding fails
  */
 export function decodePingResponse (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2495,10 +2495,10 @@ export function decodePingResponse (amino: AminoBytes, lengthPrefixed: boolean):
 /**
  * Decode a `TMEventData` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `TMEventData` object
+ * @param   amino          - Amino-encoded `TMEventData` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `TMEventData` object
+ * @returns JSON-encoded `TMEventData` object
  * @throws  will throw if decoding fails
  */
 export function decodeTMEventData (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2506,10 +2506,10 @@ export function decodeTMEventData (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `EventDataNewBlock` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataNewBlock` object
+ * @param   amino          - Amino-encoded `EventDataNewBlock` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataNewBlock` object
+ * @returns JSON-encoded `EventDataNewBlock` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataNewBlock (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2517,10 +2517,10 @@ export function decodeEventDataNewBlock (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Decode a `EventDataNewBlockHeader` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataNewBlockHeader` object
+ * @param   amino          - Amino-encoded `EventDataNewBlockHeader` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataNewBlockHeader` object
+ * @returns JSON-encoded `EventDataNewBlockHeader` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataNewBlockHeader (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2528,10 +2528,10 @@ export function decodeEventDataNewBlockHeader (amino: AminoBytes, lengthPrefixed
 /**
  * Decode a `EventDataTx` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataTx` object
+ * @param   amino          - Amino-encoded `EventDataTx` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataTx` object
+ * @returns JSON-encoded `EventDataTx` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataTx (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2539,10 +2539,10 @@ export function decodeEventDataTx (amino: AminoBytes, lengthPrefixed: boolean): 
 /**
  * Decode a `EventDataRoundState` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataRoundState` object
+ * @param   amino          - Amino-encoded `EventDataRoundState` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataRoundState` object
+ * @returns JSON-encoded `EventDataRoundState` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataRoundState (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2550,10 +2550,10 @@ export function decodeEventDataRoundState (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Decode a `EventDataNewRound` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataNewRound` object
+ * @param   amino          - Amino-encoded `EventDataNewRound` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataNewRound` object
+ * @returns JSON-encoded `EventDataNewRound` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataNewRound (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2561,10 +2561,10 @@ export function decodeEventDataNewRound (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Decode a `EventDataCompleteProposal` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataCompleteProposal` object
+ * @param   amino          - Amino-encoded `EventDataCompleteProposal` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataCompleteProposal` object
+ * @returns JSON-encoded `EventDataCompleteProposal` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataCompleteProposal (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2572,10 +2572,10 @@ export function decodeEventDataCompleteProposal (amino: AminoBytes, lengthPrefix
 /**
  * Decode a `EventDataVote` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataVote` object
+ * @param   amino          - Amino-encoded `EventDataVote` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataVote` object
+ * @returns JSON-encoded `EventDataVote` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataVote (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2583,10 +2583,10 @@ export function decodeEventDataVote (amino: AminoBytes, lengthPrefixed: boolean)
 /**
  * Decode a `EventDataValidatorSetUpdates` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataValidatorSetUpdates` object
+ * @param   amino          - Amino-encoded `EventDataValidatorSetUpdates` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataValidatorSetUpdates` object
+ * @returns JSON-encoded `EventDataValidatorSetUpdates` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataValidatorSetUpdates (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2594,10 +2594,10 @@ export function decodeEventDataValidatorSetUpdates (amino: AminoBytes, lengthPre
 /**
  * Decode a `EventDataString` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `EventDataString` object
+ * @param   amino          - Amino-encoded `EventDataString` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `EventDataString` object
+ * @returns JSON-encoded `EventDataString` object
  * @throws  will throw if decoding fails
  */
 export function decodeEventDataString (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2605,10 +2605,10 @@ export function decodeEventDataString (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Decode a `Evidence` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `Evidence` object
+ * @param   amino          - Amino-encoded `Evidence` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Evidence` object
+ * @returns JSON-encoded `Evidence` object
  * @throws  will throw if decoding fails
  */
 export function decodeEvidence (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2616,10 +2616,10 @@ export function decodeEvidence (amino: AminoBytes, lengthPrefixed: boolean): JSO
 /**
  * Decode a `DuplicateVoteEvidence` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `DuplicateVoteEvidence` object
+ * @param   amino          - Amino-encoded `DuplicateVoteEvidence` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `DuplicateVoteEvidence` object
+ * @returns JSON-encoded `DuplicateVoteEvidence` object
  * @throws  will throw if decoding fails
  */
 export function decodeDuplicateVoteEvidence (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2627,10 +2627,10 @@ export function decodeDuplicateVoteEvidence (amino: AminoBytes, lengthPrefixed: 
 /**
  * Decode a `MockGoodEvidence` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MockGoodEvidence` object
+ * @param   amino          - Amino-encoded `MockGoodEvidence` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MockGoodEvidence` object
+ * @returns JSON-encoded `MockGoodEvidence` object
  * @throws  will throw if decoding fails
  */
 export function decodeMockGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2638,10 +2638,10 @@ export function decodeMockGoodEvidence (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Decode a `MockRandomGoodEvidence` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MockRandomGoodEvidence` object
+ * @param   amino          - Amino-encoded `MockRandomGoodEvidence` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MockRandomGoodEvidence` object
+ * @returns JSON-encoded `MockRandomGoodEvidence` object
  * @throws  will throw if decoding fails
  */
 export function decodeMockRandomGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
@@ -2649,10 +2649,10 @@ export function decodeMockRandomGoodEvidence (amino: AminoBytes, lengthPrefixed:
 /**
  * Decode a `MockBadEvidence` object from Amino to JSON
  *
- * @param   amino          - binary Amino-encoded `MockBadEvidence` object
+ * @param   amino          - Amino-encoded `MockBadEvidence` object
  * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
  *
- * @returns binary JSON-encoded `MockBadEvidence` object
+ * @returns JSON-encoded `MockBadEvidence` object
  * @throws  will throw if decoding fails
  */
 export function decodeMockBadEvidence (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;

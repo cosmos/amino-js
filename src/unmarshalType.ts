@@ -109,8 +109,8 @@ import { unmarshalJSON } from './util';
 /**
  * Unmarshal a `MultiStoreProofOp` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MultiStoreProofOp` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MultiStoreProofOp` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MultiStoreProofOp` object
  * @throws  will throw if decoding fails
@@ -123,8 +123,8 @@ export function unmarshalMultiStoreProofOp (amino: AminoBytes, lengthPrefixed: b
 /**
  * Unmarshal a `IAVLAbsenceOp` object from Amino
  *
- * @param   amino          - binary Amino-encoded `IAVLAbsenceOp` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `IAVLAbsenceOp` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `IAVLAbsenceOp` object
  * @throws  will throw if decoding fails
@@ -137,8 +137,8 @@ export function unmarshalIAVLAbsenceOp (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Unmarshal a `IAVLValueOp` object from Amino
  *
- * @param   amino          - binary Amino-encoded `IAVLValueOp` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `IAVLValueOp` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `IAVLValueOp` object
  * @throws  will throw if decoding fails
@@ -151,8 +151,8 @@ export function unmarshalIAVLValueOp (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `PrivKeyLedgerSecp256k1` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PrivKeyLedgerSecp256k1` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PrivKeyLedgerSecp256k1` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PrivKeyLedgerSecp256k1` object
  * @throws  will throw if decoding fails
@@ -165,8 +165,8 @@ export function unmarshalPrivKeyLedgerSecp256k1 (amino: AminoBytes, lengthPrefix
 /**
  * Unmarshal a `Info` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Info` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `Info` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `Info` object
  * @throws  will throw if decoding fails
@@ -179,8 +179,8 @@ export function unmarshalInfo (amino: AminoBytes, lengthPrefixed: boolean = true
 /**
  * Unmarshal a `BIP44Params` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BIP44Params` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BIP44Params` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BIP44Params` object
  * @throws  will throw if decoding fails
@@ -193,8 +193,8 @@ export function unmarshalBIP44Params (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `LocalInfo` object from Amino
  *
- * @param   amino          - binary Amino-encoded `LocalInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `LocalInfo` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `LocalInfo` object
  * @throws  will throw if decoding fails
@@ -207,8 +207,8 @@ export function unmarshalLocalInfo (amino: AminoBytes, lengthPrefixed: boolean =
 /**
  * Unmarshal a `LedgerInfo` object from Amino
  *
- * @param   amino          - binary Amino-encoded `LedgerInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `LedgerInfo` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `LedgerInfo` object
  * @throws  will throw if decoding fails
@@ -221,8 +221,8 @@ export function unmarshalLedgerInfo (amino: AminoBytes, lengthPrefixed: boolean 
 /**
  * Unmarshal a `OfflineInfo` object from Amino
  *
- * @param   amino          - binary Amino-encoded `OfflineInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `OfflineInfo` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `OfflineInfo` object
  * @throws  will throw if decoding fails
@@ -235,8 +235,8 @@ export function unmarshalOfflineInfo (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `MultiInfo` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MultiInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MultiInfo` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MultiInfo` object
  * @throws  will throw if decoding fails
@@ -249,8 +249,8 @@ export function unmarshalMultiInfo (amino: AminoBytes, lengthPrefixed: boolean =
 /**
  * Unmarshal a `Msg` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Msg` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `Msg` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `Msg` object
  * @throws  will throw if decoding fails
@@ -263,8 +263,8 @@ export function unmarshalMsg (amino: AminoBytes, lengthPrefixed: boolean = true)
 /**
  * Unmarshal a `Tx` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Tx` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `Tx` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `Tx` object
  * @throws  will throw if decoding fails
@@ -277,8 +277,8 @@ export function unmarshalTx (amino: AminoBytes, lengthPrefixed: boolean = true):
 /**
  * Unmarshal a `Account` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Account` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `Account` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `Account` object
  * @throws  will throw if decoding fails
@@ -291,8 +291,8 @@ export function unmarshalAccount (amino: AminoBytes, lengthPrefixed: boolean = t
 /**
  * Unmarshal a `VestingAccount` object from Amino
  *
- * @param   amino          - binary Amino-encoded `VestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `VestingAccount` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `VestingAccount` object
  * @throws  will throw if decoding fails
@@ -305,8 +305,8 @@ export function unmarshalVestingAccount (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Unmarshal a `BaseAccount` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BaseAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BaseAccount` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BaseAccount` object
  * @throws  will throw if decoding fails
@@ -319,8 +319,8 @@ export function unmarshalBaseAccount (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `BaseVestingAccount` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BaseVestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BaseVestingAccount` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BaseVestingAccount` object
  * @throws  will throw if decoding fails
@@ -333,8 +333,8 @@ export function unmarshalBaseVestingAccount (amino: AminoBytes, lengthPrefixed: 
 /**
  * Unmarshal a `ContinuousVestingAccount` object from Amino
  *
- * @param   amino          - binary Amino-encoded `ContinuousVestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `ContinuousVestingAccount` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `ContinuousVestingAccount` object
  * @throws  will throw if decoding fails
@@ -347,8 +347,8 @@ export function unmarshalContinuousVestingAccount (amino: AminoBytes, lengthPref
 /**
  * Unmarshal a `DelayedVestingAccount` object from Amino
  *
- * @param   amino          - binary Amino-encoded `DelayedVestingAccount` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `DelayedVestingAccount` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `DelayedVestingAccount` object
  * @throws  will throw if decoding fails
@@ -361,8 +361,8 @@ export function unmarshalDelayedVestingAccount (amino: AminoBytes, lengthPrefixe
 /**
  * Unmarshal a `StdTx` object from Amino
  *
- * @param   amino          - binary Amino-encoded `StdTx` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `StdTx` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `StdTx` object
  * @throws  will throw if decoding fails
@@ -375,8 +375,8 @@ export function unmarshalStdTx (amino: AminoBytes, lengthPrefixed: boolean = tru
 /**
  * Unmarshal a `MsgSend` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgSend` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgSend` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgSend` object
  * @throws  will throw if decoding fails
@@ -389,8 +389,8 @@ export function unmarshalMsgSend (amino: AminoBytes, lengthPrefixed: boolean = t
 /**
  * Unmarshal a `MsgMultiSend` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgMultiSend` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgMultiSend` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgMultiSend` object
  * @throws  will throw if decoding fails
@@ -403,8 +403,8 @@ export function unmarshalMsgMultiSend (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Unmarshal a `MsgVerifyInvariant` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgVerifyInvariant` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgVerifyInvariant` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgVerifyInvariant` object
  * @throws  will throw if decoding fails
@@ -417,8 +417,8 @@ export function unmarshalMsgVerifyInvariant (amino: AminoBytes, lengthPrefixed: 
 /**
  * Unmarshal a `MsgWithdrawDelegatorReward` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgWithdrawDelegatorReward` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgWithdrawDelegatorReward` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgWithdrawDelegatorReward` object
  * @throws  will throw if decoding fails
@@ -431,11 +431,11 @@ export function unmarshalMsgWithdrawDelegatorReward (amino: AminoBytes, lengthPr
 /**
  * Unmarshal a `MsgWithdrawValidatorCommission` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Account` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use MsgWithdrawValidatorCommissionAmino decoding
+ * @param   amino          - Amino-encoded `MsgWithdrawValidatorCommission` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
- * @returns binary JSON-encoded `Account` object
- * @throws  `MsgWithdrawValidatorCommission`g fails
+ * @returns `MsgWithdrawValidatorCommission` object
+ * @throws  will throw if decoding fails
  */
 export function unmarshalMsgWithdrawValidatorCommission (amino: AminoBytes, lengthPrefixed: boolean = true): MsgWithdrawValidatorCommission {
     const json = decodeType.decodeMsgWithdrawValidatorCommission(amino, lengthPrefixed);
@@ -445,8 +445,8 @@ export function unmarshalMsgWithdrawValidatorCommission (amino: AminoBytes, leng
 /**
  * Unmarshal a `MsgSetWithdrawAddress` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgSetWithdrawAddress` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgSetWithdrawAddress` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgSetWithdrawAddress` object
  * @throws  will throw if decoding fails
@@ -459,8 +459,8 @@ export function unmarshalMsgSetWithdrawAddress (amino: AminoBytes, lengthPrefixe
 /**
  * Unmarshal a `Content` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Content` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `Content` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `Content` object
  * @throws  will throw if decoding fails
@@ -473,8 +473,8 @@ export function unmarshalContent (amino: AminoBytes, lengthPrefixed: boolean = t
 /**
  * Unmarshal a `MsgSubmitProposal` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgSubmitProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgSubmitProposal` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgSubmitProposal` object
  * @throws  will throw if decoding fails
@@ -487,8 +487,8 @@ export function unmarshalMsgSubmitProposal (amino: AminoBytes, lengthPrefixed: b
 /**
  * Unmarshal a `MsgDeposit` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgDeposit` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgDeposit` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgDeposit` object
  * @throws  will throw if decoding fails
@@ -501,8 +501,8 @@ export function unmarshalMsgDeposit (amino: AminoBytes, lengthPrefixed: boolean 
 /**
  * Unmarshal a `MsgVote` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgVote` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgVote` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgVote` object
  * @throws  will throw if decoding fails
@@ -515,8 +515,8 @@ export function unmarshalMsgVote (amino: AminoBytes, lengthPrefixed: boolean = t
 /**
  * Unmarshal a `TextProposal` object from Amino
  *
- * @param   amino          - binary Amino-encoded `TextProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `TextProposal` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `TextProposal` object
  * @throws  will throw if decoding fails
@@ -529,8 +529,8 @@ export function unmarshalTextProposal (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Unmarshal a `SoftwareUpgradeProposal` object from Amino
  *
- * @param   amino          - binary Amino-encoded `SoftwareUpgradeProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `SoftwareUpgradeProposal` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `SoftwareUpgradeProposal` object
  * @throws  will throw if decoding fails
@@ -543,8 +543,8 @@ export function unmarshalSoftwareUpgradeProposal (amino: AminoBytes, lengthPrefi
 /**
  * Unmarshal a `MsgIBCTransfer` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgIBCTransfer` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgIBCTransfer` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgIBCTransfer` object
  * @throws  will throw if decoding fails
@@ -557,8 +557,8 @@ export function unmarshalMsgIBCTransfer (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Unmarshal a `MsgIBCReceive` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgIBCReceive` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgIBCReceive` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgIBCReceive` object
  * @throws  will throw if decoding fails
@@ -571,8 +571,8 @@ export function unmarshalMsgIBCReceive (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Unmarshal a `ParameterChangeProposal` object from Amino
  *
- * @param   amino          - binary Amino-encoded `ParameterChangeProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `ParameterChangeProposal` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `ParameterChangeProposal` object
  * @throws  will throw if decoding fails
@@ -585,8 +585,8 @@ export function unmarshalParameterChangeProposal (amino: AminoBytes, lengthPrefi
 /**
  * Unmarshal a `MsgUnjail` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgUnjail` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgUnjail` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgUnjail` object
  * @throws  will throw if decoding fails
@@ -599,8 +599,8 @@ export function unmarshalMsgUnjail (amino: AminoBytes, lengthPrefixed: boolean =
 /**
  * Unmarshal a `MsgCreateValidator` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgCreateValidator` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgCreateValidator` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgCreateValidator` object
  * @throws  will throw if decoding fails
@@ -613,8 +613,8 @@ export function unmarshalMsgCreateValidator (amino: AminoBytes, lengthPrefixed: 
 /**
  * Unmarshal a `MsgEditValidator` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgEditValidator` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgEditValidator` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgEditValidator` object
  * @throws  will throw if decoding fails
@@ -627,8 +627,8 @@ export function unmarshalMsgEditValidator (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Unmarshal a `MsgDelegate` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgDelegate` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgDelegate` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgDelegate` object
  * @throws  will throw if decoding fails
@@ -641,8 +641,8 @@ export function unmarshalMsgDelegate (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `MsgUndelegate` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgUndelegate` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgUndelegate` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgUndelegate` object
  * @throws  will throw if decoding fails
@@ -655,8 +655,8 @@ export function unmarshalMsgUndelegate (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Unmarshal a `MsgBeginRedelegate` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgBeginRedelegate` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgBeginRedelegate` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgBeginRedelegate` object
  * @throws  will throw if decoding fails
@@ -669,8 +669,8 @@ export function unmarshalMsgBeginRedelegate (amino: AminoBytes, lengthPrefixed: 
 /**
  * Unmarshal a `BlockchainMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BlockchainMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BlockchainMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BlockchainMessage` object
  * @throws  will throw if decoding fails
@@ -683,8 +683,8 @@ export function unmarshalBlockchainMessage (amino: AminoBytes, lengthPrefixed: b
 /**
  * Unmarshal a `BcBlockRequestMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BcBlockRequestMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BcBlockRequestMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BcBlockRequestMessage` object
  * @throws  will throw if decoding fails
@@ -697,8 +697,8 @@ export function unmarshalBcBlockRequestMessage (amino: AminoBytes, lengthPrefixe
 /**
  * Unmarshal a `BcBlockResponseMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BcBlockResponseMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BcBlockResponseMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BcBlockResponseMessage` object
  * @throws  will throw if decoding fails
@@ -711,8 +711,8 @@ export function unmarshalBcBlockResponseMessage (amino: AminoBytes, lengthPrefix
 /**
  * Unmarshal a `BcNoBlockResponseMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BcNoBlockResponseMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BcNoBlockResponseMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BcNoBlockResponseMessage` object
  * @throws  will throw if decoding fails
@@ -725,8 +725,8 @@ export function unmarshalBcNoBlockResponseMessage (amino: AminoBytes, lengthPref
 /**
  * Unmarshal a `BcStatusResponseMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BcStatusResponseMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BcStatusResponseMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BcStatusResponseMessage` object
  * @throws  will throw if decoding fails
@@ -739,8 +739,8 @@ export function unmarshalBcStatusResponseMessage (amino: AminoBytes, lengthPrefi
 /**
  * Unmarshal a `BcStatusRequestMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BcStatusRequestMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BcStatusRequestMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BcStatusRequestMessage` object
  * @throws  will throw if decoding fails
@@ -753,8 +753,8 @@ export function unmarshalBcStatusRequestMessage (amino: AminoBytes, lengthPrefix
 /**
  * Unmarshal a `ConsensusMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `ConsensusMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `ConsensusMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `ConsensusMessage` object
  * @throws  will throw if decoding fails
@@ -767,8 +767,8 @@ export function unmarshalConsensusMessage (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Unmarshal a `NewRoundStepMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `NewRoundStepMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `NewRoundStepMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `NewRoundStepMessage` object
  * @throws  will throw if decoding fails
@@ -781,8 +781,8 @@ export function unmarshalNewRoundStepMessage (amino: AminoBytes, lengthPrefixed:
 /**
  * Unmarshal a `NewValidBlockMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `NewValidBlockMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `NewValidBlockMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `NewValidBlockMessage` object
  * @throws  will throw if decoding fails
@@ -795,8 +795,8 @@ export function unmarshalNewValidBlockMessage (amino: AminoBytes, lengthPrefixed
 /**
  * Unmarshal a `ProposalMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `ProposalMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `ProposalMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `ProposalMessage` object
  * @throws  will throw if decoding fails
@@ -809,8 +809,8 @@ export function unmarshalProposalMessage (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Unmarshal a `ProposalPOLMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `ProposalPOLMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `ProposalPOLMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `ProposalPOLMessage` object
  * @throws  will throw if decoding fails
@@ -823,8 +823,8 @@ export function unmarshalProposalPOLMessage (amino: AminoBytes, lengthPrefixed: 
 /**
  * Unmarshal a `BlockPartMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `BlockPartMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `BlockPartMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `BlockPartMessage` object
  * @throws  will throw if decoding fails
@@ -837,8 +837,8 @@ export function unmarshalBlockPartMessage (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Unmarshal a `VoteMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `VoteMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `VoteMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `VoteMessage` object
  * @throws  will throw if decoding fails
@@ -851,8 +851,8 @@ export function unmarshalVoteMessage (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `HasVoteMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `HasVoteMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `HasVoteMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `HasVoteMessage` object
  * @throws  will throw if decoding fails
@@ -865,8 +865,8 @@ export function unmarshalHasVoteMessage (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Unmarshal a `VoteSetMaj23Message` object from Amino
  *
- * @param   amino          - binary Amino-encoded `VoteSetMaj23Message` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `VoteSetMaj23Message` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `VoteSetMaj23Message` object
  * @throws  will throw if decoding fails
@@ -879,8 +879,8 @@ export function unmarshalVoteSetMaj23Message (amino: AminoBytes, lengthPrefixed:
 /**
  * Unmarshal a `VoteSetBitsMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `VoteSetBitsMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `VoteSetBitsMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `VoteSetBitsMessage` object
  * @throws  will throw if decoding fails
@@ -893,8 +893,8 @@ export function unmarshalVoteSetBitsMessage (amino: AminoBytes, lengthPrefixed: 
 /**
  * Unmarshal a `WALMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `WALMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `WALMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `WALMessage` object
  * @throws  will throw if decoding fails
@@ -907,8 +907,8 @@ export function unmarshalWALMessage (amino: AminoBytes, lengthPrefixed: boolean 
 /**
  * Unmarshal a `MsgInfo` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MsgInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MsgInfo` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MsgInfo` object
  * @throws  will throw if decoding fails
@@ -921,8 +921,8 @@ export function unmarshalMsgInfo (amino: AminoBytes, lengthPrefixed: boolean = t
 /**
  * Unmarshal a `TimeoutInfo` object from Amino
  *
- * @param   amino          - binary Amino-encoded `TimeoutInfo` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `TimeoutInfo` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `TimeoutInfo` object
  * @throws  will throw if decoding fails
@@ -935,8 +935,8 @@ export function unmarshalTimeoutInfo (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `EndHeightMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EndHeightMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EndHeightMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EndHeightMessage` object
  * @throws  will throw if decoding fails
@@ -949,8 +949,8 @@ export function unmarshalEndHeightMessage (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Unmarshal a `PubKey` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PubKey` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PubKey` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PubKey` object
  * @throws  will throw if decoding fails
@@ -963,8 +963,8 @@ export function unmarshalPubKey (amino: AminoBytes, lengthPrefixed: boolean = tr
 /**
  * Unmarshal a `PrivKey` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PrivKey` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PrivKey` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PrivKey` object
  * @throws  will throw if decoding fails
@@ -977,8 +977,8 @@ export function unmarshalPrivKey (amino: AminoBytes, lengthPrefixed: boolean = t
 /**
  * Unmarshal a `PubKeyEd25519` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PubKeyEd25519` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PubKeyEd25519` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PubKeyEd25519` object
  * @throws  will throw if decoding fails
@@ -991,8 +991,8 @@ export function unmarshalPubKeyEd25519 (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Unmarshal a `PrivKeyEd25519` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PrivKeyEd25519` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PrivKeyEd25519` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PrivKeyEd25519` object
  * @throws  will throw if decoding fails
@@ -1005,8 +1005,8 @@ export function unmarshalPrivKeyEd25519 (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Unmarshal a `PubKeySecp256k1` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PubKeySecp256k1` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PubKeySecp256k1` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PubKeySecp256k1` object
  * @throws  will throw if decoding fails
@@ -1019,8 +1019,8 @@ export function unmarshalPubKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Unmarshal a `PrivKeySecp256k1` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PrivKeySecp256k1` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PrivKeySecp256k1` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PrivKeySecp256k1` object
  * @throws  will throw if decoding fails
@@ -1033,8 +1033,8 @@ export function unmarshalPrivKeySecp256k1 (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Unmarshal a `PubKeyMultisigThreshold` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PubKeyMultisigThreshold` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PubKeyMultisigThreshold` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PubKeyMultisigThreshold` object
  * @throws  will throw if decoding fails
@@ -1047,8 +1047,8 @@ export function unmarshalPubKeyMultisigThreshold (amino: AminoBytes, lengthPrefi
 /**
  * Unmarshal a `EvidenceMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EvidenceMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EvidenceMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EvidenceMessage` object
  * @throws  will throw if decoding fails
@@ -1061,8 +1061,8 @@ export function unmarshalEvidenceMessage (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Unmarshal a `EvidenceListMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EvidenceListMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EvidenceListMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EvidenceListMessage` object
  * @throws  will throw if decoding fails
@@ -1075,8 +1075,8 @@ export function unmarshalEvidenceListMessage (amino: AminoBytes, lengthPrefixed:
 /**
  * Unmarshal a `MempoolMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MempoolMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MempoolMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MempoolMessage` object
  * @throws  will throw if decoding fails
@@ -1089,8 +1089,8 @@ export function unmarshalMempoolMessage (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Unmarshal a `TxMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `TxMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `TxMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `TxMessage` object
  * @throws  will throw if decoding fails
@@ -1103,8 +1103,8 @@ export function unmarshalTxMessage (amino: AminoBytes, lengthPrefixed: boolean =
 /**
  * Unmarshal a `Packet` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Packet` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `Packet` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `Packet` object
  * @throws  will throw if decoding fails
@@ -1117,8 +1117,8 @@ export function unmarshalPacket (amino: AminoBytes, lengthPrefixed: boolean = tr
 /**
  * Unmarshal a `PacketPing` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PacketPing` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PacketPing` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PacketPing` object
  * @throws  will throw if decoding fails
@@ -1131,8 +1131,8 @@ export function unmarshalPacketPing (amino: AminoBytes, lengthPrefixed: boolean 
 /**
  * Unmarshal a `PacketPong` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PacketPong` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PacketPong` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PacketPong` object
  * @throws  will throw if decoding fails
@@ -1145,8 +1145,8 @@ export function unmarshalPacketPong (amino: AminoBytes, lengthPrefixed: boolean 
 /**
  * Unmarshal a `PacketMsg` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PacketMsg` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PacketMsg` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PacketMsg` object
  * @throws  will throw if decoding fails
@@ -1159,8 +1159,8 @@ export function unmarshalPacketMsg (amino: AminoBytes, lengthPrefixed: boolean =
 /**
  * Unmarshal a `PexMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PexMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PexMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PexMessage` object
  * @throws  will throw if decoding fails
@@ -1173,8 +1173,8 @@ export function unmarshalPexMessage (amino: AminoBytes, lengthPrefixed: boolean 
 /**
  * Unmarshal a `PexRequestMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PexRequestMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PexRequestMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PexRequestMessage` object
  * @throws  will throw if decoding fails
@@ -1187,8 +1187,8 @@ export function unmarshalPexRequestMessage (amino: AminoBytes, lengthPrefixed: b
 /**
  * Unmarshal a `PexAddrsMessage` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PexAddrsMessage` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PexAddrsMessage` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PexAddrsMessage` object
  * @throws  will throw if decoding fails
@@ -1201,8 +1201,8 @@ export function unmarshalPexAddrsMessage (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Unmarshal a `RemoteSignerMsg` object from Amino
  *
- * @param   amino          - binary Amino-encoded `RemoteSignerMsg` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `RemoteSignerMsg` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `RemoteSignerMsg` object
  * @throws  will throw if decoding fails
@@ -1215,8 +1215,8 @@ export function unmarshalRemoteSignerMsg (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Unmarshal a `PubKeyRequest` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PubKeyRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PubKeyRequest` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PubKeyRequest` object
  * @throws  will throw if decoding fails
@@ -1229,8 +1229,8 @@ export function unmarshalPubKeyRequest (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Unmarshal a `PubKeyResponse` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PubKeyResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PubKeyResponse` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PubKeyResponse` object
  * @throws  will throw if decoding fails
@@ -1243,8 +1243,8 @@ export function unmarshalPubKeyResponse (amino: AminoBytes, lengthPrefixed: bool
 /**
  * Unmarshal a `SignVoteRequest` object from Amino
  *
- * @param   amino          - binary Amino-encoded `SignVoteRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `SignVoteRequest` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `SignVoteRequest` object
  * @throws  will throw if decoding fails
@@ -1257,8 +1257,8 @@ export function unmarshalSignVoteRequest (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Unmarshal a `SignedVoteResponse` object from Amino
  *
- * @param   amino          - binary Amino-encoded `SignedVoteResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `SignedVoteResponse` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `SignedVoteResponse` object
  * @throws  will throw if decoding fails
@@ -1271,8 +1271,8 @@ export function unmarshalSignedVoteResponse (amino: AminoBytes, lengthPrefixed: 
 /**
  * Unmarshal a `SignProposalRequest` object from Amino
  *
- * @param   amino          - binary Amino-encoded `SignProposalRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `SignProposalRequest` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `SignProposalRequest` object
  * @throws  will throw if decoding fails
@@ -1285,8 +1285,8 @@ export function unmarshalSignProposalRequest (amino: AminoBytes, lengthPrefixed:
 /**
  * Unmarshal a `SignedProposalResponse` object from Amino
  *
- * @param   amino          - binary Amino-encoded `SignedProposalResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `SignedProposalResponse` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `SignedProposalResponse` object
  * @throws  will throw if decoding fails
@@ -1299,8 +1299,8 @@ export function unmarshalSignedProposalResponse (amino: AminoBytes, lengthPrefix
 /**
  * Unmarshal a `PingRequest` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PingRequest` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PingRequest` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PingRequest` object
  * @throws  will throw if decoding fails
@@ -1313,8 +1313,8 @@ export function unmarshalPingRequest (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `PingResponse` object from Amino
  *
- * @param   amino          - binary Amino-encoded `PingResponse` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `PingResponse` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `PingResponse` object
  * @throws  will throw if decoding fails
@@ -1327,8 +1327,8 @@ export function unmarshalPingResponse (amino: AminoBytes, lengthPrefixed: boolea
 /**
  * Unmarshal a `TMEventData` object from Amino
  *
- * @param   amino          - binary Amino-encoded `TMEventData` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `TMEventData` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `TMEventData` object
  * @throws  will throw if decoding fails
@@ -1341,8 +1341,8 @@ export function unmarshalTMEventData (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `EventDataNewBlock` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataNewBlock` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataNewBlock` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataNewBlock` object
  * @throws  will throw if decoding fails
@@ -1355,8 +1355,8 @@ export function unmarshalEventDataNewBlock (amino: AminoBytes, lengthPrefixed: b
 /**
  * Unmarshal a `EventDataNewBlockHeader` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataNewBlockHeader` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataNewBlockHeader` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataNewBlockHeader` object
  * @throws  will throw if decoding fails
@@ -1369,8 +1369,8 @@ export function unmarshalEventDataNewBlockHeader (amino: AminoBytes, lengthPrefi
 /**
  * Unmarshal a `EventDataTx` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataTx` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataTx` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataTx` object
  * @throws  will throw if decoding fails
@@ -1383,8 +1383,8 @@ export function unmarshalEventDataTx (amino: AminoBytes, lengthPrefixed: boolean
 /**
  * Unmarshal a `EventDataRoundState` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataRoundState` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataRoundState` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataRoundState` object
  * @throws  will throw if decoding fails
@@ -1397,8 +1397,8 @@ export function unmarshalEventDataRoundState (amino: AminoBytes, lengthPrefixed:
 /**
  * Unmarshal a `EventDataNewRound` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataNewRound` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataNewRound` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataNewRound` object
  * @throws  will throw if decoding fails
@@ -1411,8 +1411,8 @@ export function unmarshalEventDataNewRound (amino: AminoBytes, lengthPrefixed: b
 /**
  * Unmarshal a `EventDataCompleteProposal` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataCompleteProposal` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataCompleteProposal` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataCompleteProposal` object
  * @throws  will throw if decoding fails
@@ -1425,8 +1425,8 @@ export function unmarshalEventDataCompleteProposal (amino: AminoBytes, lengthPre
 /**
  * Unmarshal a `EventDataVote` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataVote` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataVote` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataVote` object
  * @throws  will throw if decoding fails
@@ -1439,8 +1439,8 @@ export function unmarshalEventDataVote (amino: AminoBytes, lengthPrefixed: boole
 /**
  * Unmarshal a `EventDataValidatorSetUpdates` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataValidatorSetUpdates` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataValidatorSetUpdates` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataValidatorSetUpdates` object
  * @throws  will throw if decoding fails
@@ -1453,8 +1453,8 @@ export function unmarshalEventDataValidatorSetUpdates (amino: AminoBytes, length
 /**
  * Unmarshal a `EventDataString` object from Amino
  *
- * @param   amino          - binary Amino-encoded `EventDataString` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `EventDataString` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `EventDataString` object
  * @throws  will throw if decoding fails
@@ -1467,8 +1467,8 @@ export function unmarshalEventDataString (amino: AminoBytes, lengthPrefixed: boo
 /**
  * Unmarshal a `Evidence` object from Amino
  *
- * @param   amino          - binary Amino-encoded `Evidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `Evidence` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `Evidence` object
  * @throws  will throw if decoding fails
@@ -1481,8 +1481,8 @@ export function unmarshalEvidence (amino: AminoBytes, lengthPrefixed: boolean = 
 /**
  * Unmarshal a `DuplicateVoteEvidence` object from Amino
  *
- * @param   amino          - binary Amino-encoded `DuplicateVoteEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `DuplicateVoteEvidence` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `DuplicateVoteEvidence` object
  * @throws  will throw if decoding fails
@@ -1495,8 +1495,8 @@ export function unmarshalDuplicateVoteEvidence (amino: AminoBytes, lengthPrefixe
 /**
  * Unmarshal a `MockGoodEvidence` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MockGoodEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MockGoodEvidence` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MockGoodEvidence` object
  * @throws  will throw if decoding fails
@@ -1509,8 +1509,8 @@ export function unmarshalMockGoodEvidence (amino: AminoBytes, lengthPrefixed: bo
 /**
  * Unmarshal a `MockRandomGoodEvidence` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MockRandomGoodEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MockRandomGoodEvidence` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MockRandomGoodEvidence` object
  * @throws  will throw if decoding fails
@@ -1523,8 +1523,8 @@ export function unmarshalMockRandomGoodEvidence (amino: AminoBytes, lengthPrefix
 /**
  * Unmarshal a `MockBadEvidence` object from Amino
  *
- * @param   amino          - binary Amino-encoded `MockBadEvidence` object
- * @param   lengthPrefixed - if true, use length-prefixed Amino decoding; if false, use bare Amino decoding
+ * @param   amino          - Amino-encoded `MockBadEvidence` object
+ * @param   lengthPrefixed - if `true`, use length-prefixed Amino decoding; if `false`, use bare Amino decoding
  *
  * @returns `MockBadEvidence` object
  * @throws  will throw if decoding fails

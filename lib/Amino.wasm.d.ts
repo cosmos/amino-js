@@ -1,13 +1,10 @@
-export type Bytes        = Uint8Array;
-export type DisambBytes  = Bytes;
-export type PrefixBytes  = Bytes;
-export type JSONBytes    = Bytes;
-export type AminoBytes   = Bytes;
+import { AminoBytes, Bech32String, Bytes, DisambBytes, JSONBytes, PrefixBytes } from './types';
+
 export type ErrorMessage = string | null;
 
 // Bech32
-export function encodeBech32 (hrp: string, data: Bytes): [string, ErrorMessage];
-export function decodeBech32 (bech: string): [string, Bytes, ErrorMessage];
+export function encodeBech32 (hrp: string, data: Bytes): [Bech32String, ErrorMessage];
+export function decodeBech32 (bech: Bech32String): [string, Bytes, ErrorMessage];
 
 // Basic encoding
 export function encodeByte (byte: number): [AminoBytes, ErrorMessage];

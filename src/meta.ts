@@ -11,7 +11,7 @@ export {
 /**
  * Decode disambiguation bytes, prefix bytes, and byte length from Amino
  *
- * @param   amino - binary Amino-encoded bytes
+ * @param   amino - Amino-encoded bytes
  *
  * @returns tuple of disambiguation bytes (or null if none), prefix bytes (or null if none), and byte length
  * @throws  will throw if decoding fails

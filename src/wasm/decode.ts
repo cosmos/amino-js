@@ -1,5 +1,5 @@
 import * as Amino from '../../lib/Amino.wasm';
-import { Bytes, AminoBytes } from '../../lib/types';
+import { AminoBytes, Bytes } from '../../lib/types';
 
 export function decodeByte (amino: AminoBytes): [number, number] {
     const [value, length, error] = Amino.decodeByte(amino);
