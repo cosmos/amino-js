@@ -29,7 +29,7 @@
         "nuke":      "rm -rf **/node_modules yarn.lock",
         "prepare":   "tsc && yarn lint && yarn dist:prod && yarn test",
         "reset":     "yarn nuke && yarn",
-        "setup":     "yarn dirs && yarn go && yarn build",
+        "setup":     "yarn dirs && yarn dist:dev",
         "server":    "go run server.go",
         "static":    "cp ./static/* ./dist/",
         "test":      "jest --config ./test/jest.config.json",
