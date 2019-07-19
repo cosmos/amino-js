@@ -1,14 +1,18 @@
 import { PubKey } from './crypto';
-import { Coin, Msg } from './types';
+import { Coin, Msg, TxValue } from './types';
 
 /** @TODO document */
 export interface Account {
     type: string;
-    value: BaseAccount | BaseVestingAccount | ContinuousVestingAccount | DelayedVestingAccount;
+    value: AccountValue;
 }
 
 /** @TODO document */
-export interface BaseAccount {
+export interface AccountValue {
+}
+
+/** @TODO document */
+export interface BaseAccount extends AccountValue {
     /** Bech32 account address */
     address: string;
     coins: Coin[];
@@ -22,7 +26,7 @@ export interface VestingAccount {
 }
 
 /** @TODO document */
-export interface BaseVestingAccount {
+export interface BaseVestingAccount extends AccountValue {
     BaseAccount: BaseAccount;
     original_vesting: Coin[];
     delegated_free: Coin[];
@@ -31,18 +35,18 @@ export interface BaseVestingAccount {
 }
 
 /** @TODO document */
-export interface ContinuousVestingAccount {
+export interface ContinuousVestingAccount extends AccountValue {
     BaseVestingAccount: BaseVestingAccount;
     start_time: string;
 }
 
 /** @TODO document */
-export interface DelayedVestingAccount {
+export interface DelayedVestingAccount extends AccountValue {
     BaseVestingAccount: BaseVestingAccount;
 }
 
 /** @TODO document */
-export interface StdTx {
+export interface StdTx extends TxValue {
     msg: Msg[];
     fee: StdFee;
     signatures: StdSignature[];

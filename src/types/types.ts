@@ -1,4 +1,3 @@
-import { StdTx } from './auth';
 import { MsgSend, MsgMultiSend } from './bank';
 
 /** @TODO document */
@@ -10,7 +9,11 @@ export interface Msg {
 /** @TODO document */
 export interface Tx {
     type: string;
-    value: StdTx;
+    value: TxValue;
+}
+
+/** @TODO document */
+export interface TxValue {
 }
 
 /** @TODO document */
