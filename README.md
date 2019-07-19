@@ -1,4 +1,4 @@
-# amino-js
+# `amino-js`
 
 Supported in Node.js and browsers.
 
@@ -13,7 +13,7 @@ Support is planned for Service Workers.
 
 **https://cosmos.github.io/amino-js/**
 
-All exported functions are documented. Some Amino registered type interfaces are documented.
+All exported functions are documented. Some Amino registered TypeScript interfaces are documented. The codec works as is, but we'll work on adding more TS definitions to improve the developer experience.
 
 ### Install
 
@@ -78,25 +78,24 @@ const encodedTx = marshalTx(tx);
 const decodedTx = unmarshalTx(encodedTx);
 ```
 
-### Source
+### Register custom types
 
-##### Prerequisites
+To register your own types with Amino, you'll need to add Go structs and interfaces, register them with the codec, compile the Go code with GopherJS, and then rebuild the JS lib.
 
-Install `myitcv/gopherjs` via the instructions @ https://github.com/myitcv/gopherjs#installation-and-usage
+To keep the compiled output small, the recommended way to do this is to add your Go structs, but strip out methods, private properties, and anything else that you don't plan to marshal to Amino. 
 
-This fork is required for go module support until https://github.com/gopherjs/gopherjs/issues/855 is resolved.
+This is all (hopefully) less complicated than it sounds.
 
-##### Install
+##### 1. Fork
 
-```shell
-git clone https://github.com/cosmos/amino-js.git
-cd amino-js
-yarn install
-yarn setup
-```
+See [`FORK.md`](FORK.md) for instructions.
 
-##### Test
+##### 2. Extend
 
-```shell
-yarn test
-```
+See [`EXTEND.md`](EXTEND.md) for instructions.
+
+### Contributing
+
+`amino-js` is very new! Questions, feedback, use cases, issues, and code are all very, very welcome.
+
+Thank you for helping us help you help us all. 🎁
