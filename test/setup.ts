@@ -3,7 +3,7 @@ import jest from 'jest';
 declare global {
     // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace jest {
-        interface Matchers<R> {
+        interface Matchers<R, T> {
             toBeBytes (bytes: number[]): R;
             toBeDate (date: Date): R;
         }
