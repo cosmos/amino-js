@@ -88,11 +88,11 @@ This is all (hopefully) less complicated than it sounds.
 
 ##### 1. Fork
 
-See [`FORK.md`](FORK.md) for instructions.
+See [`FORK.md`](https://github.com/cosmos/amino-js/blob/extend/FORK.md) for instructions.
 
 ##### 2. Extend
 
-See [`EXTEND.md`](EXTEND.md) for instructions.
+See [`EXTEND.md`](https://github.com/cosmos/amino-js/blob/extend/EXTEND.md) for instructions.
 
 ### Contributing
 
