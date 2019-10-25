@@ -26,7 +26,7 @@ yarn add @tendermint/amino-js
 
 ##### NPM
 ```shell
-npm install @tendermint/amino-js
+npm install --save @tendermint/amino-js
 ```
 
 ### Usage
