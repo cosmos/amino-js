@@ -4,10 +4,10 @@ import * as Amino from '../';
 
 // https://rpc.cosmos.network:26657/tx?hash=0x2268EB5AB730B45F8426078827BB5BB49819CE2B0D74B2C1D191070BADB379F1&prove=true
 
-const txData = '1gHwYl3uCkOoo2GaChS536x615s3L5HNHZqLKYPpCK3tiRIUF5FHHqSe5EQ+wA9u2QAy8QEasjAaEQoFdWF0b20SCDExNjU3OTk1EhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAtQaCqFnshaZQp6rIkvAPyzThvCvXSDO+9AzbxVErqJPEkDWdRwgfQItPT+dDSYFMOtPqQwbbQ1j8+wfs/aBzhulg0YsRiMGZ1Z69dQmi5IT/0D/rRAb1xh6rJN7mQUN4g/FIgoxMTIyNjcyNzU0';
+const txData = '1gEoKBapCkOoo2GaChS536x615s3L5HNHZqLKYPpCK3tiRIUF5FHHqSe5EQ+wA9u2QAy8QEasjAaEQoFdWF0b20SCDExNjU3OTk1EhMKDQoFdWF0b20SBDUwMDAQwJoMGmoKJuta6YchAtQaCqFnshaZQp6rIkvAPyzThvCvXSDO+9AzbxVErqJPEkDWdRwgfQItPT+dDSYFMOtPqQwbbQ1j8+wfs/aBzhulg0YsRiMGZ1Z69dQmi5IT/0D/rRAb1xh6rJN7mQUN4g/FIgoxMTIyNjcyNzU0';
 
 const tx = {
-    'type':  'auth/StdTx',
+    'type':  'cosmos-sdk/StdTx',
     'value': {
         'msg':        [{
             'type':  'cosmos-sdk/MsgSend',
@@ -40,12 +40,12 @@ const tx = {
 
 // https://rpc.cosmos.network:26657/abci_query?path=%22store/acc/key%22&data=0x01D545E7384C3D6F5BBA7A1B252B4E1A956EBAC64C&prove=true
 
-const accountData           = 'YPqWwQqcAQpUChTVRec4TD1vW7p6GyUrThqVbrrGTBIPCgV1YXRvbRIGMTc5ODQ4GibrWumHIQKYe02D/64eNwOGvV8fs+7Nr4O3wn9SS6I9ZgPcmQ1jEiCbASg7EhQKBXVhdG9tEgsxMTAwMDAwMDAwMBoSCgV1YXRvbRIJMjA5Nzk3NjA3IhQKBXVhdG9tEgsxMTAwMDAwMDAwMCjwoLDzBQ==';
+const accountData           = 'Yvt4DwqcAQpUChTVRec4TD1vW7p6GyUrThqVbrrGTBIPCgV1YXRvbRIGMTc5ODQ4GibrWumHIQKYe02D/64eNwOGvV8fs+7Nr4O3wn9SS6I9ZgPcmQ1jEiCbASg7EhQKBXVhdG9tEgsxMTAwMDAwMDAwMBoSCgV1YXRvbRIJMjA5Nzk3NjA3IhQKBXVhdG9tEgsxMTAwMDAwMDAwMCjwoLDzBQ==';
 const iavlValueOpData       = 'hQUKggUKKwggEPRAGJeoFiIg42ukaK0uAk7ILChDKa2MAFQFCOQFHTdoHk72xrPqn8YKKwgeEO0gGJeoFiIgKTAvE5LXRMXvLtFItHxHqhaWLVKre8QWE+sG8E1Z1YYKKwgaEKEQGL2nFiogx4Bretm5AWrvsnzsRpoohgaekTVJ4R04Xj5FN5wCVwIKKwgYEJUIGL2nFiIguo1I6e9Rj73aCfyZnYQHRGUXq1GDyB1tvWdjysYTajIKKwgWEJoEGL2nFiogi7CVB6o/0PIzr+4le03bzqd7W9nluTJwkF5H96OsPucKKwgSEP8BGJujFiIgeRcR4sFkokanbxWDZpZxtaEzfZ8xtM/uPzUrvyAEsDMKKwgQEJgBGKKVFiIgIQc2xOwMqFbvMSjlSbHhUVD1c0+RaQHwRb2Jiu5Yf7UKKggOEFYYipQWKiDw5Bc4Lxdfrk/EfE4imjy2AKyg4vujseUEpWB3+gCcZAoqCAwQMBiKlBYqIKY3zEai6/YEkQSBFC6ip74SI4MtACgr/TdQFSBUfT7ICioIChAZGIqUFioguHqFHs9oIk2FQ18+nq2vZumPTIoDDwsLan1vjVMIPxcKKggIEAoYipQWKiAq5wga4cYIvmokgEgZvP7CQgQjGq6NQvwQv4Vy1YZqEwoqCAYQBhiKlBYiICD9YpCHnKK2/ezmWOxX5uUCXg5GC8I7E3pjzBjeMBzbCioIAhACGIqUFiogS1QK5AZwGKWEfTKDxlc/PXHXGioimRuUvaN0Wz/seNgaPQoVAdVF5zhMPW9bunobJStOGpVuusZMEiB2dXzzOGZoxxV2WcHcWUeXd99tJm65ENdr1muoA5tE0RiKlBY=';
 const multiStoreProofOpData = 'zAMKyQMKMgoGcGFyYW1zEigKJgifqBYSILQQeWv+l/f4sz0XrMFwYl7ciA8wVVpJEbi3qfTDklx3CjMKB3N0YWtpbmcSKAomCJ+oFhIgl/W+J7W+84XjsUkoee2UoG25z2Qoa8+4WZ797IQuDM8KLwoDZ292EigKJgifqBYSIKhUGp0K9m8bBvnaR4CrzZc2ti1V53v4Rejr0ywkKuDkCi8KA2ZlZRIoCiYIn6gWEiC/jsXcQM4jKoOPfqC3RswEkIwyvKw7goy7g0Mst/SeHAowCgRtaW50EigKJgifqBYSIKICvSgOiooDDqybo7DaN/Kd2rxGEIWKMdEzXEwkWGD7CjEKBWRpc3RyEigKJgifqBYSIOBGzTXH2fB/JSNtnb0g4zNmhOvy3RnNfghic7/0l2CsCjQKCHNsYXNoaW5nEigKJgifqBYSIH0/FymzrPVSQuE5r0kkwuRvn44z/1DK5ZB8JDdWvxSrCjAKBG1haW4SKAomCJ+oFhIgdNv/3PjtbBb+R4S4HMizVHGFeiSOKE2MaXS6k6v0NW0KLwoDYWNjEigKJgifqBYSIBKIj7ZT7YN1dcOgCKxAVRqYlJKkZ/pukCPpEPhfwrn5';
 
 const account = {
-    'type':  'auth/DelayedVestingAccount',
+    'type':  'cosmos-sdk/DelayedVestingAccount',
     'value': {
         'BaseVestingAccount': {
             'BaseAccount':       {
