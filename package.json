@@ -1,6 +1,6 @@
 {
     "name":            "@tendermint/amino-js",
-    "description":     "tendermint/go-amino for JavaScript",
+    "description":     "go-amino + GopherJS + TypeScript",
     "license":         "Apache-2.0",
     "repository":      {
         "type": "git",
