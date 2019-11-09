@@ -6,15 +6,11 @@
         "esModuleInterop":              true,
         "module":                       "CommonJS",
         "moduleResolution":             "Node",
-        "sourceMap":                    true,
         "strict":                       true,
         "strictPropertyInitialization": false,
         "target":                       "ESNext"
     },
-    "include":         [
-        "index.ts",
-        "lib"
-    ],
+    "include":         [ "index.ts" ],
     "typedocOptions":  {
         "out":                    "docs",
         "mode":                   "file",
