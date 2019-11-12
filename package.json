@@ -14,7 +14,7 @@
     "types":           "index.d.ts",
     "scripts":         {
         "build":          "webpack --config build --progress --colors --display-error-details",
-        "dirs":           "mkdir dist",
+        "dirs":           "mkdir -p dist",
         "dist:dev":       "rm -rf dist/* && yarn go && NODE_ENV=development yarn build",
         "dist:prod":      "rm -rf dist/* && yarn go:min && NODE_ENV=production yarn build && yarn gzip",
         "docs":           "rm -rf docs/* && typedoc src/*.ts src/types/*.ts lib/types.ts",
