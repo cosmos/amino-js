@@ -1,6 +1,6 @@
-dist
-docs
-go
+dist/
+docs/
+go/
 lib/*.js
-node_modules
-types
+node_modules/
+types/
