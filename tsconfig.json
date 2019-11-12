@@ -1,20 +1,16 @@
 {
     "compilerOptions": {
+        "declaration":                  true,
+        "declarationDir":               "types",
+        "emitDeclarationOnly":          true,
         "esModuleInterop":              true,
         "module":                       "CommonJS",
         "moduleResolution":             "Node",
-        "noEmit":                       true,
-        "sourceMap":                    true,
         "strict":                       true,
         "strictPropertyInitialization": false,
         "target":                       "ESNext"
     },
-    "include":         [
-        "index.d.ts",
-        "lib",
-        "src",
-        "test"
-    ],
+    "include":         [ "index.ts" ],
     "typedocOptions":  {
         "out":                    "docs",
         "mode":                   "file",
