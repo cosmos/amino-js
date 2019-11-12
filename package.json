@@ -24,9 +24,9 @@
         "gzip":           "gzip -kf dist/*.{js,map}",
         "lint":           "eslint --ext .ts,.js .",
         "nuke":           "rm -rf **/node_modules yarn.lock",
-        "prepublishOnly": "yarn lint && yarn tsc && yarn dist:prod && yarn test",
+        "prepublishOnly": "yarn dirs && yarn lint && yarn tsc && yarn dist:prod && yarn test",
         "reset":          "yarn nuke && yarn",
-        "setup":          "yarn dirs && yarn dist:dev",
+        "setup":          "yarn dirs && yarn lint && yarn tsc && yarn dist:dev",
         "test":           "jest --config test/jest.config.json",
         "tsc":            "rm -rf types/* && tsc && cp -R lib/*.d.ts types/lib/",
         "watch":          "yarn build --watch"
