@@ -1,3 +1,4 @@
+import { StdFee, StdSignature } from './auth';
 import { MsgSend, MsgMultiSend } from './bank';
 
 /** @TODO document */
@@ -14,6 +15,10 @@ export interface Tx {
 
 /** @TODO document */
 export interface TxValue {
+    msg: Msg[];
+    fee: StdFee;
+    signatures: StdSignature[];
+    memo: string;
 }
 
 /** @TODO document */
