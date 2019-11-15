@@ -104,7 +104,7 @@ import {
     VoteSetMaj23Message,
     WALMessage
 } from './types';
-import { marshalJSON } from './util';
+import { jsonToBytes } from './util';
 
 /**
  * Marshal a `MultiStoreProofOp` object to Amino
@@ -116,7 +116,7 @@ import { marshalJSON } from './util';
  * @throws  will throw if encoding fails
  */
 export function marshalMultiStoreProofOp (o: MultiStoreProofOp, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMultiStoreProofOp(json, lengthPrefixed);
 }
 
@@ -130,7 +130,7 @@ export function marshalMultiStoreProofOp (o: MultiStoreProofOp, lengthPrefixed: 
  * @throws  will throw if encoding fails
  */
 export function marshalIAVLAbsenceOp (o: IAVLAbsenceOp, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeIAVLAbsenceOp(json, lengthPrefixed);
 }
 
@@ -144,7 +144,7 @@ export function marshalIAVLAbsenceOp (o: IAVLAbsenceOp, lengthPrefixed: boolean 
  * @throws  will throw if encoding fails
  */
 export function marshalIAVLValueOp (o: IAVLValueOp, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeIAVLValueOp(json, lengthPrefixed);
 }
 
@@ -158,7 +158,7 @@ export function marshalIAVLValueOp (o: IAVLValueOp, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalPrivKeyLedgerSecp256k1 (o: PrivKeyLedgerSecp256k1, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePrivKeyLedgerSecp256k1(json, lengthPrefixed);
 }
 
@@ -172,7 +172,7 @@ export function marshalPrivKeyLedgerSecp256k1 (o: PrivKeyLedgerSecp256k1, length
  * @throws  will throw if encoding fails
  */
 export function marshalInfo (o: Info, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeInfo(json, lengthPrefixed);
 }
 
@@ -186,7 +186,7 @@ export function marshalInfo (o: Info, lengthPrefixed: boolean = true): AminoByte
  * @throws  will throw if encoding fails
  */
 export function marshalBIP44Params (o: BIP44Params, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBIP44Params(json, lengthPrefixed);
 }
 
@@ -200,7 +200,7 @@ export function marshalBIP44Params (o: BIP44Params, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalLocalInfo (o: LocalInfo, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeLocalInfo(json, lengthPrefixed);
 }
 
@@ -214,7 +214,7 @@ export function marshalLocalInfo (o: LocalInfo, lengthPrefixed: boolean = true):
  * @throws  will throw if encoding fails
  */
 export function marshalLedgerInfo (o: LedgerInfo, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeLedgerInfo(json, lengthPrefixed);
 }
 
@@ -228,7 +228,7 @@ export function marshalLedgerInfo (o: LedgerInfo, lengthPrefixed: boolean = true
  * @throws  will throw if encoding fails
  */
 export function marshalOfflineInfo (o: OfflineInfo, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeOfflineInfo(json, lengthPrefixed);
 }
 
@@ -242,7 +242,7 @@ export function marshalOfflineInfo (o: OfflineInfo, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalMultiInfo (o: MultiInfo, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMultiInfo(json, lengthPrefixed);
 }
 
@@ -256,7 +256,7 @@ export function marshalMultiInfo (o: MultiInfo, lengthPrefixed: boolean = true):
  * @throws  will throw if encoding fails
  */
 export function marshalMsg (o: Msg, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsg(json, lengthPrefixed);
 }
 
@@ -270,7 +270,7 @@ export function marshalMsg (o: Msg, lengthPrefixed: boolean = true): AminoBytes 
  * @throws  will throw if encoding fails
  */
 export function marshalTx (o: Tx, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeTx(json, lengthPrefixed);
 }
 
@@ -284,7 +284,7 @@ export function marshalTx (o: Tx, lengthPrefixed: boolean = true): AminoBytes {
  * @throws  will throw if encoding fails
  */
 export function marshalAccount (o: Account, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeAccount(json, lengthPrefixed);
 }
 
@@ -298,7 +298,7 @@ export function marshalAccount (o: Account, lengthPrefixed: boolean = true): Ami
  * @throws  will throw if encoding fails
  */
 export function marshalVestingAccount (o: VestingAccount, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeVestingAccount(json, lengthPrefixed);
 }
 
@@ -312,7 +312,7 @@ export function marshalVestingAccount (o: VestingAccount, lengthPrefixed: boolea
  * @throws  will throw if encoding fails
  */
 export function marshalBaseAccount (o: BaseAccount, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBaseAccount(json, lengthPrefixed);
 }
 
@@ -326,7 +326,7 @@ export function marshalBaseAccount (o: BaseAccount, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalBaseVestingAccount (o: BaseVestingAccount, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBaseVestingAccount(json, lengthPrefixed);
 }
 
@@ -340,7 +340,7 @@ export function marshalBaseVestingAccount (o: BaseVestingAccount, lengthPrefixed
  * @throws  will throw if encoding fails
  */
 export function marshalContinuousVestingAccount (o: ContinuousVestingAccount, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeContinuousVestingAccount(json, lengthPrefixed);
 }
 
@@ -354,7 +354,7 @@ export function marshalContinuousVestingAccount (o: ContinuousVestingAccount, le
  * @throws  will throw if encoding fails
  */
 export function marshalDelayedVestingAccount (o: DelayedVestingAccount, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeDelayedVestingAccount(json, lengthPrefixed);
 }
 
@@ -368,7 +368,7 @@ export function marshalDelayedVestingAccount (o: DelayedVestingAccount, lengthPr
  * @throws  will throw if encoding fails
  */
 export function marshalStdTx (o: StdTx, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeStdTx(json, lengthPrefixed);
 }
 
@@ -382,7 +382,7 @@ export function marshalStdTx (o: StdTx, lengthPrefixed: boolean = true): AminoBy
  * @throws  will throw if encoding fails
  */
 export function marshalMsgSend (o: MsgSend, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgSend(json, lengthPrefixed);
 }
 
@@ -396,7 +396,7 @@ export function marshalMsgSend (o: MsgSend, lengthPrefixed: boolean = true): Ami
  * @throws  will throw if encoding fails
  */
 export function marshalMsgMultiSend (o: MsgMultiSend, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgMultiSend(json, lengthPrefixed);
 }
 
@@ -410,7 +410,7 @@ export function marshalMsgMultiSend (o: MsgMultiSend, lengthPrefixed: boolean = 
  * @throws  will throw if encoding fails
  */
 export function marshalMsgVerifyInvariant (o: MsgVerifyInvariant, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgVerifyInvariant(json, lengthPrefixed);
 }
 
@@ -424,7 +424,7 @@ export function marshalMsgVerifyInvariant (o: MsgVerifyInvariant, lengthPrefixed
  * @throws  will throw if encoding fails
  */
 export function marshalMsgWithdrawDelegatorReward (o: MsgWithdrawDelegatorReward, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgWithdrawDelegatorReward(json, lengthPrefixed);
 }
 
@@ -438,7 +438,7 @@ export function marshalMsgWithdrawDelegatorReward (o: MsgWithdrawDelegatorReward
  * @throws  will throw if encoding fails
  */
 export function marshalMsgWithdrawValidatorCommission (o: MsgWithdrawValidatorCommission, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgWithdrawValidatorCommission(json, lengthPrefixed);
 }
 
@@ -452,7 +452,7 @@ export function marshalMsgWithdrawValidatorCommission (o: MsgWithdrawValidatorCo
  * @throws  will throw if encoding fails
  */
 export function marshalMsgSetWithdrawAddress (o: MsgSetWithdrawAddress, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgSetWithdrawAddress(json, lengthPrefixed);
 }
 
@@ -466,7 +466,7 @@ export function marshalMsgSetWithdrawAddress (o: MsgSetWithdrawAddress, lengthPr
  * @throws  will throw if encoding fails
  */
 export function marshalContent (o: Content, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeContent(json, lengthPrefixed);
 }
 
@@ -480,7 +480,7 @@ export function marshalContent (o: Content, lengthPrefixed: boolean = true): Ami
  * @throws  will throw if encoding fails
  */
 export function marshalMsgSubmitProposal (o: MsgSubmitProposal, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgSubmitProposal(json, lengthPrefixed);
 }
 
@@ -494,7 +494,7 @@ export function marshalMsgSubmitProposal (o: MsgSubmitProposal, lengthPrefixed: 
  * @throws  will throw if encoding fails
  */
 export function marshalMsgDeposit (o: MsgDeposit, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgDeposit(json, lengthPrefixed);
 }
 
@@ -508,7 +508,7 @@ export function marshalMsgDeposit (o: MsgDeposit, lengthPrefixed: boolean = true
  * @throws  will throw if encoding fails
  */
 export function marshalMsgVote (o: MsgVote, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgVote(json, lengthPrefixed);
 }
 
@@ -522,7 +522,7 @@ export function marshalMsgVote (o: MsgVote, lengthPrefixed: boolean = true): Ami
  * @throws  will throw if encoding fails
  */
 export function marshalTextProposal (o: TextProposal, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeTextProposal(json, lengthPrefixed);
 }
 
@@ -536,7 +536,7 @@ export function marshalTextProposal (o: TextProposal, lengthPrefixed: boolean = 
  * @throws  will throw if encoding fails
  */
 export function marshalSoftwareUpgradeProposal (o: SoftwareUpgradeProposal, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeSoftwareUpgradeProposal(json, lengthPrefixed);
 }
 
@@ -550,7 +550,7 @@ export function marshalSoftwareUpgradeProposal (o: SoftwareUpgradeProposal, leng
  * @throws  will throw if encoding fails
  */
 export function marshalMsgIBCTransfer (o: MsgIBCTransfer, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgIBCTransfer(json, lengthPrefixed);
 }
 
@@ -564,7 +564,7 @@ export function marshalMsgIBCTransfer (o: MsgIBCTransfer, lengthPrefixed: boolea
  * @throws  will throw if encoding fails
  */
 export function marshalMsgIBCReceive (o: MsgIBCReceive, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgIBCReceive(json, lengthPrefixed);
 }
 
@@ -578,7 +578,7 @@ export function marshalMsgIBCReceive (o: MsgIBCReceive, lengthPrefixed: boolean 
  * @throws  will throw if encoding fails
  */
 export function marshalParameterChangeProposal (o: ParameterChangeProposal, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeParameterChangeProposal(json, lengthPrefixed);
 }
 
@@ -592,7 +592,7 @@ export function marshalParameterChangeProposal (o: ParameterChangeProposal, leng
  * @throws  will throw if encoding fails
  */
 export function marshalMsgUnjail (o: MsgUnjail, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgUnjail(json, lengthPrefixed);
 }
 
@@ -606,7 +606,7 @@ export function marshalMsgUnjail (o: MsgUnjail, lengthPrefixed: boolean = true):
  * @throws  will throw if encoding fails
  */
 export function marshalMsgCreateValidator (o: MsgCreateValidator, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgCreateValidator(json, lengthPrefixed);
 }
 
@@ -620,7 +620,7 @@ export function marshalMsgCreateValidator (o: MsgCreateValidator, lengthPrefixed
  * @throws  will throw if encoding fails
  */
 export function marshalMsgEditValidator (o: MsgEditValidator, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgEditValidator(json, lengthPrefixed);
 }
 
@@ -634,7 +634,7 @@ export function marshalMsgEditValidator (o: MsgEditValidator, lengthPrefixed: bo
  * @throws  will throw if encoding fails
  */
 export function marshalMsgDelegate (o: MsgDelegate, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgDelegate(json, lengthPrefixed);
 }
 
@@ -648,7 +648,7 @@ export function marshalMsgDelegate (o: MsgDelegate, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalMsgUndelegate (o: MsgUndelegate, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgUndelegate(json, lengthPrefixed);
 }
 
@@ -662,7 +662,7 @@ export function marshalMsgUndelegate (o: MsgUndelegate, lengthPrefixed: boolean 
  * @throws  will throw if encoding fails
  */
 export function marshalMsgBeginRedelegate (o: MsgBeginRedelegate, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgBeginRedelegate(json, lengthPrefixed);
 }
 
@@ -676,7 +676,7 @@ export function marshalMsgBeginRedelegate (o: MsgBeginRedelegate, lengthPrefixed
  * @throws  will throw if encoding fails
  */
 export function marshalBlockchainMessage (o: BlockchainMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBlockchainMessage(json, lengthPrefixed);
 }
 
@@ -690,7 +690,7 @@ export function marshalBlockchainMessage (o: BlockchainMessage, lengthPrefixed: 
  * @throws  will throw if encoding fails
  */
 export function marshalBcBlockRequestMessage (o: BcBlockRequestMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBcBlockRequestMessage(json, lengthPrefixed);
 }
 
@@ -704,7 +704,7 @@ export function marshalBcBlockRequestMessage (o: BcBlockRequestMessage, lengthPr
  * @throws  will throw if encoding fails
  */
 export function marshalBcBlockResponseMessage (o: BcBlockResponseMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBcBlockResponseMessage(json, lengthPrefixed);
 }
 
@@ -718,7 +718,7 @@ export function marshalBcBlockResponseMessage (o: BcBlockResponseMessage, length
  * @throws  will throw if encoding fails
  */
 export function marshalBcNoBlockResponseMessage (o: BcNoBlockResponseMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBcNoBlockResponseMessage(json, lengthPrefixed);
 }
 
@@ -732,7 +732,7 @@ export function marshalBcNoBlockResponseMessage (o: BcNoBlockResponseMessage, le
  * @throws  will throw if encoding fails
  */
 export function marshalBcStatusResponseMessage (o: BcStatusResponseMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBcStatusResponseMessage(json, lengthPrefixed);
 }
 
@@ -746,7 +746,7 @@ export function marshalBcStatusResponseMessage (o: BcStatusResponseMessage, leng
  * @throws  will throw if encoding fails
  */
 export function marshalBcStatusRequestMessage (o: BcStatusRequestMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBcStatusRequestMessage(json, lengthPrefixed);
 }
 
@@ -760,7 +760,7 @@ export function marshalBcStatusRequestMessage (o: BcStatusRequestMessage, length
  * @throws  will throw if encoding fails
  */
 export function marshalConsensusMessage (o: ConsensusMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeConsensusMessage(json, lengthPrefixed);
 }
 
@@ -774,7 +774,7 @@ export function marshalConsensusMessage (o: ConsensusMessage, lengthPrefixed: bo
  * @throws  will throw if encoding fails
  */
 export function marshalNewRoundStepMessage (o: NewRoundStepMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeNewRoundStepMessage(json, lengthPrefixed);
 }
 
@@ -788,7 +788,7 @@ export function marshalNewRoundStepMessage (o: NewRoundStepMessage, lengthPrefix
  * @throws  will throw if encoding fails
  */
 export function marshalNewValidBlockMessage (o: NewValidBlockMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeNewValidBlockMessage(json, lengthPrefixed);
 }
 
@@ -802,7 +802,7 @@ export function marshalNewValidBlockMessage (o: NewValidBlockMessage, lengthPref
  * @throws  will throw if encoding fails
  */
 export function marshalProposalMessage (o: ProposalMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeProposalMessage(json, lengthPrefixed);
 }
 
@@ -816,7 +816,7 @@ export function marshalProposalMessage (o: ProposalMessage, lengthPrefixed: bool
  * @throws  will throw if encoding fails
  */
 export function marshalProposalPOLMessage (o: ProposalPOLMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeProposalPOLMessage(json, lengthPrefixed);
 }
 
@@ -830,7 +830,7 @@ export function marshalProposalPOLMessage (o: ProposalPOLMessage, lengthPrefixed
  * @throws  will throw if encoding fails
  */
 export function marshalBlockPartMessage (o: BlockPartMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeBlockPartMessage(json, lengthPrefixed);
 }
 
@@ -844,7 +844,7 @@ export function marshalBlockPartMessage (o: BlockPartMessage, lengthPrefixed: bo
  * @throws  will throw if encoding fails
  */
 export function marshalVoteMessage (o: VoteMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeVoteMessage(json, lengthPrefixed);
 }
 
@@ -858,7 +858,7 @@ export function marshalVoteMessage (o: VoteMessage, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalHasVoteMessage (o: HasVoteMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeHasVoteMessage(json, lengthPrefixed);
 }
 
@@ -872,7 +872,7 @@ export function marshalHasVoteMessage (o: HasVoteMessage, lengthPrefixed: boolea
  * @throws  will throw if encoding fails
  */
 export function marshalVoteSetMaj23Message (o: VoteSetMaj23Message, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeVoteSetMaj23Message(json, lengthPrefixed);
 }
 
@@ -886,7 +886,7 @@ export function marshalVoteSetMaj23Message (o: VoteSetMaj23Message, lengthPrefix
  * @throws  will throw if encoding fails
  */
 export function marshalVoteSetBitsMessage (o: VoteSetBitsMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeVoteSetBitsMessage(json, lengthPrefixed);
 }
 
@@ -900,7 +900,7 @@ export function marshalVoteSetBitsMessage (o: VoteSetBitsMessage, lengthPrefixed
  * @throws  will throw if encoding fails
  */
 export function marshalWALMessage (o: WALMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeWALMessage(json, lengthPrefixed);
 }
 
@@ -914,7 +914,7 @@ export function marshalWALMessage (o: WALMessage, lengthPrefixed: boolean = true
  * @throws  will throw if encoding fails
  */
 export function marshalMsgInfo (o: MsgInfo, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMsgInfo(json, lengthPrefixed);
 }
 
@@ -928,7 +928,7 @@ export function marshalMsgInfo (o: MsgInfo, lengthPrefixed: boolean = true): Ami
  * @throws  will throw if encoding fails
  */
 export function marshalTimeoutInfo (o: TimeoutInfo, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeTimeoutInfo(json, lengthPrefixed);
 }
 
@@ -942,7 +942,7 @@ export function marshalTimeoutInfo (o: TimeoutInfo, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalEndHeightMessage (o: EndHeightMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEndHeightMessage(json, lengthPrefixed);
 }
 
@@ -956,7 +956,7 @@ export function marshalEndHeightMessage (o: EndHeightMessage, lengthPrefixed: bo
  * @throws  will throw if encoding fails
  */
 export function marshalPubKey (o: PubKey, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePubKey(json, lengthPrefixed);
 }
 
@@ -970,7 +970,7 @@ export function marshalPubKey (o: PubKey, lengthPrefixed: boolean = true): Amino
  * @throws  will throw if encoding fails
  */
 export function marshalPrivKey (o: PrivKey, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePrivKey(json, lengthPrefixed);
 }
 
@@ -984,7 +984,7 @@ export function marshalPrivKey (o: PrivKey, lengthPrefixed: boolean = true): Ami
  * @throws  will throw if encoding fails
  */
 export function marshalPubKeyEd25519 (o: PubKeyEd25519, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePubKeyEd25519(json, lengthPrefixed);
 }
 
@@ -998,7 +998,7 @@ export function marshalPubKeyEd25519 (o: PubKeyEd25519, lengthPrefixed: boolean 
  * @throws  will throw if encoding fails
  */
 export function marshalPrivKeyEd25519 (o: PrivKeyEd25519, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePrivKeyEd25519(json, lengthPrefixed);
 }
 
@@ -1012,7 +1012,7 @@ export function marshalPrivKeyEd25519 (o: PrivKeyEd25519, lengthPrefixed: boolea
  * @throws  will throw if encoding fails
  */
 export function marshalPubKeySecp256k1 (o: PubKeySecp256k1, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePubKeySecp256k1(json, lengthPrefixed);
 }
 
@@ -1026,7 +1026,7 @@ export function marshalPubKeySecp256k1 (o: PubKeySecp256k1, lengthPrefixed: bool
  * @throws  will throw if encoding fails
  */
 export function marshalPrivKeySecp256k1 (o: PrivKeySecp256k1, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePrivKeySecp256k1(json, lengthPrefixed);
 }
 
@@ -1040,7 +1040,7 @@ export function marshalPrivKeySecp256k1 (o: PrivKeySecp256k1, lengthPrefixed: bo
  * @throws  will throw if encoding fails
  */
 export function marshalPubKeyMultisigThreshold (o: PubKeyMultisigThreshold, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePubKeyMultisigThreshold(json, lengthPrefixed);
 }
 
@@ -1054,7 +1054,7 @@ export function marshalPubKeyMultisigThreshold (o: PubKeyMultisigThreshold, leng
  * @throws  will throw if encoding fails
  */
 export function marshalEvidenceMessage (o: EvidenceMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEvidenceMessage(json, lengthPrefixed);
 }
 
@@ -1068,7 +1068,7 @@ export function marshalEvidenceMessage (o: EvidenceMessage, lengthPrefixed: bool
  * @throws  will throw if encoding fails
  */
 export function marshalEvidenceListMessage (o: EvidenceListMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEvidenceListMessage(json, lengthPrefixed);
 }
 
@@ -1082,7 +1082,7 @@ export function marshalEvidenceListMessage (o: EvidenceListMessage, lengthPrefix
  * @throws  will throw if encoding fails
  */
 export function marshalMempoolMessage (o: MempoolMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMempoolMessage(json, lengthPrefixed);
 }
 
@@ -1096,7 +1096,7 @@ export function marshalMempoolMessage (o: MempoolMessage, lengthPrefixed: boolea
  * @throws  will throw if encoding fails
  */
 export function marshalTxMessage (o: TxMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeTxMessage(json, lengthPrefixed);
 }
 
@@ -1110,7 +1110,7 @@ export function marshalTxMessage (o: TxMessage, lengthPrefixed: boolean = true):
  * @throws  will throw if encoding fails
  */
 export function marshalPacket (o: Packet, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePacket(json, lengthPrefixed);
 }
 
@@ -1124,7 +1124,7 @@ export function marshalPacket (o: Packet, lengthPrefixed: boolean = true): Amino
  * @throws  will throw if encoding fails
  */
 export function marshalPacketPing (o: PacketPing, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePacketPing(json, lengthPrefixed);
 }
 
@@ -1138,7 +1138,7 @@ export function marshalPacketPing (o: PacketPing, lengthPrefixed: boolean = true
  * @throws  will throw if encoding fails
  */
 export function marshalPacketPong (o: PacketPong, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePacketPong(json, lengthPrefixed);
 }
 
@@ -1152,7 +1152,7 @@ export function marshalPacketPong (o: PacketPong, lengthPrefixed: boolean = true
  * @throws  will throw if encoding fails
  */
 export function marshalPacketMsg (o: PacketMsg, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePacketMsg(json, lengthPrefixed);
 }
 
@@ -1166,7 +1166,7 @@ export function marshalPacketMsg (o: PacketMsg, lengthPrefixed: boolean = true):
  * @throws  will throw if encoding fails
  */
 export function marshalPexMessage (o: PexMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePexMessage(json, lengthPrefixed);
 }
 
@@ -1180,7 +1180,7 @@ export function marshalPexMessage (o: PexMessage, lengthPrefixed: boolean = true
  * @throws  will throw if encoding fails
  */
 export function marshalPexRequestMessage (o: PexRequestMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePexRequestMessage(json, lengthPrefixed);
 }
 
@@ -1194,7 +1194,7 @@ export function marshalPexRequestMessage (o: PexRequestMessage, lengthPrefixed: 
  * @throws  will throw if encoding fails
  */
 export function marshalPexAddrsMessage (o: PexAddrsMessage, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePexAddrsMessage(json, lengthPrefixed);
 }
 
@@ -1208,7 +1208,7 @@ export function marshalPexAddrsMessage (o: PexAddrsMessage, lengthPrefixed: bool
  * @throws  will throw if encoding fails
  */
 export function marshalRemoteSignerMsg (o: RemoteSignerMsg, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeRemoteSignerMsg(json, lengthPrefixed);
 }
 
@@ -1222,7 +1222,7 @@ export function marshalRemoteSignerMsg (o: RemoteSignerMsg, lengthPrefixed: bool
  * @throws  will throw if encoding fails
  */
 export function marshalPubKeyRequest (o: PubKeyRequest, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePubKeyRequest(json, lengthPrefixed);
 }
 
@@ -1236,7 +1236,7 @@ export function marshalPubKeyRequest (o: PubKeyRequest, lengthPrefixed: boolean 
  * @throws  will throw if encoding fails
  */
 export function marshalPubKeyResponse (o: PubKeyResponse, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePubKeyResponse(json, lengthPrefixed);
 }
 
@@ -1250,7 +1250,7 @@ export function marshalPubKeyResponse (o: PubKeyResponse, lengthPrefixed: boolea
  * @throws  will throw if encoding fails
  */
 export function marshalSignVoteRequest (o: SignVoteRequest, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeSignVoteRequest(json, lengthPrefixed);
 }
 
@@ -1264,7 +1264,7 @@ export function marshalSignVoteRequest (o: SignVoteRequest, lengthPrefixed: bool
  * @throws  will throw if encoding fails
  */
 export function marshalSignedVoteResponse (o: SignedVoteResponse, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeSignedVoteResponse(json, lengthPrefixed);
 }
 
@@ -1278,7 +1278,7 @@ export function marshalSignedVoteResponse (o: SignedVoteResponse, lengthPrefixed
  * @throws  will throw if encoding fails
  */
 export function marshalSignProposalRequest (o: SignProposalRequest, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeSignProposalRequest(json, lengthPrefixed);
 }
 
@@ -1292,7 +1292,7 @@ export function marshalSignProposalRequest (o: SignProposalRequest, lengthPrefix
  * @throws  will throw if encoding fails
  */
 export function marshalSignedProposalResponse (o: SignedProposalResponse, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeSignedProposalResponse(json, lengthPrefixed);
 }
 
@@ -1306,7 +1306,7 @@ export function marshalSignedProposalResponse (o: SignedProposalResponse, length
  * @throws  will throw if encoding fails
  */
 export function marshalPingRequest (o: PingRequest, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePingRequest(json, lengthPrefixed);
 }
 
@@ -1320,7 +1320,7 @@ export function marshalPingRequest (o: PingRequest, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalPingResponse (o: PingResponse, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodePingResponse(json, lengthPrefixed);
 }
 
@@ -1334,7 +1334,7 @@ export function marshalPingResponse (o: PingResponse, lengthPrefixed: boolean = 
  * @throws  will throw if encoding fails
  */
 export function marshalTMEventData (o: TMEventData, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeTMEventData(json, lengthPrefixed);
 }
 
@@ -1348,7 +1348,7 @@ export function marshalTMEventData (o: TMEventData, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataNewBlock (o: EventDataNewBlock, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataNewBlock(json, lengthPrefixed);
 }
 
@@ -1362,7 +1362,7 @@ export function marshalEventDataNewBlock (o: EventDataNewBlock, lengthPrefixed: 
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataNewBlockHeader (o: EventDataNewBlockHeader, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataNewBlockHeader(json, lengthPrefixed);
 }
 
@@ -1376,7 +1376,7 @@ export function marshalEventDataNewBlockHeader (o: EventDataNewBlockHeader, leng
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataTx (o: EventDataTx, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataTx(json, lengthPrefixed);
 }
 
@@ -1390,7 +1390,7 @@ export function marshalEventDataTx (o: EventDataTx, lengthPrefixed: boolean = tr
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataRoundState (o: EventDataRoundState, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataRoundState(json, lengthPrefixed);
 }
 
@@ -1404,7 +1404,7 @@ export function marshalEventDataRoundState (o: EventDataRoundState, lengthPrefix
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataNewRound (o: EventDataNewRound, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataNewRound(json, lengthPrefixed);
 }
 
@@ -1418,7 +1418,7 @@ export function marshalEventDataNewRound (o: EventDataNewRound, lengthPrefixed: 
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataCompleteProposal (o: EventDataCompleteProposal, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataCompleteProposal(json, lengthPrefixed);
 }
 
@@ -1432,7 +1432,7 @@ export function marshalEventDataCompleteProposal (o: EventDataCompleteProposal, 
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataVote (o: EventDataVote, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataVote(json, lengthPrefixed);
 }
 
@@ -1446,7 +1446,7 @@ export function marshalEventDataVote (o: EventDataVote, lengthPrefixed: boolean 
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataValidatorSetUpdates (o: EventDataValidatorSetUpdates, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataValidatorSetUpdates(json, lengthPrefixed);
 }
 
@@ -1460,7 +1460,7 @@ export function marshalEventDataValidatorSetUpdates (o: EventDataValidatorSetUpd
  * @throws  will throw if encoding fails
  */
 export function marshalEventDataString (o: EventDataString, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEventDataString(json, lengthPrefixed);
 }
 
@@ -1474,7 +1474,7 @@ export function marshalEventDataString (o: EventDataString, lengthPrefixed: bool
  * @throws  will throw if encoding fails
  */
 export function marshalEvidence (o: Evidence, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeEvidence(json, lengthPrefixed);
 }
 
@@ -1488,7 +1488,7 @@ export function marshalEvidence (o: Evidence, lengthPrefixed: boolean = true): A
  * @throws  will throw if encoding fails
  */
 export function marshalDuplicateVoteEvidence (o: DuplicateVoteEvidence, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeDuplicateVoteEvidence(json, lengthPrefixed);
 }
 
@@ -1502,7 +1502,7 @@ export function marshalDuplicateVoteEvidence (o: DuplicateVoteEvidence, lengthPr
  * @throws  will throw if encoding fails
  */
 export function marshalMockGoodEvidence (o: MockGoodEvidence, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMockGoodEvidence(json, lengthPrefixed);
 }
 
@@ -1516,7 +1516,7 @@ export function marshalMockGoodEvidence (o: MockGoodEvidence, lengthPrefixed: bo
  * @throws  will throw if encoding fails
  */
 export function marshalMockRandomGoodEvidence (o: MockRandomGoodEvidence, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMockRandomGoodEvidence(json, lengthPrefixed);
 }
 
@@ -1530,6 +1530,6 @@ export function marshalMockRandomGoodEvidence (o: MockRandomGoodEvidence, length
  * @throws  will throw if encoding fails
  */
 export function marshalMockBadEvidence (o: MockBadEvidence, lengthPrefixed: boolean = true): AminoBytes {
-    const json = marshalJSON(o);
+    const json = jsonToBytes(o);
     return encodeType.encodeMockBadEvidence(json, lengthPrefixed);
 }

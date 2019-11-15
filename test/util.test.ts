@@ -138,16 +138,16 @@ describe('util', () => {
         });
     });
 
-    describe('marshalJSON', () => {
-        it('marshals object to JSON bytes', () => {
-            const json = Amino.marshalJSON(knownObject);
+    describe('jsonToBytes', () => {
+        it('encodes object to JSON bytes', () => {
+            const json = Amino.jsonToBytes(knownObject);
             expect(json).toBeBytes(knownJSON);
         });
     });
 
-    describe('unmarshalJSON', () => {
-        it('unmarshals JSON bytes to object', () => {
-            const object = Amino.unmarshalJSON(new Uint8Array(knownJSON));
+    describe('bytesToJSON', () => {
+        it('decodes JSON bytes to object', () => {
+            const object = Amino.bytesToJSON(new Uint8Array(knownJSON));
             expect(object).toMatchObject(knownObject);
         });
     });

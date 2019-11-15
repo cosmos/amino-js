@@ -94,7 +94,7 @@ export function stringToBytes (string: USVString): Bytes {
  * @returns   JSON bytes
  * @throws    will throw if `JSON.stringify` fails (e.g. on circular reference)
  */
-export function marshalJSON<T> (value: T): JSONBytes {
+export function jsonToBytes<T> (value: T): JSONBytes {
     return stringToBytes(JSON.stringify(value));
 }
 
@@ -107,6 +107,6 @@ export function marshalJSON<T> (value: T): JSONBytes {
  * @returns   value decoded from JSON bytes
  * @throws    will throw if `JSON.parse` fails (e.g. on malformed JSON)
  */
-export function unmarshalJSON<T> (json: JSONBytes): T {
+export function bytesToJSON<T> (json: JSONBytes): T {
     return JSON.parse(bytesToString(json));
 }
