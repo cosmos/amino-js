@@ -1,3 +1,4 @@
+import './setup';
 import * as Amino from '../';
 
 const knownBech = 'cosmos164z7wwzv84h4hwn6rvjjkns6j4ht43jv9e3ljy';

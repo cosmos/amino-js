@@ -1,3 +1,4 @@
+import './setup';
 import * as Amino from '../';
 
 // https://rpc.cosmos.network:26657/tx?hash=0x2268EB5AB730B45F8426078827BB5BB49819CE2B0D74B2C1D191070BADB379F1&prove=true

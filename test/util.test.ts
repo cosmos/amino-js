@@ -1,3 +1,4 @@
+import './setup';
 import * as Amino from '../';
 
 const knownBase64 = 'AA==';
