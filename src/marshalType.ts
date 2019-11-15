@@ -1,3 +1,4 @@
+import { jsonToBytes } from '@tendermint/belt';
 import { AminoBytes } from '../lib/types';
 import * as encodeType from './encodeType';
 import {
@@ -104,7 +105,6 @@ import {
     VoteSetMaj23Message,
     WALMessage
 } from './types';
-import { jsonToBytes } from './util';
 
 /**
  * Marshal a `MultiStoreProofOp` object to Amino

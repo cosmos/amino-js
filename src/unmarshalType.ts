@@ -1,3 +1,4 @@
+import { bytesToJSON } from '@tendermint/belt';
 import { AminoBytes } from '../lib/types';
 import * as decodeType from './decodeType';
 import {
@@ -104,7 +105,6 @@ import {
     VoteSetMaj23Message,
     WALMessage
 } from './types';
-import { bytesToJSON } from './util';
 
 /**
  * Unmarshal a `MultiStoreProofOp` object from Amino

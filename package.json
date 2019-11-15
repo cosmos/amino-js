@@ -36,7 +36,10 @@
         "tsc":            "rm -rf types/* && tsc && cp -R lib/*.d.ts types/lib/",
         "watch":          "yarn build:dev --watch"
     },
-    "dependencies":    { },
+    "dependencies":    {
+        "@tendermint/belt":  "0.2.1",
+        "@tendermint/types": "0.1.1"
+    },
     "devDependencies": {
         "@babel/core":                      "7.7.2",
         "@babel/preset-env":                "7.7.1",
