@@ -10,7 +10,11 @@
         "strictPropertyInitialization": false,
         "target":                       "ESNext"
     },
-    "include":         [ "index.ts" ],
+    "include":         [
+        "index.ts",
+        "src/**/*.ts",
+        "lib/types.ts"
+    ],
     "typedocOptions":  {
         "out":                    "docs",
         "mode":                   "file",
