@@ -34,7 +34,7 @@
         "setup":          "yarn dirs && yarn lint && yarn tsc && yarn dist:dev",
         "test":           "jest --config test/jest.config.json",
         "tsc":            "rm -rf types/* && tsc && cp -R lib/*.d.ts types/lib/",
-        "watch":          "yarn build --watch"
+        "watch":          "yarn build:dev --watch"
     },
     "dependencies":    { },
     "devDependencies": {
