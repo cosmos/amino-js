@@ -19,7 +19,7 @@
         "build":          "rm -rf dist/* && webpack --config build --progress --colors --display-error-details",
         "build:dev":      "NODE_ENV=development yarn build",
         "build:prod":     "NODE_ENV=production yarn build",
-        "dirs":           "mkdir -p dist",
+        "dirs":           "mkdir -p dist docs types",
         "dist:dev":       "yarn go && yarn build:dev",
         "dist:prod":      "yarn go:min && yarn build:prod && yarn gzip",
         "docs":           "rm -rf docs/* && typedoc",
