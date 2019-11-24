@@ -9,6 +9,9 @@ import (
 	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
+// Type that represents Proposal Type as a byte
+type ProposalKind byte
+
 type Proposal struct {
 	Content `json:"content"` // Proposal content interface
 
