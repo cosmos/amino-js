@@ -1,5 +1,5 @@
 import './setup';
-import { base64ToBytes, bytesToBase64 } from '@tendermint/belt';
+import { base64ToBytes } from '@tendermint/belt';
 import * as Amino from '../';
 
 // https://lcd.nylira.net/blocks/2567202
