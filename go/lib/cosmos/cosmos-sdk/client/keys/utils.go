@@ -7,12 +7,12 @@ import (
 	"path/filepath"
 
 	"github.com/spf13/viper"
-	"github.com/tendermint/tendermint/libs/cli"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
 	"gopkg.in/yaml.v2"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/client/input"
-	"github.com/cosmos/cosmos-sdk/crypto/keys"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/input"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys"
 )
 
 // available output formats.

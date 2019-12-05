@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
 )
 
 // Register concrete types on codec codec

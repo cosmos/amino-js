@@ -3,11 +3,11 @@ package keys
 import (
 	"fmt"
 
-	"github.com/tendermint/tendermint/crypto"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/hd"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys/hd"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 var _ Keybase = lazyKeybase{}

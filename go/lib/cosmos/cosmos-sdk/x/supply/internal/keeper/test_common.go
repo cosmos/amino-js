@@ -4,21 +4,21 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/tendermint/tendermint/crypto/secp256k1"
-	"github.com/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/secp256k1"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	tmtypes "github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/store"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/bank"
-	"github.com/cosmos/cosmos-sdk/x/params"
-	"github.com/cosmos/cosmos-sdk/x/supply/internal/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply/internal/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // nolint: deadcode unused

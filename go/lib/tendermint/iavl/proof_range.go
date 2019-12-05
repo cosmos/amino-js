@@ -8,7 +8,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/tendermint/tendermint/crypto/tmhash"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/tmhash"
 )
 
 type RangeProof struct {

@@ -4,13 +4,13 @@ import (
 	"encoding/json"
 	"time"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // List of blocks

@@ -11,16 +11,16 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/tendermint/tendermint/abci/example/kvstore"
-	cfg "github.com/tendermint/tendermint/config"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/mock"
-	"github.com/tendermint/tendermint/privval"
-	"github.com/tendermint/tendermint/proxy"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/store"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/example/kvstore"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/mock"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/proxy"
+	sm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/store"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 	db "github.com/tendermint/tm-db"
 )
 

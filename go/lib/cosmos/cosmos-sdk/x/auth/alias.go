@@ -5,8 +5,8 @@
 package auth
 
 import (
-	"github.com/cosmos/cosmos-sdk/x/auth/exported"
-	"github.com/cosmos/cosmos-sdk/x/auth/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/exported"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/types"
 )
 
 const (

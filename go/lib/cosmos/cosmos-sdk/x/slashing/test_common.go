@@ -8,20 +8,20 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/crypto/ed25519"
-	"github.com/tendermint/tendermint/libs/log"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/store"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/bank"
-	"github.com/cosmos/cosmos-sdk/x/params"
-	"github.com/cosmos/cosmos-sdk/x/staking"
-	"github.com/cosmos/cosmos-sdk/x/supply"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply"
 )
 
 // TODO remove dependencies on staking (should only refer to validator set type from sdk)

@@ -3,8 +3,8 @@ package gov
 import (
 	"fmt"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/gov/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov/types"
 )
 
 // AddVote Adds a vote on a specific proposal

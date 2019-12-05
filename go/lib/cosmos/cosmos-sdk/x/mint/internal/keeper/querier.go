@@ -3,11 +3,11 @@ package keeper
 import (
 	"fmt"
 
-	abci "github.com/tendermint/tendermint/abci/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/mint/internal/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/mint/internal/types"
 )
 
 // NewQuerier returns a minting Querier handler.

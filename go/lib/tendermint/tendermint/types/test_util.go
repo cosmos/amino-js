@@ -1,7 +1,7 @@
 package types
 
 import (
-	tmtime "github.com/tendermint/tendermint/types/time"
+	tmtime "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types/time"
 )
 
 func MakeCommit(blockID BlockID, height int64, round int,

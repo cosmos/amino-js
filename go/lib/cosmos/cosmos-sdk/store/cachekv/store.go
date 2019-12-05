@@ -7,12 +7,12 @@ import (
 	"sort"
 	"sync"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/cosmos/cosmos-sdk/store/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/types"
 
-	"github.com/cosmos/cosmos-sdk/store/tracekv"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/tracekv"
 )
 
 // If value is nil but deleted is false, it means the parent doesn't have the

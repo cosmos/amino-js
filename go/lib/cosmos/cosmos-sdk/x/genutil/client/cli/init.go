@@ -8,17 +8,17 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/libs/cli"
-	"github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/types"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/server"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/cosmos/cosmos-sdk/x/genutil"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/server"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types/module"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genutil"
 )
 
 const (

@@ -8,8 +8,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/p2p/conn"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p/conn"
 )
 
 const (

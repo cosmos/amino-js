@@ -11,18 +11,18 @@ import (
 
 	"github.com/spf13/cobra"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 
-	abcicli "github.com/tendermint/tendermint/abci/client"
-	"github.com/tendermint/tendermint/abci/example/code"
-	"github.com/tendermint/tendermint/abci/example/counter"
-	"github.com/tendermint/tendermint/abci/example/kvstore"
-	"github.com/tendermint/tendermint/abci/server"
-	servertest "github.com/tendermint/tendermint/abci/tests/server"
-	"github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/abci/version"
-	"github.com/tendermint/tendermint/crypto/merkle"
+	abcicli "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/client"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/example/code"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/example/counter"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/example/kvstore"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/server"
+	servertest "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/tests/server"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/version"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
 )
 
 // client is a global variable so it can be reused by the console

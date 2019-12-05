@@ -9,14 +9,14 @@ import (
 	"github.com/pkg/errors"
 
 	amino "github.com/tendermint/go-amino"
-	cstypes "github.com/tendermint/tendermint/consensus/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	tmevents "github.com/tendermint/tendermint/libs/events"
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/p2p"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
-	tmtime "github.com/tendermint/tendermint/types/time"
+	cstypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/consensus/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	tmevents "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/events"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	sm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
+	tmtime "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types/time"
 )
 
 const (

@@ -7,8 +7,8 @@ import (
 	"github.com/pkg/errors"
 
 	"github.com/tendermint/go-amino"
-	cmn "github.com/tendermint/iavl/common"
-	"github.com/tendermint/tendermint/crypto/tmhash"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/iavl/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/tmhash"
 )
 
 var (

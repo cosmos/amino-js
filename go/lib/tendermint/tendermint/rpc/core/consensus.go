@@ -1,11 +1,11 @@
 package core
 
 import (
-	cm "github.com/tendermint/tendermint/consensus"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
+	cm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/consensus"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
+	sm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // Get the validator set at the given block height.

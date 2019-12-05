@@ -8,12 +8,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	flow "github.com/tendermint/tendermint/libs/flowrate"
-	"github.com/tendermint/tendermint/libs/log"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	flow "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/flowrate"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 /*

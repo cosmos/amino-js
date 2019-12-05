@@ -8,7 +8,7 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	tmcli "github.com/tendermint/tendermint/libs/cli"
+	tmcli "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
 )
 
 // nolint

@@ -3,10 +3,10 @@ package slashing
 import (
 	"fmt"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	tmtypes "github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // slashing begin block functionality

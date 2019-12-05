@@ -6,22 +6,22 @@ import (
 	"testing"
 	"time"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/libs/log"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 
 	"github.com/stretchr/testify/require"
 
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/store"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/bank"
-	"github.com/cosmos/cosmos-sdk/x/mint/internal/types"
-	"github.com/cosmos/cosmos-sdk/x/params"
-	"github.com/cosmos/cosmos-sdk/x/staking"
-	"github.com/cosmos/cosmos-sdk/x/supply"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/mint/internal/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply"
 )
 
 type testInput struct {

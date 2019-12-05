@@ -20,8 +20,8 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/pkg/errors"
 
-	"github.com/tendermint/tendermint/libs/log"
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
 )
 
 const (

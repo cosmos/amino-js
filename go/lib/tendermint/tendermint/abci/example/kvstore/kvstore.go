@@ -6,10 +6,10 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/tendermint/tendermint/abci/example/code"
-	"github.com/tendermint/tendermint/abci/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/version"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/example/code"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/version"
 	dbm "github.com/tendermint/tm-db"
 )
 

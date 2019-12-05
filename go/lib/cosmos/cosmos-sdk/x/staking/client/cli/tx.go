@@ -9,17 +9,17 @@ import (
 	flag "github.com/spf13/pflag"
 	"github.com/spf13/viper"
 
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/crypto"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/context"
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/version"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/auth/client/utils"
-	"github.com/cosmos/cosmos-sdk/x/staking/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/context"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/version"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/client/utils"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/types"
 )
 
 // GetTxCmd returns the transaction commands for this module

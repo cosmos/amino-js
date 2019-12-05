@@ -2,7 +2,7 @@
 package types
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // Verify interface at compile time

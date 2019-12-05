@@ -6,14 +6,14 @@ import (
 	"strings"
 	"time"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto"
-	tmtypes "github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/staking/exported"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/exported"
 )
 
 // nolint

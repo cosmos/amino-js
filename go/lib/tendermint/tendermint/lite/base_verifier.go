@@ -5,9 +5,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	lerr "github.com/tendermint/tendermint/lite/errors"
-	"github.com/tendermint/tendermint/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	lerr "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/lite/errors"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 var _ Verifier = (*BaseVerifier)(nil)

@@ -6,15 +6,15 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/spf13/cobra"
 
-	abci "github.com/tendermint/tendermint/abci/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
 
-	"github.com/cosmos/cosmos-sdk/client/context"
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/cosmos/cosmos-sdk/x/slashing/client/cli"
-	"github.com/cosmos/cosmos-sdk/x/slashing/client/rest"
-	"github.com/cosmos/cosmos-sdk/x/slashing/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/context"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types/module"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing/client/cli"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing/client/rest"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing/types"
 )
 
 var (

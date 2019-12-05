@@ -4,12 +4,12 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	cfg "github.com/tendermint/tendermint/config"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/privval"
-	"github.com/tendermint/tendermint/types"
-	tmtime "github.com/tendermint/tendermint/types/time"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
+	tmtime "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types/time"
 )
 
 // InitFilesCmd initialises a fresh Tendermint Core instance.

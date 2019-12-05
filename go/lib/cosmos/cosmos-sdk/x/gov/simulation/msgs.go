@@ -6,10 +6,10 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/gov"
-	"github.com/cosmos/cosmos-sdk/x/simulation"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/baseapp"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/simulation"
 )
 
 // ContentSimulator defines a function type alias for generating random proposal

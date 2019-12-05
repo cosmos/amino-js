@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/cosmos/cosmos-sdk/x/staking"
-	"github.com/cosmos/cosmos-sdk/x/staking/keeper"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/baseapp"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/simulation"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/keeper"
 )
 
 // SimulateMsgCreateValidator generates a MsgCreateValidator with random values

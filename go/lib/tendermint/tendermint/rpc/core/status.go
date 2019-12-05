@@ -4,12 +4,12 @@ import (
 	"bytes"
 	"time"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/p2p"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
+	sm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // Get Tendermint status including node info, pubkey, latest block

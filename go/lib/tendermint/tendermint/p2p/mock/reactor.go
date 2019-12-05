@@ -1,9 +1,9 @@
 package mock
 
 import (
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/p2p/conn"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p/conn"
 )
 
 type Reactor struct {

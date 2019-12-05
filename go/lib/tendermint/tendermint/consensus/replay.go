@@ -11,16 +11,16 @@ import (
 	//"strings"
 	"time"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	//auto "github.com/tendermint/tendermint/libs/autofile"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	//auto "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/autofile"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/mock"
-	"github.com/tendermint/tendermint/proxy"
-	sm "github.com/tendermint/tendermint/state"
-	"github.com/tendermint/tendermint/types"
-	"github.com/tendermint/tendermint/version"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/mock"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/proxy"
+	sm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/version"
 )
 
 var crc32c = crc32.MakeTable(crc32.Castagnoli)

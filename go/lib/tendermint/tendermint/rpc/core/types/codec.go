@@ -2,7 +2,7 @@ package core_types
 
 import (
 	amino "github.com/tendermint/go-amino"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 func RegisterAmino(cdc *amino.Codec) {

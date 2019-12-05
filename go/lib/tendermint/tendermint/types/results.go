@@ -1,9 +1,9 @@
 package types
 
 import (
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto/merkle"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
 //-----------------------------------------------------------------------------

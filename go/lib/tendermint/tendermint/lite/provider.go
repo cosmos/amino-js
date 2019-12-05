@@ -1,8 +1,8 @@
 package lite
 
 import (
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // Provider provides information for the lite client to sync validators.

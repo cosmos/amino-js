@@ -11,11 +11,11 @@ import (
 	"github.com/pkg/errors"
 
 	amino "github.com/tendermint/go-amino"
-	auto "github.com/tendermint/tendermint/libs/autofile"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/types"
-	tmtime "github.com/tendermint/tendermint/types/time"
+	auto "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/autofile"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
+	tmtime "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types/time"
 )
 
 const (

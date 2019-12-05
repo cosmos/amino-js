@@ -5,11 +5,11 @@ import (
 	"time"
 
 	"github.com/gogo/protobuf/proto"
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/libs/log"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 
-	"github.com/cosmos/cosmos-sdk/store/gaskv"
-	stypes "github.com/cosmos/cosmos-sdk/store/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/gaskv"
+	stypes "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/types"
 )
 
 /*

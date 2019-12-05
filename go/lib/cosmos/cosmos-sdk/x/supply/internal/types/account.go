@@ -5,11 +5,11 @@ import (
 
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/cosmos/cosmos-sdk/x/supply/exported"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	authtypes "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply/exported"
 )
 
 var _ exported.ModuleAccountI = (*ModuleAccount)(nil)

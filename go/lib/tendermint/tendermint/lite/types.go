@@ -1,7 +1,7 @@
 package lite
 
 import (
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // Verifier checks the votes to make sure the block really is signed properly.

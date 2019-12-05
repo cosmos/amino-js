@@ -5,18 +5,18 @@ import (
 	"io"
 	"strings"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto/merkle"
-	"github.com/tendermint/tendermint/crypto/tmhash"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/tmhash"
 	dbm "github.com/tendermint/tm-db"
 
-	"github.com/cosmos/cosmos-sdk/store/cachemulti"
-	"github.com/cosmos/cosmos-sdk/store/dbadapter"
-	"github.com/cosmos/cosmos-sdk/store/errors"
-	"github.com/cosmos/cosmos-sdk/store/iavl"
-	"github.com/cosmos/cosmos-sdk/store/tracekv"
-	"github.com/cosmos/cosmos-sdk/store/transient"
-	"github.com/cosmos/cosmos-sdk/store/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/cachemulti"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/dbadapter"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/errors"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/iavl"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/tracekv"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/transient"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/types"
 )
 
 const (

@@ -4,14 +4,14 @@ import (
 	"encoding/json"
 	"log"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	tmtypes "github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/slashing"
-	"github.com/cosmos/cosmos-sdk/x/staking"
-	"github.com/cosmos/cosmos-sdk/x/staking/exported"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/exported"
 )
 
 // ExportAppStateAndValidators exports the state of the application for a genesis

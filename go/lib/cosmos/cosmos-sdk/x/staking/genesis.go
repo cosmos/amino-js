@@ -3,12 +3,12 @@ package staking
 import (
 	"fmt"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	tmtypes "github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/staking/exported"
-	"github.com/cosmos/cosmos-sdk/x/staking/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/exported"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/types"
 )
 
 // InitGenesis sets the pool and parameters for the provided keeper.  For each

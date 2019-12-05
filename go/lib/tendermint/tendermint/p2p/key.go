@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/crypto/ed25519"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
 // ID is a hex-encoded crypto.Address

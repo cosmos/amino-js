@@ -1,7 +1,7 @@
 package core
 
 import (
-	rpc "github.com/tendermint/tendermint/rpc/lib/server"
+	rpc "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/server"
 )
 
 // TODO: better system than "unsafe" prefix

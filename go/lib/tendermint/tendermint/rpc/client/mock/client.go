@@ -17,12 +17,12 @@ want to directly call a tendermint node in process, you can use the
 import (
 	"reflect"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/rpc/client"
-	"github.com/tendermint/tendermint/rpc/core"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
-	"github.com/tendermint/tendermint/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/client"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // Client wraps arbitrary implementations of the various interfaces.

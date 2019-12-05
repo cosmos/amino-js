@@ -1,7 +1,7 @@
 package behaviour
 
 import (
-	"github.com/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
 )
 
 // PeerBehaviour is a struct describing a behaviour a peer performed.

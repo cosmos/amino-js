@@ -2,8 +2,8 @@ package privval
 
 import (
 	amino "github.com/tendermint/go-amino"
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // SignerMessage is sent between Signer Clients and Servers.

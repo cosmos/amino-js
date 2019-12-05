@@ -6,11 +6,11 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/gov"
-	"github.com/cosmos/cosmos-sdk/x/params"
-	"github.com/cosmos/cosmos-sdk/x/simulation"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/baseapp"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/simulation"
 )
 
 type simParamChange struct {

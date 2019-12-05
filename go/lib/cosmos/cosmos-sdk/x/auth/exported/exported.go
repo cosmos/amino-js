@@ -3,9 +3,9 @@ package exported
 import (
 	"time"
 
-	"github.com/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // Account is an interface used to store coins at a given address within state.

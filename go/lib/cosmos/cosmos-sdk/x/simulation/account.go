@@ -3,11 +3,11 @@ package simulation
 import (
 	"math/rand"
 
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/crypto/ed25519"
-	"github.com/tendermint/tendermint/crypto/secp256k1"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/secp256k1"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // Account contains a privkey, pubkey, address tuple

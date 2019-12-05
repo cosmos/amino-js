@@ -5,7 +5,7 @@ import (
 	"sync/atomic"
 
 	"github.com/Workiva/go-datastructures/queue"
-	"github.com/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 )
 
 type handleFunc = func(event Event) (Event, error)

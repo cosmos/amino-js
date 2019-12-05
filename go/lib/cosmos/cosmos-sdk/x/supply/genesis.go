@@ -1,9 +1,9 @@
 package supply
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	autypes "github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/supply/internal/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	autypes "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply/internal/types"
 )
 
 // InitGenesis sets supply information for genesis.

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
 // ErrListenerWasRemoved is returned by AddEvent if the listener was removed.

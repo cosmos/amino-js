@@ -11,14 +11,14 @@ import (
 
 	"github.com/pkg/errors"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	cfg "github.com/tendermint/tendermint/config"
-	auto "github.com/tendermint/tendermint/libs/autofile"
-	"github.com/tendermint/tendermint/libs/clist"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/proxy"
-	"github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	auto "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/autofile"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/clist"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/proxy"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 //--------------------------------------------------------------------------------

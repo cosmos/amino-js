@@ -9,13 +9,13 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	"github.com/tendermint/tendermint/abci/server"
-	tcmd "github.com/tendermint/tendermint/cmd/tendermint/commands"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/node"
-	"github.com/tendermint/tendermint/p2p"
-	pvm "github.com/tendermint/tendermint/privval"
-	"github.com/tendermint/tendermint/proxy"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/server"
+	tcmd "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/cmd/tendermint/commands"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/node"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	pvm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/proxy"
 )
 
 // Tendermint full-node start flags

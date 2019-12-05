@@ -4,11 +4,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/tendermint/tendermint/libs/cli"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
 
-	cmd "github.com/tendermint/tendermint/cmd/tendermint/commands"
-	cfg "github.com/tendermint/tendermint/config"
-	nm "github.com/tendermint/tendermint/node"
+	cmd "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/cmd/tendermint/commands"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	nm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/node"
 )
 
 func main() {

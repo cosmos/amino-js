@@ -11,17 +11,17 @@ import (
 	"github.com/spf13/viper"
 	yaml "gopkg.in/yaml.v2"
 
-	"github.com/tendermint/tendermint/libs/cli"
-	"github.com/tendermint/tendermint/libs/log"
-	tmlite "github.com/tendermint/tendermint/lite"
-	tmliteProxy "github.com/tendermint/tendermint/lite/proxy"
-	rpcclient "github.com/tendermint/tendermint/rpc/client"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	tmlite "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/lite"
+	tmliteProxy "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/lite/proxy"
+	rpcclient "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/client"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/client/keys"
-	"github.com/cosmos/cosmos-sdk/codec"
-	cryptokeys "github.com/cosmos/cosmos-sdk/crypto/keys"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/keys"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	cryptokeys "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 var (

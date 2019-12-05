@@ -5,16 +5,16 @@ import (
 	"io"
 	"sync"
 
-	"github.com/cosmos/cosmos-sdk/store/cachekv"
-	serrors "github.com/cosmos/cosmos-sdk/store/errors"
-	"github.com/cosmos/cosmos-sdk/store/tracekv"
-	"github.com/cosmos/cosmos-sdk/store/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/cachekv"
+	serrors "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/errors"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/tracekv"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/store/types"
 
 	"github.com/pkg/errors"
 	"github.com/tendermint/iavl"
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto/merkle"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 	dbm "github.com/tendermint/tm-db"
 )
 

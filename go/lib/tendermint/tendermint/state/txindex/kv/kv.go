@@ -13,10 +13,10 @@ import (
 
 	dbm "github.com/tendermint/tm-db"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/pubsub/query"
-	"github.com/tendermint/tendermint/state/txindex"
-	"github.com/tendermint/tendermint/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/pubsub/query"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state/txindex"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 const (

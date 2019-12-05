@@ -7,11 +7,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/tendermint/tendermint/abci/example/code"
-	"github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto/ed25519"
-	"github.com/tendermint/tendermint/libs/log"
-	tmtypes "github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/example/code"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 )
 

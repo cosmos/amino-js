@@ -5,10 +5,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cosmos/cosmos-sdk/client/context"
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/x/auth/client/utils"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/context"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/client/utils"
 )
 
 // GetBroadcastCommand returns the tx broadcast command.

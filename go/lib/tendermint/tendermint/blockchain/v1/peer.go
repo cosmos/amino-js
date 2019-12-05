@@ -5,10 +5,10 @@ import (
 	"math"
 	"time"
 
-	flow "github.com/tendermint/tendermint/libs/flowrate"
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/types"
+	flow "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/flowrate"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 //--------

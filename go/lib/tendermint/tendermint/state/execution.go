@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"time"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/libs/fail"
-	"github.com/tendermint/tendermint/libs/log"
-	mempl "github.com/tendermint/tendermint/mempool"
-	"github.com/tendermint/tendermint/proxy"
-	"github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/fail"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	mempl "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/mempool"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/proxy"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 )
 

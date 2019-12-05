@@ -6,8 +6,8 @@
 package params
 
 import (
-	"github.com/cosmos/cosmos-sdk/x/params/subspace"
-	"github.com/cosmos/cosmos-sdk/x/params/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/subspace"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/types"
 )
 
 const (

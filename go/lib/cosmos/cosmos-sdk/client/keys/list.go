@@ -1,7 +1,7 @@
 package keys
 
 import (
-	"github.com/cosmos/cosmos-sdk/client/flags"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
 	"github.com/spf13/cobra"
 )
 

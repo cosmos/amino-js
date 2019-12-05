@@ -11,11 +11,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	tmclient "github.com/tendermint/tendermint/rpc/client"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	rpcclient "github.com/tendermint/tendermint/rpc/lib/client"
+	tmclient "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/client"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	rpcclient "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/client"
 
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
 )
 
 // Wait for the next tendermint block from the Tendermint RPC

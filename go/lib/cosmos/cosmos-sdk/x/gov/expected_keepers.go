@@ -1,9 +1,9 @@
 package gov
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	stakingexported "github.com/cosmos/cosmos-sdk/x/staking/exported"
-	supplyexported "github.com/cosmos/cosmos-sdk/x/supply/exported"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	stakingexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/exported"
+	supplyexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply/exported"
 )
 
 // SupplyKeeper defines the supply Keeper for module accounts

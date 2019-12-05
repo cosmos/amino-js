@@ -1,7 +1,7 @@
 package merkle
 
 import (
-	"github.com/tendermint/tendermint/crypto/tmhash"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/tmhash"
 )
 
 // TODO: make these have a large predefined capacity

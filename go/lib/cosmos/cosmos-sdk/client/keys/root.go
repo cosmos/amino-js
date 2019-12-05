@@ -3,7 +3,7 @@ package keys
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
 )
 
 // Commands registers a sub-tree of commands to interact with

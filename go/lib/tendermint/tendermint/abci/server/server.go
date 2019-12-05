@@ -12,8 +12,8 @@ package server
 import (
 	"fmt"
 
-	"github.com/tendermint/tendermint/abci/types"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
 func NewServer(protoAddr, transport string, app types.Application) (cmn.Service, error) {

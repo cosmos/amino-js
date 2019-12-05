@@ -6,12 +6,12 @@ import (
 	"os"
 	"path/filepath"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/libs/log"
-	tmtypes "github.com/tendermint/tendermint/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 type (

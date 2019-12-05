@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
 )
 
 // State to Unmarshal

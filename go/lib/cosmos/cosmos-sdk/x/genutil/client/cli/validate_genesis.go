@@ -6,11 +6,11 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	tmtypes "github.com/tendermint/tendermint/types"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/server"
-	"github.com/cosmos/cosmos-sdk/types/module"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/server"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types/module"
 )
 
 // Validate genesis command takes

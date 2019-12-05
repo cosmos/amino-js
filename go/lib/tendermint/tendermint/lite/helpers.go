@@ -1,12 +1,12 @@
 package lite
 
 import (
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/crypto/ed25519"
-	"github.com/tendermint/tendermint/crypto/secp256k1"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/secp256k1"
 
-	"github.com/tendermint/tendermint/types"
-	tmtime "github.com/tendermint/tendermint/types/time"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
+	tmtime "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types/time"
 )
 
 // privKeys is a helper type for testing.

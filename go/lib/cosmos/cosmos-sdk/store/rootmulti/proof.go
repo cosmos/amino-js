@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/tendermint/iavl"
-	"github.com/tendermint/tendermint/crypto/merkle"
-	cmn "github.com/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 )
 
 // MultiStoreProof defines a collection of store proofs in a multi-store

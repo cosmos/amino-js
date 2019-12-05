@@ -6,14 +6,14 @@ import (
 	"encoding/json"
 	"fmt"
 
-	abci "github.com/tendermint/tendermint/abci/types"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	authexported "github.com/cosmos/cosmos-sdk/x/auth/exported"
-	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	"github.com/cosmos/cosmos-sdk/x/genutil/types"
-	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	authexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/exported"
+	authtypes "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genutil/types"
+	stakingtypes "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/types"
 )
 
 // SetGenTxsInAppGenesisState - sets the genesis transactions in the app genesis state

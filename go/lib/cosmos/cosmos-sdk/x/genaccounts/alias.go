@@ -5,7 +5,7 @@
 package genaccounts
 
 import (
-	"github.com/cosmos/cosmos-sdk/x/genaccounts/internal/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genaccounts/internal/types"
 )
 
 const (

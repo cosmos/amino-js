@@ -5,8 +5,8 @@ import (
 	"reflect"
 
 	amino "github.com/tendermint/go-amino"
-	"github.com/tendermint/tendermint/libs/log"
-	em "github.com/tendermint/tendermint/tools/tm-monitor/eventmeter"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	em "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/tools/tm-monitor/eventmeter"
 )
 
 type EventMeter struct {

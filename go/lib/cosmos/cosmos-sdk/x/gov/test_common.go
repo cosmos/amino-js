@@ -9,19 +9,19 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
-	"github.com/tendermint/tendermint/crypto/ed25519"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/crypto"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/bank"
-	"github.com/cosmos/cosmos-sdk/x/gov/types"
-	"github.com/cosmos/cosmos-sdk/x/mock"
-	"github.com/cosmos/cosmos-sdk/x/staking"
-	"github.com/cosmos/cosmos-sdk/x/supply"
-	supplyexported "github.com/cosmos/cosmos-sdk/x/supply/exported"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/mock"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply"
+	supplyexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply/exported"
 )
 
 var (

@@ -8,18 +8,18 @@ import (
 	"strings"
 	"time"
 
-	abci "github.com/tendermint/tendermint/abci/types"
-	"github.com/tendermint/tendermint/libs/log"
+	abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
 
-	cfg "github.com/tendermint/tendermint/config"
-	cmn "github.com/tendermint/tendermint/libs/common"
-	nm "github.com/tendermint/tendermint/node"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/privval"
-	"github.com/tendermint/tendermint/proxy"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	core_grpc "github.com/tendermint/tendermint/rpc/grpc"
-	rpcclient "github.com/tendermint/tendermint/rpc/lib/client"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	nm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/node"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/proxy"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	core_grpc "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/grpc"
+	rpcclient "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/client"
 )
 
 // Options helps with specifying some parameters for our RPC testing for greater

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/tendermint/tendermint/libs/log"
-	"github.com/tendermint/tendermint/privval"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
 )
 
 var (

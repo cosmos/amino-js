@@ -1,10 +1,10 @@
 package genaccounts
 
 import (
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	authexported "github.com/cosmos/cosmos-sdk/x/auth/exported"
-	"github.com/cosmos/cosmos-sdk/x/genaccounts/internal/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	authexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/exported"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genaccounts/internal/types"
 )
 
 // InitGenesis initializes accounts and deliver genesis transactions

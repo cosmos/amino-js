@@ -13,23 +13,23 @@ import (
 	flag "github.com/spf13/pflag"
 	"github.com/spf13/viper"
 
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/libs/common"
-	tmtypes "github.com/tendermint/tendermint/types"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/cosmos/cosmos-sdk/client/context"
-	"github.com/cosmos/cosmos-sdk/codec"
-	kbkeys "github.com/cosmos/cosmos-sdk/crypto/keys"
-	"github.com/cosmos/cosmos-sdk/server"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/cosmos/cosmos-sdk/x/auth/client/utils"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/context"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	kbkeys "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/server"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types/module"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/client/utils"
 
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/genutil"
-	"github.com/cosmos/cosmos-sdk/x/genutil/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genutil"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genutil/types"
 )
 
 // StakingMsgBuildingHelpers helpers for message building gen-tx command

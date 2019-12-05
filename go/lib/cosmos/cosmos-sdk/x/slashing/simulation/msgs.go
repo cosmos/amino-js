@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/cosmos/cosmos-sdk/baseapp"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/cosmos/cosmos-sdk/x/slashing"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/baseapp"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/simulation"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing"
 )
 
 // SimulateMsgUnjail generates a MsgUnjail with random values

@@ -1,7 +1,7 @@
 package bank
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // GenesisState is the bank state that must be provided at genesis.

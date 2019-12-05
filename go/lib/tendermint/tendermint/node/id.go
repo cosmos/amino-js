@@ -3,7 +3,7 @@ package node
 import (
 	"time"
 
-	"github.com/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 )
 
 type NodeID struct {

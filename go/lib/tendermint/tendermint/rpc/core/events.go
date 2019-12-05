@@ -6,10 +6,10 @@ import (
 
 	"github.com/pkg/errors"
 
-	tmpubsub "github.com/tendermint/tendermint/libs/pubsub"
-	tmquery "github.com/tendermint/tendermint/libs/pubsub/query"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
+	tmpubsub "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/pubsub"
+	tmquery "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/pubsub/query"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
 )
 
 // Subscribe for events via WebSocket.
@@ -33,8 +33,8 @@ import (
 // DeliverTx response.
 //
 //  import (
-//	  abci "github.com/tendermint/tendermint/abci/types"
-// 	  "github.com/tendermint/tendermint/libs/pubsub/query"
+//	  abci "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/abci/types"
+// 	  "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/pubsub/query"
 //  )
 //
 //  abci.ResponseDeliverTx{
@@ -107,7 +107,7 @@ import (
 // https://godoc.org/github.com/tendermint/tendermint/libs/pubsub/query.
 //
 // ```go
-// import "github.com/tendermint/tendermint/types"
+// import "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 //
 // client := client.NewHTTP("tcp://0.0.0.0:26657", "/websocket")
 // err := client.Start()

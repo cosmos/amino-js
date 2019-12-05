@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sync"
 
-	log "github.com/tendermint/tendermint/libs/log"
-	lerr "github.com/tendermint/tendermint/lite/errors"
-	"github.com/tendermint/tendermint/types"
+	log "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	lerr "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/lite/errors"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 const sizeOfPendingMap = 1024

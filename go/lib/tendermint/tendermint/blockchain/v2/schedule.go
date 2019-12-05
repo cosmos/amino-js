@@ -7,7 +7,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
 )
 
 type blockState int

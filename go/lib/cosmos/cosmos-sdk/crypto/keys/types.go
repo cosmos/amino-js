@@ -3,11 +3,11 @@ package keys
 import (
 	"fmt"
 
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/crypto/multisig"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/multisig"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/hd"
-	"github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys/hd"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // Keybase exposes operations on a generic keystore

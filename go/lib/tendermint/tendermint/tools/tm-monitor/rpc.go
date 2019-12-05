@@ -5,11 +5,11 @@ import (
 	"net"
 	"net/http"
 
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
 
-	"github.com/tendermint/tendermint/libs/log"
-	rpc "github.com/tendermint/tendermint/rpc/lib/server"
-	"github.com/tendermint/tendermint/tools/tm-monitor/monitor"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	rpc "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/server"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/tools/tm-monitor/monitor"
 )
 
 func startRPC(listenAddr string, m *monitor.Monitor, logger log.Logger) net.Listener {

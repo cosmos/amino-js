@@ -6,15 +6,15 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cosmos/cosmos-sdk/client/context"
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/version"
-	"github.com/cosmos/cosmos-sdk/x/auth"
-	"github.com/cosmos/cosmos-sdk/x/auth/client/utils"
-	"github.com/cosmos/cosmos-sdk/x/gov"
-	paramscutils "github.com/cosmos/cosmos-sdk/x/params/client/utils"
-	"github.com/cosmos/cosmos-sdk/x/params/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/context"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/version"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/client/utils"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov"
+	paramscutils "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/client/utils"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/types"
 )
 
 // GetCmdSubmitProposal implements a command handler for submitting a parameter

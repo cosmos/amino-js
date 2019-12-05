@@ -3,8 +3,8 @@ package context
 import (
 	"fmt"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // BroadcastTx broadcasts a transactions either synchronously or asynchronously

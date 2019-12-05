@@ -7,10 +7,10 @@ import (
 
 	amino "github.com/tendermint/go-amino"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/libs/log"
-	rpcserver "github.com/tendermint/tendermint/rpc/lib/server"
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	rpcserver "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/server"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
 )
 
 var routes = map[string]*rpcserver.RPCFunc{

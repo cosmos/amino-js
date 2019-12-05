@@ -6,9 +6,9 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/tendermint/tendermint/types"
-	tmtime "github.com/tendermint/tendermint/types/time"
-	"github.com/tendermint/tendermint/version"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
+	tmtime "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types/time"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/version"
 )
 
 // database keys

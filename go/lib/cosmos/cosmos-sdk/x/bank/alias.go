@@ -5,8 +5,8 @@
 package bank
 
 import (
-	"github.com/cosmos/cosmos-sdk/x/bank/internal/keeper"
-	"github.com/cosmos/cosmos-sdk/x/bank/internal/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank/internal/keeper"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank/internal/types"
 )
 
 const (

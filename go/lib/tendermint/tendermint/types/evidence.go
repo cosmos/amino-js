@@ -5,12 +5,12 @@ import (
 	"fmt"
 
 	"github.com/pkg/errors"
-	"github.com/tendermint/tendermint/crypto/tmhash"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/tmhash"
 
 	amino "github.com/tendermint/go-amino"
 
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/crypto/merkle"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/merkle"
 )
 
 const (

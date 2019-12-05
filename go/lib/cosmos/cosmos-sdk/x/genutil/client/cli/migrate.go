@@ -5,14 +5,14 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/server"
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/version"
-	extypes "github.com/cosmos/cosmos-sdk/x/genutil"
-	v036 "github.com/cosmos/cosmos-sdk/x/genutil/legacy/v036"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/server"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/version"
+	extypes "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genutil"
+	v036 "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/genutil/legacy/v036"
 )
 
 var migrationMap = extypes.MigrationMap{

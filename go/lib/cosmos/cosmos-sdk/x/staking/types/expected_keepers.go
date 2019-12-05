@@ -1,10 +1,10 @@
 package types
 
 import (
-	sdk "github.com/cosmos/cosmos-sdk/types"
-	authexported "github.com/cosmos/cosmos-sdk/x/auth/exported"
-	stakingexported "github.com/cosmos/cosmos-sdk/x/staking/exported"
-	supplyexported "github.com/cosmos/cosmos-sdk/x/supply/exported"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	authexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth/exported"
+	stakingexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/exported"
+	supplyexported "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/supply/exported"
 )
 
 // DistributionKeeper expected distribution keeper (noalias)

@@ -9,14 +9,14 @@ import (
 	"github.com/spf13/viper"
 	"gopkg.in/yaml.v2"
 
-	tcmd "github.com/tendermint/tendermint/cmd/tendermint/commands"
-	"github.com/tendermint/tendermint/libs/cli"
-	"github.com/tendermint/tendermint/p2p"
-	pvm "github.com/tendermint/tendermint/privval"
-	tversion "github.com/tendermint/tendermint/version"
+	tcmd "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/cmd/tendermint/commands"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	pvm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
+	tversion "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/version"
 
-	"github.com/cosmos/cosmos-sdk/codec"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 // ShowNodeIDCmd - ported from Tendermint, dump node ID to stdout

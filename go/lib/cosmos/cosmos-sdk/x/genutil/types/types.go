@@ -3,7 +3,7 @@ package types
 import (
 	"encoding/json"
 
-	"github.com/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 )
 
 // DONTCOVER

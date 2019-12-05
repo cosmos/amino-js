@@ -3,9 +3,9 @@ package null
 import (
 	"errors"
 
-	"github.com/tendermint/tendermint/libs/pubsub/query"
-	"github.com/tendermint/tendermint/state/txindex"
-	"github.com/tendermint/tendermint/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/pubsub/query"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state/txindex"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 var _ txindex.TxIndexer = (*TxIndex)(nil)

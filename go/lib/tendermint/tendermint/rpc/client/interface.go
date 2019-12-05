@@ -23,9 +23,9 @@ implementation.
 import (
 	"context"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	"github.com/tendermint/tendermint/types"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // Client wraps most important rpc calls a client would make if you want to

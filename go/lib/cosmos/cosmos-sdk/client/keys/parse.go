@@ -10,11 +10,11 @@ import (
 	"github.com/spf13/viper"
 	"gopkg.in/yaml.v2"
 
-	"github.com/tendermint/tendermint/libs/bech32"
-	"github.com/tendermint/tendermint/libs/cli"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/bech32"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
+	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 )
 
 var bech32Prefixes = []string{

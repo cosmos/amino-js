@@ -5,14 +5,14 @@ import (
 	"path/filepath"
 	"time"
 
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/libs/common"
-	"github.com/tendermint/tendermint/p2p"
-	"github.com/tendermint/tendermint/privval"
-	tmtypes "github.com/tendermint/tendermint/types"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/p2p"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
+	tmtypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 
-	"github.com/cosmos/cosmos-sdk/server"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/server"
 )
 
 // ExportGenesisFile creates and writes the genesis configuration to disk. An

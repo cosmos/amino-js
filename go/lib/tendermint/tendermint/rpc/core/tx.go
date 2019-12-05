@@ -3,13 +3,13 @@ package core
 import (
 	"fmt"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 
-	tmquery "github.com/tendermint/tendermint/libs/pubsub/query"
-	ctypes "github.com/tendermint/tendermint/rpc/core/types"
-	rpctypes "github.com/tendermint/tendermint/rpc/lib/types"
-	"github.com/tendermint/tendermint/state/txindex/null"
-	"github.com/tendermint/tendermint/types"
+	tmquery "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/pubsub/query"
+	ctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/core/types"
+	rpctypes "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/rpc/lib/types"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/state/txindex/null"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/types"
 )
 
 // Tx allows you to query the transaction results. `nil` could mean the

@@ -11,7 +11,7 @@ import (
 	"github.com/pkg/errors"
 
 	amino "github.com/tendermint/go-amino"
-	"github.com/tendermint/tendermint/crypto/tmhash"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/tmhash"
 )
 
 // Node represents a node in a Tree.

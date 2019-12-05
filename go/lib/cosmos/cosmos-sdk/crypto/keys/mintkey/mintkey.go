@@ -6,14 +6,14 @@ import (
 
 	"github.com/tendermint/crypto/bcrypt"
 
-	"github.com/tendermint/tendermint/crypto"
-	"github.com/tendermint/tendermint/crypto/armor"
-	cryptoAmino "github.com/tendermint/tendermint/crypto/encoding/amino"
-	"github.com/tendermint/tendermint/crypto/xsalsa20symmetric"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/armor"
+	cryptoAmino "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/encoding/amino"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/xsalsa20symmetric"
 
-	cmn "github.com/tendermint/tendermint/libs/common"
+	cmn "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/common"
 
-	"github.com/cosmos/cosmos-sdk/crypto/keys/keyerror"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/crypto/keys/keyerror"
 )
 
 const (

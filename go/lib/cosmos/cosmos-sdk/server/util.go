@@ -14,17 +14,17 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	tcmd "github.com/tendermint/tendermint/cmd/tendermint/commands"
-	cfg "github.com/tendermint/tendermint/config"
-	"github.com/tendermint/tendermint/libs/cli"
-	tmflags "github.com/tendermint/tendermint/libs/cli/flags"
-	"github.com/tendermint/tendermint/libs/log"
-	pvm "github.com/tendermint/tendermint/privval"
+	tcmd "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/cmd/tendermint/commands"
+	cfg "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/config"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli"
+	tmflags "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/cli/flags"
+	"github.com/cosmos/amino-js/go/lib/tendermint/tendermint/libs/log"
+	pvm "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/privval"
 
-	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/cosmos/cosmos-sdk/codec"
-	"github.com/cosmos/cosmos-sdk/server/config"
-	"github.com/cosmos/cosmos-sdk/version"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/flags"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/codec"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/server/config"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/version"
 )
 
 // server context

@@ -6,9 +6,9 @@ import (
 
 	"github.com/gorilla/mux"
 
-	"github.com/cosmos/cosmos-sdk/client/context"
-	"github.com/cosmos/cosmos-sdk/types/rest"
-	"github.com/cosmos/cosmos-sdk/x/mint/internal/types"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/client/context"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types/rest"
+	"github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/mint/internal/types"
 )
 
 func registerQueryRoutes(cliCtx context.CLIContext, r *mux.Router) {
