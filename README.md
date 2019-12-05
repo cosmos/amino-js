@@ -43,7 +43,7 @@ Encoding/decoding of registered types:
 import { marshalTx, unmarshalTx } from '@tendermint/amino-js';
 
 const tx = {
-   'type':  'auth/StdTx',
+   'type':  'cosmos-sdk/StdTx',
    'value': {
        'msg':        [{
            'type':  'cosmos-sdk/MsgSend',
