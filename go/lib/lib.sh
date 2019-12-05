@@ -1,9 +1,9 @@
 export SDK_PATH=cosmos/cosmos-sdk
-export SDK_VERSION=v0.35.0
+export SDK_VERSION=v0.37.4
 export TENDERMINT_PATH=tendermint/tendermint
-export TENDERMINT_VERSION=v0.31.7
+export TENDERMINT_VERSION=v0.32.7
 export IAVL_PATH=tendermint/iavl
-export IAVL_VERSION=v0.12.1
+export IAVL_VERSION=v0.12.4
 
 copy () {
   rm -rf "$1"
