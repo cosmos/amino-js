@@ -1,4 +1,5 @@
-import { AminoBytes, Bech32String, Bytes, DisambBytes, JSONBytes, PrefixBytes } from './types';
+import { Bech32String, Bytes, JSONBytes } from '@tendermint/types';
+import { AminoBytes, DisambBytes, PrefixBytes } from './types';
 
 // Bech32
 /**

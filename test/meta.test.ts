@@ -1,3 +1,4 @@
+import './setup';
 import * as Amino from '../';
 
 describe('meta', () => {
