@@ -1,6 +1,6 @@
 module github.com/cosmos/amino-js/go/test
 
-go 1.13
+go 1.12
 
 require (
 	github.com/cosmos/amino-js/go/src v0.0.0
