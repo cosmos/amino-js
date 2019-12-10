@@ -1,3 +1,5 @@
+import './setup';
+import { base64ToBytes, bytesToBase64 } from '@tendermint/belt';
 import * as Amino from '../';
 
 const txData = '2gEoKBapCkOoo2GaChTNi4afLkGQV1Df+AvNv4mvem6PjBIU0kxbneuQG/5QEXWWJm+hoPWFufEaEQoFc3Rha2USCDEwMDAwMDAwEhEKCwoFc3Rha2USAjQwEOa4AhpqCibrWumHIQL9AVlxawWaJcrGJl/aLlLAVxGHlI/BLzj3GC8Zi1a8wRJAummHUrkNaAcMCTg5K7E2SYgLoJA3Rh6MxpxvIcp9LQJ0NPhTCZ1WwuiKhwnKg3R/EU46/GQv7ktmTlPSDjrnCyIQKFNlbnQgdmlhIEx1bmllKQ==';
@@ -46,7 +48,7 @@ describe('Tx1', () => {
     describe('decoding', () => {
         describe('Tx', () => {
             it('decodes bytes', () => {
-                const bytes = Amino.base64ToBytes(txData);
+                const bytes = base64ToBytes(txData);
                 const value = Amino.unmarshalTx(bytes, true);
                 expect(value).toMatchObject(tx);
             });
@@ -57,7 +59,7 @@ describe('Tx1', () => {
         describe('Tx', () => {
             it('encodes value', () => {
                 const bytes = Amino.marshalTx(tx, true);
-                const data  = Amino.bytesToBase64(bytes);
+                const data  = bytesToBase64(bytes);
                 expect(data).toBe(txData);
             });
         });
