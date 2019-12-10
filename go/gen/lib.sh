@@ -5,14 +5,16 @@ export TENDERMINT_VERSION=v0.31.7
 export IAVL_PATH=tendermint/iavl
 export IAVL_VERSION=v0.12.1
 
+export LIB_PATH="../lib/"
+
 export SDK_PATH_VERSION="${SDK_PATH}@${SDK_VERSION}"
 export TENDERMINT_PATH_VERSION="${TENDERMINT_PATH}@${TENDERMINT_VERSION}"
 export IAVL_PATH_VERSION="${IAVL_PATH}@${IAVL_VERSION}"
 
 copy () {
-  rm -rf "$1"
-  rsync -rvL --include '*/' --include '*.go' --exclude '*' --prune-empty-dirs --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r "${GOPATH}/pkg/mod/github.com/$1/" "$1"
-  find "$1" -type f -name "*_test.go" -exec rm -rf {} \;
+  rm -rf "${LIB_PATH}$1"
+  rsync -rvL --include '*/' --include '*.go' --exclude '*' --prune-empty-dirs --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r "${GOPATH}/pkg/mod/github.com/$1/" "${LIB_PATH}$1"
+  find "${LIB_PATH}$1" -type f -name "*_test.go" -exec rm -rf {} \;
 #  find "$1" -type f -name "{doc,version}.go" -exec rm -rf {} \;
 #  find "$1" -type f -exec sed -i '' 's!"github\.com/!"github.com/cosmos/amino-js/go/lib/!g' {} +
 }
