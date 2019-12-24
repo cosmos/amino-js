@@ -6,8 +6,6 @@ import (
 
 // RegisterCodec Register Codec
 func RegisterCodec(codec *amino.Codec) {
-	codec.RegisterConcrete(TxCreateMarket{}, "microtick/CreateMarket", nil)
-
 	codec.RegisterConcrete(&Params{}, "irishub/Auth/Params", nil)
 
 	codec.RegisterInterface((*Account)(nil), nil)
