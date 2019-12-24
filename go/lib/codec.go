@@ -7,15 +7,15 @@ import (
 
 	types "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
 
-	auth "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
-	bank "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank"
+	// auth "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/auth"
+	// bank "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/bank"
 	crisis "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/crisis"
-	distribution "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/distribution/types"
-	gov "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov/types"
-	ibc "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/ibc"
-	params "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/types"
-	slashing "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing"
-	staking "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/types"
+	// distribution "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/distribution/types"
+	// gov "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/gov/types"
+	// ibc "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/ibc"
+	// params "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/params/types"
+	// slashing "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/slashing"
+	// staking "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/x/staking/types"
 
 	tm_crypto "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto"
 	tm_ed25519 "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/ed25519"
@@ -43,11 +43,11 @@ func RegisterCodec(codec *amino.Codec) {
 	// cosmos/cosmos-sdk/crypto/keys/codec.go
 
 	codec.RegisterInterface((*keys.Info)(nil), nil)
-	codec.RegisterConcrete(hd.BIP44Params{},   CryptoKeysHdBIP44Params, nil)
-	codec.RegisterConcrete(keys.LocalInfo{},   CryptoKeysLocalInfo, nil)
-	codec.RegisterConcrete(keys.LedgerInfo{},  CryptoKeysLedgerInfo, nil)
+	codec.RegisterConcrete(hd.BIP44Params{}, CryptoKeysHdBIP44Params, nil)
+	codec.RegisterConcrete(keys.LocalInfo{}, CryptoKeysLocalInfo, nil)
+	codec.RegisterConcrete(keys.LedgerInfo{}, CryptoKeysLedgerInfo, nil)
 	codec.RegisterConcrete(keys.OfflineInfo{}, CryptoKeysOfflineInfo, nil)
-	codec.RegisterConcrete(keys.MultiInfo{},   CryptoKeysMultiInfo, nil)
+	codec.RegisterConcrete(keys.MultiInfo{}, CryptoKeysMultiInfo, nil)
 
 	// cosmos/cosmos-sdk/types/codec.go
 
@@ -56,19 +56,19 @@ func RegisterCodec(codec *amino.Codec) {
 
 	// cosmos/cosmos-sdk/x/auth/codec.go
 
-	codec.RegisterInterface((*auth.Account)(nil), nil)
-	codec.RegisterInterface((*auth.VestingAccount)(nil), nil)
+	// codec.RegisterInterface((*auth.Account)(nil), nil)
+	// codec.RegisterInterface((*auth.VestingAccount)(nil), nil)
 
-	codec.RegisterConcrete(&auth.BaseAccount{},              AuthAccount, nil)
-	codec.RegisterConcrete(&auth.BaseVestingAccount{},       AuthBaseVestingAccount, nil)
-	codec.RegisterConcrete(&auth.ContinuousVestingAccount{}, AuthContinuousVestingAccount, nil)
-	codec.RegisterConcrete(&auth.DelayedVestingAccount{},    AuthDelayedVestingAccount, nil)
-	codec.RegisterConcrete(auth.StdTx{},                     AuthStdTx, nil)
+	// codec.RegisterConcrete(&auth.BaseAccount{},              AuthAccount, nil)
+	// codec.RegisterConcrete(&auth.BaseVestingAccount{},       AuthBaseVestingAccount, nil)
+	// codec.RegisterConcrete(&auth.ContinuousVestingAccount{}, AuthContinuousVestingAccount, nil)
+	// codec.RegisterConcrete(&auth.DelayedVestingAccount{},    AuthDelayedVestingAccount, nil)
+	// codec.RegisterConcrete(auth.StdTx{},                     AuthStdTx, nil)
 
-	// cosmos/cosmos-sdk/x/bank/codec.go
+	// // cosmos/cosmos-sdk/x/bank/codec.go
 
-	codec.RegisterConcrete(bank.MsgSend{},      CosmosSdkMsgSend, nil)
-	codec.RegisterConcrete(bank.MsgMultiSend{}, CosmosSdkMsgMultiSend, nil)
+	// codec.RegisterConcrete(bank.MsgSend{},      CosmosSdkMsgSend, nil)
+	// codec.RegisterConcrete(bank.MsgMultiSend{}, CosmosSdkMsgMultiSend, nil)
 
 	// cosmos/cosmos-sdk/x/crisis/codec.go
 
@@ -76,72 +76,72 @@ func RegisterCodec(codec *amino.Codec) {
 
 	// cosmos/cosmos-sdk/x/distribution/types/codec.go
 
-	codec.RegisterConcrete(distribution.MsgWithdrawDelegatorReward{},     CosmosSdkMsgWithdrawDelegationReward, nil)
-	codec.RegisterConcrete(distribution.MsgWithdrawValidatorCommission{}, CosmosSdkMsgWithdrawValidatorCommission, nil)
-	codec.RegisterConcrete(distribution.MsgSetWithdrawAddress{},          CosmosSdkMsgModifyWithdrawAddress, nil)
+	// codec.RegisterConcrete(distribution.MsgWithdrawDelegatorReward{},     CosmosSdkMsgWithdrawDelegationReward, nil)
+	// codec.RegisterConcrete(distribution.MsgWithdrawValidatorCommission{}, CosmosSdkMsgWithdrawValidatorCommission, nil)
+	// codec.RegisterConcrete(distribution.MsgSetWithdrawAddress{},          CosmosSdkMsgModifyWithdrawAddress, nil)
 
-	// cosmos/cosmos-sdk/x/gov/types/codec.go
+	// // cosmos/cosmos-sdk/x/gov/types/codec.go
 
-	codec.RegisterInterface((*gov.Content)(nil), nil)
+	// codec.RegisterInterface((*gov.Content)(nil), nil)
 
-	codec.RegisterConcrete(gov.MsgSubmitProposal{},       CosmosSdkMsgSubmitProposal, nil)
-	codec.RegisterConcrete(gov.MsgDeposit{},              CosmosSdkMsgDeposit, nil)
-	codec.RegisterConcrete(gov.MsgVote{},                 CosmosSdkMsgVote, nil)
-	codec.RegisterConcrete(gov.TextProposal{},            CosmosSdkTextProposal, nil)
-	codec.RegisterConcrete(gov.SoftwareUpgradeProposal{}, CosmosSdkSoftwareUpgradeProposal, nil)
+	// codec.RegisterConcrete(gov.MsgSubmitProposal{},       CosmosSdkMsgSubmitProposal, nil)
+	// codec.RegisterConcrete(gov.MsgDeposit{},              CosmosSdkMsgDeposit, nil)
+	// codec.RegisterConcrete(gov.MsgVote{},                 CosmosSdkMsgVote, nil)
+	// codec.RegisterConcrete(gov.TextProposal{},            CosmosSdkTextProposal, nil)
+	// codec.RegisterConcrete(gov.SoftwareUpgradeProposal{}, CosmosSdkSoftwareUpgradeProposal, nil)
 
-	// cosmos/cosmos-sdk/x/ibc/codec.go
+	// // cosmos/cosmos-sdk/x/ibc/codec.go
 
-	codec.RegisterConcrete(ibc.MsgIBCTransfer{}, CosmosSdkMsgIBCTransfer, nil)
-	codec.RegisterConcrete(ibc.MsgIBCReceive{},  CosmosSdkMsgIBCReceive, nil)
+	// codec.RegisterConcrete(ibc.MsgIBCTransfer{}, CosmosSdkMsgIBCTransfer, nil)
+	// codec.RegisterConcrete(ibc.MsgIBCReceive{},  CosmosSdkMsgIBCReceive, nil)
 
-	// cosmos/cosmos-sdk/x/params/types/codec.go
+	// // cosmos/cosmos-sdk/x/params/types/codec.go
 
-	codec.RegisterConcrete(params.ParameterChangeProposal{}, CosmosSdkParameterChangeProposal, nil)
+	// codec.RegisterConcrete(params.ParameterChangeProposal{}, CosmosSdkParameterChangeProposal, nil)
 
-	// cosmos/cosmos-sdk/x/slashing/codec.go
+	// // cosmos/cosmos-sdk/x/slashing/codec.go
 
-	codec.RegisterConcrete(slashing.MsgUnjail{}, CosmosSdkMsgUnjail, nil)
+	// codec.RegisterConcrete(slashing.MsgUnjail{}, CosmosSdkMsgUnjail, nil)
 
-	// cosmos/cosmos-sdk/x/staking/types/codec.go
+	// // cosmos/cosmos-sdk/x/staking/types/codec.go
 
-	codec.RegisterConcrete(staking.MsgCreateValidator{}, CosmosSdkMsgCreateValidator, nil)
-	codec.RegisterConcrete(staking.MsgEditValidator{},   CosmosSdkMsgEditValidator, nil)
-	codec.RegisterConcrete(staking.MsgDelegate{},        CosmosSdkMsgDelegate, nil)
-	codec.RegisterConcrete(staking.MsgUndelegate{},      CosmosSdkMsgUndelegate, nil)
-	codec.RegisterConcrete(staking.MsgBeginRedelegate{}, CosmosSdkMsgBeginRedelegate, nil)
+	// codec.RegisterConcrete(staking.MsgCreateValidator{}, CosmosSdkMsgCreateValidator, nil)
+	// codec.RegisterConcrete(staking.MsgEditValidator{},   CosmosSdkMsgEditValidator, nil)
+	// codec.RegisterConcrete(staking.MsgDelegate{},        CosmosSdkMsgDelegate, nil)
+	// codec.RegisterConcrete(staking.MsgUndelegate{},      CosmosSdkMsgUndelegate, nil)
+	// codec.RegisterConcrete(staking.MsgBeginRedelegate{}, CosmosSdkMsgBeginRedelegate, nil)
 
 	// tendermint/tendermint/blockchain/reactor.go
 
 	codec.RegisterInterface((*tm_blockchain.BlockchainMessage)(nil), nil)
 
-	codec.RegisterConcrete(&tm_blockchain.BcBlockRequestMessage{},    TendermintBlockchainBlockRequest, nil)
-	codec.RegisterConcrete(&tm_blockchain.BcBlockResponseMessage{},   TendermintBlockchainBlockResponse, nil)
+	codec.RegisterConcrete(&tm_blockchain.BcBlockRequestMessage{}, TendermintBlockchainBlockRequest, nil)
+	codec.RegisterConcrete(&tm_blockchain.BcBlockResponseMessage{}, TendermintBlockchainBlockResponse, nil)
 	codec.RegisterConcrete(&tm_blockchain.BcNoBlockResponseMessage{}, TendermintBlockchainNoBlockResponse, nil)
-	codec.RegisterConcrete(&tm_blockchain.BcStatusResponseMessage{},  TendermintBlockchainStatusResponse, nil)
-	codec.RegisterConcrete(&tm_blockchain.BcStatusRequestMessage{},   TendermintBlockchainStatusRequest, nil)
+	codec.RegisterConcrete(&tm_blockchain.BcStatusResponseMessage{}, TendermintBlockchainStatusResponse, nil)
+	codec.RegisterConcrete(&tm_blockchain.BcStatusRequestMessage{}, TendermintBlockchainStatusRequest, nil)
 
 	// tendermint/tendermint/consensus/reactor.go
 
 	codec.RegisterInterface((*tm_consensus.ConsensusMessage)(nil), nil)
 
-	codec.RegisterConcrete(&tm_consensus.NewRoundStepMessage{},  TendermintNewRoundStepMessage, nil)
+	codec.RegisterConcrete(&tm_consensus.NewRoundStepMessage{}, TendermintNewRoundStepMessage, nil)
 	codec.RegisterConcrete(&tm_consensus.NewValidBlockMessage{}, TendermintNewValidBlockMessage, nil)
-	codec.RegisterConcrete(&tm_consensus.ProposalMessage{},      TendermintProposal, nil)
-	codec.RegisterConcrete(&tm_consensus.ProposalPOLMessage{},   TendermintProposalPOL, nil)
-	codec.RegisterConcrete(&tm_consensus.BlockPartMessage{},     TendermintBlockPart, nil)
-	codec.RegisterConcrete(&tm_consensus.VoteMessage{},          TendermintVote, nil)
-	codec.RegisterConcrete(&tm_consensus.HasVoteMessage{},       TendermintHasVote, nil)
-	codec.RegisterConcrete(&tm_consensus.VoteSetMaj23Message{},  TendermintVoteSetMaj23, nil)
-	codec.RegisterConcrete(&tm_consensus.VoteSetBitsMessage{},   TendermintVoteSetBits, nil)
+	codec.RegisterConcrete(&tm_consensus.ProposalMessage{}, TendermintProposal, nil)
+	codec.RegisterConcrete(&tm_consensus.ProposalPOLMessage{}, TendermintProposalPOL, nil)
+	codec.RegisterConcrete(&tm_consensus.BlockPartMessage{}, TendermintBlockPart, nil)
+	codec.RegisterConcrete(&tm_consensus.VoteMessage{}, TendermintVote, nil)
+	codec.RegisterConcrete(&tm_consensus.HasVoteMessage{}, TendermintHasVote, nil)
+	codec.RegisterConcrete(&tm_consensus.VoteSetMaj23Message{}, TendermintVoteSetMaj23, nil)
+	codec.RegisterConcrete(&tm_consensus.VoteSetBitsMessage{}, TendermintVoteSetBits, nil)
 
 	// tendermint/tendermint/consensus/wal.go
 
 	codec.RegisterInterface((*tm_consensus.WALMessage)(nil), nil)
 
 	// codec.RegisterConcrete(tm_types.EventDataRoundState{},  TendermintWalEventDataRoundState, nil)
-	codec.RegisterConcrete(tm_consensus.MsgInfo{},          TendermintWalMsgInfo, nil)
-	codec.RegisterConcrete(tm_consensus.TimeoutInfo{},      TendermintWalTimeoutInfo, nil)
+	codec.RegisterConcrete(tm_consensus.MsgInfo{}, TendermintWalMsgInfo, nil)
+	codec.RegisterConcrete(tm_consensus.TimeoutInfo{}, TendermintWalTimeoutInfo, nil)
 	codec.RegisterConcrete(tm_consensus.EndHeightMessage{}, TendermintWalEndHeightMessage, nil)
 
 	// tendermint/tendermint/crypto/encoding/amino/amino.go
@@ -149,10 +149,10 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterInterface((*tm_crypto.PubKey)(nil), nil)
 	codec.RegisterInterface((*tm_crypto.PrivKey)(nil), nil)
 
-	codec.RegisterConcrete(tm_ed25519.PubKeyEd25519{},            TendermintPubKeyEd25519, nil)
-	codec.RegisterConcrete(tm_ed25519.PrivKeyEd25519{},           TendermintPrivKeyEd25519, nil)
-	codec.RegisterConcrete(tm_secp256k1.PubKeySecp256k1{},        TendermintPubKeySecp256k1, nil)
-	codec.RegisterConcrete(tm_secp256k1.PrivKeySecp256k1{},       TendermintPrivKeySecp256k1, nil)
+	codec.RegisterConcrete(tm_ed25519.PubKeyEd25519{}, TendermintPubKeyEd25519, nil)
+	codec.RegisterConcrete(tm_ed25519.PrivKeyEd25519{}, TendermintPrivKeyEd25519, nil)
+	codec.RegisterConcrete(tm_secp256k1.PubKeySecp256k1{}, TendermintPubKeySecp256k1, nil)
+	codec.RegisterConcrete(tm_secp256k1.PrivKeySecp256k1{}, TendermintPrivKeySecp256k1, nil)
 	codec.RegisterConcrete(tm_multisig.PubKeyMultisigThreshold{}, TendermintPubKeyMultisigThreshold, nil)
 
 	// tendermint/tendermint/evidence/reactor.go
@@ -173,49 +173,49 @@ func RegisterCodec(codec *amino.Codec) {
 
 	codec.RegisterConcrete(tm_conn.PacketPing{}, TendermintP2pPacketPing, nil)
 	codec.RegisterConcrete(tm_conn.PacketPong{}, TendermintP2pPacketPong, nil)
-	codec.RegisterConcrete(tm_conn.PacketMsg{},  TendermintP2pPacketMsg, nil)
+	codec.RegisterConcrete(tm_conn.PacketMsg{}, TendermintP2pPacketMsg, nil)
 
 	// tendermint/tendermint/p2p/pex/pex_reactor.go
 
 	codec.RegisterInterface((*tm_pex.PexMessage)(nil), nil)
 
 	codec.RegisterConcrete(&tm_pex.PexRequestMessage{}, TendermintP2pPexRequestMessage, nil)
-	codec.RegisterConcrete(&tm_pex.PexAddrsMessage{},   TendermintP2pPexAddrsMessage, nil)
+	codec.RegisterConcrete(&tm_pex.PexAddrsMessage{}, TendermintP2pPexAddrsMessage, nil)
 
 	// tendermint/tendermint/privval/messages.go
 
 	codec.RegisterInterface((*tm_privval.RemoteSignerMsg)(nil), nil)
 
-	codec.RegisterConcrete(&tm_privval.PubKeyRequest{},          TendermintRemotesignerPubKeyRequest, nil)
-	codec.RegisterConcrete(&tm_privval.PubKeyResponse{},         TendermintRemotesignerPubKeyResponse, nil)
-	codec.RegisterConcrete(&tm_privval.SignVoteRequest{},        TendermintRemotesignerSignVoteRequest, nil)
-	codec.RegisterConcrete(&tm_privval.SignedVoteResponse{},     TendermintRemotesignerSignedVoteResponse, nil)
-	codec.RegisterConcrete(&tm_privval.SignProposalRequest{},    TendermintRemotesignerSignProposalRequest, nil)
+	codec.RegisterConcrete(&tm_privval.PubKeyRequest{}, TendermintRemotesignerPubKeyRequest, nil)
+	codec.RegisterConcrete(&tm_privval.PubKeyResponse{}, TendermintRemotesignerPubKeyResponse, nil)
+	codec.RegisterConcrete(&tm_privval.SignVoteRequest{}, TendermintRemotesignerSignVoteRequest, nil)
+	codec.RegisterConcrete(&tm_privval.SignedVoteResponse{}, TendermintRemotesignerSignedVoteResponse, nil)
+	codec.RegisterConcrete(&tm_privval.SignProposalRequest{}, TendermintRemotesignerSignProposalRequest, nil)
 	codec.RegisterConcrete(&tm_privval.SignedProposalResponse{}, TendermintRemotesignerSignedProposalResponse, nil)
-	codec.RegisterConcrete(&tm_privval.PingRequest{},            TendermintRemotesignerPingRequest, nil)
-	codec.RegisterConcrete(&tm_privval.PingResponse{},           TendermintRemotesignerPingResponse, nil)
+	codec.RegisterConcrete(&tm_privval.PingRequest{}, TendermintRemotesignerPingRequest, nil)
+	codec.RegisterConcrete(&tm_privval.PingResponse{}, TendermintRemotesignerPingResponse, nil)
 
 	// tendermint/tendermint/types/events.go
 
 	codec.RegisterInterface((*tm_types.TMEventData)(nil), nil)
 
-	codec.RegisterConcrete(tm_types.EventDataNewBlock{},            TendermintEventNewBlock, nil)
-	codec.RegisterConcrete(tm_types.EventDataNewBlockHeader{},      TendermintEventNewBlockHeader, nil)
-	codec.RegisterConcrete(tm_types.EventDataTx{},                  TendermintEventTx, nil)
-	codec.RegisterConcrete(tm_types.EventDataRoundState{},          TendermintEventRoundState, nil)
-	codec.RegisterConcrete(tm_types.EventDataNewRound{},            TendermintEventNewRound, nil)
-	codec.RegisterConcrete(tm_types.EventDataCompleteProposal{},    TendermintEventCompleteProposal, nil)
-	codec.RegisterConcrete(tm_types.EventDataVote{},                TendermintEventVote, nil)
+	codec.RegisterConcrete(tm_types.EventDataNewBlock{}, TendermintEventNewBlock, nil)
+	codec.RegisterConcrete(tm_types.EventDataNewBlockHeader{}, TendermintEventNewBlockHeader, nil)
+	codec.RegisterConcrete(tm_types.EventDataTx{}, TendermintEventTx, nil)
+	codec.RegisterConcrete(tm_types.EventDataRoundState{}, TendermintEventRoundState, nil)
+	codec.RegisterConcrete(tm_types.EventDataNewRound{}, TendermintEventNewRound, nil)
+	codec.RegisterConcrete(tm_types.EventDataCompleteProposal{}, TendermintEventCompleteProposal, nil)
+	codec.RegisterConcrete(tm_types.EventDataVote{}, TendermintEventVote, nil)
 	codec.RegisterConcrete(tm_types.EventDataValidatorSetUpdates{}, TendermintEventValidatorSetUpdates, nil)
-	codec.RegisterConcrete(tm_types.EventDataString(""),            TendermintEventProposalString, nil)
+	codec.RegisterConcrete(tm_types.EventDataString(""), TendermintEventProposalString, nil)
 
 	// tendermint/tendermint/types/evidence.go
 
 	codec.RegisterInterface((*tm_types.Evidence)(nil), nil)
 
 	codec.RegisterConcrete(&tm_types.DuplicateVoteEvidence{}, TendermintDuplicateVoteEvidence, nil)
-	codec.RegisterConcrete(tm_types.MockGoodEvidence{},       TendermintMockGoodEvidence, nil)
+	codec.RegisterConcrete(tm_types.MockGoodEvidence{}, TendermintMockGoodEvidence, nil)
 	codec.RegisterConcrete(tm_types.MockRandomGoodEvidence{}, TendermintMockRandomGoodEvidence, nil)
-	codec.RegisterConcrete(tm_types.MockBadEvidence{},        TendermintMockBadEvidence, nil)
+	codec.RegisterConcrete(tm_types.MockBadEvidence{}, TendermintMockBadEvidence, nil)
 	// @formatter:on
 }

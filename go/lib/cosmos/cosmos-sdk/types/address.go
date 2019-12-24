@@ -15,7 +15,7 @@ import (
 
 const (
 	AddrLen = 20
-	Bech32MainPrefix = "cosmos"
+	Bech32MainPrefix = "iaa"
 	PrefixValidator = "val"
 	PrefixConsensus = "cons"
 	PrefixPublic = "pub"
