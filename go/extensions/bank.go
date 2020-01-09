@@ -12,3 +12,11 @@ type MsgSend struct {
 }
 
 var _ sdk.Msg = MsgSend{}
+
+// MsgBurn - high level transaction of the coin module
+type MsgBurn struct {
+	Owner sdk.AccAddress `json:"owner"`
+	Coins sdk.Coins      `json:"coins"`
+}
+
+var _ sdk.Msg = MsgBurn{}
