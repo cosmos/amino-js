@@ -46,7 +46,13 @@ export interface DelayedVestingAccount extends AccountValue {
 }
 
 /** @TODO document */
-export interface StdTx extends TxValue {
+export interface StdTx {
+    type: string;
+    value: StdTxValue;
+}
+
+/** @TODO document */
+export interface StdTxValue extends TxValue {
     msg: Msg[];
     fee: StdFee;
     signatures: StdSignature[];
@@ -55,7 +61,7 @@ export interface StdTx extends TxValue {
 
 /** @TODO document */
 export interface StdFee {
-    amount: Coin[];
+    amount: Coin[] | null;
     gas: string;
 }
 
