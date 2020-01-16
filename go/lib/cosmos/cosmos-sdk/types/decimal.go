@@ -14,7 +14,7 @@ type Dec struct {
 }
 
 const (
-	Precision = 18
+	Precision = 10
 )
 
 func NewDecFromStr(str string) (d Dec, err error) {
