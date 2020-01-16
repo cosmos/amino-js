@@ -20,3 +20,11 @@ type MsgBurn struct {
 }
 
 var _ sdk.Msg = MsgBurn{}
+
+// MsgSetMemoRegexp - set memo regexp
+type MsgSetMemoRegexp struct {
+	Owner      sdk.AccAddress `json:"owner"`
+	MemoRegexp string         `json:"memo_regexp"`
+}
+
+var _ sdk.Msg = MsgSetMemoRegexp{}

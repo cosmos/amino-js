@@ -13,4 +13,8 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterConcrete(StdTx{}, "irishub/bank/StdTx", nil)
 	codec.RegisterConcrete(&MsgSend{}, "irishub/bank/Send", nil)
 	codec.RegisterConcrete(&MsgBurn{}, "irishub/bank/Burn", nil)
+	codec.RegisterConcrete(&MsgSetMemoRegexp{}, "irishub/bank/SetMemoRegexp", nil)
+	codec.RegisterConcrete(&MsgDelegate{}, "irishub/stake/MsgDelegate", nil)
+	codec.RegisterConcrete(&MsgBeginUnbonding{}, "irishub/stake/BeginUnbonding", nil)
+	codec.RegisterConcrete(&MsgBeginRedelegate{}, "irishub/stake/BeginRedelegate", nil)
 }
