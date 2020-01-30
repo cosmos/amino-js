@@ -3,8 +3,6 @@ FROM golang:1.12-buster
 
 WORKDIR /project
 
-VOLUME /project
-
 # install some dependencies from apt-get.
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
@@ -19,3 +17,6 @@ RUN cd /gopherjs && GO111MODULE=on go install
 # install yarn dependencies
 COPY package.json yarn.lock ./
 RUN yarn install
+
+# copy source
+COPY . .

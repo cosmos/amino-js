@@ -109,7 +109,7 @@ Run the following commands in the root path of this repository.
 #### Build the docker image
 
 ```
-docker build -t cosmos/amino-js:local -f Dockerfile .
+docker build .
 ```
 
 ### Run yarn in the docker container
@@ -118,10 +118,10 @@ You can run any yarn command inside the container. By sharing the current path t
 
 Run `yarn setup` and `yarn test`:
 ```
-docker run --rm -it -v $(PWD):/project cosmos/amino-js:local yarn setup && yarn test
+docker run --rm -it -v $(PWD)/dist:/project/dist -v $(PWD)/types:/project/types $(docker build -q .) yarn setup && yarn test
 ```
 
 Run `yarn publish`:
 ```
-docker run --rm -it -v $(PWD):/project cosmos/amino-js:local yarn publish
+docker run --rm -it -v $(PWD)/dist:/project/dist -v $(PWD)/types:/project/types $(docker build -q .) yarn publish
 ```
