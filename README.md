@@ -99,3 +99,35 @@ See [`EXTEND.md`](https://github.com/cosmos/amino-js/blob/extend/EXTEND.md) for 
 `amino-js` is very new! Questions, feedback, use cases, issues, and code are all very, very welcome.
 
 Thank you for helping us help you help us all. 🎁
+
+### Build inside a Docker Container
+
+If you wish to build this lib without having to install Go 1.12, GopherJS and Yarn on your local computer, you can build it inside a docker container. You only need docker to be installed on your computer.
+
+#### Download source code
+
+```
+export GITHUB_ORG="<github user or org name of your fork>"
+git clone https://github.com/$GITHUB_ORG/amino-js
+cd ./amino-js
+```
+
+#### Build the docker image
+
+```
+docker build -t cosmos/amino-js:local -f Dockerfile .
+```
+
+### Run yarn in the docker container
+
+You can run any yarn command inside the container. By sharing the current path to the container, any new files will be available on the host.
+
+Run `yarn setup` and `yarn test`:
+```
+docker run --rm -it -v $(PWD):/project cosmos/amino-js:local yarn setup && yarn test
+```
+
+Run `yarn publish`:
+```
+docker run --rm -it -v $(PWD):/project cosmos/amino-js:local yarn publish
+```
