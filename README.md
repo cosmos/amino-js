@@ -104,13 +104,7 @@ Thank you for helping us help you help us all. 🎁
 
 If you wish to build this lib without having to install Go 1.12, GopherJS and Yarn on your local computer, you can build it inside a docker container. You only need docker to be installed on your computer.
 
-#### Download source code
-
-```
-export GITHUB_ORG="<github user or org name of your fork>"
-git clone https://github.com/$GITHUB_ORG/amino-js
-cd ./amino-js
-```
+Run the following commands in the root path of this repository.
 
 #### Build the docker image
 
