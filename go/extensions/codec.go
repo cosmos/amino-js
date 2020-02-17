@@ -24,4 +24,9 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterConcrete(&MsgDeposit{}, "irishub/gov/MsgDeposit", nil)
 	codec.RegisterConcrete(&MsgVote{}, "irishub/gov/MsgVote", nil)
 	codec.RegisterConcrete(&MsgUnjail{}, "irishub/slashing/MsgUnjail", nil)
+	codec.RegisterConcrete(&MsgWithdrawDelegatorRewardsAll{}, "irishub/distr/MsgWithdrawDelegationRewardsAll", nil)
+	codec.RegisterConcrete(&MsgWithdrawDelegatorReward{}, "irishub/distr/MsgWithdrawDelegationReward", nil)
+	codec.RegisterConcrete(&MsgWithdrawValidatorRewardsAll{}, "irishub/distr/MsgWithdrawValidatorRewardsAll", nil)
+	codec.RegisterConcrete(&MsgSetWithdrawAddress{}, "irishub/distr/MsgModifyWithdrawAddress", nil)
+
 }
