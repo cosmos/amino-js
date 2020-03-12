@@ -5,5 +5,5 @@ import (
 )
 
 func RegisterCodec(codec *amino.Codec) {
-	codec.RegisterConcrete(TxCreateMarket{}, "microtick/CreateMarket", nil)
+	codec.RegisterConcrete(MsgAddRecord{}, "aol/MsgAddRecord", nil)
 }
