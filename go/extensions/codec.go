@@ -5,5 +5,8 @@ import (
 )
 
 func RegisterCodec(codec *amino.Codec) {
-	codec.RegisterConcrete(MsgAddRecord{}, "aol/MsgAddRecord", nil)
+	codec.RegisterConcrete(MsgCreateTopic{},  "aol/MsgCreateTopic", nil)
+	codec.RegisterConcrete(MsgAddWriter{},    "aol/MsgAddWriter", nil)
+	codec.RegisterConcrete(MsgDeleteWriter{}, "aol/MsgDeleteWriter", nil)
+	codec.RegisterConcrete(MsgAddRecord{},    "aol/MsgAddRecord", nil)
 }
