@@ -12,8 +12,8 @@ const tx = {
         'msg':        [{
             'type':  'cosmos-sdk/MsgSend',
             'value': {
-                'from_address': 'cosmos1h806c7khnvmjlywdrkdgk2vrayy2mmvf9rxk2r',
-                'to_address':   'cosmos1z7g5w84ynmjyg0kqpahdjqpj7yq34v3suckp0e',
+                'from_address': 'panacea1h806c7khnvmjlywdrkdgk2vrayy2mmvfgv6s3q',
+                'to_address':   'panacea1z7g5w84ynmjyg0kqpahdjqpj7yq34v3s3h2856',
                 'amount':       [{
                     'denom':  'uatom',
                     'amount': '11657995'
@@ -49,7 +49,7 @@ const account = {
     'value': {
         'BaseVestingAccount': {
             'BaseAccount':       {
-                'address':        'cosmos164z7wwzv84h4hwn6rvjjkns6j4ht43jv9e3ljy',
+                'address':        'panacea164z7wwzv84h4hwn6rvjjkns6j4ht43jvgkdef8',
                 'coins':          [{
                     'denom':  'uatom',
                     'amount': '179848'

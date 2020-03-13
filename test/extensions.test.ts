@@ -10,9 +10,9 @@ const createTopicTx = {
       {
         "type": "aol/MsgCreateTopic",
         "value": {
-          "TopicName": "certification",
-          "Description": "",
-          "OwnerAddress": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
+          "topic_name": "certification",
+          "description": "",
+          "owner_address": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
         }
       }
     ],
@@ -47,11 +47,11 @@ const addWriterTx = {
       {
         "type": "aol/MsgAddWriter",
         "value": {
-          "TopicName": "medicalRecord",
-          "Moniker": "",
-          "Description": "",
-          "WriterAddress": "panacea12adnsesa8ynfurjy9lyvfzy9rdeg64ss3dfv6g",
-          "OwnerAddress": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
+          "topic_name": "medicalRecord",
+          "moniker": "",
+          "description": "",
+          "writer_address": "panacea12adnsesa8ynfurjy9lyvfzy9rdeg64ss3dfv6g",
+          "owner_address": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
         }
       }
     ],
@@ -86,9 +86,9 @@ const deleteWriterTx = {
       {
         "type": "aol/MsgDeleteWriter",
         "value": {
-          "TopicName": "test",
-          "WriterAddress": "panacea1kjfznhy7u3d4ce8jhn98wn6ujem3064l4fls4x",
-          "OwnerAddress": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
+          "topic_name": "test",
+          "writer_address": "panacea1kjfznhy7u3d4ce8jhn98wn6ujem3064l4fls4x",
+          "owner_address": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
         }
       }
     ],
@@ -122,12 +122,12 @@ const addRecordTx = {
     "msg": [{
       "type": "aol/MsgAddRecord",
       "value": {
-        "TopicName": "certification",
-        "Key": "eyJ2ZXJzaW9uIjoxLCJ2YWx1ZSI6IjkyZjNjMmMyIn0=",
-        "Value": "OTVNdC8wWVkrNDE2Qis5cVQvaXc5Tk9ObmIyWWl4WHkwcHhrWk9DM3pwUT0=",
-        "WriterAddress": "panacea16zevrfj0crdsknq634sdrtfuc77yelmndvte6j",
-        "OwnerAddress": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu",
-        "FeePayerAddress": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
+        "topic_name": "certification",
+        "key": "eyJ2ZXJzaW9uIjoxLCJ2YWx1ZSI6IjkyZjNjMmMyIn0=",
+        "value": "OTVNdC8wWVkrNDE2Qis5cVQvaXc5Tk9ObmIyWWl4WHkwcHhrWk9DM3pwUT0=",
+        "writer_address": "panacea16zevrfj0crdsknq634sdrtfuc77yelmndvte6j",
+        "owner_address": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu",
+        "fee_payer_address": "panacea1d8xsncdn4m9e0gxx4u9jq3u84rd88tdkthz6pu"
       }
     }],
     "fee": {
