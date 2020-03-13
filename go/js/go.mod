@@ -8,6 +8,8 @@ require (
 	github.com/tendermint/go-amino v0.15.0
 )
 
+replace github.com/cosmos/amino-js/go/extensions => ../extensions
+
 replace github.com/cosmos/amino-js/go/src => ../src
 
 replace github.com/cosmos/amino-js/go/lib => ../lib

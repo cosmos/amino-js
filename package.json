@@ -1,10 +1,10 @@
 {
-    "name":            "@tendermint/amino-js",
-    "description":     "go-amino + GopherJS + TypeScript",
+    "name":            "@medibloc/amino-js",
+    "description":     "tendermint/go-amino for JavaScript",
     "license":         "Apache-2.0",
     "repository":      {
         "type": "git",
-        "url":  "https://github.com/cosmos/amino-js.git"
+        "url":  "https://github.com/medibloc/amino-js.git"
     },
     "publishConfig":   {
         "access": "public"
