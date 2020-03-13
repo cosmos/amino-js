@@ -12,31 +12,31 @@ var (
 )
 
 type MsgCreateTopic struct {
-	TopicName    string
-	Description  string
-	OwnerAddress sdk.AccAddress
+	TopicName    string         `json:"topic_name"`
+	Description  string         `json:"description"`
+	OwnerAddress sdk.AccAddress `json:"owner_address"`
 }
 
 type MsgAddWriter struct {
-	TopicName     string
-	Moniker       string
-	Description   string
-	WriterAddress sdk.AccAddress
-	OwnerAddress  sdk.AccAddress
+	TopicName     string         `json:"topic_name"`
+	Moniker       string         `json:"moniker"`
+	Description   string         `json:"description"`
+	WriterAddress sdk.AccAddress `json:"writer_address"`
+	OwnerAddress  sdk.AccAddress `json:"owner_address"`
 }
 
 type MsgDeleteWriter struct {
-	TopicName     string
-	WriterAddress sdk.AccAddress
-	OwnerAddress  sdk.AccAddress
+	TopicName     string         `json:"topic_name"`
+	WriterAddress sdk.AccAddress `json:"writer_address"`
+	OwnerAddress  sdk.AccAddress `json:"owner_address"`
 }
 
 // MsgAddRecord for add record message
 type MsgAddRecord struct {
-	TopicName       string
-	Key             []byte
-	Value           []byte
-	WriterAddress   sdk.AccAddress
-	OwnerAddress    sdk.AccAddress
-	FeePayerAddress sdk.AccAddress
+	TopicName       string         `json:"topic_name"`
+	Key             []byte         `json:"key"`
+	Value           []byte         `json:"value"`
+	WriterAddress   sdk.AccAddress `json:"writer_address"`
+	OwnerAddress    sdk.AccAddress `json:"owner_address"`
+	FeePayerAddress sdk.AccAddress `json:"fee_payer_address"`
 }
