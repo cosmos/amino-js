@@ -1,7 +1,7 @@
 package extensions
 
 import (
-	sdk "github.com/cosmos/amino-js/go/lib/cosmos/cosmos-sdk/types"
+	sdk "github.com/cosmos/amino-js/go/lib/panacea/panacea-sdk/types"
 )
 
 var (
