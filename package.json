@@ -1,19 +1,31 @@
 {
     "name": "@medibloc/amino-js",
+    "version": "0.6.2",
     "description": "tendermint/go-amino for JavaScript",
+    "main": "index.js",
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/medibloc/amino-js.git"
+        "url": "git+https://github.com/medibloc/amino-js.git"
     },
+    "keywords": [
+      "medibloc",
+      "javascript",
+      "library",
+      "panacea",
+      "amino"
+    ],
     "publishConfig": {
         "access": "public"
     },
     "engines": {
         "node": ">=10"
     },
-    "version": "0.6.2",
-    "main": "index.js",
+    "author": "MediBloc <dev@medibloc.org>",
+    "bugs": {
+      "url": "https://github.com/medibloc/amino-js/issues"
+    },
+    "homepage": "https://medibloc.org",
     "types": "index.d.ts",
     "scripts": {
         "build": "rm -rf dist/* && webpack --config build --progress --colors --display-error-details",
