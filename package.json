@@ -1,68 +1,68 @@
 {
-    "name":            "@medibloc/amino-js",
-    "description":     "tendermint/go-amino for JavaScript",
-    "license":         "Apache-2.0",
-    "repository":      {
+    "name": "@medibloc/amino-js",
+    "description": "tendermint/go-amino for JavaScript",
+    "license": "Apache-2.0",
+    "repository": {
         "type": "git",
-        "url":  "https://github.com/medibloc/amino-js.git"
+        "url": "https://github.com/medibloc/amino-js.git"
     },
-    "publishConfig":   {
+    "publishConfig": {
         "access": "public"
     },
-    "engines":         {
+    "engines": {
         "node": ">=10"
     },
-    "version":         "0.6.2",
-    "main":            "index.js",
-    "types":           "index.d.ts",
-    "scripts":         {
-        "build":          "rm -rf dist/* && webpack --config build --progress --colors --display-error-details",
-        "build:dev":      "NODE_ENV=development yarn build",
-        "build:prod":     "NODE_ENV=production yarn build",
-        "dirs":           "mkdir -p dist docs types",
-        "dist:dev":       "yarn go && yarn build:dev",
-        "dist:prod":      "yarn go:min && yarn build:prod && yarn gzip",
-        "docs":           "rm -rf docs/* && typedoc",
-        "go":             "cd go/js && gopherjs build -v -o ../../lib/Amino.js .",
-        "go:min":         "yarn go -m",
-        "go:watch":       "yarn go -w",
-        "gzip":           "gzip -kf dist/*.{js,map}",
-        "lint":           "eslint --ext .ts,.js .",
-        "nuke":           "rm -rf **/node_modules yarn.lock",
+    "version": "0.6.2",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "build": "rm -rf dist/* && webpack --config build --progress --colors --display-error-details",
+        "build:dev": "NODE_ENV=development yarn build",
+        "build:prod": "NODE_ENV=production yarn build",
+        "dirs": "mkdir -p dist docs types",
+        "dist:dev": "yarn go && yarn build:dev",
+        "dist:prod": "yarn go:min && yarn build:prod && yarn gzip",
+        "docs": "rm -rf docs/* && typedoc",
+        "go": "cd go/js && gopherjs build -v -o ../../lib/Amino.js .",
+        "go:min": "yarn go -m",
+        "go:watch": "yarn go -w",
+        "gzip": "gzip -kf dist/*.{js,map}",
+        "lint": "eslint --ext .ts,.js .",
+        "nuke": "rm -rf **/node_modules yarn.lock",
         "prepublishOnly": "yarn dirs && yarn lint && yarn tsc && yarn dist:prod && yarn test",
-        "reset":          "yarn nuke && yarn",
-        "setup":          "yarn dirs && yarn lint && yarn tsc && yarn dist:dev",
-        "test":           "jest --config test/jest.config.json",
-        "tsc":            "rm -rf types/* && tsc && cp -R lib/*.d.ts types/lib/",
-        "watch":          "yarn build:dev --watch"
+        "reset": "yarn nuke && yarn",
+        "setup": "yarn dirs && yarn lint && yarn tsc && yarn dist:dev",
+        "test": "jest --config test/jest.config.json",
+        "tsc": "rm -rf types/* && tsc && cp -R lib/*.d.ts types/lib/",
+        "watch": "yarn build:dev --watch"
     },
-    "dependencies":    {
-        "@tendermint/belt":  "0.2.1",
+    "dependencies": {
+        "@tendermint/belt": "0.2.1",
         "@tendermint/types": "0.1.1"
     },
     "devDependencies": {
-        "@babel/core":                      "7.7.2",
-        "@babel/preset-env":                "7.7.1",
-        "@babel/preset-typescript":         "7.7.2",
-        "@types/jest":                      "24.0.22",
-        "@types/node":                      "12.12.7",
+        "@babel/core": "7.7.2",
+        "@babel/preset-env": "7.7.1",
+        "@babel/preset-typescript": "7.7.2",
+        "@types/jest": "24.0.22",
+        "@types/node": "12.12.7",
         "@typescript-eslint/eslint-plugin": "2.6.1",
-        "@typescript-eslint/parser":        "2.6.1",
-        "babel-loader":                     "8.0.6",
-        "eslint":                           "6.6.0",
-        "eslint-loader":                    "3.0.2",
-        "eslint-plugin-node":               "10.0.0",
-        "jest":                             "24.9.0",
-        "ts-jest":                          "24.1.0",
-        "ts-loader":                        "6.2.1",
-        "ts-node":                          "8.4.1",
-        "typedoc":                          "0.15.0",
-        "typescript":                       "3.7.2",
-        "webpack":                          "4.41.2",
-        "webpack-cli":                      "3.3.10",
-        "webpack-merge":                    "4.2.2"
+        "@typescript-eslint/parser": "2.6.1",
+        "babel-loader": "8.0.6",
+        "eslint": "6.6.0",
+        "eslint-loader": "3.0.2",
+        "eslint-plugin-node": "10.0.0",
+        "jest": "24.9.0",
+        "ts-jest": "24.1.0",
+        "ts-loader": "6.2.1",
+        "ts-node": "8.4.1",
+        "typedoc": "0.15.0",
+        "typescript": "3.7.2",
+        "webpack": "4.41.2",
+        "webpack-cli": "3.3.10",
+        "webpack-merge": "4.2.2"
     },
-    "files":           [
+    "files": [
         "dist",
         "lib/**/*.{ts,js,map}",
         "src/**/*.{ts,js}",
