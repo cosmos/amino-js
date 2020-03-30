@@ -100,5 +100,6 @@ export {
     decodeDuplicateVoteEvidence,
     decodeMockGoodEvidence,
     decodeMockRandomGoodEvidence,
-    decodeMockBadEvidence
+    decodeMockBadEvidence,
+    decodeValidatorSigningInfo,
 } from '../lib/Amino';

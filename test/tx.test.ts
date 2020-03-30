@@ -71,6 +71,7 @@ describe("Store", () => {
         // const bytes = base64ToBytes(txData);
         // const value = Amino.unmarshalTx(bytes, true);
         // expect(value).toMatchObject(tx);
+        console.log(Amino.unmarshalValidatorSigningInfo(base64ToBytes("BBDCzgE=")));
       });
     });
   });

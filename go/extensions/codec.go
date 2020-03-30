@@ -29,5 +29,6 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterConcrete(&MsgWithdrawDelegatorReward{}, "irishub/distr/MsgWithdrawDelegationReward", nil)
 	codec.RegisterConcrete(&MsgWithdrawValidatorRewardsAll{}, "irishub/distr/MsgWithdrawValidatorRewardsAll", nil)
 	codec.RegisterConcrete(&MsgSetWithdrawAddress{}, "irishub/distr/MsgModifyWithdrawAddress", nil)
+	codec.RegisterInterface((*ValidatorSigningInfo)(nil), nil)
 
 }

@@ -2657,3 +2657,6 @@ export function decodeMockRandomGoodEvidence (amino: AminoBytes, lengthPrefixed:
  * @throws  will throw if decoding fails
  */
 export function decodeMockBadEvidence (amino: AminoBytes, lengthPrefixed: boolean): JSONBytes;
+export function decodeValidatorSigningInfo(
+  amino: AminoBytes
+): JSONBytes;

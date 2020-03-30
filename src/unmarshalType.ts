@@ -103,7 +103,8 @@ import {
     VoteMessage,
     VoteSetBitsMessage,
     VoteSetMaj23Message,
-    WALMessage
+    WALMessage,
+    ValidatorSigningInfo
 } from './types';
 
 /**
@@ -1531,5 +1532,10 @@ export function unmarshalMockRandomGoodEvidence (amino: AminoBytes, lengthPrefix
  */
 export function unmarshalMockBadEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): MockBadEvidence {
     const json = decodeType.decodeMockBadEvidence(amino, lengthPrefixed);
+    return bytesToJSON(json);
+}
+
+export function unmarshalValidatorSigningInfo(amino: AminoBytes): ValidatorSigningInfo {
+    const json = decodeType.decodeValidatorSigningInfo(amino);
     return bytesToJSON(json);
 }

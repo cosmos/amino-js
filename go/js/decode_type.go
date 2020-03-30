@@ -819,3 +819,11 @@ func DecodeMockBadEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte) {
 	}
 	return
 }
+
+func DecodeValidatorSigningInfo(bz []byte) (bz2 []byte) {
+	bz2, err := src.DecodeValidatorSigningInfo(bz)
+	if err != nil {
+		panic(err)
+	}
+	return
+}
