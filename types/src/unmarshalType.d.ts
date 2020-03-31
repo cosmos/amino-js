@@ -1,112 +1,5 @@
-import { bytesToJSON } from '@tendermint/belt';
 import { AminoBytes } from '../lib/types';
-import * as decodeType from './decodeType';
-import {
-    Account,
-    BaseAccount,
-    BaseVestingAccount,
-    BcBlockRequestMessage,
-    BcBlockResponseMessage,
-    BcNoBlockResponseMessage,
-    BcStatusRequestMessage,
-    BcStatusResponseMessage,
-    BIP44Params,
-    BlockchainMessage,
-    BlockPartMessage,
-    ConsensusMessage,
-    Content,
-    ContinuousVestingAccount,
-    DelayedVestingAccount,
-    DuplicateVoteEvidence,
-    EndHeightMessage,
-    EventDataCompleteProposal,
-    EventDataNewBlock,
-    EventDataNewBlockHeader,
-    EventDataNewRound,
-    EventDataRoundState,
-    EventDataString,
-    EventDataTx,
-    EventDataValidatorSetUpdates,
-    EventDataVote,
-    Evidence,
-    EvidenceListMessage,
-    EvidenceMessage,
-    HasVoteMessage,
-    IAVLAbsenceOp,
-    IAVLValueOp,
-    Info,
-    LedgerInfo,
-    LocalInfo,
-    MempoolMessage,
-    MockBadEvidence,
-    MockGoodEvidence,
-    MockRandomGoodEvidence,
-    Msg,
-    MsgBeginRedelegate,
-    MsgCreateValidator,
-    MsgDelegate,
-    MsgDeposit,
-    MsgEditValidator,
-    MsgIBCReceive,
-    MsgIBCTransfer,
-    MsgInfo,
-    MsgMultiSend,
-    MsgSend,
-    MsgSetWithdrawAddress,
-    MsgSubmitProposal,
-    MsgUndelegate,
-    MsgUnjail,
-    MsgVerifyInvariant,
-    MsgVote,
-    MsgWithdrawDelegatorReward,
-    MsgWithdrawValidatorCommission,
-    MultiInfo,
-    MultiStoreProofOp,
-    NewRoundStepMessage,
-    NewValidBlockMessage,
-    OfflineInfo,
-    Packet,
-    PacketMsg,
-    PacketPing,
-    PacketPong,
-    ParameterChangeProposal,
-    PexAddrsMessage,
-    PexMessage,
-    PexRequestMessage,
-    PingRequest,
-    PingResponse,
-    PrivKey,
-    PrivKeyEd25519,
-    PrivKeyLedgerSecp256k1,
-    PrivKeySecp256k1,
-    ProposalMessage,
-    ProposalPOLMessage,
-    PubKey,
-    PubKeyEd25519,
-    PubKeyMultisigThreshold,
-    PubKeyRequest,
-    PubKeyResponse,
-    PubKeySecp256k1,
-    RemoteSignerMsg,
-    SignedProposalResponse,
-    SignedVoteResponse,
-    SignProposalRequest,
-    SignVoteRequest,
-    SoftwareUpgradeProposal,
-    StdTx,
-    TextProposal,
-    TimeoutInfo,
-    TMEventData,
-    Tx,
-    TxMessage,
-    VestingAccount,
-    VoteMessage,
-    VoteSetBitsMessage,
-    VoteSetMaj23Message,
-    WALMessage,
-    ValidatorSigningInfo
-} from './types';
-
+import { Account, BaseAccount, BaseVestingAccount, BcBlockRequestMessage, BcBlockResponseMessage, BcNoBlockResponseMessage, BcStatusRequestMessage, BcStatusResponseMessage, BIP44Params, BlockchainMessage, BlockPartMessage, ConsensusMessage, Content, ContinuousVestingAccount, DelayedVestingAccount, DuplicateVoteEvidence, EndHeightMessage, EventDataCompleteProposal, EventDataNewBlock, EventDataNewBlockHeader, EventDataNewRound, EventDataRoundState, EventDataString, EventDataTx, EventDataValidatorSetUpdates, EventDataVote, Evidence, EvidenceListMessage, EvidenceMessage, HasVoteMessage, IAVLAbsenceOp, IAVLValueOp, Info, LedgerInfo, LocalInfo, MempoolMessage, MockBadEvidence, MockGoodEvidence, MockRandomGoodEvidence, Msg, MsgBeginRedelegate, MsgCreateValidator, MsgDelegate, MsgDeposit, MsgEditValidator, MsgIBCReceive, MsgIBCTransfer, MsgInfo, MsgMultiSend, MsgSend, MsgSetWithdrawAddress, MsgSubmitProposal, MsgUndelegate, MsgUnjail, MsgVerifyInvariant, MsgVote, MsgWithdrawDelegatorReward, MsgWithdrawValidatorCommission, MultiInfo, MultiStoreProofOp, NewRoundStepMessage, NewValidBlockMessage, OfflineInfo, Packet, PacketMsg, PacketPing, PacketPong, ParameterChangeProposal, PexAddrsMessage, PexMessage, PexRequestMessage, PingRequest, PingResponse, PrivKey, PrivKeyEd25519, PrivKeyLedgerSecp256k1, PrivKeySecp256k1, ProposalMessage, ProposalPOLMessage, PubKey, PubKeyEd25519, PubKeyMultisigThreshold, PubKeyRequest, PubKeyResponse, PubKeySecp256k1, RemoteSignerMsg, SignedProposalResponse, SignedVoteResponse, SignProposalRequest, SignVoteRequest, SoftwareUpgradeProposal, StdTx, TextProposal, TimeoutInfo, TMEventData, Tx, TxMessage, VestingAccount, VoteMessage, VoteSetBitsMessage, VoteSetMaj23Message, WALMessage, ValidatorSigningInfo } from './types';
 /**
  * Unmarshal a `MultiStoreProofOp` object from Amino
  *
@@ -116,11 +9,7 @@ import {
  * @returns `MultiStoreProofOp` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMultiStoreProofOp (amino: AminoBytes, lengthPrefixed: boolean = true): MultiStoreProofOp {
-    const json = decodeType.decodeMultiStoreProofOp(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMultiStoreProofOp(amino: AminoBytes, lengthPrefixed?: boolean): MultiStoreProofOp;
 /**
  * Unmarshal a `IAVLAbsenceOp` object from Amino
  *
@@ -130,11 +19,7 @@ export function unmarshalMultiStoreProofOp (amino: AminoBytes, lengthPrefixed: b
  * @returns `IAVLAbsenceOp` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalIAVLAbsenceOp (amino: AminoBytes, lengthPrefixed: boolean = true): IAVLAbsenceOp {
-    const json = decodeType.decodeIAVLAbsenceOp(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalIAVLAbsenceOp(amino: AminoBytes, lengthPrefixed?: boolean): IAVLAbsenceOp;
 /**
  * Unmarshal a `IAVLValueOp` object from Amino
  *
@@ -144,11 +29,7 @@ export function unmarshalIAVLAbsenceOp (amino: AminoBytes, lengthPrefixed: boole
  * @returns `IAVLValueOp` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalIAVLValueOp (amino: AminoBytes, lengthPrefixed: boolean = true): IAVLValueOp {
-    const json = decodeType.decodeIAVLValueOp(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalIAVLValueOp(amino: AminoBytes, lengthPrefixed?: boolean): IAVLValueOp;
 /**
  * Unmarshal a `PrivKeyLedgerSecp256k1` object from Amino
  *
@@ -158,11 +39,7 @@ export function unmarshalIAVLValueOp (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `PrivKeyLedgerSecp256k1` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPrivKeyLedgerSecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKeyLedgerSecp256k1 {
-    const json = decodeType.decodePrivKeyLedgerSecp256k1(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPrivKeyLedgerSecp256k1(amino: AminoBytes, lengthPrefixed?: boolean): PrivKeyLedgerSecp256k1;
 /**
  * Unmarshal a `Info` object from Amino
  *
@@ -172,11 +49,7 @@ export function unmarshalPrivKeyLedgerSecp256k1 (amino: AminoBytes, lengthPrefix
  * @returns `Info` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalInfo (amino: AminoBytes, lengthPrefixed: boolean = true): Info {
-    const json = decodeType.decodeInfo(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalInfo(amino: AminoBytes, lengthPrefixed?: boolean): Info;
 /**
  * Unmarshal a `BIP44Params` object from Amino
  *
@@ -186,11 +59,7 @@ export function unmarshalInfo (amino: AminoBytes, lengthPrefixed: boolean = true
  * @returns `BIP44Params` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBIP44Params (amino: AminoBytes, lengthPrefixed: boolean = true): BIP44Params {
-    const json = decodeType.decodeBIP44Params(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBIP44Params(amino: AminoBytes, lengthPrefixed?: boolean): BIP44Params;
 /**
  * Unmarshal a `LocalInfo` object from Amino
  *
@@ -200,11 +69,7 @@ export function unmarshalBIP44Params (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `LocalInfo` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalLocalInfo (amino: AminoBytes, lengthPrefixed: boolean = true): LocalInfo {
-    const json = decodeType.decodeLocalInfo(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalLocalInfo(amino: AminoBytes, lengthPrefixed?: boolean): LocalInfo;
 /**
  * Unmarshal a `LedgerInfo` object from Amino
  *
@@ -214,11 +79,7 @@ export function unmarshalLocalInfo (amino: AminoBytes, lengthPrefixed: boolean =
  * @returns `LedgerInfo` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalLedgerInfo (amino: AminoBytes, lengthPrefixed: boolean = true): LedgerInfo {
-    const json = decodeType.decodeLedgerInfo(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalLedgerInfo(amino: AminoBytes, lengthPrefixed?: boolean): LedgerInfo;
 /**
  * Unmarshal a `OfflineInfo` object from Amino
  *
@@ -228,11 +89,7 @@ export function unmarshalLedgerInfo (amino: AminoBytes, lengthPrefixed: boolean 
  * @returns `OfflineInfo` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalOfflineInfo (amino: AminoBytes, lengthPrefixed: boolean = true): OfflineInfo {
-    const json = decodeType.decodeOfflineInfo(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalOfflineInfo(amino: AminoBytes, lengthPrefixed?: boolean): OfflineInfo;
 /**
  * Unmarshal a `MultiInfo` object from Amino
  *
@@ -242,11 +99,7 @@ export function unmarshalOfflineInfo (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `MultiInfo` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMultiInfo (amino: AminoBytes, lengthPrefixed: boolean = true): MultiInfo {
-    const json = decodeType.decodeMultiInfo(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMultiInfo(amino: AminoBytes, lengthPrefixed?: boolean): MultiInfo;
 /**
  * Unmarshal a `Msg` object from Amino
  *
@@ -256,11 +109,7 @@ export function unmarshalMultiInfo (amino: AminoBytes, lengthPrefixed: boolean =
  * @returns `Msg` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsg (amino: AminoBytes, lengthPrefixed: boolean = true): Msg {
-    const json = decodeType.decodeMsg(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsg(amino: AminoBytes, lengthPrefixed?: boolean): Msg;
 /**
  * Unmarshal a `Tx` object from Amino
  *
@@ -270,11 +119,7 @@ export function unmarshalMsg (amino: AminoBytes, lengthPrefixed: boolean = true)
  * @returns `Tx` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalTx (amino: AminoBytes, lengthPrefixed: boolean = true): Tx {
-    const json = decodeType.decodeTx(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalTx(amino: AminoBytes, lengthPrefixed?: boolean): Tx;
 /**
  * Unmarshal a `Account` object from Amino
  *
@@ -284,11 +129,7 @@ export function unmarshalTx (amino: AminoBytes, lengthPrefixed: boolean = true):
  * @returns `Account` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalAccount (amino: AminoBytes, lengthPrefixed: boolean = true): Account {
-    const json = decodeType.decodeAccount(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalAccount(amino: AminoBytes, lengthPrefixed?: boolean): Account;
 /**
  * Unmarshal a `VestingAccount` object from Amino
  *
@@ -298,11 +139,7 @@ export function unmarshalAccount (amino: AminoBytes, lengthPrefixed: boolean = t
  * @returns `VestingAccount` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): VestingAccount {
-    const json = decodeType.decodeVestingAccount(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalVestingAccount(amino: AminoBytes, lengthPrefixed?: boolean): VestingAccount;
 /**
  * Unmarshal a `BaseAccount` object from Amino
  *
@@ -312,11 +149,7 @@ export function unmarshalVestingAccount (amino: AminoBytes, lengthPrefixed: bool
  * @returns `BaseAccount` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBaseAccount (amino: AminoBytes, lengthPrefixed: boolean = true): BaseAccount {
-    const json = decodeType.decodeBaseAccount(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBaseAccount(amino: AminoBytes, lengthPrefixed?: boolean): BaseAccount;
 /**
  * Unmarshal a `BaseVestingAccount` object from Amino
  *
@@ -326,11 +159,7 @@ export function unmarshalBaseAccount (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `BaseVestingAccount` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBaseVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): BaseVestingAccount {
-    const json = decodeType.decodeBaseVestingAccount(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBaseVestingAccount(amino: AminoBytes, lengthPrefixed?: boolean): BaseVestingAccount;
 /**
  * Unmarshal a `ContinuousVestingAccount` object from Amino
  *
@@ -340,11 +169,7 @@ export function unmarshalBaseVestingAccount (amino: AminoBytes, lengthPrefixed: 
  * @returns `ContinuousVestingAccount` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalContinuousVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): ContinuousVestingAccount {
-    const json = decodeType.decodeContinuousVestingAccount(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalContinuousVestingAccount(amino: AminoBytes, lengthPrefixed?: boolean): ContinuousVestingAccount;
 /**
  * Unmarshal a `DelayedVestingAccount` object from Amino
  *
@@ -354,11 +179,7 @@ export function unmarshalContinuousVestingAccount (amino: AminoBytes, lengthPref
  * @returns `DelayedVestingAccount` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalDelayedVestingAccount (amino: AminoBytes, lengthPrefixed: boolean = true): DelayedVestingAccount {
-    const json = decodeType.decodeDelayedVestingAccount(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalDelayedVestingAccount(amino: AminoBytes, lengthPrefixed?: boolean): DelayedVestingAccount;
 /**
  * Unmarshal a `StdTx` object from Amino
  *
@@ -368,11 +189,7 @@ export function unmarshalDelayedVestingAccount (amino: AminoBytes, lengthPrefixe
  * @returns `StdTx` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalStdTx (amino: AminoBytes, lengthPrefixed: boolean = true): StdTx {
-    const json = decodeType.decodeStdTx(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalStdTx(amino: AminoBytes, lengthPrefixed?: boolean): StdTx;
 /**
  * Unmarshal a `MsgSend` object from Amino
  *
@@ -382,11 +199,7 @@ export function unmarshalStdTx (amino: AminoBytes, lengthPrefixed: boolean = tru
  * @returns `MsgSend` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgSend (amino: AminoBytes, lengthPrefixed: boolean = true): MsgSend {
-    const json = decodeType.decodeMsgSend(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgSend(amino: AminoBytes, lengthPrefixed?: boolean): MsgSend;
 /**
  * Unmarshal a `MsgMultiSend` object from Amino
  *
@@ -396,11 +209,7 @@ export function unmarshalMsgSend (amino: AminoBytes, lengthPrefixed: boolean = t
  * @returns `MsgMultiSend` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgMultiSend (amino: AminoBytes, lengthPrefixed: boolean = true): MsgMultiSend {
-    const json = decodeType.decodeMsgMultiSend(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgMultiSend(amino: AminoBytes, lengthPrefixed?: boolean): MsgMultiSend;
 /**
  * Unmarshal a `MsgVerifyInvariant` object from Amino
  *
@@ -410,11 +219,7 @@ export function unmarshalMsgMultiSend (amino: AminoBytes, lengthPrefixed: boolea
  * @returns `MsgVerifyInvariant` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgVerifyInvariant (amino: AminoBytes, lengthPrefixed: boolean = true): MsgVerifyInvariant {
-    const json = decodeType.decodeMsgVerifyInvariant(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgVerifyInvariant(amino: AminoBytes, lengthPrefixed?: boolean): MsgVerifyInvariant;
 /**
  * Unmarshal a `MsgWithdrawDelegatorReward` object from Amino
  *
@@ -424,11 +229,7 @@ export function unmarshalMsgVerifyInvariant (amino: AminoBytes, lengthPrefixed: 
  * @returns `MsgWithdrawDelegatorReward` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgWithdrawDelegatorReward (amino: AminoBytes, lengthPrefixed: boolean = true): MsgWithdrawDelegatorReward {
-    const json = decodeType.decodeMsgWithdrawDelegatorReward(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgWithdrawDelegatorReward(amino: AminoBytes, lengthPrefixed?: boolean): MsgWithdrawDelegatorReward;
 /**
  * Unmarshal a `MsgWithdrawValidatorCommission` object from Amino
  *
@@ -438,11 +239,7 @@ export function unmarshalMsgWithdrawDelegatorReward (amino: AminoBytes, lengthPr
  * @returns `MsgWithdrawValidatorCommission` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgWithdrawValidatorCommission (amino: AminoBytes, lengthPrefixed: boolean = true): MsgWithdrawValidatorCommission {
-    const json = decodeType.decodeMsgWithdrawValidatorCommission(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgWithdrawValidatorCommission(amino: AminoBytes, lengthPrefixed?: boolean): MsgWithdrawValidatorCommission;
 /**
  * Unmarshal a `MsgSetWithdrawAddress` object from Amino
  *
@@ -452,11 +249,7 @@ export function unmarshalMsgWithdrawValidatorCommission (amino: AminoBytes, leng
  * @returns `MsgSetWithdrawAddress` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgSetWithdrawAddress (amino: AminoBytes, lengthPrefixed: boolean = true): MsgSetWithdrawAddress {
-    const json = decodeType.decodeMsgSetWithdrawAddress(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgSetWithdrawAddress(amino: AminoBytes, lengthPrefixed?: boolean): MsgSetWithdrawAddress;
 /**
  * Unmarshal a `Content` object from Amino
  *
@@ -466,11 +259,7 @@ export function unmarshalMsgSetWithdrawAddress (amino: AminoBytes, lengthPrefixe
  * @returns `Content` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalContent (amino: AminoBytes, lengthPrefixed: boolean = true): Content {
-    const json = decodeType.decodeContent(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalContent(amino: AminoBytes, lengthPrefixed?: boolean): Content;
 /**
  * Unmarshal a `MsgSubmitProposal` object from Amino
  *
@@ -480,11 +269,7 @@ export function unmarshalContent (amino: AminoBytes, lengthPrefixed: boolean = t
  * @returns `MsgSubmitProposal` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgSubmitProposal (amino: AminoBytes, lengthPrefixed: boolean = true): MsgSubmitProposal {
-    const json = decodeType.decodeMsgSubmitProposal(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgSubmitProposal(amino: AminoBytes, lengthPrefixed?: boolean): MsgSubmitProposal;
 /**
  * Unmarshal a `MsgDeposit` object from Amino
  *
@@ -494,11 +279,7 @@ export function unmarshalMsgSubmitProposal (amino: AminoBytes, lengthPrefixed: b
  * @returns `MsgDeposit` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgDeposit (amino: AminoBytes, lengthPrefixed: boolean = true): MsgDeposit {
-    const json = decodeType.decodeMsgDeposit(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgDeposit(amino: AminoBytes, lengthPrefixed?: boolean): MsgDeposit;
 /**
  * Unmarshal a `MsgVote` object from Amino
  *
@@ -508,11 +289,7 @@ export function unmarshalMsgDeposit (amino: AminoBytes, lengthPrefixed: boolean 
  * @returns `MsgVote` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgVote (amino: AminoBytes, lengthPrefixed: boolean = true): MsgVote {
-    const json = decodeType.decodeMsgVote(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgVote(amino: AminoBytes, lengthPrefixed?: boolean): MsgVote;
 /**
  * Unmarshal a `TextProposal` object from Amino
  *
@@ -522,11 +299,7 @@ export function unmarshalMsgVote (amino: AminoBytes, lengthPrefixed: boolean = t
  * @returns `TextProposal` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalTextProposal (amino: AminoBytes, lengthPrefixed: boolean = true): TextProposal {
-    const json = decodeType.decodeTextProposal(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalTextProposal(amino: AminoBytes, lengthPrefixed?: boolean): TextProposal;
 /**
  * Unmarshal a `SoftwareUpgradeProposal` object from Amino
  *
@@ -536,11 +309,7 @@ export function unmarshalTextProposal (amino: AminoBytes, lengthPrefixed: boolea
  * @returns `SoftwareUpgradeProposal` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalSoftwareUpgradeProposal (amino: AminoBytes, lengthPrefixed: boolean = true): SoftwareUpgradeProposal {
-    const json = decodeType.decodeSoftwareUpgradeProposal(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalSoftwareUpgradeProposal(amino: AminoBytes, lengthPrefixed?: boolean): SoftwareUpgradeProposal;
 /**
  * Unmarshal a `MsgIBCTransfer` object from Amino
  *
@@ -550,11 +319,7 @@ export function unmarshalSoftwareUpgradeProposal (amino: AminoBytes, lengthPrefi
  * @returns `MsgIBCTransfer` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgIBCTransfer (amino: AminoBytes, lengthPrefixed: boolean = true): MsgIBCTransfer {
-    const json = decodeType.decodeMsgIBCTransfer(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgIBCTransfer(amino: AminoBytes, lengthPrefixed?: boolean): MsgIBCTransfer;
 /**
  * Unmarshal a `MsgIBCReceive` object from Amino
  *
@@ -564,11 +329,7 @@ export function unmarshalMsgIBCTransfer (amino: AminoBytes, lengthPrefixed: bool
  * @returns `MsgIBCReceive` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgIBCReceive (amino: AminoBytes, lengthPrefixed: boolean = true): MsgIBCReceive {
-    const json = decodeType.decodeMsgIBCReceive(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgIBCReceive(amino: AminoBytes, lengthPrefixed?: boolean): MsgIBCReceive;
 /**
  * Unmarshal a `ParameterChangeProposal` object from Amino
  *
@@ -578,11 +339,7 @@ export function unmarshalMsgIBCReceive (amino: AminoBytes, lengthPrefixed: boole
  * @returns `ParameterChangeProposal` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalParameterChangeProposal (amino: AminoBytes, lengthPrefixed: boolean = true): ParameterChangeProposal {
-    const json = decodeType.decodeParameterChangeProposal(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalParameterChangeProposal(amino: AminoBytes, lengthPrefixed?: boolean): ParameterChangeProposal;
 /**
  * Unmarshal a `MsgUnjail` object from Amino
  *
@@ -592,11 +349,7 @@ export function unmarshalParameterChangeProposal (amino: AminoBytes, lengthPrefi
  * @returns `MsgUnjail` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgUnjail (amino: AminoBytes, lengthPrefixed: boolean = true): MsgUnjail {
-    const json = decodeType.decodeMsgUnjail(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgUnjail(amino: AminoBytes, lengthPrefixed?: boolean): MsgUnjail;
 /**
  * Unmarshal a `MsgCreateValidator` object from Amino
  *
@@ -606,11 +359,7 @@ export function unmarshalMsgUnjail (amino: AminoBytes, lengthPrefixed: boolean =
  * @returns `MsgCreateValidator` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgCreateValidator (amino: AminoBytes, lengthPrefixed: boolean = true): MsgCreateValidator {
-    const json = decodeType.decodeMsgCreateValidator(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgCreateValidator(amino: AminoBytes, lengthPrefixed?: boolean): MsgCreateValidator;
 /**
  * Unmarshal a `MsgEditValidator` object from Amino
  *
@@ -620,11 +369,7 @@ export function unmarshalMsgCreateValidator (amino: AminoBytes, lengthPrefixed: 
  * @returns `MsgEditValidator` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgEditValidator (amino: AminoBytes, lengthPrefixed: boolean = true): MsgEditValidator {
-    const json = decodeType.decodeMsgEditValidator(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgEditValidator(amino: AminoBytes, lengthPrefixed?: boolean): MsgEditValidator;
 /**
  * Unmarshal a `MsgDelegate` object from Amino
  *
@@ -634,11 +379,7 @@ export function unmarshalMsgEditValidator (amino: AminoBytes, lengthPrefixed: bo
  * @returns `MsgDelegate` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgDelegate (amino: AminoBytes, lengthPrefixed: boolean = true): MsgDelegate {
-    const json = decodeType.decodeMsgDelegate(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgDelegate(amino: AminoBytes, lengthPrefixed?: boolean): MsgDelegate;
 /**
  * Unmarshal a `MsgUndelegate` object from Amino
  *
@@ -648,11 +389,7 @@ export function unmarshalMsgDelegate (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `MsgUndelegate` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgUndelegate (amino: AminoBytes, lengthPrefixed: boolean = true): MsgUndelegate {
-    const json = decodeType.decodeMsgUndelegate(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgUndelegate(amino: AminoBytes, lengthPrefixed?: boolean): MsgUndelegate;
 /**
  * Unmarshal a `MsgBeginRedelegate` object from Amino
  *
@@ -662,11 +399,7 @@ export function unmarshalMsgUndelegate (amino: AminoBytes, lengthPrefixed: boole
  * @returns `MsgBeginRedelegate` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgBeginRedelegate (amino: AminoBytes, lengthPrefixed: boolean = true): MsgBeginRedelegate {
-    const json = decodeType.decodeMsgBeginRedelegate(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgBeginRedelegate(amino: AminoBytes, lengthPrefixed?: boolean): MsgBeginRedelegate;
 /**
  * Unmarshal a `BlockchainMessage` object from Amino
  *
@@ -676,11 +409,7 @@ export function unmarshalMsgBeginRedelegate (amino: AminoBytes, lengthPrefixed: 
  * @returns `BlockchainMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBlockchainMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BlockchainMessage {
-    const json = decodeType.decodeBlockchainMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBlockchainMessage(amino: AminoBytes, lengthPrefixed?: boolean): BlockchainMessage;
 /**
  * Unmarshal a `BcBlockRequestMessage` object from Amino
  *
@@ -690,11 +419,7 @@ export function unmarshalBlockchainMessage (amino: AminoBytes, lengthPrefixed: b
  * @returns `BcBlockRequestMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBcBlockRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcBlockRequestMessage {
-    const json = decodeType.decodeBcBlockRequestMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBcBlockRequestMessage(amino: AminoBytes, lengthPrefixed?: boolean): BcBlockRequestMessage;
 /**
  * Unmarshal a `BcBlockResponseMessage` object from Amino
  *
@@ -704,11 +429,7 @@ export function unmarshalBcBlockRequestMessage (amino: AminoBytes, lengthPrefixe
  * @returns `BcBlockResponseMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBcBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcBlockResponseMessage {
-    const json = decodeType.decodeBcBlockResponseMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBcBlockResponseMessage(amino: AminoBytes, lengthPrefixed?: boolean): BcBlockResponseMessage;
 /**
  * Unmarshal a `BcNoBlockResponseMessage` object from Amino
  *
@@ -718,11 +439,7 @@ export function unmarshalBcBlockResponseMessage (amino: AminoBytes, lengthPrefix
  * @returns `BcNoBlockResponseMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBcNoBlockResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcNoBlockResponseMessage {
-    const json = decodeType.decodeBcNoBlockResponseMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBcNoBlockResponseMessage(amino: AminoBytes, lengthPrefixed?: boolean): BcNoBlockResponseMessage;
 /**
  * Unmarshal a `BcStatusResponseMessage` object from Amino
  *
@@ -732,11 +449,7 @@ export function unmarshalBcNoBlockResponseMessage (amino: AminoBytes, lengthPref
  * @returns `BcStatusResponseMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBcStatusResponseMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcStatusResponseMessage {
-    const json = decodeType.decodeBcStatusResponseMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBcStatusResponseMessage(amino: AminoBytes, lengthPrefixed?: boolean): BcStatusResponseMessage;
 /**
  * Unmarshal a `BcStatusRequestMessage` object from Amino
  *
@@ -746,11 +459,7 @@ export function unmarshalBcStatusResponseMessage (amino: AminoBytes, lengthPrefi
  * @returns `BcStatusRequestMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBcStatusRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BcStatusRequestMessage {
-    const json = decodeType.decodeBcStatusRequestMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBcStatusRequestMessage(amino: AminoBytes, lengthPrefixed?: boolean): BcStatusRequestMessage;
 /**
  * Unmarshal a `ConsensusMessage` object from Amino
  *
@@ -760,11 +469,7 @@ export function unmarshalBcStatusRequestMessage (amino: AminoBytes, lengthPrefix
  * @returns `ConsensusMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalConsensusMessage (amino: AminoBytes, lengthPrefixed: boolean = true): ConsensusMessage {
-    const json = decodeType.decodeConsensusMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalConsensusMessage(amino: AminoBytes, lengthPrefixed?: boolean): ConsensusMessage;
 /**
  * Unmarshal a `NewRoundStepMessage` object from Amino
  *
@@ -774,11 +479,7 @@ export function unmarshalConsensusMessage (amino: AminoBytes, lengthPrefixed: bo
  * @returns `NewRoundStepMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalNewRoundStepMessage (amino: AminoBytes, lengthPrefixed: boolean = true): NewRoundStepMessage {
-    const json = decodeType.decodeNewRoundStepMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalNewRoundStepMessage(amino: AminoBytes, lengthPrefixed?: boolean): NewRoundStepMessage;
 /**
  * Unmarshal a `NewValidBlockMessage` object from Amino
  *
@@ -788,11 +489,7 @@ export function unmarshalNewRoundStepMessage (amino: AminoBytes, lengthPrefixed:
  * @returns `NewValidBlockMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalNewValidBlockMessage (amino: AminoBytes, lengthPrefixed: boolean = true): NewValidBlockMessage {
-    const json = decodeType.decodeNewValidBlockMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalNewValidBlockMessage(amino: AminoBytes, lengthPrefixed?: boolean): NewValidBlockMessage;
 /**
  * Unmarshal a `ProposalMessage` object from Amino
  *
@@ -802,11 +499,7 @@ export function unmarshalNewValidBlockMessage (amino: AminoBytes, lengthPrefixed
  * @returns `ProposalMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalProposalMessage (amino: AminoBytes, lengthPrefixed: boolean = true): ProposalMessage {
-    const json = decodeType.decodeProposalMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalProposalMessage(amino: AminoBytes, lengthPrefixed?: boolean): ProposalMessage;
 /**
  * Unmarshal a `ProposalPOLMessage` object from Amino
  *
@@ -816,11 +509,7 @@ export function unmarshalProposalMessage (amino: AminoBytes, lengthPrefixed: boo
  * @returns `ProposalPOLMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalProposalPOLMessage (amino: AminoBytes, lengthPrefixed: boolean = true): ProposalPOLMessage {
-    const json = decodeType.decodeProposalPOLMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalProposalPOLMessage(amino: AminoBytes, lengthPrefixed?: boolean): ProposalPOLMessage;
 /**
  * Unmarshal a `BlockPartMessage` object from Amino
  *
@@ -830,11 +519,7 @@ export function unmarshalProposalPOLMessage (amino: AminoBytes, lengthPrefixed: 
  * @returns `BlockPartMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalBlockPartMessage (amino: AminoBytes, lengthPrefixed: boolean = true): BlockPartMessage {
-    const json = decodeType.decodeBlockPartMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalBlockPartMessage(amino: AminoBytes, lengthPrefixed?: boolean): BlockPartMessage;
 /**
  * Unmarshal a `VoteMessage` object from Amino
  *
@@ -844,11 +529,7 @@ export function unmarshalBlockPartMessage (amino: AminoBytes, lengthPrefixed: bo
  * @returns `VoteMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalVoteMessage (amino: AminoBytes, lengthPrefixed: boolean = true): VoteMessage {
-    const json = decodeType.decodeVoteMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalVoteMessage(amino: AminoBytes, lengthPrefixed?: boolean): VoteMessage;
 /**
  * Unmarshal a `HasVoteMessage` object from Amino
  *
@@ -858,11 +539,7 @@ export function unmarshalVoteMessage (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `HasVoteMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalHasVoteMessage (amino: AminoBytes, lengthPrefixed: boolean = true): HasVoteMessage {
-    const json = decodeType.decodeHasVoteMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalHasVoteMessage(amino: AminoBytes, lengthPrefixed?: boolean): HasVoteMessage;
 /**
  * Unmarshal a `VoteSetMaj23Message` object from Amino
  *
@@ -872,11 +549,7 @@ export function unmarshalHasVoteMessage (amino: AminoBytes, lengthPrefixed: bool
  * @returns `VoteSetMaj23Message` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalVoteSetMaj23Message (amino: AminoBytes, lengthPrefixed: boolean = true): VoteSetMaj23Message {
-    const json = decodeType.decodeVoteSetMaj23Message(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalVoteSetMaj23Message(amino: AminoBytes, lengthPrefixed?: boolean): VoteSetMaj23Message;
 /**
  * Unmarshal a `VoteSetBitsMessage` object from Amino
  *
@@ -886,11 +559,7 @@ export function unmarshalVoteSetMaj23Message (amino: AminoBytes, lengthPrefixed:
  * @returns `VoteSetBitsMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalVoteSetBitsMessage (amino: AminoBytes, lengthPrefixed: boolean = true): VoteSetBitsMessage {
-    const json = decodeType.decodeVoteSetBitsMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalVoteSetBitsMessage(amino: AminoBytes, lengthPrefixed?: boolean): VoteSetBitsMessage;
 /**
  * Unmarshal a `WALMessage` object from Amino
  *
@@ -900,11 +569,7 @@ export function unmarshalVoteSetBitsMessage (amino: AminoBytes, lengthPrefixed: 
  * @returns `WALMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalWALMessage (amino: AminoBytes, lengthPrefixed: boolean = true): WALMessage {
-    const json = decodeType.decodeWALMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalWALMessage(amino: AminoBytes, lengthPrefixed?: boolean): WALMessage;
 /**
  * Unmarshal a `MsgInfo` object from Amino
  *
@@ -914,11 +579,7 @@ export function unmarshalWALMessage (amino: AminoBytes, lengthPrefixed: boolean 
  * @returns `MsgInfo` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMsgInfo (amino: AminoBytes, lengthPrefixed: boolean = true): MsgInfo {
-    const json = decodeType.decodeMsgInfo(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMsgInfo(amino: AminoBytes, lengthPrefixed?: boolean): MsgInfo;
 /**
  * Unmarshal a `TimeoutInfo` object from Amino
  *
@@ -928,11 +589,7 @@ export function unmarshalMsgInfo (amino: AminoBytes, lengthPrefixed: boolean = t
  * @returns `TimeoutInfo` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalTimeoutInfo (amino: AminoBytes, lengthPrefixed: boolean = true): TimeoutInfo {
-    const json = decodeType.decodeTimeoutInfo(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalTimeoutInfo(amino: AminoBytes, lengthPrefixed?: boolean): TimeoutInfo;
 /**
  * Unmarshal a `EndHeightMessage` object from Amino
  *
@@ -942,11 +599,7 @@ export function unmarshalTimeoutInfo (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `EndHeightMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEndHeightMessage (amino: AminoBytes, lengthPrefixed: boolean = true): EndHeightMessage {
-    const json = decodeType.decodeEndHeightMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEndHeightMessage(amino: AminoBytes, lengthPrefixed?: boolean): EndHeightMessage;
 /**
  * Unmarshal a `PubKey` object from Amino
  *
@@ -956,11 +609,7 @@ export function unmarshalEndHeightMessage (amino: AminoBytes, lengthPrefixed: bo
  * @returns `PubKey` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPubKey (amino: AminoBytes, lengthPrefixed: boolean = true): PubKey {
-    const json = decodeType.decodePubKey(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPubKey(amino: AminoBytes, lengthPrefixed?: boolean): PubKey;
 /**
  * Unmarshal a `PrivKey` object from Amino
  *
@@ -970,11 +619,7 @@ export function unmarshalPubKey (amino: AminoBytes, lengthPrefixed: boolean = tr
  * @returns `PrivKey` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPrivKey (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKey {
-    const json = decodeType.decodePrivKey(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPrivKey(amino: AminoBytes, lengthPrefixed?: boolean): PrivKey;
 /**
  * Unmarshal a `PubKeyEd25519` object from Amino
  *
@@ -984,11 +629,7 @@ export function unmarshalPrivKey (amino: AminoBytes, lengthPrefixed: boolean = t
  * @returns `PubKeyEd25519` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPubKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyEd25519 {
-    const json = decodeType.decodePubKeyEd25519(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPubKeyEd25519(amino: AminoBytes, lengthPrefixed?: boolean): PubKeyEd25519;
 /**
  * Unmarshal a `PrivKeyEd25519` object from Amino
  *
@@ -998,11 +639,7 @@ export function unmarshalPubKeyEd25519 (amino: AminoBytes, lengthPrefixed: boole
  * @returns `PrivKeyEd25519` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPrivKeyEd25519 (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKeyEd25519 {
-    const json = decodeType.decodePrivKeyEd25519(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPrivKeyEd25519(amino: AminoBytes, lengthPrefixed?: boolean): PrivKeyEd25519;
 /**
  * Unmarshal a `PubKeySecp256k1` object from Amino
  *
@@ -1012,11 +649,7 @@ export function unmarshalPrivKeyEd25519 (amino: AminoBytes, lengthPrefixed: bool
  * @returns `PubKeySecp256k1` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPubKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeySecp256k1 {
-    const json = decodeType.decodePubKeySecp256k1(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPubKeySecp256k1(amino: AminoBytes, lengthPrefixed?: boolean): PubKeySecp256k1;
 /**
  * Unmarshal a `PrivKeySecp256k1` object from Amino
  *
@@ -1026,11 +659,7 @@ export function unmarshalPubKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boo
  * @returns `PrivKeySecp256k1` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPrivKeySecp256k1 (amino: AminoBytes, lengthPrefixed: boolean = true): PrivKeySecp256k1 {
-    const json = decodeType.decodePrivKeySecp256k1(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPrivKeySecp256k1(amino: AminoBytes, lengthPrefixed?: boolean): PrivKeySecp256k1;
 /**
  * Unmarshal a `PubKeyMultisigThreshold` object from Amino
  *
@@ -1040,11 +669,7 @@ export function unmarshalPrivKeySecp256k1 (amino: AminoBytes, lengthPrefixed: bo
  * @returns `PubKeyMultisigThreshold` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPubKeyMultisigThreshold (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyMultisigThreshold {
-    const json = decodeType.decodePubKeyMultisigThreshold(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPubKeyMultisigThreshold(amino: AminoBytes, lengthPrefixed?: boolean): PubKeyMultisigThreshold;
 /**
  * Unmarshal a `EvidenceMessage` object from Amino
  *
@@ -1054,11 +679,7 @@ export function unmarshalPubKeyMultisigThreshold (amino: AminoBytes, lengthPrefi
  * @returns `EvidenceMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEvidenceMessage (amino: AminoBytes, lengthPrefixed: boolean = true): EvidenceMessage {
-    const json = decodeType.decodeEvidenceMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEvidenceMessage(amino: AminoBytes, lengthPrefixed?: boolean): EvidenceMessage;
 /**
  * Unmarshal a `EvidenceListMessage` object from Amino
  *
@@ -1068,11 +689,7 @@ export function unmarshalEvidenceMessage (amino: AminoBytes, lengthPrefixed: boo
  * @returns `EvidenceListMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEvidenceListMessage (amino: AminoBytes, lengthPrefixed: boolean = true): EvidenceListMessage {
-    const json = decodeType.decodeEvidenceListMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEvidenceListMessage(amino: AminoBytes, lengthPrefixed?: boolean): EvidenceListMessage;
 /**
  * Unmarshal a `MempoolMessage` object from Amino
  *
@@ -1082,11 +699,7 @@ export function unmarshalEvidenceListMessage (amino: AminoBytes, lengthPrefixed:
  * @returns `MempoolMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMempoolMessage (amino: AminoBytes, lengthPrefixed: boolean = true): MempoolMessage {
-    const json = decodeType.decodeMempoolMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMempoolMessage(amino: AminoBytes, lengthPrefixed?: boolean): MempoolMessage;
 /**
  * Unmarshal a `TxMessage` object from Amino
  *
@@ -1096,11 +709,7 @@ export function unmarshalMempoolMessage (amino: AminoBytes, lengthPrefixed: bool
  * @returns `TxMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalTxMessage (amino: AminoBytes, lengthPrefixed: boolean = true): TxMessage {
-    const json = decodeType.decodeTxMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalTxMessage(amino: AminoBytes, lengthPrefixed?: boolean): TxMessage;
 /**
  * Unmarshal a `Packet` object from Amino
  *
@@ -1110,11 +719,7 @@ export function unmarshalTxMessage (amino: AminoBytes, lengthPrefixed: boolean =
  * @returns `Packet` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPacket (amino: AminoBytes, lengthPrefixed: boolean = true): Packet {
-    const json = decodeType.decodePacket(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPacket(amino: AminoBytes, lengthPrefixed?: boolean): Packet;
 /**
  * Unmarshal a `PacketPing` object from Amino
  *
@@ -1124,11 +729,7 @@ export function unmarshalPacket (amino: AminoBytes, lengthPrefixed: boolean = tr
  * @returns `PacketPing` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPacketPing (amino: AminoBytes, lengthPrefixed: boolean = true): PacketPing {
-    const json = decodeType.decodePacketPing(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPacketPing(amino: AminoBytes, lengthPrefixed?: boolean): PacketPing;
 /**
  * Unmarshal a `PacketPong` object from Amino
  *
@@ -1138,11 +739,7 @@ export function unmarshalPacketPing (amino: AminoBytes, lengthPrefixed: boolean 
  * @returns `PacketPong` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPacketPong (amino: AminoBytes, lengthPrefixed: boolean = true): PacketPong {
-    const json = decodeType.decodePacketPong(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPacketPong(amino: AminoBytes, lengthPrefixed?: boolean): PacketPong;
 /**
  * Unmarshal a `PacketMsg` object from Amino
  *
@@ -1152,11 +749,7 @@ export function unmarshalPacketPong (amino: AminoBytes, lengthPrefixed: boolean 
  * @returns `PacketMsg` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPacketMsg (amino: AminoBytes, lengthPrefixed: boolean = true): PacketMsg {
-    const json = decodeType.decodePacketMsg(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPacketMsg(amino: AminoBytes, lengthPrefixed?: boolean): PacketMsg;
 /**
  * Unmarshal a `PexMessage` object from Amino
  *
@@ -1166,11 +759,7 @@ export function unmarshalPacketMsg (amino: AminoBytes, lengthPrefixed: boolean =
  * @returns `PexMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPexMessage (amino: AminoBytes, lengthPrefixed: boolean = true): PexMessage {
-    const json = decodeType.decodePexMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPexMessage(amino: AminoBytes, lengthPrefixed?: boolean): PexMessage;
 /**
  * Unmarshal a `PexRequestMessage` object from Amino
  *
@@ -1180,11 +769,7 @@ export function unmarshalPexMessage (amino: AminoBytes, lengthPrefixed: boolean 
  * @returns `PexRequestMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPexRequestMessage (amino: AminoBytes, lengthPrefixed: boolean = true): PexRequestMessage {
-    const json = decodeType.decodePexRequestMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPexRequestMessage(amino: AminoBytes, lengthPrefixed?: boolean): PexRequestMessage;
 /**
  * Unmarshal a `PexAddrsMessage` object from Amino
  *
@@ -1194,11 +779,7 @@ export function unmarshalPexRequestMessage (amino: AminoBytes, lengthPrefixed: b
  * @returns `PexAddrsMessage` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPexAddrsMessage (amino: AminoBytes, lengthPrefixed: boolean = true): PexAddrsMessage {
-    const json = decodeType.decodePexAddrsMessage(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPexAddrsMessage(amino: AminoBytes, lengthPrefixed?: boolean): PexAddrsMessage;
 /**
  * Unmarshal a `RemoteSignerMsg` object from Amino
  *
@@ -1208,11 +789,7 @@ export function unmarshalPexAddrsMessage (amino: AminoBytes, lengthPrefixed: boo
  * @returns `RemoteSignerMsg` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalRemoteSignerMsg (amino: AminoBytes, lengthPrefixed: boolean = true): RemoteSignerMsg {
-    const json = decodeType.decodeRemoteSignerMsg(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalRemoteSignerMsg(amino: AminoBytes, lengthPrefixed?: boolean): RemoteSignerMsg;
 /**
  * Unmarshal a `PubKeyRequest` object from Amino
  *
@@ -1222,11 +799,7 @@ export function unmarshalRemoteSignerMsg (amino: AminoBytes, lengthPrefixed: boo
  * @returns `PubKeyRequest` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPubKeyRequest (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyRequest {
-    const json = decodeType.decodePubKeyRequest(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPubKeyRequest(amino: AminoBytes, lengthPrefixed?: boolean): PubKeyRequest;
 /**
  * Unmarshal a `PubKeyResponse` object from Amino
  *
@@ -1236,11 +809,7 @@ export function unmarshalPubKeyRequest (amino: AminoBytes, lengthPrefixed: boole
  * @returns `PubKeyResponse` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPubKeyResponse (amino: AminoBytes, lengthPrefixed: boolean = true): PubKeyResponse {
-    const json = decodeType.decodePubKeyResponse(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPubKeyResponse(amino: AminoBytes, lengthPrefixed?: boolean): PubKeyResponse;
 /**
  * Unmarshal a `SignVoteRequest` object from Amino
  *
@@ -1250,11 +819,7 @@ export function unmarshalPubKeyResponse (amino: AminoBytes, lengthPrefixed: bool
  * @returns `SignVoteRequest` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalSignVoteRequest (amino: AminoBytes, lengthPrefixed: boolean = true): SignVoteRequest {
-    const json = decodeType.decodeSignVoteRequest(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalSignVoteRequest(amino: AminoBytes, lengthPrefixed?: boolean): SignVoteRequest;
 /**
  * Unmarshal a `SignedVoteResponse` object from Amino
  *
@@ -1264,11 +829,7 @@ export function unmarshalSignVoteRequest (amino: AminoBytes, lengthPrefixed: boo
  * @returns `SignedVoteResponse` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalSignedVoteResponse (amino: AminoBytes, lengthPrefixed: boolean = true): SignedVoteResponse {
-    const json = decodeType.decodeSignedVoteResponse(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalSignedVoteResponse(amino: AminoBytes, lengthPrefixed?: boolean): SignedVoteResponse;
 /**
  * Unmarshal a `SignProposalRequest` object from Amino
  *
@@ -1278,11 +839,7 @@ export function unmarshalSignedVoteResponse (amino: AminoBytes, lengthPrefixed: 
  * @returns `SignProposalRequest` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalSignProposalRequest (amino: AminoBytes, lengthPrefixed: boolean = true): SignProposalRequest {
-    const json = decodeType.decodeSignProposalRequest(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalSignProposalRequest(amino: AminoBytes, lengthPrefixed?: boolean): SignProposalRequest;
 /**
  * Unmarshal a `SignedProposalResponse` object from Amino
  *
@@ -1292,11 +849,7 @@ export function unmarshalSignProposalRequest (amino: AminoBytes, lengthPrefixed:
  * @returns `SignedProposalResponse` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalSignedProposalResponse (amino: AminoBytes, lengthPrefixed: boolean = true): SignedProposalResponse {
-    const json = decodeType.decodeSignedProposalResponse(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalSignedProposalResponse(amino: AminoBytes, lengthPrefixed?: boolean): SignedProposalResponse;
 /**
  * Unmarshal a `PingRequest` object from Amino
  *
@@ -1306,11 +859,7 @@ export function unmarshalSignedProposalResponse (amino: AminoBytes, lengthPrefix
  * @returns `PingRequest` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPingRequest (amino: AminoBytes, lengthPrefixed: boolean = true): PingRequest {
-    const json = decodeType.decodePingRequest(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPingRequest(amino: AminoBytes, lengthPrefixed?: boolean): PingRequest;
 /**
  * Unmarshal a `PingResponse` object from Amino
  *
@@ -1320,11 +869,7 @@ export function unmarshalPingRequest (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `PingResponse` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalPingResponse (amino: AminoBytes, lengthPrefixed: boolean = true): PingResponse {
-    const json = decodeType.decodePingResponse(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalPingResponse(amino: AminoBytes, lengthPrefixed?: boolean): PingResponse;
 /**
  * Unmarshal a `TMEventData` object from Amino
  *
@@ -1334,11 +879,7 @@ export function unmarshalPingResponse (amino: AminoBytes, lengthPrefixed: boolea
  * @returns `TMEventData` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalTMEventData (amino: AminoBytes, lengthPrefixed: boolean = true): TMEventData {
-    const json = decodeType.decodeTMEventData(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalTMEventData(amino: AminoBytes, lengthPrefixed?: boolean): TMEventData;
 /**
  * Unmarshal a `EventDataNewBlock` object from Amino
  *
@@ -1348,11 +889,7 @@ export function unmarshalTMEventData (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `EventDataNewBlock` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataNewBlock (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataNewBlock {
-    const json = decodeType.decodeEventDataNewBlock(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataNewBlock(amino: AminoBytes, lengthPrefixed?: boolean): EventDataNewBlock;
 /**
  * Unmarshal a `EventDataNewBlockHeader` object from Amino
  *
@@ -1362,11 +899,7 @@ export function unmarshalEventDataNewBlock (amino: AminoBytes, lengthPrefixed: b
  * @returns `EventDataNewBlockHeader` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataNewBlockHeader (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataNewBlockHeader {
-    const json = decodeType.decodeEventDataNewBlockHeader(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataNewBlockHeader(amino: AminoBytes, lengthPrefixed?: boolean): EventDataNewBlockHeader;
 /**
  * Unmarshal a `EventDataTx` object from Amino
  *
@@ -1376,11 +909,7 @@ export function unmarshalEventDataNewBlockHeader (amino: AminoBytes, lengthPrefi
  * @returns `EventDataTx` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataTx (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataTx {
-    const json = decodeType.decodeEventDataTx(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataTx(amino: AminoBytes, lengthPrefixed?: boolean): EventDataTx;
 /**
  * Unmarshal a `EventDataRoundState` object from Amino
  *
@@ -1390,11 +919,7 @@ export function unmarshalEventDataTx (amino: AminoBytes, lengthPrefixed: boolean
  * @returns `EventDataRoundState` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataRoundState (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataRoundState {
-    const json = decodeType.decodeEventDataRoundState(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataRoundState(amino: AminoBytes, lengthPrefixed?: boolean): EventDataRoundState;
 /**
  * Unmarshal a `EventDataNewRound` object from Amino
  *
@@ -1404,11 +929,7 @@ export function unmarshalEventDataRoundState (amino: AminoBytes, lengthPrefixed:
  * @returns `EventDataNewRound` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataNewRound (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataNewRound {
-    const json = decodeType.decodeEventDataNewRound(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataNewRound(amino: AminoBytes, lengthPrefixed?: boolean): EventDataNewRound;
 /**
  * Unmarshal a `EventDataCompleteProposal` object from Amino
  *
@@ -1418,11 +939,7 @@ export function unmarshalEventDataNewRound (amino: AminoBytes, lengthPrefixed: b
  * @returns `EventDataCompleteProposal` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataCompleteProposal (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataCompleteProposal {
-    const json = decodeType.decodeEventDataCompleteProposal(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataCompleteProposal(amino: AminoBytes, lengthPrefixed?: boolean): EventDataCompleteProposal;
 /**
  * Unmarshal a `EventDataVote` object from Amino
  *
@@ -1432,11 +949,7 @@ export function unmarshalEventDataCompleteProposal (amino: AminoBytes, lengthPre
  * @returns `EventDataVote` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataVote (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataVote {
-    const json = decodeType.decodeEventDataVote(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataVote(amino: AminoBytes, lengthPrefixed?: boolean): EventDataVote;
 /**
  * Unmarshal a `EventDataValidatorSetUpdates` object from Amino
  *
@@ -1446,11 +959,7 @@ export function unmarshalEventDataVote (amino: AminoBytes, lengthPrefixed: boole
  * @returns `EventDataValidatorSetUpdates` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataValidatorSetUpdates (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataValidatorSetUpdates {
-    const json = decodeType.decodeEventDataValidatorSetUpdates(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataValidatorSetUpdates(amino: AminoBytes, lengthPrefixed?: boolean): EventDataValidatorSetUpdates;
 /**
  * Unmarshal a `EventDataString` object from Amino
  *
@@ -1460,11 +969,7 @@ export function unmarshalEventDataValidatorSetUpdates (amino: AminoBytes, length
  * @returns `EventDataString` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEventDataString (amino: AminoBytes, lengthPrefixed: boolean = true): EventDataString {
-    const json = decodeType.decodeEventDataString(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEventDataString(amino: AminoBytes, lengthPrefixed?: boolean): EventDataString;
 /**
  * Unmarshal a `Evidence` object from Amino
  *
@@ -1474,11 +979,7 @@ export function unmarshalEventDataString (amino: AminoBytes, lengthPrefixed: boo
  * @returns `Evidence` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): Evidence {
-    const json = decodeType.decodeEvidence(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalEvidence(amino: AminoBytes, lengthPrefixed?: boolean): Evidence;
 /**
  * Unmarshal a `DuplicateVoteEvidence` object from Amino
  *
@@ -1488,11 +989,7 @@ export function unmarshalEvidence (amino: AminoBytes, lengthPrefixed: boolean = 
  * @returns `DuplicateVoteEvidence` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalDuplicateVoteEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): DuplicateVoteEvidence {
-    const json = decodeType.decodeDuplicateVoteEvidence(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalDuplicateVoteEvidence(amino: AminoBytes, lengthPrefixed?: boolean): DuplicateVoteEvidence;
 /**
  * Unmarshal a `MockGoodEvidence` object from Amino
  *
@@ -1502,11 +999,7 @@ export function unmarshalDuplicateVoteEvidence (amino: AminoBytes, lengthPrefixe
  * @returns `MockGoodEvidence` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMockGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): MockGoodEvidence {
-    const json = decodeType.decodeMockGoodEvidence(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMockGoodEvidence(amino: AminoBytes, lengthPrefixed?: boolean): MockGoodEvidence;
 /**
  * Unmarshal a `MockRandomGoodEvidence` object from Amino
  *
@@ -1516,11 +1009,7 @@ export function unmarshalMockGoodEvidence (amino: AminoBytes, lengthPrefixed: bo
  * @returns `MockRandomGoodEvidence` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMockRandomGoodEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): MockRandomGoodEvidence {
-    const json = decodeType.decodeMockRandomGoodEvidence(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
+export declare function unmarshalMockRandomGoodEvidence(amino: AminoBytes, lengthPrefixed?: boolean): MockRandomGoodEvidence;
 /**
  * Unmarshal a `MockBadEvidence` object from Amino
  *
@@ -1530,12 +1019,5 @@ export function unmarshalMockRandomGoodEvidence (amino: AminoBytes, lengthPrefix
  * @returns `MockBadEvidence` object
  * @throws  will throw if decoding fails
  */
-export function unmarshalMockBadEvidence (amino: AminoBytes, lengthPrefixed: boolean = true): MockBadEvidence {
-    const json = decodeType.decodeMockBadEvidence(amino, lengthPrefixed);
-    return bytesToJSON(json);
-}
-
-export function unmarshalValidatorSigningInfo(amino: AminoBytes): ValidatorSigningInfo {
-    const json = decodeType.decodeValidatorSigningInfo(amino);
-    return bytesToJSON(json);
-}
+export declare function unmarshalMockBadEvidence(amino: AminoBytes, lengthPrefixed?: boolean): MockBadEvidence;
+export declare function unmarshalValidatorSigningInfo(amino: AminoBytes): ValidatorSigningInfo;

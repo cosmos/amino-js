@@ -25,6 +25,7 @@ import (
 	tm_multisig "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/multisig"
 	tm_secp256k1 "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/crypto/secp256k1"
 
+	"github.com/cosmos/amino-js/go/extensions"
 	tm_blockchain "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/blockchain"
 	tm_consensus "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/consensus"
 	tm_evidence "github.com/cosmos/amino-js/go/lib/tendermint/tendermint/evidence"
@@ -2062,6 +2063,22 @@ func DecodeMockBadEvidence(bz []byte, lengthPrefixed bool) (bz2 []byte, err erro
 	} else {
 		err = codec.UnmarshalBinaryBare(bz, &o)
 	}
+
+	if err != nil {
+		return nil, err
+	}
+
+	bz2, err = codec.MarshalJSON(o)
+	if err != nil {
+		return nil, err
+	}
+
+	return
+}
+
+func DecodeValidatorSigningInfo(bz []byte) (bz2 []byte, err error) {
+	var o extensions.BaseValidatorSigningInfo
+	err = codec.UnmarshalBinaryLengthPrefixed(bz, &o)
 
 	if err != nil {
 		return nil, err

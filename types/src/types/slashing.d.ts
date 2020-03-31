@@ -2,4 +2,5 @@
 export interface MsgUnjail {
 }
 /** @TODO document */
-export interface ValidatorSigningInfo {}
+export interface ValidatorSigningInfo {
+}
