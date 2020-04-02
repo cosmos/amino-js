@@ -9,6 +9,7 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterConcrete(&Params{}, "irishub/Auth/Params", nil)
 
 	codec.RegisterInterface((*Account)(nil), nil)
+	codec.RegisterInterface((*ValidatorSigningInfo)(nil), nil)
 	codec.RegisterConcrete(&BaseAccount{}, "irishub/bank/Account", nil)
 	codec.RegisterConcrete(&StdTx{}, "irishub/bank/StdTx", nil)
 	codec.RegisterConcrete(&MsgSend{}, "irishub/bank/Send", nil)
@@ -29,6 +30,9 @@ func RegisterCodec(codec *amino.Codec) {
 	codec.RegisterConcrete(&MsgWithdrawDelegatorReward{}, "irishub/distr/MsgWithdrawDelegationReward", nil)
 	codec.RegisterConcrete(&MsgWithdrawValidatorRewardsAll{}, "irishub/distr/MsgWithdrawValidatorRewardsAll", nil)
 	codec.RegisterConcrete(&MsgSetWithdrawAddress{}, "irishub/distr/MsgModifyWithdrawAddress", nil)
-	codec.RegisterInterface((*ValidatorSigningInfo)(nil), nil)
+	codec.RegisterConcrete(&MsgSwapOrder{}, "irismod/coinswap/MsgSwapOrder", nil)
+	codec.RegisterConcrete(&MsgAddLiquidity{}, "irismod/coinswap/MsgAddLiquidity", nil)
+	codec.RegisterConcrete(&MsgRemoveLiquidity{}, "irismod/coinswap/MsgRemoveLiquidity", nil)
+	codec.RegisterConcrete(&CoinswapParams{}, "irismod/coinswap/Params", nil)
 
 }
