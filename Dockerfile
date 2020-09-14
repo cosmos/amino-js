@@ -28,6 +28,4 @@ RUN cd go/js && go mod download
 RUN yarn install
 RUN yarn setup
 
-RUN yarn test
-
 CMD ["yarn", "pack"]
